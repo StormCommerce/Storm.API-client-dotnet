@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6280458a-0591-4c14-9453-e7ae15e11ef0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings>
+      <NamespaceMapping TargetNamespace="Enferno.Services.Contracts.Expose.Applications" ClrNamespace="Enferno.StormApiClient.Applications" />
+      <NamespaceMapping TargetNamespace="Enferno.Services.Contracts.Expose.Customers" ClrNamespace="Enferno.StormApiClient.Customers" />
+      <NamespaceMapping TargetNamespace="Enferno.Services.Contracts.Expose.Orders" ClrNamespace="Enferno.StormApiClient.Orders" />
+      <NamespaceMapping TargetNamespace="Enferno.Services.Contracts.Expose.Products" ClrNamespace="Enferno.StormApiClient.Products" />
+      <NamespaceMapping TargetNamespace="Enferno.Services.Contracts.Expose.Shopping" ClrNamespace="Enferno.StormApiClient.Shopping" />
+      <NamespaceMapping TargetNamespace="Enferno.Services.Contracts.Expose" ClrNamespace="Enferno.StormApiClient.Expose" />
+      <NamespaceMapping TargetNamespace="http://Enferno.Native.Schemas.ErrorMessage_v2" ClrNamespace="Enferno.StormApiClient.Expose.ErrorMessage_v2" />
+      <NamespaceMapping TargetNamespace="Enferno.Services.Contracts.Message" ClrNamespace="Enferno.StormApiClient.Expose.Message" />
+    </NamespaceMappings>
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://servicesstage.enferno.se/api/1.1/ApplicationService.svc?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://servicesstage.enferno.se/api/1.1/CustomerService.svc?wsdl" Protocol="http" SourceId="2" />
+    <MetadataSource Address="https://servicesstage.enferno.se/api/1.1/OrderService.svc?wsdl" Protocol="http" SourceId="4" />
+    <MetadataSource Address="https://servicesstage.enferno.se/api/1.1/ProductService.svc?wsdl" Protocol="http" SourceId="5" />
+    <MetadataSource Address="https://servicesstage.enferno.se/api/1.1/ShoppingService.svc?wsdl" Protocol="http" SourceId="6" />
+    <MetadataSource Address="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?wsdl" Protocol="http" SourceId="7" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ApplicationService7.xsd" MetadataType="Schema" ID="6b7d68c7-82fb-4a0d-9322-befb41ce943d" SourceId="1" SourceUrl="https://servicesstage.enferno.se/api/1.1/ApplicationService.svc?xsd=xsd6" />
+    <MetadataFile FileName="ApplicationService2.wsdl" MetadataType="Wsdl" ID="20952c5c-c595-4531-87a3-0fd2217ed78b" SourceId="1" SourceUrl="https://servicesstage.enferno.se/api/1.1/ApplicationService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ApplicationService71.xsd" MetadataType="Schema" ID="790023b9-aae4-40fd-8cae-655bc97c1e32" SourceId="1" SourceUrl="https://servicesstage.enferno.se/api/1.1/ApplicationService.svc?xsd=xsd4" />
+    <MetadataFile FileName="ApplicationService72.xsd" MetadataType="Schema" ID="ece2760f-7251-4b5e-9efd-2de5d37016bd" SourceId="1" SourceUrl="https://servicesstage.enferno.se/api/1.1/ApplicationService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ApplicationService73.xsd" MetadataType="Schema" ID="fbe0609e-226e-4618-9727-6034c61941e1" SourceId="1" SourceUrl="https://servicesstage.enferno.se/api/1.1/ApplicationService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ApplicationService74.xsd" MetadataType="Schema" ID="fde93562-d625-412a-831b-8bade25dc637" SourceId="1" SourceUrl="https://servicesstage.enferno.se/api/1.1/ApplicationService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ApplicationService21.wsdl" MetadataType="Wsdl" ID="cc43865f-9390-4ab8-bc75-55f78c6e3604" SourceId="1" SourceUrl="https://servicesstage.enferno.se/api/1.1/ApplicationService.svc?wsdl" />
+    <MetadataFile FileName="ApplicationService75.xsd" MetadataType="Schema" ID="4e3896d6-1a82-4082-94f7-8ae89fd24c3e" SourceId="1" SourceUrl="https://servicesstage.enferno.se/api/1.1/ApplicationService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ApplicationService76.xsd" MetadataType="Schema" ID="d081821c-8df0-4429-b531-7a10c75e163b" SourceId="1" SourceUrl="https://servicesstage.enferno.se/api/1.1/ApplicationService.svc?xsd=xsd5" />
+    <MetadataFile FileName="CustomerService6.xsd" MetadataType="Schema" ID="16bc7b42-bb37-4057-926f-17df1e8f4dbf" SourceId="2" SourceUrl="https://servicesstage.enferno.se/api/1.1/CustomerService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CustomerService2.wsdl" MetadataType="Wsdl" ID="fb4de39d-d0f8-471a-9a85-970925ede718" SourceId="2" SourceUrl="https://servicesstage.enferno.se/api/1.1/CustomerService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="CustomerService61.xsd" MetadataType="Schema" ID="28c9a6af-c917-452c-93b3-0c2d1f1e20e3" SourceId="2" SourceUrl="https://servicesstage.enferno.se/api/1.1/CustomerService.svc?xsd=xsd5" />
+    <MetadataFile FileName="CustomerService62.xsd" MetadataType="Schema" ID="31dc9b4b-fe2c-4c79-a331-b0f15944ba31" SourceId="2" SourceUrl="https://servicesstage.enferno.se/api/1.1/CustomerService.svc?xsd=xsd4" />
+    <MetadataFile FileName="CustomerService63.xsd" MetadataType="Schema" ID="e30fccb4-aedb-4782-acf6-a223085a85fb" SourceId="2" SourceUrl="https://servicesstage.enferno.se/api/1.1/CustomerService.svc?xsd=xsd3" />
+    <MetadataFile FileName="CustomerService64.xsd" MetadataType="Schema" ID="fc880981-8426-468b-9b09-8aec215039aa" SourceId="2" SourceUrl="https://servicesstage.enferno.se/api/1.1/CustomerService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CustomerService65.xsd" MetadataType="Schema" ID="6fa04f3f-3f60-453f-9df2-3c0c6fa8be20" SourceId="2" SourceUrl="https://servicesstage.enferno.se/api/1.1/CustomerService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CustomerService21.wsdl" MetadataType="Wsdl" ID="6730d2b9-2ea1-4a11-b591-ac897cfd7ec6" SourceId="2" SourceUrl="https://servicesstage.enferno.se/api/1.1/CustomerService.svc?wsdl" />
+    <MetadataFile FileName="OrderService.xsd" MetadataType="Schema" ID="f1ceb6ca-7def-47bb-95cf-2dd2bb956454" SourceId="4" SourceUrl="https://servicesstage.enferno.se/api/1.1/OrderService.svc?xsd=xsd4" />
+    <MetadataFile FileName="OrderService4.xsd" MetadataType="Schema" ID="5f92e23f-fce0-4fd9-acdb-35064f93d414" SourceId="4" SourceUrl="https://servicesstage.enferno.se/api/1.1/OrderService.svc?xsd=xsd2" />
+    <MetadataFile FileName="OrderService41.xsd" MetadataType="Schema" ID="1082791d-c985-4446-a59f-68c65a30be83" SourceId="4" SourceUrl="https://servicesstage.enferno.se/api/1.1/OrderService.svc?xsd=xsd3" />
+    <MetadataFile FileName="OrderService42.xsd" MetadataType="Schema" ID="0719045b-1b6d-4fcb-adc8-2053d7e61347" SourceId="4" SourceUrl="https://servicesstage.enferno.se/api/1.1/OrderService.svc?xsd=xsd0" />
+    <MetadataFile FileName="OrderService43.xsd" MetadataType="Schema" ID="e9e9debe-80bc-4a2c-ae39-afff4a91def0" SourceId="4" SourceUrl="https://servicesstage.enferno.se/api/1.1/OrderService.svc?xsd=xsd1" />
+    <MetadataFile FileName="OrderService2.wsdl" MetadataType="Wsdl" ID="2ff658a8-021f-4e1f-9632-0e7767dc5bd7" SourceId="4" SourceUrl="https://servicesstage.enferno.se/api/1.1/OrderService.svc?wsdl" />
+    <MetadataFile FileName="OrderService21.wsdl" MetadataType="Wsdl" ID="c98e4388-c060-46f8-900d-b3ebc72982f2" SourceId="4" SourceUrl="https://servicesstage.enferno.se/api/1.1/OrderService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ProductService8.xsd" MetadataType="Schema" ID="95adebda-9e4e-40e7-b136-e2c7a3c447be" SourceId="5" SourceUrl="https://servicesstage.enferno.se/api/1.1/ProductService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ProductService81.xsd" MetadataType="Schema" ID="0daace6f-0475-4ec1-9b8c-01f49ef5d182" SourceId="5" SourceUrl="https://servicesstage.enferno.se/api/1.1/ProductService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ProductService82.xsd" MetadataType="Schema" ID="d2246dd8-8090-4196-9c1d-4c7ca0f4023d" SourceId="5" SourceUrl="https://servicesstage.enferno.se/api/1.1/ProductService.svc?xsd=xsd7" />
+    <MetadataFile FileName="ProductService83.xsd" MetadataType="Schema" ID="3ee0215e-a2ef-4b44-9a73-b4bdb7542562" SourceId="5" SourceUrl="https://servicesstage.enferno.se/api/1.1/ProductService.svc?xsd=xsd4" />
+    <MetadataFile FileName="ProductService1.xsd" MetadataType="Schema" ID="643dfbe1-36b0-4260-84d4-3ea700608557" SourceId="5" SourceUrl="https://servicesstage.enferno.se/api/1.1/ProductService.svc?xsd=xsd8" />
+    <MetadataFile FileName="ProductService84.xsd" MetadataType="Schema" ID="2095f412-d8e3-412b-be8a-16116a710aba" SourceId="5" SourceUrl="https://servicesstage.enferno.se/api/1.1/ProductService.svc?xsd=xsd5" />
+    <MetadataFile FileName="ProductService2.wsdl" MetadataType="Wsdl" ID="c7915567-d592-48ee-b5f1-79b210e7896a" SourceId="5" SourceUrl="https://servicesstage.enferno.se/api/1.1/ProductService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ProductService85.xsd" MetadataType="Schema" ID="7d36fc74-50b7-4be9-bf5a-d49771f4f0d8" SourceId="5" SourceUrl="https://servicesstage.enferno.se/api/1.1/ProductService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ProductService21.wsdl" MetadataType="Wsdl" ID="8bb816cb-f3e9-4cdb-83c3-e567b2defb04" SourceId="5" SourceUrl="https://servicesstage.enferno.se/api/1.1/ProductService.svc?wsdl" />
+    <MetadataFile FileName="ProductService86.xsd" MetadataType="Schema" ID="112d1944-1ed6-4e01-9fa5-89a9f4f3145a" SourceId="5" SourceUrl="https://servicesstage.enferno.se/api/1.1/ProductService.svc?xsd=xsd6" />
+    <MetadataFile FileName="ProductService87.xsd" MetadataType="Schema" ID="b1e76bdf-f167-4899-90b3-4bbf399dc724" SourceId="5" SourceUrl="https://servicesstage.enferno.se/api/1.1/ProductService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ShoppingService8.xsd" MetadataType="Schema" ID="ef177816-f576-451b-9d14-19571d84b322" SourceId="6" SourceUrl="https://servicesstage.enferno.se/api/1.1/ShoppingService.svc?xsd=xsd4" />
+    <MetadataFile FileName="ShoppingService2.wsdl" MetadataType="Wsdl" ID="fca62e18-2ab4-4ca2-b0ce-c18ab227719f" SourceId="6" SourceUrl="https://servicesstage.enferno.se/api/1.1/ShoppingService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ShoppingService81.xsd" MetadataType="Schema" ID="011ec465-0fa3-422f-976e-d452a71b773d" SourceId="6" SourceUrl="https://servicesstage.enferno.se/api/1.1/ShoppingService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ShoppingService82.xsd" MetadataType="Schema" ID="54aabeea-6de4-4798-bc66-fb0f1e3ab0ef" SourceId="6" SourceUrl="https://servicesstage.enferno.se/api/1.1/ShoppingService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ShoppingService83.xsd" MetadataType="Schema" ID="d82ca345-e7c4-428b-86e0-10369f9a9c92" SourceId="6" SourceUrl="https://servicesstage.enferno.se/api/1.1/ShoppingService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ShoppingService84.xsd" MetadataType="Schema" ID="63c32637-849f-4c0f-9786-6fe112c22da1" SourceId="6" SourceUrl="https://servicesstage.enferno.se/api/1.1/ShoppingService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ShoppingService85.xsd" MetadataType="Schema" ID="adffcc99-620e-4a97-8c8d-0ecb92d48daa" SourceId="6" SourceUrl="https://servicesstage.enferno.se/api/1.1/ShoppingService.svc?xsd=xsd7" />
+    <MetadataFile FileName="ShoppingService.xsd" MetadataType="Schema" ID="527ad642-e6a3-46bb-abd4-c64372d8ba3b" SourceId="6" SourceUrl="https://servicesstage.enferno.se/api/1.1/ShoppingService.svc?xsd=xsd8" />
+    <MetadataFile FileName="ShoppingService86.xsd" MetadataType="Schema" ID="284196b2-bd12-4250-808d-21af829c2e0c" SourceId="6" SourceUrl="https://servicesstage.enferno.se/api/1.1/ShoppingService.svc?xsd=xsd6" />
+    <MetadataFile FileName="ShoppingService21.wsdl" MetadataType="Wsdl" ID="a7535a40-0687-422c-9d01-a0b7f6829bc5" SourceId="6" SourceUrl="https://servicesstage.enferno.se/api/1.1/ShoppingService.svc?wsdl" />
+    <MetadataFile FileName="ShoppingService87.xsd" MetadataType="Schema" ID="9df08ae0-5d67-4169-bd62-6e2a3107c2e0" SourceId="6" SourceUrl="https://servicesstage.enferno.se/api/1.1/ShoppingService.svc?xsd=xsd5" />
+    <MetadataFile FileName="ExposeService11.xsd" MetadataType="Schema" ID="3ba1be68-2f97-4cf9-893e-7d411b1bafb3" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd4" />
+    <MetadataFile FileName="ExposeService111.xsd" MetadataType="Schema" ID="0a6fcaf1-c468-4a92-9fd2-b7c759941549" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd7" />
+    <MetadataFile FileName="ExposeService2.wsdl" MetadataType="Wsdl" ID="91408421-b67e-432b-8a5b-a1f03bd4c266" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ExposeService112.xsd" MetadataType="Schema" ID="e464ab1c-5489-4fe6-a661-c0ffd2e3ccf6" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd10" />
+    <MetadataFile FileName="ExposeService113.xsd" MetadataType="Schema" ID="84f3f096-4232-40fa-8b27-bd1097d835c0" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd9" />
+    <MetadataFile FileName="ExposeService114.xsd" MetadataType="Schema" ID="e9226049-4535-4e37-911d-62835cc54c19" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ExposeService1.xsd" MetadataType="Schema" ID="a01fb023-0865-42a8-955d-d2bb02b4282a" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd12" />
+    <MetadataFile FileName="ExposeService115.xsd" MetadataType="Schema" ID="d3cbcb99-b8cf-4a53-8920-8450c16d2f96" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd5" />
+    <MetadataFile FileName="ExposeService21.wsdl" MetadataType="Wsdl" ID="eae8221a-d40e-4777-8c3b-c46b393e1af6" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?wsdl" />
+    <MetadataFile FileName="ExposeService116.xsd" MetadataType="Schema" ID="98537ba9-e7de-4c6f-a2b5-41df8f73b352" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd6" />
+    <MetadataFile FileName="ExposeService.xsd" MetadataType="Schema" ID="6a9d00de-7480-4d48-b421-fc87ef7f3380" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd11" />
+    <MetadataFile FileName="ExposeService117.xsd" MetadataType="Schema" ID="85ff2194-788b-436d-acfe-bd9b873201be" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ExposeService119.xsd" MetadataType="Schema" ID="0169c712-a90d-4732-a617-2fe8cce97136" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd8" />
+    <MetadataFile FileName="ExposeService118.xsd" MetadataType="Schema" ID="b7cb9d24-7508-421a-9a34-a65f578d94ef" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ExposeService1110.xsd" MetadataType="Schema" ID="1cb87e7a-fb42-4f60-b9bf-8e84fbb7a77c" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

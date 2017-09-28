@@ -1,0 +1,1219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="Enferno.Services.Contracts.Expose.Products" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ProductService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="SOAP_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="true" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="Enferno.Services.Contracts.Expose.Products" location="https://servicesstage.enferno.se/api/1.1/ProductService.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="SOAP" type="i0:ProductService">
+    <wsp:PolicyReference URI="#SOAP_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetManufacturer">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/GetManufacturer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetManufacturerByUniqueName">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/GetManufacturerByUniqueName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNavigationStructure">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/GetNavigationStructure" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListConfigurationItems">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListConfigurationItems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProduct">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/GetProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductByUniqueName">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/GetProductByUniqueName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductByPartNo">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/GetProductByPartNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListPromotionsByProductId">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListPromotionsByProductId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListPromotionsByProductUniqueName">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListPromotionsByProductUniqueName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductOnHandByPartNo">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/GetProductOnHandByPartNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductOnHandByProduct">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/GetProductOnHandByProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListOnHandInfoTypes">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListOnHandInfoTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetExternalProductOnHandByPartNo">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/GetExternalProductOnHandByPartNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetExternalProductOnHandByProduct">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/GetExternalProductOnHandByProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertProductReview">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/InsertProductReview" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductReviewLikes">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/UpdateProductReviewLikes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductViewCount">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/UpdateProductViewCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListPricelistTypes">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListPricelistTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListPricelists">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListPricelists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductFlags">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductFlags" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListAssortments">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListAssortments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListAccessoryTypes">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListAccessoryTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListParametricValues">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListParametricValues" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListParametricInfo">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListParametricInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListParametricValues2">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListParametricValues2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListStatuses">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListStatuses" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListFlags">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListFlags" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListFileTypeIds">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListFileTypeIds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListFocusParametrics">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListFocusParametrics" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListManufacturers">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListManufacturers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListManufacturersEx">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListManufacturersEx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListNavigationNodeTypeIds">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListNavigationNodeTypeIds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListNavigationNodes">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListNavigationNodes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListNavigationNodesEx">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListNavigationNodesEx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListBestsellingProducts">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListBestsellingProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListBestsellingProducts2">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListBestsellingProducts2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListBestsellingProductsByNode">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListBestsellingProductsByNode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListBestsellingProductsByNode2">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListBestsellingProductsByNode2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListIncludedProducts">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListIncludedProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListFamilies">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListFamilies" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProducts">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductsByNode">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByNode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProducts2">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProducts2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListBestSellingProductsByCompany">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListBestSellingProductsByCompany" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductsByCustomer">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductsByPricelist">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByPricelist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductsByFamilies">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByFamilies" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductsByPromotionRequirement">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByPromotionRequirement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductsByIds">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByIds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductsByIds2">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByIds2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductsByPartNos">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByPartNos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductsById">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductsByNode2">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByNode2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductItemFilterValues">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductItemFilterValues" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductItemFilterValuesByNode">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductItemFilterValuesByNode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductItemFilterValuesByIds">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductItemFilterValuesByIds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductItemFilterValuesById">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductItemFilterValuesById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductItemFilterValuesByCustomer">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductItemFilterValuesByCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductFilters">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductFilters" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductFiltersByNode">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductFiltersByNode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductFilters2">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductFilters2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductFiltersByNode2">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductFiltersByNode2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductFiltersByCustomer">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductFiltersByCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductFiltersByPricelist">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductFiltersByPricelist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductFiltersByIds">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductFiltersByIds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductAccessories">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductAccessories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductAccessories2">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductAccessories2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductAccessories3">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductAccessories3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductAccessories4">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductAccessories4" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductAccessories5">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductAccessories5" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductCrossSell">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductCrossSell" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductCrossSell2">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductCrossSell2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductCrossSell3">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductCrossSell3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductCrossSell4">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductCrossSell4" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductParametrics">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductParametrics" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductUpsell">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductUpsell" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductUpsell2">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductUpsell2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductUpSell3">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductUpSell3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductUpSell4">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductUpSell4" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductsInFamilies">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsInFamilies" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductsInFamilies2">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsInFamilies2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListTopProducts">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListTopProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListPopularProducts">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListPopularProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListPopularProductsByNode">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListPopularProductsByNode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListPopularProducts2">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListPopularProducts2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListPopularProductsByNode2">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListPopularProductsByNode2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListVariantItems">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListVariantItems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListCategories">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListCategories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductReviews">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductReviews" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductReviewsAll">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductReviewsAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListCategoryItems">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListCategoryItems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListCategoryItemsByPricelists">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListCategoryItemsByPricelists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListWarehouseInfo">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListWarehouseInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCategories">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/SearchCategories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchManufacturers">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/SearchManufacturers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchProductsLite">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/SearchProductsLite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchProductsLite2">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/SearchProductsLite2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListSkuTypes">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListSkuTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProductService">
+    <wsdl:port name="SOAP" binding="tns:SOAP">
+      <soap12:address location="https://servicesstage.enferno.se/api/1.1/ProductService.svc/soap" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://servicesstage.enferno.se/api/1.1/ProductService.svc/soap</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

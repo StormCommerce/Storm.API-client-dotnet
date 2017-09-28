@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="Enferno.Services.Contracts.Expose.Orders" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="Enferno.Services.Contracts.Expose.Orders" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="Enferno.Services.Contracts.Expose.Orders/Imports">
+      <xsd:import schemaLocation="https://servicesstage.enferno.se/api/1.1/OrderService.svc?xsd=xsd0" namespace="Enferno.Services.Contracts.Expose.Orders" />
+      <xsd:import schemaLocation="https://servicesstage.enferno.se/api/1.1/OrderService.svc?xsd=xsd3" namespace="http://Enferno.Native.Schemas.ErrorMessage_v2" />
+      <xsd:import schemaLocation="https://servicesstage.enferno.se/api/1.1/OrderService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://servicesstage.enferno.se/api/1.1/OrderService.svc?xsd=xsd2" namespace="Enferno.Services.Contracts.Message" />
+      <xsd:import schemaLocation="https://servicesstage.enferno.se/api/1.1/OrderService.svc?xsd=xsd4" namespace="Enferno.Services.Contracts.Expose" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="OrderService_InsertDeliveryNote_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDeliveryNote" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_InsertDeliveryNote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDeliveryNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_InsertDeliveryNote_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q1="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q1:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_InsertInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertInvoice" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_InsertInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_InsertInvoice_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q2="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q2:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_GetOrderByNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderByNo" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_GetOrderByNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderByNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_GetOrderByNo_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q3="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q3:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_GetOrderByBasket_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderByBasket" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_GetOrderByBasket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderByBasketResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_GetOrderByBasket_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q4="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q4:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_ListOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListOrders" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_ListOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_ListOrders_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q5="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q5:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_ListOrders2_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListOrders2" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_ListOrders2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListOrders2Response" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_ListOrders2_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q6="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q6:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_SearchOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchOrder" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_SearchOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_SearchOrder_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q7="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q7:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_UpdateDeliveryNotePackage_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDeliveryNotePackage" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_UpdateDeliveryNotePackage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDeliveryNotePackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_UpdateDeliveryNotePackage_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q8="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q8:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_ListOrderStatuses_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListOrderStatuses" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_ListOrderStatuses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListOrderStatusesResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_ListOrderStatuses_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q9="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q9:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:portType name="OrderService">
+    <wsdl:operation name="InsertDeliveryNote">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/InsertDeliveryNote" message="tns:OrderService_InsertDeliveryNote_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/InsertDeliveryNoteResponse" message="tns:OrderService_InsertDeliveryNote_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/InsertDeliveryNoteErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:OrderService_InsertDeliveryNote_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertInvoice">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/InsertInvoice" message="tns:OrderService_InsertInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/InsertInvoiceResponse" message="tns:OrderService_InsertInvoice_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/InsertInvoiceErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:OrderService_InsertInvoice_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderByNo">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/GetOrderByNo" message="tns:OrderService_GetOrderByNo_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/GetOrderByNoResponse" message="tns:OrderService_GetOrderByNo_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/GetOrderByNoErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:OrderService_GetOrderByNo_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderByBasket">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/GetOrderByBasket" message="tns:OrderService_GetOrderByBasket_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/GetOrderByBasketResponse" message="tns:OrderService_GetOrderByBasket_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/GetOrderByBasketErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:OrderService_GetOrderByBasket_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListOrders">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/ListOrders" message="tns:OrderService_ListOrders_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/ListOrdersResponse" message="tns:OrderService_ListOrders_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/ListOrdersErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:OrderService_ListOrders_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListOrders2">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/ListOrders2" message="tns:OrderService_ListOrders2_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/ListOrders2Response" message="tns:OrderService_ListOrders2_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/ListOrders2ErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:OrderService_ListOrders2_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchOrder">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/SearchOrder" message="tns:OrderService_SearchOrder_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/SearchOrderResponse" message="tns:OrderService_SearchOrder_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/SearchOrderErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:OrderService_SearchOrder_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeliveryNotePackage">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/UpdateDeliveryNotePackage" message="tns:OrderService_UpdateDeliveryNotePackage_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/UpdateDeliveryNotePackageResponse" message="tns:OrderService_UpdateDeliveryNotePackage_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/UpdateDeliveryNotePackageErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:OrderService_UpdateDeliveryNotePackage_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListOrderStatuses">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/ListOrderStatuses" message="tns:OrderService_ListOrderStatuses_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/ListOrderStatusesResponse" message="tns:OrderService_ListOrderStatuses_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/ListOrderStatusesErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:OrderService_ListOrderStatuses_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

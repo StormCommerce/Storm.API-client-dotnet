@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="27055d67-1c14-48a4-9b7f-f7a04d52110b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://stormstage.enferno.se/API/1.1/Export/ExportService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ExportService.xsd" MetadataType="Schema" ID="416a62b1-75cc-49f0-ad9b-0c9c948cba14" SourceId="1" SourceUrl="https://stormstage.enferno.se/api/1.1/Export/ExportService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ExportService1.xsd" MetadataType="Schema" ID="10301878-4008-4821-8e8c-9660a2d5f493" SourceId="1" SourceUrl="https://stormstage.enferno.se/api/1.1/Export/ExportService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ExportService.disco" MetadataType="Disco" ID="02da888e-cb79-4f78-b848-8b4e0c862596" SourceId="1" SourceUrl="https://stormstage.enferno.se/api/1.1/Export/ExportService.svc?disco" />
+    <MetadataFile FileName="ExportService.wsdl" MetadataType="Wsdl" ID="1d25b8b6-cc0f-4372-be67-2e585e2bff8e" SourceId="1" SourceUrl="https://stormstage.enferno.se/api/1.1/Export/ExportService.svc?wsdl" />
+    <MetadataFile FileName="ExportService2.xsd" MetadataType="Schema" ID="3c1c1df1-3281-4d81-a22f-d27049899e31" SourceId="1" SourceUrl="https://stormstage.enferno.se/api/1.1/Export/ExportService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ExportService1.wsdl" MetadataType="Wsdl" ID="734920c7-361e-4bf8-b336-9a0e0b938814" SourceId="1" SourceUrl="https://stormstage.enferno.se/api/1.1/Export/ExportService.svc?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="Enferno.Services.Contracts.Expose.Products" elementFormDefault="qualified" targetNamespace="Enferno.Services.Contracts.Expose.Products" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://servicesstage.enferno.se/api/1.1/ApplicationService.svc?xsd=xsd4" namespace="Enferno.Services.Contracts.Expose" />
+  <xs:import schemaLocation="https://servicesstage.enferno.se/api/1.1/ApplicationService.svc?xsd=xsd2" namespace="Enferno.Services.Contracts.Message" />
+  <xs:complexType name="OnHand">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Enferno.Services.Contracts.Message" base="q1:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:decimal" />
+          <xs:element minOccurs="0" name="IncomingValue" type="xs:decimal" />
+          <xs:element minOccurs="0" name="NextDeliveryDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LeadtimeDayCount" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="LastChecked" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsReturnable" type="xs:boolean" />
+          <xs:element xmlns:q2="Enferno.Services.Contracts.Expose" minOccurs="0" name="Info" nillable="true" type="q2:IdValues" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OnHand" nillable="true" type="tns:OnHand" />
+</xs:schema>

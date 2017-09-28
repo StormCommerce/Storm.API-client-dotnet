@@ -1,0 +1,1390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="Enferno.Services.Contracts.Expose.Products" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="Enferno.Services.Contracts.Expose.Products" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="Enferno.Services.Contracts.Expose.Products/Imports">
+      <xsd:import schemaLocation="https://servicesstage.enferno.se/api/1.1/ProductService.svc?xsd=xsd0" namespace="Enferno.Services.Contracts.Expose.Products" />
+      <xsd:import schemaLocation="https://servicesstage.enferno.se/api/1.1/ProductService.svc?xsd=xsd3" namespace="http://Enferno.Native.Schemas.ErrorMessage_v2" />
+      <xsd:import schemaLocation="https://servicesstage.enferno.se/api/1.1/ProductService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://servicesstage.enferno.se/api/1.1/ProductService.svc?xsd=xsd2" namespace="Enferno.Services.Contracts.Message" />
+      <xsd:import schemaLocation="https://servicesstage.enferno.se/api/1.1/ProductService.svc?xsd=xsd4" namespace="Enferno.Services.Contracts.Expose" />
+      <xsd:import schemaLocation="https://servicesstage.enferno.se/api/1.1/ProductService.svc?xsd=xsd5" namespace="Enferno.Services.Contracts.Expose.Shopping" />
+      <xsd:import schemaLocation="https://servicesstage.enferno.se/api/1.1/ProductService.svc?xsd=xsd6" namespace="Enferno.Services.Contracts.Expose.Applications" />
+      <xsd:import schemaLocation="https://servicesstage.enferno.se/api/1.1/ProductService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Enferno.Services.Contracts.Expose" />
+      <xsd:import schemaLocation="https://servicesstage.enferno.se/api/1.1/ProductService.svc?xsd=xsd8" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ProductService_GetManufacturer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetManufacturer" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetManufacturer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetManufacturerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetManufacturer_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q1="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q1:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetManufacturerByUniqueName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetManufacturerByUniqueName" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetManufacturerByUniqueName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetManufacturerByUniqueNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetManufacturerByUniqueName_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q2="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q2:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetNavigationStructure_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNavigationStructure" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetNavigationStructure_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNavigationStructureResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetNavigationStructure_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q3="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q3:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListConfigurationItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListConfigurationItems" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListConfigurationItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListConfigurationItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListConfigurationItems_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q4="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q4:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProduct" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetProduct_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q5="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q5:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetProductByUniqueName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductByUniqueName" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetProductByUniqueName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductByUniqueNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetProductByUniqueName_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q6="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q6:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetProductByPartNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductByPartNo" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetProductByPartNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductByPartNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetProductByPartNo_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q7="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q7:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListPromotionsByProductId_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListPromotionsByProductId" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListPromotionsByProductId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListPromotionsByProductIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListPromotionsByProductId_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q8="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q8:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListPromotionsByProductUniqueName_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListPromotionsByProductUniqueName" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListPromotionsByProductUniqueName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListPromotionsByProductUniqueNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListPromotionsByProductUniqueName_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q9="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q9:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetProductOnHandByPartNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductOnHandByPartNo" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetProductOnHandByPartNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductOnHandByPartNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetProductOnHandByPartNo_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q10="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q10:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetProductOnHandByProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductOnHandByProduct" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetProductOnHandByProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductOnHandByProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetProductOnHandByProduct_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q11="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q11:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListOnHandInfoTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListOnHandInfoTypes" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListOnHandInfoTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListOnHandInfoTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListOnHandInfoTypes_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q12="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q12:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetExternalProductOnHandByPartNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExternalProductOnHandByPartNo" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetExternalProductOnHandByPartNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExternalProductOnHandByPartNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetExternalProductOnHandByPartNo_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q13="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q13:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetExternalProductOnHandByProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExternalProductOnHandByProduct" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetExternalProductOnHandByProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExternalProductOnHandByProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetExternalProductOnHandByProduct_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q14="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q14:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_InsertProductReview_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertProductReview" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_InsertProductReview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertProductReviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_InsertProductReview_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q15="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q15:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_UpdateProductReviewLikes_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductReviewLikes" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_UpdateProductReviewLikes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductReviewLikesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_UpdateProductReviewLikes_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q16="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q16:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_UpdateProductViewCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductViewCount" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_UpdateProductViewCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductViewCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_UpdateProductViewCount_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q17="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q17:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListPricelistTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListPricelistTypes" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListPricelistTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListPricelistTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListPricelistTypes_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q18="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q18:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListPricelists_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListPricelists" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListPricelists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListPricelistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListPricelists_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q19="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q19:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductFlags_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductFlags" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductFlags_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductFlagsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductFlags_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q20="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q20:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListAssortments_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListAssortments" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListAssortments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListAssortmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListAssortments_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q21="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q21:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListAccessoryTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListAccessoryTypes" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListAccessoryTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListAccessoryTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListAccessoryTypes_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q22="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q22:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListParametricValues_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListParametricValues" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListParametricValues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListParametricValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListParametricValues_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q23="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q23:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListParametricInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListParametricInfo" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListParametricInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListParametricInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListParametricInfo_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q24="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q24:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListParametricValues2_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListParametricValues2" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListParametricValues2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListParametricValues2Response" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListParametricValues2_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q25="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q25:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListStatuses_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListStatuses" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListStatuses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListStatusesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListStatuses_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q26="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q26:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListFlags_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListFlags" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListFlags_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListFlagsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListFlags_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q27="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q27:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListFileTypeIds_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListFileTypeIds" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListFileTypeIds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListFileTypeIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListFileTypeIds_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q28="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q28:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListFocusParametrics_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListFocusParametrics" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListFocusParametrics_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListFocusParametricsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListFocusParametrics_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q29="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q29:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListManufacturers_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListManufacturers" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListManufacturers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListManufacturersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListManufacturers_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q30="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q30:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListManufacturersEx_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListManufacturersEx" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListManufacturersEx_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListManufacturersExResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListManufacturersEx_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q31="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q31:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListNavigationNodeTypeIds_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListNavigationNodeTypeIds" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListNavigationNodeTypeIds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListNavigationNodeTypeIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListNavigationNodeTypeIds_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q32="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q32:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListNavigationNodes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListNavigationNodes" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListNavigationNodes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListNavigationNodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListNavigationNodes_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q33="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q33:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListNavigationNodesEx_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListNavigationNodesEx" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListNavigationNodesEx_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListNavigationNodesExResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListNavigationNodesEx_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q34="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q34:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListBestsellingProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListBestsellingProducts" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListBestsellingProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListBestsellingProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListBestsellingProducts_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q35="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q35:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListBestsellingProducts2_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListBestsellingProducts2" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListBestsellingProducts2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListBestsellingProducts2Response" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListBestsellingProducts2_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q36="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q36:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListBestsellingProductsByNode_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListBestsellingProductsByNode" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListBestsellingProductsByNode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListBestsellingProductsByNodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListBestsellingProductsByNode_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q37="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q37:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListBestsellingProductsByNode2_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListBestsellingProductsByNode2" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListBestsellingProductsByNode2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListBestsellingProductsByNode2Response" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListBestsellingProductsByNode2_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q38="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q38:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListIncludedProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListIncludedProducts" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListIncludedProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListIncludedProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListIncludedProducts_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q39="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q39:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListFamilies_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListFamilies" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListFamilies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListFamiliesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListFamilies_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q40="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q40:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProducts" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProducts_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q41="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q41:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsByNode_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductsByNode" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsByNode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductsByNodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsByNode_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q42="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q42:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProducts2_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProducts2" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProducts2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProducts2Response" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProducts2_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q43="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q43:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListBestSellingProductsByCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListBestSellingProductsByCompany" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListBestSellingProductsByCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListBestSellingProductsByCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListBestSellingProductsByCompany_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q44="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q44:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsByCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductsByCustomer" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsByCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductsByCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsByCustomer_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q45="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q45:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsByPricelist_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductsByPricelist" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsByPricelist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductsByPricelistResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsByPricelist_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q46="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q46:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsByFamilies_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductsByFamilies" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsByFamilies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductsByFamiliesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsByFamilies_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q47="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q47:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsByPromotionRequirement_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductsByPromotionRequirement" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsByPromotionRequirement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductsByPromotionRequirementResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsByPromotionRequirement_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q48="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q48:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsByIds_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductsByIds" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsByIds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductsByIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsByIds_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q49="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q49:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsByIds2_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductsByIds2" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsByIds2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductsByIds2Response" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsByIds2_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q50="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q50:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsByPartNos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductsByPartNos" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsByPartNos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductsByPartNosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsByPartNos_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q51="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q51:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsById_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductsById" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductsByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsById_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q52="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q52:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsByNode2_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductsByNode2" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsByNode2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductsByNode2Response" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsByNode2_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q53="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q53:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductItemFilterValues_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductItemFilterValues" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductItemFilterValues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductItemFilterValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductItemFilterValues_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q54="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q54:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductItemFilterValuesByNode_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductItemFilterValuesByNode" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductItemFilterValuesByNode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductItemFilterValuesByNodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductItemFilterValuesByNode_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q55="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q55:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductItemFilterValuesByIds_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductItemFilterValuesByIds" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductItemFilterValuesByIds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductItemFilterValuesByIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductItemFilterValuesByIds_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q56="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q56:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductItemFilterValuesById_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductItemFilterValuesById" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductItemFilterValuesById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductItemFilterValuesByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductItemFilterValuesById_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q57="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q57:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductItemFilterValuesByCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductItemFilterValuesByCustomer" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductItemFilterValuesByCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductItemFilterValuesByCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductItemFilterValuesByCustomer_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q58="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q58:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductFilters_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductFilters" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductFilters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductFiltersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductFilters_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q59="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q59:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductFiltersByNode_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductFiltersByNode" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductFiltersByNode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductFiltersByNodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductFiltersByNode_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q60="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q60:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductFilters2_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductFilters2" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductFilters2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductFilters2Response" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductFilters2_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q61="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q61:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductFiltersByNode2_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductFiltersByNode2" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductFiltersByNode2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductFiltersByNode2Response" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductFiltersByNode2_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q62="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q62:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductFiltersByCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductFiltersByCustomer" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductFiltersByCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductFiltersByCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductFiltersByCustomer_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q63="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q63:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductFiltersByPricelist_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductFiltersByPricelist" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductFiltersByPricelist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductFiltersByPricelistResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductFiltersByPricelist_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q64="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q64:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductFiltersByIds_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductFiltersByIds" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductFiltersByIds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductFiltersByIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductFiltersByIds_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q65="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q65:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductAccessories_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductAccessories" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductAccessories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductAccessoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductAccessories_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q66="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q66:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductAccessories2_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductAccessories2" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductAccessories2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductAccessories2Response" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductAccessories2_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q67="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q67:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductAccessories3_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductAccessories3" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductAccessories3_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductAccessories3Response" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductAccessories3_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q68="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q68:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductAccessories4_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductAccessories4" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductAccessories4_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductAccessories4Response" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductAccessories4_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q69="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q69:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductAccessories5_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductAccessories5" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductAccessories5_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductAccessories5Response" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductAccessories5_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q70="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q70:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductCrossSell_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductCrossSell" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductCrossSell_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductCrossSellResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductCrossSell_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q71="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q71:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductCrossSell2_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductCrossSell2" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductCrossSell2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductCrossSell2Response" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductCrossSell2_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q72="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q72:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductCrossSell3_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductCrossSell3" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductCrossSell3_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductCrossSell3Response" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductCrossSell3_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q73="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q73:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductCrossSell4_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductCrossSell4" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductCrossSell4_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductCrossSell4Response" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductCrossSell4_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q74="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q74:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductParametrics_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductParametrics" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductParametrics_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductParametricsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductParametrics_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q75="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q75:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductUpsell_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductUpsell" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductUpsell_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductUpsellResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductUpsell_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q76="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q76:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductUpsell2_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductUpsell2" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductUpsell2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductUpsell2Response" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductUpsell2_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q77="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q77:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductUpSell3_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductUpSell3" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductUpSell3_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductUpSell3Response" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductUpSell3_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q78="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q78:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductUpSell4_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductUpSell4" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductUpSell4_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductUpSell4Response" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductUpSell4_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q79="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q79:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsInFamilies_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductsInFamilies" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsInFamilies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductsInFamiliesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsInFamilies_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q80="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q80:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsInFamilies2_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductsInFamilies2" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsInFamilies2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductsInFamilies2Response" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductsInFamilies2_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q81="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q81:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListTopProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListTopProducts" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListTopProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListTopProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListTopProducts_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q82="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q82:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListPopularProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListPopularProducts" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListPopularProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListPopularProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListPopularProducts_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q83="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q83:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListPopularProductsByNode_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListPopularProductsByNode" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListPopularProductsByNode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListPopularProductsByNodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListPopularProductsByNode_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q84="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q84:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListPopularProducts2_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListPopularProducts2" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListPopularProducts2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListPopularProducts2Response" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListPopularProducts2_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q85="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q85:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListPopularProductsByNode2_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListPopularProductsByNode2" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListPopularProductsByNode2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListPopularProductsByNode2Response" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListPopularProductsByNode2_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q86="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q86:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListVariantItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListVariantItems" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListVariantItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListVariantItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListVariantItems_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q87="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q87:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListCategories" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListCategories_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q88="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q88:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductReviews_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductReviews" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductReviews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductReviewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductReviews_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q89="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q89:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductReviewsAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductReviewsAll" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductReviewsAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductReviewsAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductReviewsAll_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q90="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q90:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListCategoryItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListCategoryItems" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListCategoryItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListCategoryItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListCategoryItems_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q91="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q91:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListCategoryItemsByPricelists_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListCategoryItemsByPricelists" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListCategoryItemsByPricelists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListCategoryItemsByPricelistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListCategoryItemsByPricelists_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q92="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q92:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListWarehouseInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListWarehouseInfo" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListWarehouseInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListWarehouseInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListWarehouseInfo_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q93="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q93:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_SearchCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCategories" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_SearchCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_SearchCategories_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q94="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q94:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_SearchManufacturers_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchManufacturers" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_SearchManufacturers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchManufacturersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_SearchManufacturers_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q95="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q95:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_SearchProductsLite_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchProductsLite" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_SearchProductsLite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchProductsLiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_SearchProductsLite_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q96="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q96:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_SearchProductsLite2_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchProductsLite2" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_SearchProductsLite2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchProductsLite2Response" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_SearchProductsLite2_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q97="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q97:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListSkuTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListSkuTypes" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListSkuTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListSkuTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListSkuTypes_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q98="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q98:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:portType name="ProductService">
+    <wsdl:operation name="GetManufacturer">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/GetManufacturer" message="tns:ProductService_GetManufacturer_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/GetManufacturerResponse" message="tns:ProductService_GetManufacturer_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/GetManufacturerErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_GetManufacturer_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManufacturerByUniqueName">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/GetManufacturerByUniqueName" message="tns:ProductService_GetManufacturerByUniqueName_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/GetManufacturerByUniqueNameResponse" message="tns:ProductService_GetManufacturerByUniqueName_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/GetManufacturerByUniqueNameErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_GetManufacturerByUniqueName_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNavigationStructure">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/GetNavigationStructure" message="tns:ProductService_GetNavigationStructure_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/GetNavigationStructureResponse" message="tns:ProductService_GetNavigationStructure_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/GetNavigationStructureErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_GetNavigationStructure_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListConfigurationItems">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListConfigurationItems" message="tns:ProductService_ListConfigurationItems_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListConfigurationItemsResponse" message="tns:ProductService_ListConfigurationItems_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListConfigurationItemsErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListConfigurationItems_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProduct">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/GetProduct" message="tns:ProductService_GetProduct_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/GetProductResponse" message="tns:ProductService_GetProduct_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/GetProductErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_GetProduct_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductByUniqueName">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/GetProductByUniqueName" message="tns:ProductService_GetProductByUniqueName_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/GetProductByUniqueNameResponse" message="tns:ProductService_GetProductByUniqueName_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/GetProductByUniqueNameErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_GetProductByUniqueName_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductByPartNo">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/GetProductByPartNo" message="tns:ProductService_GetProductByPartNo_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/GetProductByPartNoResponse" message="tns:ProductService_GetProductByPartNo_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/GetProductByPartNoErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_GetProductByPartNo_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListPromotionsByProductId">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListPromotionsByProductId" message="tns:ProductService_ListPromotionsByProductId_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListPromotionsByProductIdResponse" message="tns:ProductService_ListPromotionsByProductId_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListPromotionsByProductIdErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListPromotionsByProductId_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListPromotionsByProductUniqueName">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListPromotionsByProductUniqueName" message="tns:ProductService_ListPromotionsByProductUniqueName_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListPromotionsByProductUniqueNameResponse" message="tns:ProductService_ListPromotionsByProductUniqueName_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListPromotionsByProductUniqueNameErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListPromotionsByProductUniqueName_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductOnHandByPartNo">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/GetProductOnHandByPartNo" message="tns:ProductService_GetProductOnHandByPartNo_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/GetProductOnHandByPartNoResponse" message="tns:ProductService_GetProductOnHandByPartNo_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/GetProductOnHandByPartNoErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_GetProductOnHandByPartNo_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductOnHandByProduct">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/GetProductOnHandByProduct" message="tns:ProductService_GetProductOnHandByProduct_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/GetProductOnHandByProductResponse" message="tns:ProductService_GetProductOnHandByProduct_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/GetProductOnHandByProductErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_GetProductOnHandByProduct_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListOnHandInfoTypes">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListOnHandInfoTypes" message="tns:ProductService_ListOnHandInfoTypes_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListOnHandInfoTypesResponse" message="tns:ProductService_ListOnHandInfoTypes_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListOnHandInfoTypesErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListOnHandInfoTypes_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExternalProductOnHandByPartNo">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/GetExternalProductOnHandByPartNo" message="tns:ProductService_GetExternalProductOnHandByPartNo_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/GetExternalProductOnHandByPartNoResponse" message="tns:ProductService_GetExternalProductOnHandByPartNo_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/GetExternalProductOnHandByPartNoErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_GetExternalProductOnHandByPartNo_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExternalProductOnHandByProduct">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/GetExternalProductOnHandByProduct" message="tns:ProductService_GetExternalProductOnHandByProduct_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/GetExternalProductOnHandByProductResponse" message="tns:ProductService_GetExternalProductOnHandByProduct_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/GetExternalProductOnHandByProductErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_GetExternalProductOnHandByProduct_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertProductReview">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/InsertProductReview" message="tns:ProductService_InsertProductReview_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/InsertProductReviewResponse" message="tns:ProductService_InsertProductReview_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/InsertProductReviewErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_InsertProductReview_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductReviewLikes">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/UpdateProductReviewLikes" message="tns:ProductService_UpdateProductReviewLikes_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/UpdateProductReviewLikesResponse" message="tns:ProductService_UpdateProductReviewLikes_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/UpdateProductReviewLikesErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_UpdateProductReviewLikes_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductViewCount">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/UpdateProductViewCount" message="tns:ProductService_UpdateProductViewCount_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/UpdateProductViewCountResponse" message="tns:ProductService_UpdateProductViewCount_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/UpdateProductViewCountErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_UpdateProductViewCount_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListPricelistTypes">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListPricelistTypes" message="tns:ProductService_ListPricelistTypes_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListPricelistTypesResponse" message="tns:ProductService_ListPricelistTypes_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListPricelistTypesErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListPricelistTypes_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListPricelists">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListPricelists" message="tns:ProductService_ListPricelists_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListPricelistsResponse" message="tns:ProductService_ListPricelists_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListPricelistsErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListPricelists_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductFlags">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductFlags" message="tns:ProductService_ListProductFlags_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductFlagsResponse" message="tns:ProductService_ListProductFlags_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductFlagsErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductFlags_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListAssortments">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListAssortments" message="tns:ProductService_ListAssortments_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListAssortmentsResponse" message="tns:ProductService_ListAssortments_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListAssortmentsErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListAssortments_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListAccessoryTypes">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListAccessoryTypes" message="tns:ProductService_ListAccessoryTypes_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListAccessoryTypesResponse" message="tns:ProductService_ListAccessoryTypes_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListAccessoryTypesErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListAccessoryTypes_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListParametricValues">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListParametricValues" message="tns:ProductService_ListParametricValues_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListParametricValuesResponse" message="tns:ProductService_ListParametricValues_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListParametricValuesErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListParametricValues_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListParametricInfo">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListParametricInfo" message="tns:ProductService_ListParametricInfo_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListParametricInfoResponse" message="tns:ProductService_ListParametricInfo_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListParametricInfoErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListParametricInfo_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListParametricValues2">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListParametricValues2" message="tns:ProductService_ListParametricValues2_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListParametricValues2Response" message="tns:ProductService_ListParametricValues2_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListParametricValues2ErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListParametricValues2_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListStatuses">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListStatuses" message="tns:ProductService_ListStatuses_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListStatusesResponse" message="tns:ProductService_ListStatuses_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListStatusesErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListStatuses_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListFlags">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListFlags" message="tns:ProductService_ListFlags_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListFlagsResponse" message="tns:ProductService_ListFlags_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListFlagsErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListFlags_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListFileTypeIds">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListFileTypeIds" message="tns:ProductService_ListFileTypeIds_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListFileTypeIdsResponse" message="tns:ProductService_ListFileTypeIds_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListFileTypeIdsErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListFileTypeIds_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListFocusParametrics">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListFocusParametrics" message="tns:ProductService_ListFocusParametrics_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListFocusParametricsResponse" message="tns:ProductService_ListFocusParametrics_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListFocusParametricsErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListFocusParametrics_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListManufacturers">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListManufacturers" message="tns:ProductService_ListManufacturers_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListManufacturersResponse" message="tns:ProductService_ListManufacturers_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListManufacturersErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListManufacturers_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListManufacturersEx">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListManufacturersEx" message="tns:ProductService_ListManufacturersEx_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListManufacturersExResponse" message="tns:ProductService_ListManufacturersEx_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListManufacturersExErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListManufacturersEx_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListNavigationNodeTypeIds">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListNavigationNodeTypeIds" message="tns:ProductService_ListNavigationNodeTypeIds_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListNavigationNodeTypeIdsResponse" message="tns:ProductService_ListNavigationNodeTypeIds_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListNavigationNodeTypeIdsErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListNavigationNodeTypeIds_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListNavigationNodes">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListNavigationNodes" message="tns:ProductService_ListNavigationNodes_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListNavigationNodesResponse" message="tns:ProductService_ListNavigationNodes_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListNavigationNodesErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListNavigationNodes_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListNavigationNodesEx">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListNavigationNodesEx" message="tns:ProductService_ListNavigationNodesEx_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListNavigationNodesExResponse" message="tns:ProductService_ListNavigationNodesEx_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListNavigationNodesExErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListNavigationNodesEx_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListBestsellingProducts">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListBestsellingProducts" message="tns:ProductService_ListBestsellingProducts_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListBestsellingProductsResponse" message="tns:ProductService_ListBestsellingProducts_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListBestsellingProductsErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListBestsellingProducts_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListBestsellingProducts2">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListBestsellingProducts2" message="tns:ProductService_ListBestsellingProducts2_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListBestsellingProducts2Response" message="tns:ProductService_ListBestsellingProducts2_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListBestsellingProducts2ErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListBestsellingProducts2_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListBestsellingProductsByNode">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListBestsellingProductsByNode" message="tns:ProductService_ListBestsellingProductsByNode_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListBestsellingProductsByNodeResponse" message="tns:ProductService_ListBestsellingProductsByNode_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListBestsellingProductsByNodeErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListBestsellingProductsByNode_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListBestsellingProductsByNode2">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListBestsellingProductsByNode2" message="tns:ProductService_ListBestsellingProductsByNode2_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListBestsellingProductsByNode2Response" message="tns:ProductService_ListBestsellingProductsByNode2_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListBestsellingProductsByNode2ErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListBestsellingProductsByNode2_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListIncludedProducts">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListIncludedProducts" message="tns:ProductService_ListIncludedProducts_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListIncludedProductsResponse" message="tns:ProductService_ListIncludedProducts_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListIncludedProductsErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListIncludedProducts_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListFamilies">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListFamilies" message="tns:ProductService_ListFamilies_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListFamiliesResponse" message="tns:ProductService_ListFamilies_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListFamiliesErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListFamilies_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProducts">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProducts" message="tns:ProductService_ListProducts_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsResponse" message="tns:ProductService_ListProducts_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProducts_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductsByNode">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByNode" message="tns:ProductService_ListProductsByNode_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByNodeResponse" message="tns:ProductService_ListProductsByNode_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByNodeErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductsByNode_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProducts2">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProducts2" message="tns:ProductService_ListProducts2_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProducts2Response" message="tns:ProductService_ListProducts2_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProducts2ErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProducts2_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListBestSellingProductsByCompany">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListBestSellingProductsByCompany" message="tns:ProductService_ListBestSellingProductsByCompany_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListBestSellingProductsByCompanyResponse" message="tns:ProductService_ListBestSellingProductsByCompany_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListBestSellingProductsByCompanyErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListBestSellingProductsByCompany_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductsByCustomer">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByCustomer" message="tns:ProductService_ListProductsByCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByCustomerResponse" message="tns:ProductService_ListProductsByCustomer_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByCustomerErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductsByCustomer_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductsByPricelist">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByPricelist" message="tns:ProductService_ListProductsByPricelist_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByPricelistResponse" message="tns:ProductService_ListProductsByPricelist_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByPricelistErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductsByPricelist_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductsByFamilies">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByFamilies" message="tns:ProductService_ListProductsByFamilies_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByFamiliesResponse" message="tns:ProductService_ListProductsByFamilies_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByFamiliesErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductsByFamilies_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductsByPromotionRequirement">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByPromotionRequirement" message="tns:ProductService_ListProductsByPromotionRequirement_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByPromotionRequirementResponse" message="tns:ProductService_ListProductsByPromotionRequirement_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByPromotionRequirementErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductsByPromotionRequirement_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductsByIds">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByIds" message="tns:ProductService_ListProductsByIds_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByIdsResponse" message="tns:ProductService_ListProductsByIds_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByIdsErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductsByIds_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductsByIds2">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByIds2" message="tns:ProductService_ListProductsByIds2_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByIds2Response" message="tns:ProductService_ListProductsByIds2_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByIds2ErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductsByIds2_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductsByPartNos">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByPartNos" message="tns:ProductService_ListProductsByPartNos_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByPartNosResponse" message="tns:ProductService_ListProductsByPartNos_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByPartNosErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductsByPartNos_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductsById">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsById" message="tns:ProductService_ListProductsById_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByIdResponse" message="tns:ProductService_ListProductsById_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByIdErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductsById_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductsByNode2">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByNode2" message="tns:ProductService_ListProductsByNode2_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByNode2Response" message="tns:ProductService_ListProductsByNode2_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsByNode2ErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductsByNode2_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductItemFilterValues">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductItemFilterValues" message="tns:ProductService_ListProductItemFilterValues_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductItemFilterValuesResponse" message="tns:ProductService_ListProductItemFilterValues_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductItemFilterValuesErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductItemFilterValues_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductItemFilterValuesByNode">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductItemFilterValuesByNode" message="tns:ProductService_ListProductItemFilterValuesByNode_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductItemFilterValuesByNodeResponse" message="tns:ProductService_ListProductItemFilterValuesByNode_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductItemFilterValuesByNodeErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductItemFilterValuesByNode_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductItemFilterValuesByIds">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductItemFilterValuesByIds" message="tns:ProductService_ListProductItemFilterValuesByIds_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductItemFilterValuesByIdsResponse" message="tns:ProductService_ListProductItemFilterValuesByIds_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductItemFilterValuesByIdsErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductItemFilterValuesByIds_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductItemFilterValuesById">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductItemFilterValuesById" message="tns:ProductService_ListProductItemFilterValuesById_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductItemFilterValuesByIdResponse" message="tns:ProductService_ListProductItemFilterValuesById_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductItemFilterValuesByIdErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductItemFilterValuesById_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductItemFilterValuesByCustomer">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductItemFilterValuesByCustomer" message="tns:ProductService_ListProductItemFilterValuesByCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductItemFilterValuesByCustomerResponse" message="tns:ProductService_ListProductItemFilterValuesByCustomer_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductItemFilterValuesByCustomerErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductItemFilterValuesByCustomer_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductFilters">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductFilters" message="tns:ProductService_ListProductFilters_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductFiltersResponse" message="tns:ProductService_ListProductFilters_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductFiltersErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductFilters_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductFiltersByNode">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductFiltersByNode" message="tns:ProductService_ListProductFiltersByNode_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductFiltersByNodeResponse" message="tns:ProductService_ListProductFiltersByNode_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductFiltersByNodeErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductFiltersByNode_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductFilters2">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductFilters2" message="tns:ProductService_ListProductFilters2_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductFilters2Response" message="tns:ProductService_ListProductFilters2_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductFilters2ErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductFilters2_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductFiltersByNode2">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductFiltersByNode2" message="tns:ProductService_ListProductFiltersByNode2_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductFiltersByNode2Response" message="tns:ProductService_ListProductFiltersByNode2_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductFiltersByNode2ErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductFiltersByNode2_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductFiltersByCustomer">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductFiltersByCustomer" message="tns:ProductService_ListProductFiltersByCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductFiltersByCustomerResponse" message="tns:ProductService_ListProductFiltersByCustomer_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductFiltersByCustomerErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductFiltersByCustomer_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductFiltersByPricelist">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductFiltersByPricelist" message="tns:ProductService_ListProductFiltersByPricelist_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductFiltersByPricelistResponse" message="tns:ProductService_ListProductFiltersByPricelist_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductFiltersByPricelistErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductFiltersByPricelist_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductFiltersByIds">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductFiltersByIds" message="tns:ProductService_ListProductFiltersByIds_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductFiltersByIdsResponse" message="tns:ProductService_ListProductFiltersByIds_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductFiltersByIdsErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductFiltersByIds_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductAccessories">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductAccessories" message="tns:ProductService_ListProductAccessories_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductAccessoriesResponse" message="tns:ProductService_ListProductAccessories_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductAccessoriesErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductAccessories_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductAccessories2">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductAccessories2" message="tns:ProductService_ListProductAccessories2_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductAccessories2Response" message="tns:ProductService_ListProductAccessories2_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductAccessories2ErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductAccessories2_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductAccessories3">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductAccessories3" message="tns:ProductService_ListProductAccessories3_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductAccessories3Response" message="tns:ProductService_ListProductAccessories3_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductAccessories3ErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductAccessories3_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductAccessories4">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductAccessories4" message="tns:ProductService_ListProductAccessories4_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductAccessories4Response" message="tns:ProductService_ListProductAccessories4_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductAccessories4ErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductAccessories4_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductAccessories5">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductAccessories5" message="tns:ProductService_ListProductAccessories5_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductAccessories5Response" message="tns:ProductService_ListProductAccessories5_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductAccessories5ErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductAccessories5_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductCrossSell">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductCrossSell" message="tns:ProductService_ListProductCrossSell_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductCrossSellResponse" message="tns:ProductService_ListProductCrossSell_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductCrossSellErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductCrossSell_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductCrossSell2">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductCrossSell2" message="tns:ProductService_ListProductCrossSell2_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductCrossSell2Response" message="tns:ProductService_ListProductCrossSell2_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductCrossSell2ErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductCrossSell2_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductCrossSell3">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductCrossSell3" message="tns:ProductService_ListProductCrossSell3_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductCrossSell3Response" message="tns:ProductService_ListProductCrossSell3_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductCrossSell3ErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductCrossSell3_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductCrossSell4">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductCrossSell4" message="tns:ProductService_ListProductCrossSell4_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductCrossSell4Response" message="tns:ProductService_ListProductCrossSell4_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductCrossSell4ErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductCrossSell4_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductParametrics">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductParametrics" message="tns:ProductService_ListProductParametrics_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductParametricsResponse" message="tns:ProductService_ListProductParametrics_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductParametricsErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductParametrics_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductUpsell">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductUpsell" message="tns:ProductService_ListProductUpsell_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductUpsellResponse" message="tns:ProductService_ListProductUpsell_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductUpsellErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductUpsell_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductUpsell2">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductUpsell2" message="tns:ProductService_ListProductUpsell2_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductUpsell2Response" message="tns:ProductService_ListProductUpsell2_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductUpsell2ErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductUpsell2_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductUpSell3">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductUpSell3" message="tns:ProductService_ListProductUpSell3_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductUpSell3Response" message="tns:ProductService_ListProductUpSell3_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductUpSell3ErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductUpSell3_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductUpSell4">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductUpSell4" message="tns:ProductService_ListProductUpSell4_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductUpSell4Response" message="tns:ProductService_ListProductUpSell4_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductUpSell4ErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductUpSell4_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductsInFamilies">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsInFamilies" message="tns:ProductService_ListProductsInFamilies_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsInFamiliesResponse" message="tns:ProductService_ListProductsInFamilies_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsInFamiliesErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductsInFamilies_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductsInFamilies2">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsInFamilies2" message="tns:ProductService_ListProductsInFamilies2_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsInFamilies2Response" message="tns:ProductService_ListProductsInFamilies2_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductsInFamilies2ErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductsInFamilies2_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListTopProducts">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListTopProducts" message="tns:ProductService_ListTopProducts_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListTopProductsResponse" message="tns:ProductService_ListTopProducts_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListTopProductsErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListTopProducts_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListPopularProducts">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListPopularProducts" message="tns:ProductService_ListPopularProducts_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListPopularProductsResponse" message="tns:ProductService_ListPopularProducts_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListPopularProductsErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListPopularProducts_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListPopularProductsByNode">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListPopularProductsByNode" message="tns:ProductService_ListPopularProductsByNode_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListPopularProductsByNodeResponse" message="tns:ProductService_ListPopularProductsByNode_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListPopularProductsByNodeErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListPopularProductsByNode_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListPopularProducts2">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListPopularProducts2" message="tns:ProductService_ListPopularProducts2_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListPopularProducts2Response" message="tns:ProductService_ListPopularProducts2_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListPopularProducts2ErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListPopularProducts2_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListPopularProductsByNode2">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListPopularProductsByNode2" message="tns:ProductService_ListPopularProductsByNode2_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListPopularProductsByNode2Response" message="tns:ProductService_ListPopularProductsByNode2_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListPopularProductsByNode2ErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListPopularProductsByNode2_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListVariantItems">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListVariantItems" message="tns:ProductService_ListVariantItems_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListVariantItemsResponse" message="tns:ProductService_ListVariantItems_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListVariantItemsErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListVariantItems_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListCategories">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListCategories" message="tns:ProductService_ListCategories_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListCategoriesResponse" message="tns:ProductService_ListCategories_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListCategoriesErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListCategories_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductReviews">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductReviews" message="tns:ProductService_ListProductReviews_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductReviewsResponse" message="tns:ProductService_ListProductReviews_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductReviewsErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductReviews_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductReviewsAll">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductReviewsAll" message="tns:ProductService_ListProductReviewsAll_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductReviewsAllResponse" message="tns:ProductService_ListProductReviewsAll_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductReviewsAllErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductReviewsAll_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListCategoryItems">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListCategoryItems" message="tns:ProductService_ListCategoryItems_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListCategoryItemsResponse" message="tns:ProductService_ListCategoryItems_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListCategoryItemsErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListCategoryItems_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListCategoryItemsByPricelists">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListCategoryItemsByPricelists" message="tns:ProductService_ListCategoryItemsByPricelists_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListCategoryItemsByPricelistsResponse" message="tns:ProductService_ListCategoryItemsByPricelists_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListCategoryItemsByPricelistsErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListCategoryItemsByPricelists_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListWarehouseInfo">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListWarehouseInfo" message="tns:ProductService_ListWarehouseInfo_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListWarehouseInfoResponse" message="tns:ProductService_ListWarehouseInfo_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListWarehouseInfoErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListWarehouseInfo_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCategories">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/SearchCategories" message="tns:ProductService_SearchCategories_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/SearchCategoriesResponse" message="tns:ProductService_SearchCategories_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/SearchCategoriesErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_SearchCategories_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchManufacturers">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/SearchManufacturers" message="tns:ProductService_SearchManufacturers_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/SearchManufacturersResponse" message="tns:ProductService_SearchManufacturers_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/SearchManufacturersErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_SearchManufacturers_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchProductsLite">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/SearchProductsLite" message="tns:ProductService_SearchProductsLite_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/SearchProductsLiteResponse" message="tns:ProductService_SearchProductsLite_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/SearchProductsLiteErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_SearchProductsLite_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchProductsLite2">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/SearchProductsLite2" message="tns:ProductService_SearchProductsLite2_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/SearchProductsLite2Response" message="tns:ProductService_SearchProductsLite2_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/SearchProductsLite2ErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_SearchProductsLite2_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListSkuTypes">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListSkuTypes" message="tns:ProductService_ListSkuTypes_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListSkuTypesResponse" message="tns:ProductService_ListSkuTypes_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListSkuTypesErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListSkuTypes_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

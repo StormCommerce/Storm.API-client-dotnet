@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CacheConfiguration name="AccessClient" duration="300">
+  <Item name="CreateCustomer" duration="0" redirectformat="Customer{0}" propertypath="Id"/>
+  <Item name="GetCustomerByEmail" redirectformat="Customer{0}" propertypath="Id"/>
+
+  <Item name="GetCustomer" redirectformat="Customer{0}" propertypath="Id"/>
+  <Item name="UpdateCustomer" duration="0" redirectformat="Customer{0}" propertypath="Id"/>
+  <Item name="UpdateCustomer2" duration="0" redirectformat="Customer{0}" refreshformat="Customer{0}" propertypath="Id"/>
+
+</CacheConfiguration>

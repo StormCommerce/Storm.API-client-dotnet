@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="Enferno.Services.Contracts.Expose.Applications" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://servicesstage.enferno.se/api/1.1/ApplicationService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://servicesstage.enferno.se/api/1.1/ApplicationService.svc?xsd=xsd4" namespace="Enferno.Services.Contracts.Expose" />
+  <xs:import schemaLocation="https://servicesstage.enferno.se/api/1.1/ApplicationService.svc?xsd=xsd2" namespace="Enferno.Services.Contracts.Message" />
+  <xs:import schemaLocation="https://servicesstage.enferno.se/api/1.1/ApplicationService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://servicesstage.enferno.se/api/1.1/ApplicationService.svc?xsd=xsd6" namespace="Enferno.Services.Contracts.Expose.Products" />
+  <xs:element name="GetApplication">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cultureCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetApplicationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="GetApplicationResult" nillable="true" type="q1:Application" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Application">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="Enferno.Services.Contracts.Message" base="q2:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ParentId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Key" type="ser:guid" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SenderEmailAddress" nillable="true" type="xs:string" />
+          <xs:element xmlns:q3="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="Client" nillable="true" type="q3:Client" />
+          <xs:element xmlns:q4="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="Cultures" nillable="true" type="q4:Cultures" />
+          <xs:element xmlns:q5="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="Currencies" nillable="true" type="q5:Currencies" />
+          <xs:element xmlns:q6="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="Pricelists" nillable="true" type="q6:Pricelists" />
+          <xs:element xmlns:q7="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="SalesAreas" nillable="true" type="q7:SalesAreas" />
+          <xs:element xmlns:q8="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="Roles" nillable="true" type="q8:Roles" />
+          <xs:element xmlns:q9="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="Countries" nillable="true" type="q9:Countries" />
+          <xs:element xmlns:q10="Enferno.Services.Contracts.Expose" minOccurs="0" name="Authorizations" nillable="true" type="q10:IdValues" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q11="Enferno.Services.Contracts.Expose.Applications" name="Application" nillable="true" type="q11:Application" />
+  <xs:complexType name="Client">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="Enferno.Services.Contracts.Message" base="q12:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Key" type="ser:guid" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q13="Enferno.Services.Contracts.Expose.Applications" name="Client" nillable="true" type="q13:Client" />
+  <xs:complexType name="Cultures">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="Enferno.Services.Contracts.Message" base="q14:Entity">
+        <xs:sequence>
+          <xs:element xmlns:q15="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="List" nillable="true" type="q15:CultureList" />
+          <xs:element xmlns:q16="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="Default" nillable="true" type="q16:Culture" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q17="Enferno.Services.Contracts.Expose.Applications" name="Cultures" nillable="true" type="q17:Cultures" />
+  <xs:complexType name="CultureList">
+    <xs:sequence>
+      <xs:element xmlns:q18="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" maxOccurs="unbounded" name="Culture" nillable="true" type="q18:Culture" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q19="Enferno.Services.Contracts.Expose.Applications" name="CultureList" nillable="true" type="q19:CultureList" />
+  <xs:complexType name="Culture">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q20="Enferno.Services.Contracts.Message" base="q20:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q21="Enferno.Services.Contracts.Expose.Applications" name="Culture" nillable="true" type="q21:Culture" />
+  <xs:complexType name="Currencies">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q22="Enferno.Services.Contracts.Message" base="q22:Entity">
+        <xs:sequence>
+          <xs:element xmlns:q23="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="List" nillable="true" type="q23:CurrencyList" />
+          <xs:element xmlns:q24="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="Default" nillable="true" type="q24:Currency" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q25="Enferno.Services.Contracts.Expose.Applications" name="Currencies" nillable="true" type="q25:Currencies" />
+  <xs:complexType name="CurrencyList">
+    <xs:sequence>
+      <xs:element xmlns:q26="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" maxOccurs="unbounded" name="Currency" nillable="true" type="q26:Currency" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q27="Enferno.Services.Contracts.Expose.Applications" name="CurrencyList" nillable="true" type="q27:CurrencyList" />
+  <xs:complexType name="Currency">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q28="Enferno.Services.Contracts.Message" base="q28:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Prefix" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Suffix" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q29="Enferno.Services.Contracts.Expose.Applications" name="Currency" nillable="true" type="q29:Currency" />
+  <xs:complexType name="Pricelists">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q30="Enferno.Services.Contracts.Message" base="q30:Entity">
+        <xs:sequence>
+          <xs:element xmlns:q31="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Ids" nillable="true" type="q31:ArrayOfint" />
+          <xs:element minOccurs="0" name="Default" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q32="Enferno.Services.Contracts.Expose.Applications" name="Pricelists" nillable="true" type="q32:Pricelists" />
+  <xs:complexType name="SalesAreas">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q33="Enferno.Services.Contracts.Message" base="q33:Entity">
+        <xs:sequence>
+          <xs:element xmlns:q34="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="List" nillable="true" type="q34:SalesAreaList" />
+          <xs:element xmlns:q35="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="Default" nillable="true" type="q35:SalesArea" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q36="Enferno.Services.Contracts.Expose.Applications" name="SalesAreas" nillable="true" type="q36:SalesAreas" />
+  <xs:complexType name="SalesAreaList">
+    <xs:sequence>
+      <xs:element xmlns:q37="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" maxOccurs="unbounded" name="SalesArea" nillable="true" type="q37:SalesArea" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q38="Enferno.Services.Contracts.Expose.Applications" name="SalesAreaList" nillable="true" type="q38:SalesAreaList" />
+  <xs:complexType name="SalesArea">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q39="Enferno.Services.Contracts.Message" base="q39:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CurrencyId" type="xs:int" />
+          <xs:element minOccurs="0" name="VatCodeId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q40="Enferno.Services.Contracts.Expose.Applications" name="SalesArea" nillable="true" type="q40:SalesArea" />
+  <xs:complexType name="Roles">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q41="Enferno.Services.Contracts.Message" base="q41:Entity">
+        <xs:sequence>
+          <xs:element xmlns:q42="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="List" nillable="true" type="q42:RoleList" />
+          <xs:element xmlns:q43="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="Default" nillable="true" type="q43:Role" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q44="Enferno.Services.Contracts.Expose.Applications" name="Roles" nillable="true" type="q44:Roles" />
+  <xs:complexType name="RoleList">
+    <xs:sequence>
+      <xs:element xmlns:q45="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" maxOccurs="unbounded" name="Role" nillable="true" type="q45:Role" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q46="Enferno.Services.Contracts.Expose.Applications" name="RoleList" nillable="true" type="q46:RoleList" />
+  <xs:complexType name="Role">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q47="Enferno.Services.Contracts.Message" base="q47:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q48="Enferno.Services.Contracts.Expose.Applications" name="Role" nillable="true" type="q48:Role" />
+  <xs:complexType name="Countries">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q49="Enferno.Services.Contracts.Message" base="q49:Entity">
+        <xs:sequence>
+          <xs:element xmlns:q50="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="List" nillable="true" type="q50:CountryList" />
+          <xs:element xmlns:q51="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="Default" nillable="true" type="q51:Country" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q52="Enferno.Services.Contracts.Expose.Applications" name="Countries" nillable="true" type="q52:Countries" />
+  <xs:complexType name="CountryList">
+    <xs:sequence>
+      <xs:element xmlns:q53="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" maxOccurs="unbounded" name="Country" nillable="true" type="q53:Country" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q54="Enferno.Services.Contracts.Expose.Applications" name="CountryList" nillable="true" type="q54:CountryList" />
+  <xs:complexType name="Country">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q55="Enferno.Services.Contracts.Message" base="q55:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q56="Enferno.Services.Contracts.Expose.Applications" name="Country" nillable="true" type="q56:Country" />
+  <xs:element name="ListApplicationFlagGroups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cultureCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListApplicationFlagGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="Enferno.Services.Contracts.Expose" minOccurs="0" name="ListApplicationFlagGroupsResult" nillable="true" type="q57:IdValues" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListApplicationFlags">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="flagGroupId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cultureCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListApplicationFlagsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="Enferno.Services.Contracts.Expose" minOccurs="0" name="ListApplicationFlagsResult" nillable="true" type="q58:IdValues" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListStoreInfoTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cultureCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListStoreInfoTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="Enferno.Services.Contracts.Expose" minOccurs="0" name="ListStoreInfoTypesResult" nillable="true" type="q59:IdValues" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListStores">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="partNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="longitude" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="latitude" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageSize" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cultureCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListStoresResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="ListStoresResult" nillable="true" type="q60:StoreItemPagedList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="StoreItemPagedList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q61="Enferno.Services.Contracts.Message" base="q61:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ItemCount" type="xs:int" />
+          <xs:element xmlns:q62="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="Items" nillable="true" type="q62:StoreItemList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q63="Enferno.Services.Contracts.Expose.Applications" name="StoreItemPagedList" nillable="true" type="q63:StoreItemPagedList" />
+  <xs:complexType name="StoreItemList">
+    <xs:sequence>
+      <xs:element xmlns:q64="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" maxOccurs="unbounded" name="StoreItem" nillable="true" type="q64:StoreItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q65="Enferno.Services.Contracts.Expose.Applications" name="StoreItemList" nillable="true" type="q65:StoreItemList" />
+  <xs:complexType name="StoreItem">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q66="Enferno.Services.Contracts.Message" base="q66:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PostalAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OnHandValue" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="IncomingValue" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="NextDeliveryDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Distance" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element xmlns:q67="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="OnHand" nillable="true" type="q67:OnHand" />
+          <xs:element xmlns:q68="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="OnHandDemo" nillable="true" type="q68:OnHand" />
+          <xs:element minOccurs="0" name="UniqueName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q69="Enferno.Services.Contracts.Expose.Applications" name="StoreItem" nillable="true" type="q69:StoreItem" />
+  <xs:element name="GetLocationInfoByZipCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="countryCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="zip" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLocationInfoByZipCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="GetLocationInfoByZipCodeResult" nillable="true" type="q70:LocationInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="LocationInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q71="Enferno.Services.Contracts.Message" base="q71:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+          <xs:element xmlns:q72="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="Delivery" nillable="true" type="q72:Location" />
+          <xs:element xmlns:q73="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="Pickup" nillable="true" type="q73:Location" />
+          <xs:element xmlns:q74="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="Payment" nillable="true" type="q74:Location" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q75="Enferno.Services.Contracts.Expose.Applications" name="LocationInfo" nillable="true" type="q75:LocationInfo" />
+  <xs:complexType name="Location">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q76="Enferno.Services.Contracts.Message" base="q76:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="StoreId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="StoreCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WarehouseId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="LocationIdId" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q77="Enferno.Services.Contracts.Expose.Applications" name="Location" nillable="true" type="q77:Location" />
+  <xs:element name="GetStoreItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="partNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cultureCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStoreItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="GetStoreItemResult" nillable="true" type="q78:StoreItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStoreItemByUniqueName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uniqueName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="partNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cultureCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStoreItemByUniqueNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="GetStoreItemByUniqueNameResult" nillable="true" type="q79:StoreItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStoreItemByCountryAndZipCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="countryId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="zipCode" type="xs:int" />
+        <xs:element minOccurs="0" name="partNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cultureCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStoreItemByCountryAndZipCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="GetStoreItemByCountryAndZipCodeResult" nillable="true" type="q80:StoreItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListStoreItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="partNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="longitude" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="latitude" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageSize" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cultureCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListStoreItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="ListStoreItemsResult" nillable="true" type="q81:StoreItemPagedList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListStoreInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pageNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageSize" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cultureCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListStoreInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="ListStoreInfoResult" nillable="true" type="q82:StoreInfoPagedList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="StoreInfoPagedList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q83="Enferno.Services.Contracts.Message" base="q83:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ItemCount" type="xs:int" />
+          <xs:element xmlns:q84="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="Items" nillable="true" type="q84:StoreInfoList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q85="Enferno.Services.Contracts.Expose.Applications" name="StoreInfoPagedList" nillable="true" type="q85:StoreInfoPagedList" />
+  <xs:complexType name="StoreInfoList">
+    <xs:sequence>
+      <xs:element xmlns:q86="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" maxOccurs="unbounded" name="StoreInfo" nillable="true" type="q86:StoreInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q87="Enferno.Services.Contracts.Expose.Applications" name="StoreInfoList" nillable="true" type="q87:StoreInfoList" />
+  <xs:complexType name="StoreInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q88="Enferno.Services.Contracts.Message" base="q88:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element xmlns:q89="Enferno.Services.Contracts.Expose" minOccurs="0" name="Info" nillable="true" type="q89:IdValues" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q90="Enferno.Services.Contracts.Expose.Applications" name="StoreInfo" nillable="true" type="q90:StoreInfo" />
+  <xs:element name="GetStore">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="longitude" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="latitude" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cultureCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStoreResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q91="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="GetStoreResult" nillable="true" type="q91:Store" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Store">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q92="Enferno.Services.Contracts.Message" base="q92:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PostalAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OpeningWeekdays" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OpeningSaturdays" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OpeningSundays" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Longitude" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="Latitude" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="Distance" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Key" type="ser:guid" />
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubType" nillable="true" type="xs:string" />
+          <xs:element xmlns:q93="Enferno.Services.Contracts.Expose" minOccurs="0" name="Info" nillable="true" type="q93:IdValues" />
+          <xs:element xmlns:q94="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="Pricelists" nillable="true" type="q94:Pricelists" />
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ImageKey" nillable="true" type="ser:guid" />
+          <xs:element minOccurs="0" name="UniqueName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q95="Enferno.Services.Contracts.Expose.Applications" name="Store" nillable="true" type="q95:Store" />
+  <xs:element name="GetStoreByUniqueName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uniqueName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="longitude" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="latitude" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cultureCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStoreByUniqueNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q96="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="GetStoreByUniqueNameResult" nillable="true" type="q96:Store" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListStores2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cultureCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListStores2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="ListStores2Result" nillable="true" type="q97:StoreList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="StoreList">
+    <xs:sequence>
+      <xs:element xmlns:q98="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" maxOccurs="unbounded" name="Store" nillable="true" type="q98:Store" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q99="Enferno.Services.Contracts.Expose.Applications" name="StoreList" nillable="true" type="q99:StoreList" />
+  <xs:element name="UpdateDivisionInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="typeId" type="xs:int" />
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="updatedBy" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDivisionInfoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListInfoTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="groupId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cultureCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListInfoTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="Enferno.Services.Contracts.Expose" minOccurs="0" name="ListInfoTypesResult" nillable="true" type="q100:IdNameDescriptions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

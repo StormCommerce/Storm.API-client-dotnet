@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://Enferno.Native.Schemas.ErrorMessage_v2" elementFormDefault="qualified" targetNamespace="http://Enferno.Native.Schemas.ErrorMessage_v2" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ErrorMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MessageId" type="xs:int" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Orchestration" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeStamp" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Record" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:any minOccurs="0" processContents="lax" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ErrorMessage" nillable="true" type="tns:ErrorMessage" />
+</xs:schema>

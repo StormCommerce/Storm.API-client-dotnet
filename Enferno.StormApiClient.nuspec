@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>Enferno.StormApiClient</id>
+    <version>1.8.6.0</version>
+    <title>Enferno Storm Api Client</title>
+    <authors>Storm Commerce AB</authors>
+    <owners>Storm Commerce AB</owners>
+    <projectUrl>https://enfernostormapiclient.codeplex.com/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Enferno Storm Commerce API Client library.</description>
+    <releaseNotes>
+      What's new?
+
+      ApplicationService:
+      - #409 We now support applications without any public pricelists. This gives that all calls to methods with pricelistSeed must supply a valid pricelistSeed, or no Products will be fetched. If the application have valid pricelists then pricelistSeed is optional as before. See 1069 below.
+
+      CustomerService:
+      - #1142 Three new methods, ListPriceRules, ListCustomerFlags and ListCompanyFlags, have been added to enable lookup.
+      https://services.enferno.se/api/1.1/docs/#/Customers/Operations/ListPriceRules
+      https://services.enferno.se/api/1.1/docs/#/Customers/Operations/ListCustomerFlags
+      https://services.enferno.se/api/1.1/docs/#/Customers/Operations/ListCompanyFlags
+
+      OrderService:
+      - #1142 A new method, ListOrderStatuses, has been added to enable lookup.
+      https://services.enferno.se/api/1.1/docs/#/Orders/Operations/ListOrderStatuses
+
+      ProductService:
+      - #1142 Two new methods, ListSkuTypes and ListOnHandInfoTypes, has been added to enable lookup.
+      https://services.enferno.se/api/1.1/ProductService.svc/rest/ListSkuTypes?cultureCode=
+      https://services.enferno.se/api/1.1/ProductService.svc/rest/ListOnHandInfoTypes?cultureCode=
+
+      ProductService, ShoppingService:
+      - # 1069 pricelistSeed is now used to filter any valid pricelists. If none is supplied all valid pricelists for applications will be used. Since this changes old behavior we have introduced a feature switch on this for existing applications and they will still be using the old behavior where the pricelistSeed was appended to existing valid pricelists. The new behavior will be default in a feature version of the API.
+      This feature switch is maintained by Storm.
+
+      - #408: OnHand has been extended with a new property, Info, which holds additional info-fields for OnHand. This property will only be populated when calling any of the Get/ListProductOnHandXXX methods.
+      https://services.enferno.se/api/1.1/docs/#/Products/Entities/OnHand
+
+      ShoppingService:
+      - #1142 Two new methods, ListBasketStatuses and ListBasketTypes, have been added to enable lookup.
+      https://services.enferno.se/api/1.1/ShoppingService.svc/rest/ListBasketStatuses?cultureCode=
+      https://services.enferno.se/api/1.1/ShoppingService.svc/rest/ListBasketTypes?cultureCode=
+
+      ExposeService:
+      - #406 A new method, ListErrorMessages, lists all available Name/Values for all Bad Requests raised by the API. Later on a list of Exceptions will be provided in the documentation for each method.
+      https://services.enferno.se/api/1.1/docs/#/Expose%20(Empty)/Operations/ListErrorMessages
+
+      What's fixed?
+
+      ShoppingService:
+      - #410 The creation of our internal OrderRequest, which is used in the payment and order process has been moved to the API from our internal order process. This affects payments and orders, and should improve performance in the checkout process since we now skip remote calls.
+
+      - # 1016 Support for different currencies on Baskets. Previously basket's currency was defaulted to the Application's default currency and used in payments and on order. Now the basket's currency can be set in CreateBasket, by setting Basket.CurrencyId or Basket.CurrencyCode to appropriate values in the supplied basket. If nothing is specified, the default will be used as before. The basket will then be handled in that currency for payments and order. This should not affect existing applications using only the default currency.
+
+      - #1013 DeleteBasket now verifies that only normal baskets (Type = 1) can be deleted. Deleted baskets will not be available through the API and handled as missing and null will be returned when trying to get a deleted basket.
+
+      CustomerService:
+      - #1215 Password shown in logs for ChangePassword has now been fixed.
+
+      Miscellaneous changes? 
+
+      General:
+      - Improvements in the documentation.
+
+
+      Feedback?
+      Faults and strange behavior can be reported to support@storm.io or to patrik.rosquist@storm.io.
+       
+       
+      Regards,
+      The Storm API Team
+    </releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>Enferno Storm API Client</tags>
+    <dependencies>
+      <dependency id="Enferno.Public" version="1.0.17" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="StormApiClient\bin\Debug\Enferno.StormApiClient.dll" target="lib/net45" />
+    <file src="StormApiClient\bin\Debug\Enferno.StormApiClient.pdb" target="lib/net45" />
+    <file src="Enferno.Web.StormUtils\bin\Debug\Enferno.Web.StormUtils.dll" target="lib/net45" />
+    <file src="Enferno.Web.StormUtils\bin\Debug\Enferno.Web.StormUtils.pdb" target="lib/net45" />
+    <file src="StormApiClient\Web.config.install.xdt" target="content/net45" />
+    <file src="StormApiClient\**\*.cs" target="src\Enferno.StormApiClient" />
+    <file src="Enferno.Web.StormUtils\**\*.cs" target="src\Enferno.Web.StormUtils" />
+  </files>
+</package>
