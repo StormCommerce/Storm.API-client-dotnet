@@ -1,4 +1,10 @@
 # Storm API .NET
-STORM API Client is a client library for easy integration againt the Storm API. This is used when building applications that calls Enferno STORM Api. It wraps wcf calls to storm api and provides support for caching and batch calls.
+Storm API is a client library for easy integration against the Storm API. This is used when building applications that calls Storm API. It wraps WCF calls to Storm API and provides support for caching and batch calls.
 
-Documentation for Storm API can be found at https://storm.io/docs/storm-api/
+*Requirements*
+* Enferno.Public
+* Enterprise library logging application block 5.x
+
+Documentation for Storm API can be found at https://storm.io/docs/storm-api
+
+Watch this project to follow our releases.
