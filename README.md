@@ -3,7 +3,7 @@ Storm API is a client library for easy integration against the Storm API. This i
 
 *Requirements*
 * Enferno.Public
-* Enterprise library logging application block 5.x
+* Enterprise library logging application block 6.x
 
 Documentation for Storm API can be found at https://storm.io/docs/storm-api
 
