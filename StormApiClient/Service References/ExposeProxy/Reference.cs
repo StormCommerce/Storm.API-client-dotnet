@@ -72,6 +72,7 @@ namespace Enferno.StormApiClient.Expose {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByProduct2Request))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByBasketRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByBasket2Request))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByBasketRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseExRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseEx2Request))]
@@ -88,6 +89,7 @@ namespace Enferno.StormApiClient.Expose {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.DeleteBasketRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.DeleteSubscriptionRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemsRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemQuantityWithChildrenRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBuyerRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBuyer2Request))]
@@ -551,6 +553,7 @@ namespace Enferno.StormApiClient.Expose {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasket2Response))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.SetAttestBasketResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemsResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemQuantityWithChildrenResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ResponseOfTypeSubscription))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.CreateSubscriptionResponse))]
@@ -627,6 +630,7 @@ namespace Enferno.StormApiClient.Expose {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetPromotionResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ResponseOfTypePromotionList))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByBasketResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByProductIdResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByProductUniqueNameResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ResponseOfTypeDeliveryMethodList))]
@@ -903,6 +907,7 @@ namespace Enferno.StormApiClient.Expose {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasket2Response))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.SetAttestBasketResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemsResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemQuantityWithChildrenResponse))]
     public partial class ResponseOfTypeBasket : Enferno.StormApiClient.Expose.Response {
         
@@ -1005,6 +1010,13 @@ namespace Enferno.StormApiClient.Expose {
     [System.Runtime.Serialization.DataContractAttribute(Name="UpdateBasketItemResponse", Namespace="Enferno.Services.Contracts.Expose")]
     [System.SerializableAttribute()]
     public partial class UpdateBasketItemResponse : Enferno.StormApiClient.Expose.ResponseOfTypeBasket {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UpdateBasketItemsResponse", Namespace="Enferno.Services.Contracts.Expose")]
+    [System.SerializableAttribute()]
+    public partial class UpdateBasketItemsResponse : Enferno.StormApiClient.Expose.ResponseOfTypeBasket {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1798,6 +1810,7 @@ namespace Enferno.StormApiClient.Expose {
     [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfTypePromotionList", Namespace="Enferno.Services.Contracts.Expose")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByBasketResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByProductIdResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByProductUniqueNameResponse))]
     public partial class ResponseOfTypePromotionList : Enferno.StormApiClient.Expose.Response {
@@ -1824,6 +1837,13 @@ namespace Enferno.StormApiClient.Expose {
     [System.Runtime.Serialization.DataContractAttribute(Name="ListPromotionsResponse", Namespace="Enferno.Services.Contracts.Expose")]
     [System.SerializableAttribute()]
     public partial class ListPromotionsResponse : Enferno.StormApiClient.Expose.ResponseOfTypePromotionList {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ListPromotionsByBasketResponse", Namespace="Enferno.Services.Contracts.Expose")]
+    [System.SerializableAttribute()]
+    public partial class ListPromotionsByBasketResponse : Enferno.StormApiClient.Expose.ResponseOfTypePromotionList {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2642,6 +2662,7 @@ namespace Enferno.StormApiClient.Expose {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByProduct2Request))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByBasketRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByBasket2Request))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByBasketRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseExRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseEx2Request))]
@@ -2658,6 +2679,7 @@ namespace Enferno.StormApiClient.Expose {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.DeleteBasketRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.DeleteSubscriptionRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemsRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemQuantityWithChildrenRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBuyerRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBuyer2Request))]
@@ -2919,6 +2941,7 @@ namespace Enferno.StormApiClient.Expose {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByProduct2Response))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByBasketResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByBasket2Response))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByBasketResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseExResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseEx2Response))]
@@ -2935,6 +2958,7 @@ namespace Enferno.StormApiClient.Expose {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.DeleteBasketResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.DeleteSubscriptionResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemsResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemQuantityWithChildrenResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBuyerResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBuyer2Response))]
@@ -7964,6 +7988,45 @@ namespace Enferno.StormApiClient.Expose {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ListPromotionsByBasketRequest", Namespace="Enferno.Services.Contracts.Expose")]
+    [System.SerializableAttribute()]
+    public partial class ListPromotionsByBasketRequest : Enferno.StormApiClient.Expose.Request {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int BasketIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CultureCodeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int BasketId {
+            get {
+                return this.BasketIdField;
+            }
+            set {
+                if ((this.BasketIdField.Equals(value) != true)) {
+                    this.BasketIdField = value;
+                    this.RaisePropertyChanged("BasketId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CultureCode {
+            get {
+                return this.CultureCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CultureCodeField, value) != true)) {
+                    this.CultureCodeField = value;
+                    this.RaisePropertyChanged("CultureCode");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="PurchaseRequest", Namespace="Enferno.Services.Contracts.Expose")]
     [System.SerializableAttribute()]
     public partial class PurchaseRequest : Enferno.StormApiClient.Expose.Request {
@@ -9022,6 +9085,93 @@ namespace Enferno.StormApiClient.Expose {
                 if ((object.ReferenceEquals(this.ItemField, value) != true)) {
                     this.ItemField = value;
                     this.RaisePropertyChanged("Item");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PricelistSeed {
+            get {
+                return this.PricelistSeedField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PricelistSeedField, value) != true)) {
+                    this.PricelistSeedField = value;
+                    this.RaisePropertyChanged("PricelistSeed");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public string CultureCode {
+            get {
+                return this.CultureCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CultureCodeField, value) != true)) {
+                    this.CultureCodeField = value;
+                    this.RaisePropertyChanged("CultureCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public string CurrencyId {
+            get {
+                return this.CurrencyIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CurrencyIdField, value) != true)) {
+                    this.CurrencyIdField = value;
+                    this.RaisePropertyChanged("CurrencyId");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UpdateBasketItemsRequest", Namespace="Enferno.Services.Contracts.Expose")]
+    [System.SerializableAttribute()]
+    public partial class UpdateBasketItemsRequest : Enferno.StormApiClient.Expose.Request {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int BasketIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Enferno.StormApiClient.Shopping.BasketItemList ItemsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PricelistSeedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CultureCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CurrencyIdField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int BasketId {
+            get {
+                return this.BasketIdField;
+            }
+            set {
+                if ((this.BasketIdField.Equals(value) != true)) {
+                    this.BasketIdField = value;
+                    this.RaisePropertyChanged("BasketId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Enferno.StormApiClient.Shopping.BasketItemList Items {
+            get {
+                return this.ItemsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ItemsField, value) != true)) {
+                    this.ItemsField = value;
+                    this.RaisePropertyChanged("Items");
                 }
             }
         }
@@ -29901,6 +30051,7 @@ namespace Enferno.StormApiClient.Expose.Message {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasket2Response))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.SetAttestBasketResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemsResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemQuantityWithChildrenResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ResponseOfTypeSubscription))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.CreateSubscriptionResponse))]
@@ -29977,6 +30128,7 @@ namespace Enferno.StormApiClient.Expose.Message {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetPromotionResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ResponseOfTypePromotionList))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByBasketResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByProductIdResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByProductUniqueNameResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ResponseOfTypeDeliveryMethodList))]
@@ -30250,6 +30402,7 @@ namespace Enferno.StormApiClient.Expose.Message {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByProduct2Request))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByBasketRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByBasket2Request))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByBasketRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseExRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseEx2Request))]
@@ -30266,6 +30419,7 @@ namespace Enferno.StormApiClient.Expose.Message {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.DeleteBasketRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.DeleteSubscriptionRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemsRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemQuantityWithChildrenRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBuyerRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBuyer2Request))]
@@ -34200,6 +34354,7 @@ namespace Enferno.StormApiClient.Products {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByProduct2Request))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByBasketRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByBasket2Request))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByBasketRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseExRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseEx2Request))]
@@ -34216,6 +34371,7 @@ namespace Enferno.StormApiClient.Products {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.DeleteBasketRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.DeleteSubscriptionRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemsRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemQuantityWithChildrenRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBuyerRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBuyer2Request))]
@@ -34477,6 +34633,7 @@ namespace Enferno.StormApiClient.Products {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByProduct2Response))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByBasketResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByBasket2Response))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByBasketResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseExResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseEx2Response))]
@@ -34493,6 +34650,7 @@ namespace Enferno.StormApiClient.Products {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.DeleteBasketResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.DeleteSubscriptionResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemsResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemQuantityWithChildrenResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBuyerResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBuyer2Response))]
@@ -35070,6 +35228,7 @@ namespace Enferno.StormApiClient.Products {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByProduct2Request))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByBasketRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByBasket2Request))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByBasketRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseExRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseEx2Request))]
@@ -35086,6 +35245,7 @@ namespace Enferno.StormApiClient.Products {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.DeleteBasketRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.DeleteSubscriptionRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemsRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemQuantityWithChildrenRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBuyerRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBuyer2Request))]
@@ -35347,6 +35507,7 @@ namespace Enferno.StormApiClient.Products {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByProduct2Response))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByBasketResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByBasket2Response))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByBasketResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseExResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseEx2Response))]
@@ -35363,6 +35524,7 @@ namespace Enferno.StormApiClient.Products {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.DeleteBasketResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.DeleteSubscriptionResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemsResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemQuantityWithChildrenResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBuyerResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBuyer2Response))]
@@ -37381,6 +37543,7 @@ namespace Enferno.StormApiClient.Products {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByProduct2Request))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByBasketRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByBasket2Request))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByBasketRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseExRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseEx2Request))]
@@ -37397,6 +37560,7 @@ namespace Enferno.StormApiClient.Products {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.DeleteBasketRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.DeleteSubscriptionRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemsRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemQuantityWithChildrenRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBuyerRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBuyer2Request))]
@@ -37658,6 +37822,7 @@ namespace Enferno.StormApiClient.Products {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByProduct2Response))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByBasketResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByBasket2Response))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByBasketResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseExResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseEx2Response))]
@@ -37674,6 +37839,7 @@ namespace Enferno.StormApiClient.Products {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.DeleteBasketResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.DeleteSubscriptionResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemsResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemQuantityWithChildrenResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBuyerResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBuyer2Response))]
@@ -39912,6 +40078,7 @@ namespace Enferno.StormApiClient.Products {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByProduct2Request))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByBasketRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByBasket2Request))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByBasketRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseExRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseEx2Request))]
@@ -39928,6 +40095,7 @@ namespace Enferno.StormApiClient.Products {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.DeleteBasketRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.DeleteSubscriptionRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemsRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemQuantityWithChildrenRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBuyerRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBuyer2Request))]
@@ -40189,6 +40357,7 @@ namespace Enferno.StormApiClient.Products {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByProduct2Response))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByBasketResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListDeliveryMethodsByBasket2Response))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByBasketResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseExResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.PurchaseEx2Response))]
@@ -40205,6 +40374,7 @@ namespace Enferno.StormApiClient.Products {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.DeleteBasketResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.DeleteSubscriptionResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBasketItemQuantityWithChildrenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBuyerResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.UpdateBuyer2Response))]
@@ -49806,6 +49976,9 @@ namespace Enferno.StormApiClient.Orders {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int TypeIdField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DeliveryMarkField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public long Id {
             get {
@@ -50036,6 +50209,19 @@ namespace Enferno.StormApiClient.Orders {
                 if ((this.TypeIdField.Equals(value) != true)) {
                     this.TypeIdField = value;
                     this.RaisePropertyChanged("TypeId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=18)]
+        public string DeliveryMark {
+            get {
+                return this.DeliveryMarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DeliveryMarkField, value) != true)) {
+                    this.DeliveryMarkField = value;
+                    this.RaisePropertyChanged("DeliveryMark");
                 }
             }
         }
@@ -54907,6 +55093,18 @@ namespace Enferno.StormApiClient.Shopping {
             "asket2Response")]
         System.Threading.Tasks.Task<Enferno.StormApiClient.Shopping.DeliveryMethodList> ListDeliveryMethodsByBasket2Async(int basketId, string countryId, string zip, string customerId, string companyId, string dropPointSize, string cultureCode, string currencyId);
         
+        [System.ServiceModel.OperationContractAttribute(Action="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/ListPromotionsByBasket" +
+            "", ReplyAction="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/ListPromotionsByBasket" +
+            "Response")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Enferno.StormApiClient.Expose.ErrorMessage_v2.ErrorMessage), Action="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/ListPromotionsByBasket" +
+            "ErrorMessage_v2Fault", Name="ErrorMessage", Namespace="http://Enferno.Native.Schemas.ErrorMessage_v2")]
+        Enferno.StormApiClient.Shopping.PromotionList ListPromotionsByBasket(int basketId, string cultureCode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/ListPromotionsByBasket" +
+            "", ReplyAction="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/ListPromotionsByBasket" +
+            "Response")]
+        System.Threading.Tasks.Task<Enferno.StormApiClient.Shopping.PromotionList> ListPromotionsByBasketAsync(int basketId, string cultureCode);
+        
         [System.ServiceModel.OperationContractAttribute(Action="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/Purchase", ReplyAction="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/PurchaseResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(Enferno.StormApiClient.Expose.ErrorMessage_v2.ErrorMessage), Action="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/PurchaseErrorMessage_v" +
             "2Fault", Name="ErrorMessage", Namespace="http://Enferno.Native.Schemas.ErrorMessage_v2")]
@@ -55050,6 +55248,16 @@ namespace Enferno.StormApiClient.Shopping {
         [System.ServiceModel.OperationContractAttribute(Action="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/UpdateBasketItem", ReplyAction="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/UpdateBasketItemRespon" +
             "se")]
         System.Threading.Tasks.Task<Enferno.StormApiClient.Shopping.Basket> UpdateBasketItemAsync(int basketId, Enferno.StormApiClient.Shopping.BasketItem item, string pricelistSeed, string cultureCode, string currencyId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/UpdateBasketItems", ReplyAction="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/UpdateBasketItemsRespo" +
+            "nse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Enferno.StormApiClient.Expose.ErrorMessage_v2.ErrorMessage), Action="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/UpdateBasketItemsError" +
+            "Message_v2Fault", Name="ErrorMessage", Namespace="http://Enferno.Native.Schemas.ErrorMessage_v2")]
+        Enferno.StormApiClient.Shopping.Basket UpdateBasketItems(int basketId, Enferno.StormApiClient.Shopping.BasketItemList items, string pricelistSeed, string cultureCode, string currencyId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/UpdateBasketItems", ReplyAction="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/UpdateBasketItemsRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<Enferno.StormApiClient.Shopping.Basket> UpdateBasketItemsAsync(int basketId, Enferno.StormApiClient.Shopping.BasketItemList items, string pricelistSeed, string cultureCode, string currencyId);
         
         [System.ServiceModel.OperationContractAttribute(Action="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/UpdateBasketItemQuanti" +
             "tyWithChildren", ReplyAction="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/UpdateBasketItemQuanti" +
@@ -55511,6 +55719,14 @@ namespace Enferno.StormApiClient.Shopping {
             return base.Channel.ListDeliveryMethodsByBasket2Async(basketId, countryId, zip, customerId, companyId, dropPointSize, cultureCode, currencyId);
         }
         
+        public Enferno.StormApiClient.Shopping.PromotionList ListPromotionsByBasket(int basketId, string cultureCode) {
+            return base.Channel.ListPromotionsByBasket(basketId, cultureCode);
+        }
+        
+        public System.Threading.Tasks.Task<Enferno.StormApiClient.Shopping.PromotionList> ListPromotionsByBasketAsync(int basketId, string cultureCode) {
+            return base.Channel.ListPromotionsByBasketAsync(basketId, cultureCode);
+        }
+        
         public Enferno.StormApiClient.Shopping.PaymentResponse Purchase(int basketId, string ipAddress, string userAgent, string pricelistSeed, string cultureCode) {
             return base.Channel.Purchase(basketId, ipAddress, userAgent, pricelistSeed, cultureCode);
         }
@@ -55637,6 +55853,14 @@ namespace Enferno.StormApiClient.Shopping {
         
         public System.Threading.Tasks.Task<Enferno.StormApiClient.Shopping.Basket> UpdateBasketItemAsync(int basketId, Enferno.StormApiClient.Shopping.BasketItem item, string pricelistSeed, string cultureCode, string currencyId) {
             return base.Channel.UpdateBasketItemAsync(basketId, item, pricelistSeed, cultureCode, currencyId);
+        }
+        
+        public Enferno.StormApiClient.Shopping.Basket UpdateBasketItems(int basketId, Enferno.StormApiClient.Shopping.BasketItemList items, string pricelistSeed, string cultureCode, string currencyId) {
+            return base.Channel.UpdateBasketItems(basketId, items, pricelistSeed, cultureCode, currencyId);
+        }
+        
+        public System.Threading.Tasks.Task<Enferno.StormApiClient.Shopping.Basket> UpdateBasketItemsAsync(int basketId, Enferno.StormApiClient.Shopping.BasketItemList items, string pricelistSeed, string cultureCode, string currencyId) {
+            return base.Channel.UpdateBasketItemsAsync(basketId, items, pricelistSeed, cultureCode, currencyId);
         }
         
         public Enferno.StormApiClient.Shopping.Basket UpdateBasketItemQuantityWithChildren(int basketId, int lineNo, decimal quantity, string pricelistSeed, string cultureCode, string currencyId) {

@@ -499,6 +499,18 @@
         <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
+    <wsdl:operation name="ListPromotionsByBasket">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/ListPromotionsByBasket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
     <wsdl:operation name="Purchase">
       <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/Purchase" style="document" />
       <wsdl:input>
@@ -681,6 +693,18 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateBasketItem">
       <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/UpdateBasketItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBasketItems">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/UpdateBasketItems" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

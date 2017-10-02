@@ -296,6 +296,7 @@
           <xs:element xmlns:q58="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="DeliveryNotes" nillable="true" type="q58:DeliveryNotes" />
           <xs:element xmlns:q59="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="Info" nillable="true" type="q59:InfoList" />
           <xs:element minOccurs="0" name="TypeId" type="xs:int" />
+          <xs:element minOccurs="0" name="DeliveryMark" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
