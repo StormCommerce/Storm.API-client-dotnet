@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>1.8.6.0</version>
+    <version>1.8.7-beta</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -12,56 +12,48 @@
     <releaseNotes>
       What's new?
 
-      ApplicationService:
-      - #409 We now support applications without any public pricelists. This gives that all calls to methods with pricelistSeed must supply a valid pricelistSeed, or no Products will be fetched. If the application have valid pricelists then pricelistSeed is optional as before. See 1069 below.
-
-      CustomerService:
-      - #1142 Three new methods, ListPriceRules, ListCustomerFlags and ListCompanyFlags, have been added to enable lookup.
-      https://services.enferno.se/api/1.1/docs/#/Customers/Operations/ListPriceRules
-      https://services.enferno.se/api/1.1/docs/#/Customers/Operations/ListCustomerFlags
-      https://services.enferno.se/api/1.1/docs/#/Customers/Operations/ListCompanyFlags
-
       OrderService:
-      - #1142 A new method, ListOrderStatuses, has been added to enable lookup.
-      https://services.enferno.se/api/1.1/docs/#/Orders/Operations/ListOrderStatuses
-
-      ProductService:
-      - #1142 Two new methods, ListSkuTypes and ListOnHandInfoTypes, has been added to enable lookup.
-      https://services.enferno.se/api/1.1/ProductService.svc/rest/ListSkuTypes?cultureCode=
-      https://services.enferno.se/api/1.1/ProductService.svc/rest/ListOnHandInfoTypes?cultureCode=
-
-      ProductService, ShoppingService:
-      - # 1069 pricelistSeed is now used to filter any valid pricelists. If none is supplied all valid pricelists for applications will be used. Since this changes old behavior we have introduced a feature switch on this for existing applications and they will still be using the old behavior where the pricelistSeed was appended to existing valid pricelists. The new behavior will be default in a feature version of the API.
-      This feature switch is maintained by Storm.
-
-      - #408: OnHand has been extended with a new property, Info, which holds additional info-fields for OnHand. This property will only be populated when calling any of the Get/ListProductOnHandXXX methods.
-      https://services.enferno.se/api/1.1/docs/#/Products/Entities/OnHand
+      - #1434 A new Property, DeliveryMark, on Order has been added. This property gets its value from Basket.OrderReference.
+      https://servicesstage.enferno.se/api/1.1/docs/#/Orders/Entities/Order
 
       ShoppingService:
-      - #1142 Two new methods, ListBasketStatuses and ListBasketTypes, have been added to enable lookup.
-      https://services.enferno.se/api/1.1/ShoppingService.svc/rest/ListBasketStatuses?cultureCode=
-      https://services.enferno.se/api/1.1/ShoppingService.svc/rest/ListBasketTypes?cultureCode=
+      - #1318 A new method, UpdateBasketItems, has been added. This is analogous to InsertBasketItem/InsertBasketItems and provides means to update a list of BasketItems in one request.
+      https://servicesstage.enferno.se/api/1.1/docs/index.html#/Shopping/Operations/UpdateBasketItems
 
-      ExposeService:
-      - #406 A new method, ListErrorMessages, lists all available Name/Values for all Bad Requests raised by the API. Later on a list of Exceptions will be provided in the documentation for each method.
-      https://services.enferno.se/api/1.1/docs/#/Expose%20(Empty)/Operations/ListErrorMessages
+      - #1391 A new method, ListPromotionsByBasket has been added.
+      https://servicesstage.enferno.se/api/1.1/docs/index.html#/Shopping/Operations/ListPromotionsByBasket
 
       What's fixed?
 
-      ShoppingService:
-      - #410 The creation of our internal OrderRequest, which is used in the payment and order process has been moved to the API from our internal order process. This affects payments and orders, and should improve performance in the checkout process since we now skip remote calls.
-
-      - # 1016 Support for different currencies on Baskets. Previously basket's currency was defaulted to the Application's default currency and used in payments and on order. Now the basket's currency can be set in CreateBasket, by setting Basket.CurrencyId or Basket.CurrencyCode to appropriate values in the supplied basket. If nothing is specified, the default will be used as before. The basket will then be handled in that currency for payments and order. This should not affect existing applications using only the default currency.
-
-      - #1013 DeleteBasket now verifies that only normal baskets (Type = 1) can be deleted. Deleted baskets will not be available through the API and handled as missing and null will be returned when trying to get a deleted basket.
-
       CustomerService:
-      - #1215 Password shown in logs for ChangePassword has now been fixed.
+      - #1418 The ClientSetting "IsClientCustomerApplicationUnique" (id 44) was not honored in all cases. This is now enforced in GetCustomer and such. This affected clients using different Customers and Companies on each Application.
+
+      ShoppingService:
+      - #393. Promotions with effect "Add Product" could possibly invalidate delivery methods. Previously delivery methods were validated before promotions were applied. This could render already valid delivery methods being invalid. This has now been fixed.
+
+      - #403 Promotions with effect "Choose Product" did not remove the optional items when products were added to the Basket. This has been fixed.
+
+      - #411 Multiple freight items on orders. Previously we had synchronization problems where multiple requests could end up on different servers in the API cluster, or when multiple requests where processed in parallel for any Basket or Checkout. In rare cases, this gave multiple freight items on orders. This has now been addressed.
+
+      - #432 Promotion with effect "Add Product" did add products permanently and did not remove them if requirement changed. This has been fixed.
+
+      - #1103 When choosing price where multiple currencies were involved we did not use the same currency in the compare. This has been fixed and only applied to customers having different currencies on any market/application.
+
+      - #1239 When choosing price, we did that before applying promotions. This could lead us to choose the wrong price since a cheaper one, after promotions, might have been better. This has been fixed.
+
+      - #1321 When supporting multiple discount codes in the Checkout, we accepted all as valid even when just any was valid. This has been fixed. This resulted in us returning all discount codes, not just the valid ones.
+
+      - #1322. Promotions with effect "Product Discount" where not applied under certain conditions on child items. This is now supported when parent item is a virtual product.
+
 
       Miscellaneous changes? 
 
       General:
-      - Improvements in the documentation.
+      - We are improving the online documentation by providing a better structure and conforming to the Storm Commerce profile. Improvements in navigation, linking between things, search and functionality are being addressed. We now support POST direct from the documentation. This is available as a preview on https://servicesstage.enferno.se/api/1.1/docs/index2.html
+
+      Notable changes are that the namespace navigation has been moved to the left and we have added a new level under each namespace called group. When listing a group all collections, entities and methods that are related are shown under each group.
+
+      Known issues are some performance problems when navigating namespace/groupings with many entities and methods. We are continuing to refine the groupings so their content may change in the final release. Please feel free to come in with feedback on this.
 
 
       Feedback?

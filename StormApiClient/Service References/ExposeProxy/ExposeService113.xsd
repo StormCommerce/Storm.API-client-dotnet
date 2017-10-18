@@ -252,6 +252,7 @@
           <xs:element minOccurs="0" name="DeliveryNotes" nillable="true" type="tns:DeliveryNotes" />
           <xs:element minOccurs="0" name="Info" nillable="true" type="tns:InfoList" />
           <xs:element minOccurs="0" name="TypeId" type="xs:int" />
+          <xs:element minOccurs="0" name="DeliveryMark" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
