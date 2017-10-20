@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>1.8.7.0</version>
+    <version>1.8.8-beta</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -12,56 +12,35 @@
     <releaseNotes>
 What's new?
 
-OrderService:
-- #1434 A new Property, DeliveryMark, on Order has been added. This property gets its value from Basket.OrderReference.
-https://servicesstage.enferno.se/api/1.1/docs/#/Orders/Entities/Order
-
 ShoppingService:
-- #1318 A new method, UpdateBasketItems, has been added. This is analogous to InsertBasketItem/InsertBasketItems and provides means to update a list of BasketItems in one request.
-https://servicesstage.enferno.se/api/1.1/docs/index.html#/Shopping/Operations/UpdateBasketItems
+- #839 A new method, PaymentValidate, has been added. This method gets called from PSP (Klarna in this case) and enables us to perform prepayment validations. Clients can send in an additional validation url, which gets called if specified, in order to enable application specific validations.
+https://servicesstage.enferno.se/api/1.1/docs/#/Shopping/Operations/PaymentValidate
 
-- #1391 A new method, ListPromotionsByBasket has been added.
-https://servicesstage.enferno.se/api/1.1/docs/index.html#/Shopping/Operations/ListPromotionsByBasket
+ProductService:
+- #1615 A new method overload, ListProductsByIds3, has been added in order to support pagination and filtering. This conforms to the other ListProducts-methods. 
+https://servicesstage.enferno.se/api/1.1/docs/#/Products/Operations/ListProductsByIds3
+
+- #1616 A new Property on ProductParametric, SortOrder, has been added. This allows applications to merge parametrics from variants with the product and maintain the sort order.
+https://servicesstage.enferno.se/api/1.1/docs/#/Products/Entities/ProductParametric
+
 
 What's fixed?
 
-CustomerService:
-- #1418 The ClientSetting "IsClientCustomerApplicationUnique" (id 44) was not honored in all cases. This is now enforced in GetCustomer and such. This affected clients using different Customers and Companies on each Application.
-
 ShoppingService:
-- #393. Promotions with effect "Add Product" could possibly invalidate delivery methods. Previously delivery methods were validated before promotions were applied. This could render already valid delivery methods being invalid. This has now been fixed.
-
-- #403 Promotions with effect "Choose Product" did not remove the optional items when products were added to the Basket. This has been fixed.
-
-- #411 Multiple freight items on orders. Previously we had synchronization problems where multiple requests could end up on different servers in the API cluster, or when multiple requests where processed in parallel for any Basket or Checkout. In rare cases, this gave multiple freight items on orders. This has now been addressed.
-
-- #432 Promotion with effect "Add Product" did add products permanently and did not remove them if requirement changed. This has been fixed.
-
-- #1103 When choosing price where multiple currencies were involved we did not use the same currency in the compare. This has been fixed and only applied to customers having different currencies on any market/application.
-
-- #1239 When choosing price, we did that before applying promotions. This could lead us to choose the wrong price since a cheaper one, after promotions, might have been better. This has been fixed.
-
-- #1321 When supporting multiple discount codes in the Checkout, we accepted all as valid even when just any was valid. This has been fixed. This resulted in us returning all discount codes, not just the valid ones.
-
-- #1322. Promotions with effect "Product Discount" where not applied under certain conditions on child items. This is now supported when parent item is a virtual product.
-
+- #983 Saved baskets are now excluded from validation of correct pricelists when fetching the basket. Previously invalid pricelists could be replaced. This will not happen for saved baskets now.
 
 Miscellaneous changes? 
 
-General:
-- We are improving the online documentation by providing a better structure and conforming to the Storm Commerce profile. Improvements in navigation, linking between things, search and functionality are being addressed. We now support POST direct from the documentation. This is available as a preview on https://servicesstage.enferno.se/api/1.1/docs/index2.html
-
-Notable changes are that the namespace navigation has been moved to the left and we have added a new level under each namespace called group. When listing a group all collections, entities and methods that are related are shown under each group.
-
-Known issues are some performance problems when navigating namespace/groupings with many entities and methods. We are continuing to refine the groupings so their content may change in the final release. Please feel free to come in with feedback on this.
-
+ProductService:
+- #845 Performance issues for ListProductFilters have been addressed. Rewrite of SearchProductList have been performed and we are now utilizing more parallelism when getting all product data from the database.
 
 Feedback?
 Faults and strange behavior can be reported to support@storm.io or to patrik.rosquist@storm.io.
-       
-       
+ 
+ 
 Regards,
 The Storm API Team
+
 </releaseNotes>
     <copyright>Copyright 2017</copyright>
     <tags>Enferno Storm API Client</tags>

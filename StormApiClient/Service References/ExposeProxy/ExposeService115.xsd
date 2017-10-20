@@ -310,6 +310,7 @@
           <xs:element minOccurs="0" name="Uom" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="GroupId" type="xs:int" />
           <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SortOrder" type="xs:int" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

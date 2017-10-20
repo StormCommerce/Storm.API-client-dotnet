@@ -445,6 +445,15 @@
   <wsdl:message name="ShoppingService_PaymentCancel_ErrorMessage_v2Fault_FaultMessage">
     <wsdl:part xmlns:q48="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q48:ErrorMessage" />
   </wsdl:message>
+  <wsdl:message name="ShoppingService_PaymentValidate_InputMessage">
+    <wsdl:part name="parameters" element="tns:PaymentValidate" />
+  </wsdl:message>
+  <wsdl:message name="ShoppingService_PaymentValidate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PaymentValidateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ShoppingService_PaymentValidate_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q49="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q49:ErrorMessage" />
+  </wsdl:message>
   <wsdl:message name="ShoppingService_SendBasket_InputMessage">
     <wsdl:part name="parameters" element="tns:SendBasket" />
   </wsdl:message>
@@ -452,7 +461,7 @@
     <wsdl:part name="parameters" element="tns:SendBasketResponse" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_SendBasket_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q49="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q49:ErrorMessage" />
+    <wsdl:part xmlns:q50="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q50:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_UpdateBasket_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateBasket" />
@@ -461,7 +470,7 @@
     <wsdl:part name="parameters" element="tns:UpdateBasketResponse" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_UpdateBasket_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q50="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q50:ErrorMessage" />
+    <wsdl:part xmlns:q51="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q51:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_UpdateBasket2_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateBasket2" />
@@ -470,7 +479,7 @@
     <wsdl:part name="parameters" element="tns:UpdateBasket2Response" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_UpdateBasket2_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q51="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q51:ErrorMessage" />
+    <wsdl:part xmlns:q52="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q52:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_UpdateSubscription_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateSubscription" />
@@ -479,7 +488,7 @@
     <wsdl:part name="parameters" element="tns:UpdateSubscriptionResponse" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_UpdateSubscription_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q52="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q52:ErrorMessage" />
+    <wsdl:part xmlns:q53="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q53:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_SetAttestBasket_InputMessage">
     <wsdl:part name="parameters" element="tns:SetAttestBasket" />
@@ -488,7 +497,7 @@
     <wsdl:part name="parameters" element="tns:SetAttestBasketResponse" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_SetAttestBasket_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q53="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q53:ErrorMessage" />
+    <wsdl:part xmlns:q54="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q54:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_DeleteBasket_InputMessage">
     <wsdl:part name="parameters" element="tns:DeleteBasket" />
@@ -497,7 +506,7 @@
     <wsdl:part name="parameters" element="tns:DeleteBasketResponse" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_DeleteBasket_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q54="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q54:ErrorMessage" />
+    <wsdl:part xmlns:q55="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q55:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_DeleteSubscription_InputMessage">
     <wsdl:part name="parameters" element="tns:DeleteSubscription" />
@@ -506,7 +515,7 @@
     <wsdl:part name="parameters" element="tns:DeleteSubscriptionResponse" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_DeleteSubscription_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q55="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q55:ErrorMessage" />
+    <wsdl:part xmlns:q56="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q56:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_UpdateBasketItem_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateBasketItem" />
@@ -515,7 +524,7 @@
     <wsdl:part name="parameters" element="tns:UpdateBasketItemResponse" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_UpdateBasketItem_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q56="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q56:ErrorMessage" />
+    <wsdl:part xmlns:q57="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q57:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_UpdateBasketItems_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateBasketItems" />
@@ -524,7 +533,7 @@
     <wsdl:part name="parameters" element="tns:UpdateBasketItemsResponse" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_UpdateBasketItems_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q57="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q57:ErrorMessage" />
+    <wsdl:part xmlns:q58="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q58:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_UpdateBasketItemQuantityWithChildren_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateBasketItemQuantityWithChildren" />
@@ -533,7 +542,7 @@
     <wsdl:part name="parameters" element="tns:UpdateBasketItemQuantityWithChildrenResponse" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_UpdateBasketItemQuantityWithChildren_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q58="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q58:ErrorMessage" />
+    <wsdl:part xmlns:q59="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q59:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_UpdateBuyer_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateBuyer" />
@@ -542,7 +551,7 @@
     <wsdl:part name="parameters" element="tns:UpdateBuyerResponse" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_UpdateBuyer_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q59="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q59:ErrorMessage" />
+    <wsdl:part xmlns:q60="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q60:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_UpdateBuyer2_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateBuyer2" />
@@ -551,7 +560,7 @@
     <wsdl:part name="parameters" element="tns:UpdateBuyer2Response" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_UpdateBuyer2_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q60="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q60:ErrorMessage" />
+    <wsdl:part xmlns:q61="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q61:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_UpdatePayer_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdatePayer" />
@@ -560,7 +569,7 @@
     <wsdl:part name="parameters" element="tns:UpdatePayerResponse" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_UpdatePayer_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q61="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q61:ErrorMessage" />
+    <wsdl:part xmlns:q62="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q62:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_UpdatePayer2_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdatePayer2" />
@@ -569,7 +578,7 @@
     <wsdl:part name="parameters" element="tns:UpdatePayer2Response" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_UpdatePayer2_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q62="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q62:ErrorMessage" />
+    <wsdl:part xmlns:q63="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q63:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_UpdateShipTo_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateShipTo" />
@@ -578,7 +587,7 @@
     <wsdl:part name="parameters" element="tns:UpdateShipToResponse" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_UpdateShipTo_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q63="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q63:ErrorMessage" />
+    <wsdl:part xmlns:q64="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q64:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_UpdateShipTo2_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateShipTo2" />
@@ -587,7 +596,7 @@
     <wsdl:part name="parameters" element="tns:UpdateShipTo2Response" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_UpdateShipTo2_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q64="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q64:ErrorMessage" />
+    <wsdl:part xmlns:q65="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q65:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_UpdateDeliveryMethod_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateDeliveryMethod" />
@@ -596,7 +605,7 @@
     <wsdl:part name="parameters" element="tns:UpdateDeliveryMethodResponse" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_UpdateDeliveryMethod_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q65="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q65:ErrorMessage" />
+    <wsdl:part xmlns:q66="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q66:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_UpdateDeliveryMethod3_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateDeliveryMethod3" />
@@ -605,7 +614,7 @@
     <wsdl:part name="parameters" element="tns:UpdateDeliveryMethod3Response" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_UpdateDeliveryMethod3_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q66="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q66:ErrorMessage" />
+    <wsdl:part xmlns:q67="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q67:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_UpdatePaymentMethod_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdatePaymentMethod" />
@@ -614,7 +623,7 @@
     <wsdl:part name="parameters" element="tns:UpdatePaymentMethodResponse" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_UpdatePaymentMethod_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q67="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q67:ErrorMessage" />
+    <wsdl:part xmlns:q68="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q68:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_UpdatePaymentMethod2_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdatePaymentMethod2" />
@@ -623,7 +632,7 @@
     <wsdl:part name="parameters" element="tns:UpdatePaymentMethod2Response" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_UpdatePaymentMethod2_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q68="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q68:ErrorMessage" />
+    <wsdl:part xmlns:q69="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q69:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_ListBasketStatuses_InputMessage">
     <wsdl:part name="parameters" element="tns:ListBasketStatuses" />
@@ -632,7 +641,7 @@
     <wsdl:part name="parameters" element="tns:ListBasketStatusesResponse" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_ListBasketStatuses_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q69="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q69:ErrorMessage" />
+    <wsdl:part xmlns:q70="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q70:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_ListBasketTypes_InputMessage">
     <wsdl:part name="parameters" element="tns:ListBasketTypes" />
@@ -641,7 +650,7 @@
     <wsdl:part name="parameters" element="tns:ListBasketTypesResponse" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_ListBasketTypes_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q70="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q70:ErrorMessage" />
+    <wsdl:part xmlns:q71="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q71:ErrorMessage" />
   </wsdl:message>
   <wsdl:portType name="ShoppingService">
     <wsdl:operation name="ClearBasket">
@@ -883,6 +892,11 @@
       <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/PaymentCancel" message="tns:ShoppingService_PaymentCancel_InputMessage" />
       <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/PaymentCancelResponse" message="tns:ShoppingService_PaymentCancel_OutputMessage" />
       <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/PaymentCancelErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ShoppingService_PaymentCancel_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PaymentValidate">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/PaymentValidate" message="tns:ShoppingService_PaymentValidate_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/PaymentValidateResponse" message="tns:ShoppingService_PaymentValidate_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/PaymentValidateErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ShoppingService_PaymentValidate_ErrorMessage_v2Fault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="SendBasket">
       <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/SendBasket" message="tns:ShoppingService_SendBasket_InputMessage" />
