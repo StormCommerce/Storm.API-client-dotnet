@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>1.8.8-beta</version>
+    <version>1.8.8.0</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -14,14 +14,14 @@ What's new?
 
 ShoppingService:
 - #839 A new method, PaymentValidate, has been added. This method gets called from PSP (Klarna in this case) and enables us to perform prepayment validations. Clients can send in an additional validation url, which gets called if specified, in order to enable application specific validations.
-https://servicesstage.enferno.se/api/1.1/docs/#/Shopping/Operations/PaymentValidate
+https://services.enferno.se/api/1.1/docs/#/Shopping/Operations/PaymentValidate
 
 ProductService:
-- #1615 A new method overload, ListProductsByIds3, has been added in order to support pagination and filtering. This conforms to the other ListProducts-methods. 
-https://servicesstage.enferno.se/api/1.1/docs/#/Products/Operations/ListProductsByIds3
+- #1615 A new method overload, ListProductsByIds3, has been added to support pagination and filtering. This conforms to the other ListProducts-methods. 
+https://services.enferno.se/api/1.1/docs/#/Products/Operations/ListProductsByIds3
 
 - #1616 A new Property on ProductParametric, SortOrder, has been added. This allows applications to merge parametrics from variants with the product and maintain the sort order.
-https://servicesstage.enferno.se/api/1.1/docs/#/Products/Entities/ProductParametric
+https://services.enferno.se/api/1.1/docs/#/Products/Entities/ProductParametric
 
 
 What's fixed?
@@ -32,7 +32,7 @@ ShoppingService:
 Miscellaneous changes? 
 
 ProductService:
-- #845 Performance issues for ListProductFilters have been addressed. Rewrite of SearchProductList have been performed and we are now utilizing more parallelism when getting all product data from the database.
+- #845 Performance issues for ListProductFilters have been addressed. Rewrite of SearchProductLite have been performed and we are now utilizing more parallelism when getting all product data from the database.
 
 Feedback?
 Faults and strange behavior can be reported to support@storm.io or to patrik.rosquist@storm.io.
