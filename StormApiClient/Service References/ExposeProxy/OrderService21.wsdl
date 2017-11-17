@@ -90,6 +90,24 @@
   <wsdl:message name="OrderService_ListOrderStatuses_ErrorMessage_v2Fault_FaultMessage">
     <wsdl:part xmlns:q9="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q9:ErrorMessage" />
   </wsdl:message>
+  <wsdl:message name="OrderService_ListOrderInfoTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListOrderInfoTypes" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_ListOrderInfoTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListOrderInfoTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_ListOrderInfoTypes_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q10="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q10:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_ListOrderItemInfoTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListOrderItemInfoTypes" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_ListOrderItemInfoTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListOrderItemInfoTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_ListOrderItemInfoTypes_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q11="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q11:ErrorMessage" />
+  </wsdl:message>
   <wsdl:portType name="OrderService">
     <wsdl:operation name="InsertDeliveryNote">
       <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/InsertDeliveryNote" message="tns:OrderService_InsertDeliveryNote_InputMessage" />
@@ -135,6 +153,16 @@
       <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/ListOrderStatuses" message="tns:OrderService_ListOrderStatuses_InputMessage" />
       <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/ListOrderStatusesResponse" message="tns:OrderService_ListOrderStatuses_OutputMessage" />
       <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/ListOrderStatusesErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:OrderService_ListOrderStatuses_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListOrderInfoTypes">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/ListOrderInfoTypes" message="tns:OrderService_ListOrderInfoTypes_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/ListOrderInfoTypesResponse" message="tns:OrderService_ListOrderInfoTypes_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/ListOrderInfoTypesErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:OrderService_ListOrderInfoTypes_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListOrderItemInfoTypes">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/ListOrderItemInfoTypes" message="tns:OrderService_ListOrderItemInfoTypes_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/ListOrderItemInfoTypesResponse" message="tns:OrderService_ListOrderItemInfoTypes_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/ListOrderItemInfoTypesErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:OrderService_ListOrderItemInfoTypes_ErrorMessage_v2Fault_FaultMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

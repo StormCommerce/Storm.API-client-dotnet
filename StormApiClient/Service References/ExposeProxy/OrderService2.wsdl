@@ -139,6 +139,30 @@
         <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
+    <wsdl:operation name="ListOrderInfoTypes">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Orders/OrderService/ListOrderInfoTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListOrderItemInfoTypes">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Orders/OrderService/ListOrderItemInfoTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="OrderService">
     <wsdl:port name="SOAP" binding="tns:SOAP">

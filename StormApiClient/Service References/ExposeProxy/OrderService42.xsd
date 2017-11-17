@@ -323,17 +323,18 @@
           <xs:element minOccurs="0" name="ImageKey" nillable="true" type="ser:guid" />
           <xs:element minOccurs="0" name="Type" type="xs:int" />
           <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+          <xs:element xmlns:q64="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="Info" nillable="true" type="q64:InfoList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element xmlns:q64="Enferno.Services.Contracts.Expose.Orders" name="OrderItem" nillable="true" type="q64:OrderItem" />
+  <xs:element xmlns:q65="Enferno.Services.Contracts.Expose.Orders" name="OrderItem" nillable="true" type="q65:OrderItem" />
   <xs:complexType name="DeliveryNotes">
     <xs:sequence>
-      <xs:element xmlns:q65="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" maxOccurs="unbounded" name="DeliveryNote" nillable="true" type="q65:DeliveryNote" />
+      <xs:element xmlns:q66="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" maxOccurs="unbounded" name="DeliveryNote" nillable="true" type="q66:DeliveryNote" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element xmlns:q66="Enferno.Services.Contracts.Expose.Orders" name="DeliveryNotes" nillable="true" type="q66:DeliveryNotes" />
+  <xs:element xmlns:q67="Enferno.Services.Contracts.Expose.Orders" name="DeliveryNotes" nillable="true" type="q67:DeliveryNotes" />
   <xs:element name="GetOrderByBasket">
     <xs:complexType>
       <xs:sequence>
@@ -345,7 +346,7 @@
   <xs:element name="GetOrderByBasketResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q67="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="GetOrderByBasketResult" nillable="true" type="q67:Order" />
+        <xs:element xmlns:q68="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="GetOrderByBasketResult" nillable="true" type="q68:Order" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -367,27 +368,27 @@
   <xs:element name="ListOrdersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q68="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="ListOrdersResult" nillable="true" type="q68:OrderPagedList" />
+        <xs:element xmlns:q69="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="ListOrdersResult" nillable="true" type="q69:OrderPagedList" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="OrderPagedList">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q69="Enferno.Services.Contracts.Message" base="q69:Entity">
+      <xs:extension xmlns:q70="Enferno.Services.Contracts.Message" base="q70:Entity">
         <xs:sequence>
           <xs:element minOccurs="0" name="ItemCount" type="xs:int" />
-          <xs:element xmlns:q70="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="Items" nillable="true" type="q70:OrderList" />
+          <xs:element xmlns:q71="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="Items" nillable="true" type="q71:OrderList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element xmlns:q71="Enferno.Services.Contracts.Expose.Orders" name="OrderPagedList" nillable="true" type="q71:OrderPagedList" />
+  <xs:element xmlns:q72="Enferno.Services.Contracts.Expose.Orders" name="OrderPagedList" nillable="true" type="q72:OrderPagedList" />
   <xs:complexType name="OrderList">
     <xs:sequence>
-      <xs:element xmlns:q72="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" maxOccurs="unbounded" name="Order" nillable="true" type="q72:Order" />
+      <xs:element xmlns:q73="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" maxOccurs="unbounded" name="Order" nillable="true" type="q73:Order" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element xmlns:q73="Enferno.Services.Contracts.Expose.Orders" name="OrderList" nillable="true" type="q73:OrderList" />
+  <xs:element xmlns:q74="Enferno.Services.Contracts.Expose.Orders" name="OrderList" nillable="true" type="q74:OrderList" />
   <xs:element name="ListOrders2">
     <xs:complexType>
       <xs:sequence>
@@ -407,7 +408,7 @@
   <xs:element name="ListOrders2Response">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q74="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="ListOrders2Result" nillable="true" type="q74:OrderPagedList" />
+        <xs:element xmlns:q75="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="ListOrders2Result" nillable="true" type="q75:OrderPagedList" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -422,14 +423,14 @@
   <xs:element name="SearchOrderResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q75="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="SearchOrderResult" nillable="true" type="q75:Order" />
+        <xs:element xmlns:q76="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="SearchOrderResult" nillable="true" type="q76:Order" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateDeliveryNotePackage">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q76="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="deliveryNotePackage" nillable="true" type="q76:DeliveryNotePackage" />
+        <xs:element xmlns:q77="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="deliveryNotePackage" nillable="true" type="q77:DeliveryNotePackage" />
         <xs:element minOccurs="0" name="cultureCode" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -449,7 +450,35 @@
   <xs:element name="ListOrderStatusesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q77="Enferno.Services.Contracts.Expose" minOccurs="0" name="ListOrderStatusesResult" nillable="true" type="q77:IdNameDescriptions" />
+        <xs:element xmlns:q78="Enferno.Services.Contracts.Expose" minOccurs="0" name="ListOrderStatusesResult" nillable="true" type="q78:IdNameDescriptions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListOrderInfoTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cultureCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListOrderInfoTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="Enferno.Services.Contracts.Expose" minOccurs="0" name="ListOrderInfoTypesResult" nillable="true" type="q79:IdValues" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListOrderItemInfoTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cultureCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListOrderItemInfoTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="Enferno.Services.Contracts.Expose" minOccurs="0" name="ListOrderItemInfoTypesResult" nillable="true" type="q80:IdValues" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

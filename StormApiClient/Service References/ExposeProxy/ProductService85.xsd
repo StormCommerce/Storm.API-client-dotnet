@@ -285,6 +285,7 @@
           <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Key" nillable="true" type="ser:guid" />
           <xs:element minOccurs="0" name="Extension" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

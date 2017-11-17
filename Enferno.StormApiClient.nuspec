@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>1.8.8.0</version>
+    <version>1.8.9-beta</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -12,27 +12,44 @@
     <releaseNotes>
 What's new?
 
-ShoppingService:
-- #839 A new method, PaymentValidate, has been added. This method gets called from PSP (Klarna in this case) and enables us to perform prepayment validations. Clients can send in an additional validation url, which gets called if specified, in order to enable application specific validations.
-https://services.enferno.se/api/1.1/docs/#/Shopping/Operations/PaymentValidate
+General:
+- #1380 A new Property, Code, has been added to IdValue and it will be populated where appropriate. 
+
+ApplicationService:
+- #1380 Code is now available on Store.Info
+https://servicesstage.enferno.se/api/1.1/docs/#/Expose/Entities/IdValue
+
+OrderService:
+- # 1620 Info field has been added to Order and OrderItem. These info fields will be populated from the corresponding info fields on Basket and BasketItem when the order is created. Only info fields with matching Code will be mapped.
+https://servicesstage.enferno.se/api/1.1/docs/#/Orders/Entities/Info 
+
+- #1380 Code is available on Order.Info and OrderItem.Info.
+
+- #1620 New methods have been added to list OrderInfoTypes.
+https://servicesstage.enferno.se/api/1.1/docs/#/Orders/Operations/ListOrderInfoTypes
+https://servicesstage.enferno.se/api/1.1/docs/#/Orders/Operations/ListOrderItemInfoTypes
 
 ProductService:
-- #1615 A new method overload, ListProductsByIds3, has been added to support pagination and filtering. This conforms to the other ListProducts-methods. 
-https://services.enferno.se/api/1.1/docs/#/Products/Operations/ListProductsByIds3
+- #1380 A new Property, Code, has been added to IdValue and it will be populated where appropriate. Current methods populating this value are ListCategories and ListProductFileTypeIds.
+https://servicesstage.enferno.se/api/1.1/docs/#/Products/Operations/ListCategories
+Https://servicesstage.enferno.se/api/1.1/docs/#/Products/Operations/ListFileTypeIds
 
-- #1616 A new Property on ProductParametric, SortOrder, has been added. This allows applications to merge parametrics from variants with the product and maintain the sort order.
-https://services.enferno.se/api/1.1/docs/#/Products/Entities/ProductParametric
+- #1380 A new Property, Code, has been added to ProductFile. This values will be shown on Product.Files.
+
+ShoppingService:
+- #1380 Code is available on Basket.Info and BasketItem.Info.
+
+- #1629 DoHold has been added to Basket. This Property can be updated in the Checkout process with UpdateBasket.
+https://servicesstage.enferno.se/api/1.1/docs/#/Shopping/Entities/Basket
+
+- #1531. Support internally for decimal as Quantity.
 
 
 What's fixed?
 
-ShoppingService:
-- #983 Saved baskets are now excluded from validation of correct pricelists when fetching the basket. Previously invalid pricelists could be replaced. This will not happen for saved baskets now.
-
 Miscellaneous changes? 
 
-ProductService:
-- #845 Performance issues for ListProductFilters have been addressed. Rewrite of SearchProductLite have been performed and we are now utilizing more parallelism when getting all product data from the database.
+- #982 AddressLine1 and AddressLine2 has been extended from 100 to 255 characters.
 
 Feedback?
 Faults and strange behavior can be reported to support@storm.io or to patrik.rosquist@storm.io.

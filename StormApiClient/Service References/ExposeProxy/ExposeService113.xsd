@@ -279,6 +279,7 @@
           <xs:element minOccurs="0" name="ImageKey" nillable="true" type="ser:guid" />
           <xs:element minOccurs="0" name="Type" type="xs:int" />
           <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Info" nillable="true" type="tns:InfoList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

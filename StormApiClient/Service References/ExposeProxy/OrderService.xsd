@@ -21,4 +21,22 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="IdNameDescription" nillable="true" type="tns:IdNameDescription" />
+  <xs:complexType name="IdValues">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:IdValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IdValues" nillable="true" type="tns:IdValues" />
+  <xs:complexType name="IdValue">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="Enferno.Services.Contracts.Message" base="q2:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdValue" nillable="true" type="tns:IdValue" />
 </xs:schema>
