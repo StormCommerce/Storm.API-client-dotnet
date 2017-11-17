@@ -20,7 +20,7 @@ ApplicationService:
 https://servicesstage.enferno.se/api/1.1/docs/#/Expose/Entities/IdValue
 
 OrderService:
-- # 1620 Info field has been added to Order and OrderItem. These info fields will be populated from the corresponding info fields on Basket and BasketItem when the order is created. Only info fields with matching Code will be mapped.
+- #1620 Info field has been added to Order and OrderItem. These info fields will be populated from the corresponding info fields on Basket and BasketItem when the order is created. Only info fields with matching Code will be mapped.
 https://servicesstage.enferno.se/api/1.1/docs/#/Orders/Entities/Info 
 
 - #1380 Code is available on Order.Info and OrderItem.Info.
