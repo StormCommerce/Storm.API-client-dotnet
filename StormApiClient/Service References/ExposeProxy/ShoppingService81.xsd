@@ -117,6 +117,7 @@
           <xs:element minOccurs="0" name="IsSubscribable" type="xs:boolean" />
           <xs:element minOccurs="0" name="DescriptionHeader" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="IsPriceManual" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PriceStandard" nillable="true" type="xs:decimal" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

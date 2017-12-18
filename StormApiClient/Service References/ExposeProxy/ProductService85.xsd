@@ -248,6 +248,8 @@
           <xs:element minOccurs="0" name="IsDropShipOnly" type="xs:boolean" />
           <xs:element minOccurs="0" name="Synonyms" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="IsSubscribable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="UnspscCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PriceStandard" nillable="true" type="xs:decimal" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -690,6 +692,7 @@
           <xs:element minOccurs="0" name="Type" type="xs:int" />
           <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IsVirtual" type="xs:boolean" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1247,6 +1250,7 @@
           <xs:element minOccurs="0" name="UnitOfMeasurement" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="UnitOfMeasurementCount" nillable="true" type="xs:decimal" />
           <xs:element minOccurs="0" name="EanCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PriceStandard" nillable="true" type="xs:decimal" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -2763,6 +2767,7 @@
           <xs:element minOccurs="0" name="IsBuyable" type="xs:boolean" />
           <xs:element minOccurs="0" name="RecommendedQuantity" nillable="true" type="xs:decimal" />
           <xs:element minOccurs="0" name="IsRecommendedQuantityFixed" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Standard" nillable="true" type="xs:decimal" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

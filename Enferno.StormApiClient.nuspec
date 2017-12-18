@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>1.8.9.0</version>
+    <version>1.8.10-beta</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -12,53 +12,55 @@
     <releaseNotes>
 What's new?
 
-General:
-- #1380 A new Property, Code, has been added to IdValue and it will be populated where appropriate. 
-
-ApplicationService:
-- #1380 Code is now available on Store.Info
-https://servicesstage.enferno.se/api/1.1/docs/#/Expose/Entities/IdValue
-
 OrderService:
-- #1620 Info field has been added to Order and OrderItem. These info fields will be populated from the corresponding info fields on Basket and BasketItem when the order is created. Only info fields with matching Code will be mapped.
-https://servicesstage.enferno.se/api/1.1/docs/#/Orders/Entities/Info 
+- #2101 A new property, ParentLineNo, has been added to OrderItem.
+https://servicesstage.enferno.se/api/1.1/docs/#/Orders/Entities/OrderItem
 
-- #1380 Code is available on Order.Info and OrderItem.Info.
-
-- #1620 New methods have been added to list OrderInfoTypes.
-https://servicesstage.enferno.se/api/1.1/docs/#/Orders/Operations/ListOrderInfoTypes
-https://servicesstage.enferno.se/api/1.1/docs/#/Orders/Operations/ListOrderItemInfoTypes
+- #1880 New properties, PriceRecommended, PriceCatalog and PriceStandard have been added to OrderItem.
+https://servicesstage.enferno.se/api/1.1/docs/#/Orders/Entities/OrderItem
 
 ProductService:
-- #1380 A new Property, Code, has been added to IdValue and it will be populated where appropriate. Current methods populating this value are ListCategories and ListProductFileTypeIds.
-https://servicesstage.enferno.se/api/1.1/docs/#/Products/Operations/ListCategories
-Https://servicesstage.enferno.se/api/1.1/docs/#/Products/Operations/ListFileTypeIds
+- #1380 A new property, IsVirtual, has been added to PriceList.
+https://servicesstage.enferno.se/api/1.1/docs/#/Products/Entities/Pricelist
 
-- #1380 A new Property, Code, has been added to ProductFile. This values will be shown on Product.Files.
+- #1380 Support for virtual pricelists. Virtual pricelists are like any other pricelist but no prices are calculated in Storm. They are calculated on demand when fetching prices. Virtual pricelists MUST inherit from any non-virtual pricelist and cannot itself be inherited. For now, no population rules apply and should not be specified for virtual pricelists. All pricing rules except FixedPrice, Structure calculation and Competitive pricing apply. Since the price calculation is done in the application listing products and sorting by Price, the sort must be done in the client application. We will sort on the inherited pricelists' prices. The same goes for fetching  product list filters. The price filter will contain prices from the inherited pricelist. Support for setting up virtual pricelist will be added to Storm Admin later.
+https://servicesstage.enferno.se/api/1.1/docs/#/Products/Entities/Pricelist
+
+- #1738 Support for QuantityBreak on product prices has been added. When getting product prices we are now honoring the QuantityBreak setting on prices. For products, the price with QuantityBreak equals to 1 is fetched.
+
+- #1880 A new property, PriceStandard, has been added to Product, ProductItem and VariantItem.Price.
+https://servicesstage.enferno.se/api/1.1/docs/#/Products/Entities/Product
+https://servicesstage.enferno.se/api/1.1/docs/#/Products/Entities/ProductItem
+https://servicesstage.enferno.se/api/1.1/docs/#/Products/Entities/ProductPrice
+
+- #2104 A new property, UnspscCode, has been added to Product.
+https://servicesstage.enferno.se/api/1.1/docs/#/Products/Entities/Product
 
 ShoppingService:
-- #1380 Code is available on Basket.Info and BasketItem.Info.
+- #1738 Support for QuantityBreak on baskets has been added. When getting prices for basket items we take the correct prices specified by QuantityBreak.
 
-- #1629 DoHold has been added to Basket. This Property can be updated in the Checkout process with UpdateBasket.
-https://servicesstage.enferno.se/api/1.1/docs/#/Shopping/Entities/Basket
-
-- #1531. Support internally for decimal as Quantity.
-
+- #1880 A new property, PriceStandard, has been added to BasketItem.
+https://servicesstage.enferno.se/api/1.1/docs/#/Shopping/Entities/BasketItem
 
 What's fixed?
 
+- #1925 Customer and Company flags on promotions did not work properly. This has been fixed.
+
+- #2027 The response from Custom validation in KCO validation was not read correctly. Now we look at the response Content-Type and read it properly. Supported response types are "application/json" and "text/xml". If none of these are specified plain text is assumed.
+
+- #2061 BasketItemRequirement in Promotions ignored sku types Freight and InvoiceFee by default. Now these sku types can be specified in BasketItemRequirement.
+
 Miscellaneous changes? 
 
-- #982 AddressLine1 and AddressLine2 has been extended from 100 to 255 characters.
+N/A
 
 Feedback?
 Faults and strange behavior can be reported to support@storm.io or to patrik.rosquist@storm.io.
- 
- 
+       
+       
 Regards,
 The Storm API Team
-
-</releaseNotes>
+    </releaseNotes>
     <copyright>Copyright 2017</copyright>
     <tags>Enferno Storm API Client</tags>
     <dependencies>

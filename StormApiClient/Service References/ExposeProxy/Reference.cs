@@ -31962,6 +31962,12 @@ namespace Enferno.StormApiClient.Products {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool IsSubscribableField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UnspscCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> PriceStandardField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Id {
             get {
@@ -32686,6 +32692,32 @@ namespace Enferno.StormApiClient.Products {
                 if ((this.IsSubscribableField.Equals(value) != true)) {
                     this.IsSubscribableField = value;
                     this.RaisePropertyChanged("IsSubscribable");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=56)]
+        public string UnspscCode {
+            get {
+                return this.UnspscCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UnspscCodeField, value) != true)) {
+                    this.UnspscCodeField = value;
+                    this.RaisePropertyChanged("UnspscCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=57)]
+        public System.Nullable<decimal> PriceStandard {
+            get {
+                return this.PriceStandardField;
+            }
+            set {
+                if ((this.PriceStandardField.Equals(value) != true)) {
+                    this.PriceStandardField = value;
+                    this.RaisePropertyChanged("PriceStandard");
                 }
             }
         }
@@ -33514,6 +33546,9 @@ namespace Enferno.StormApiClient.Products {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<System.DateTime> EndDateField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsVirtualField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Id {
             get {
@@ -33679,6 +33714,19 @@ namespace Enferno.StormApiClient.Products {
                 if ((this.EndDateField.Equals(value) != true)) {
                     this.EndDateField = value;
                     this.RaisePropertyChanged("EndDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=13)]
+        public bool IsVirtual {
+            get {
+                return this.IsVirtualField;
+            }
+            set {
+                if ((this.IsVirtualField.Equals(value) != true)) {
+                    this.IsVirtualField = value;
+                    this.RaisePropertyChanged("IsVirtual");
                 }
             }
         }
@@ -36798,6 +36846,9 @@ namespace Enferno.StormApiClient.Products {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EanCodeField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> PriceStandardField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Id {
             get {
@@ -37431,6 +37482,19 @@ namespace Enferno.StormApiClient.Products {
                 if ((object.ReferenceEquals(this.EanCodeField, value) != true)) {
                     this.EanCodeField = value;
                     this.RaisePropertyChanged("EanCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=49)]
+        public System.Nullable<decimal> PriceStandard {
+            get {
+                return this.PriceStandardField;
+            }
+            set {
+                if ((this.PriceStandardField.Equals(value) != true)) {
+                    this.PriceStandardField = value;
+                    this.RaisePropertyChanged("PriceStandard");
                 }
             }
         }
@@ -38927,6 +38991,9 @@ namespace Enferno.StormApiClient.Products {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool IsRecommendedQuantityFixedField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> StandardField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal Value {
             get {
@@ -39027,6 +39094,19 @@ namespace Enferno.StormApiClient.Products {
                 if ((this.IsRecommendedQuantityFixedField.Equals(value) != true)) {
                     this.IsRecommendedQuantityFixedField = value;
                     this.RaisePropertyChanged("IsRecommendedQuantityFixed");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+        public System.Nullable<decimal> Standard {
+            get {
+                return this.StandardField;
+            }
+            set {
+                if ((this.StandardField.Equals(value) != true)) {
+                    this.StandardField = value;
+                    this.RaisePropertyChanged("Standard");
                 }
             }
         }
@@ -50722,6 +50802,18 @@ namespace Enferno.StormApiClient.Orders {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Enferno.StormApiClient.Orders.InfoList InfoField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> ParentRowNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> PriceRecommendedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> PriceCatalogField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> PriceStandardField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal RowNumber {
             get {
@@ -50874,6 +50966,58 @@ namespace Enferno.StormApiClient.Orders {
                 if ((object.ReferenceEquals(this.InfoField, value) != true)) {
                     this.InfoField = value;
                     this.RaisePropertyChanged("Info");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
+        public System.Nullable<decimal> ParentRowNumber {
+            get {
+                return this.ParentRowNumberField;
+            }
+            set {
+                if ((this.ParentRowNumberField.Equals(value) != true)) {
+                    this.ParentRowNumberField = value;
+                    this.RaisePropertyChanged("ParentRowNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=13)]
+        public System.Nullable<decimal> PriceRecommended {
+            get {
+                return this.PriceRecommendedField;
+            }
+            set {
+                if ((this.PriceRecommendedField.Equals(value) != true)) {
+                    this.PriceRecommendedField = value;
+                    this.RaisePropertyChanged("PriceRecommended");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=14)]
+        public System.Nullable<decimal> PriceCatalog {
+            get {
+                return this.PriceCatalogField;
+            }
+            set {
+                if ((this.PriceCatalogField.Equals(value) != true)) {
+                    this.PriceCatalogField = value;
+                    this.RaisePropertyChanged("PriceCatalog");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=15)]
+        public System.Nullable<decimal> PriceStandard {
+            get {
+                return this.PriceStandardField;
+            }
+            set {
+                if ((this.PriceStandardField.Equals(value) != true)) {
+                    this.PriceStandardField = value;
+                    this.RaisePropertyChanged("PriceStandard");
                 }
             }
         }
@@ -52098,6 +52242,9 @@ namespace Enferno.StormApiClient.Shopping {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool IsPriceManualField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> PriceStandardField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<int> Id {
             get {
@@ -52783,6 +52930,19 @@ namespace Enferno.StormApiClient.Shopping {
                 if ((this.IsPriceManualField.Equals(value) != true)) {
                     this.IsPriceManualField = value;
                     this.RaisePropertyChanged("IsPriceManual");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=53)]
+        public System.Nullable<decimal> PriceStandard {
+            get {
+                return this.PriceStandardField;
+            }
+            set {
+                if ((this.PriceStandardField.Equals(value) != true)) {
+                    this.PriceStandardField = value;
+                    this.RaisePropertyChanged("PriceStandard");
                 }
             }
         }

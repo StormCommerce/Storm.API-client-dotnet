@@ -324,6 +324,10 @@
           <xs:element minOccurs="0" name="Type" type="xs:int" />
           <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
           <xs:element xmlns:q64="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="Info" nillable="true" type="q64:InfoList" />
+          <xs:element minOccurs="0" name="ParentRowNumber" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PriceRecommended" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PriceCatalog" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PriceStandard" nillable="true" type="xs:decimal" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
