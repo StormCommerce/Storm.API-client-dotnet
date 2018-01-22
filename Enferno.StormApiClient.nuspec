@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>1.8.10-beta</version>
+    <version>1.8.10-beta2</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -11,6 +11,9 @@
     <description>Enferno Storm Commerce API Client library.</description>
     <releaseNotes>
 What's new?
+
+CallbackHandler:
+      -Payex updated
 
 OrderService:
 - #2101 A new property, ParentLineNo, has been added to OrderItem.
