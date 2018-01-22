@@ -69,6 +69,7 @@ namespace Enferno.Web.StormUtils
             switch (paymentServiceId.Value)
             {
                 case 1:
+                    completeAfterCallback = true;
                     return GetFormParameters(context, "Payex");
                 case 4:
                     return GetFormParameters(context, "Dibs");
