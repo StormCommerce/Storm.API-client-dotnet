@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>1.8.10-beta2</version>
+    <version>1.8.10.0</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -12,38 +12,39 @@
     <releaseNotes>
 What's new?
 
-CallbackHandler:
-      -Payex updated
-
 OrderService:
 - #2101 A new property, ParentLineNo, has been added to OrderItem.
-https://servicesstage.enferno.se/api/1.1/docs/#/Orders/Entities/OrderItem
+https://services.enferno.se/api/1.1/docs/#/Orders/Entities/OrderItem
 
 - #1880 New properties, PriceRecommended, PriceCatalog and PriceStandard have been added to OrderItem.
-https://servicesstage.enferno.se/api/1.1/docs/#/Orders/Entities/OrderItem
+https://services.enferno.se/api/1.1/docs/#/Orders/Entities/OrderItem
 
 ProductService:
 - #1380 A new property, IsVirtual, has been added to PriceList.
-https://servicesstage.enferno.se/api/1.1/docs/#/Products/Entities/Pricelist
+https://services.enferno.se/api/1.1/docs/#/Products/Entities/Pricelist
 
-- #1380 Support for virtual pricelists. Virtual pricelists are like any other pricelist but no prices are calculated in Storm. They are calculated on demand when fetching prices. Virtual pricelists MUST inherit from any non-virtual pricelist and cannot itself be inherited. For now, no population rules apply and should not be specified for virtual pricelists. All pricing rules except FixedPrice, Structure calculation and Competitive pricing apply. Since the price calculation is done in the application listing products and sorting by Price, the sort must be done in the client application. We will sort on the inherited pricelists' prices. The same goes for fetching  product list filters. The price filter will contain prices from the inherited pricelist. Support for setting up virtual pricelist will be added to Storm Admin later.
-https://servicesstage.enferno.se/api/1.1/docs/#/Products/Entities/Pricelist
+- #1380 Support for virtual pricelists. Virtual pricelists are like any other pricelist but no prices are calculated in Storm. They are calculated on demand when fetching prices. Virtual pricelists MUST inherit from any non-virtual pricelist and cannot itself be inherited. For now, no population rules apply and should not be specified for virtual pricelists. All pricing rules except FixedPrice, Structure calculation and Competitive pricing apply. Since the price calculation is done in the application listing products and sorting by Price, the sort must be done in the client application. We will sort on the inherited pricelists' prices. The same goes for fetching product list filters. The price filter will contain prices from the inherited pricelist. Support for setting up virtual pricelist will be added to Storm Admin later.
+https://services.enferno.se/api/1.1/docs/#/Products/Entities/Pricelist
 
 - #1738 Support for QuantityBreak on product prices has been added. When getting product prices we are now honoring the QuantityBreak setting on prices. For products, the price with QuantityBreak equals to 1 is fetched.
 
 - #1880 A new property, PriceStandard, has been added to Product, ProductItem and VariantItem.Price.
-https://servicesstage.enferno.se/api/1.1/docs/#/Products/Entities/Product
-https://servicesstage.enferno.se/api/1.1/docs/#/Products/Entities/ProductItem
-https://servicesstage.enferno.se/api/1.1/docs/#/Products/Entities/ProductPrice
+https://services.enferno.se/api/1.1/docs/#/Products/Entities/Product
+https://services.enferno.se/api/1.1/docs/#/Products/Entities/ProductItem
+https://services.enferno.se/api/1.1/docs/#/Products/Entities/ProductPrice
 
 - #2104 A new property, UnspscCode, has been added to Product.
-https://servicesstage.enferno.se/api/1.1/docs/#/Products/Entities/Product
+https://services.enferno.se/api/1.1/docs/#/Products/Entities/Product
 
 ShoppingService:
 - #1738 Support for QuantityBreak on baskets has been added. When getting prices for basket items we take the correct prices specified by QuantityBreak.
 
 - #1880 A new property, PriceStandard, has been added to BasketItem.
-https://servicesstage.enferno.se/api/1.1/docs/#/Shopping/Entities/BasketItem
+https://services.enferno.se/api/1.1/docs/#/Shopping/Entities/BasketItem
+
+- #1869 Support for multiple freight items, each for distinct vat rates. A new SkuType, FreightStructure has been added and can be used with included normal freight items where each represents distinct vat values. The original freight price will be distributed amongst the included freight items based on the vat values of all deliverable items in the basket.
+
+- #2190 New property on Basket, IsBuyable.
 
 What's fixed?
 
@@ -53,14 +54,16 @@ What's fixed?
 
 - #2061 BasketItemRequirement in Promotions ignored sku types Freight and InvoiceFee by default. Now these sku types can be specified in BasketItemRequirement.
 
+- #2017 Bad Request is now raised for BasketContainsSomeUnbuyableItems, BasketContainsNoBuyableItems and BasketItemNotEditable. These were previously handled as Internal  Server Errors.
+
+- #2001 Promotions with Effect AddProduct now automatically removes the added product if the requirements are not fullfilled. This was not done properly before if the added product was persisted in the database. Moreover, deleting non-editable basket items are now allowed.
+
+- #2190 Bad Request is now raised for BasketNotBuyable. This were previously handled as Internal  Server Errors.
+
 Miscellaneous changes? 
 
-N/A
-
-Feedback?
-Faults and strange behavior can be reported to support@storm.io or to patrik.rosquist@storm.io.
-       
-       
+- CallbackHandler for PayEx updated.
+ 
 Regards,
 The Storm API Team
     </releaseNotes>
