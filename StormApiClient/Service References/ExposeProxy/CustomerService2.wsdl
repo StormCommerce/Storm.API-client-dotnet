@@ -595,6 +595,15 @@
   <wsdl:message name="CustomerService_UpdateCompanyPricelist_ErrorMessage_v2Fault_FaultMessage">
     <wsdl:part xmlns:q65="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q65:ErrorMessage" />
   </wsdl:message>
+  <wsdl:message name="CustomerService_DeleteCompanyPricelist_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCompanyPricelist" />
+  </wsdl:message>
+  <wsdl:message name="CustomerService_DeleteCompanyPricelist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCompanyPricelistResponse" />
+  </wsdl:message>
+  <wsdl:message name="CustomerService_DeleteCompanyPricelist_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q66="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q66:ErrorMessage" />
+  </wsdl:message>
   <wsdl:message name="CustomerService_ListPriceRules_InputMessage">
     <wsdl:part name="parameters" element="tns:ListPriceRules" />
   </wsdl:message>
@@ -602,7 +611,7 @@
     <wsdl:part name="parameters" element="tns:ListPriceRulesResponse" />
   </wsdl:message>
   <wsdl:message name="CustomerService_ListPriceRules_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q66="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q66:ErrorMessage" />
+    <wsdl:part xmlns:q67="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q67:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="CustomerService_ListCustomerFlags_InputMessage">
     <wsdl:part name="parameters" element="tns:ListCustomerFlags" />
@@ -611,7 +620,7 @@
     <wsdl:part name="parameters" element="tns:ListCustomerFlagsResponse" />
   </wsdl:message>
   <wsdl:message name="CustomerService_ListCustomerFlags_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q67="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q67:ErrorMessage" />
+    <wsdl:part xmlns:q68="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q68:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="CustomerService_ListCompanyFlags_InputMessage">
     <wsdl:part name="parameters" element="tns:ListCompanyFlags" />
@@ -620,7 +629,7 @@
     <wsdl:part name="parameters" element="tns:ListCompanyFlagsResponse" />
   </wsdl:message>
   <wsdl:message name="CustomerService_ListCompanyFlags_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q68="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q68:ErrorMessage" />
+    <wsdl:part xmlns:q69="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q69:ErrorMessage" />
   </wsdl:message>
   <wsdl:portType name="CustomerService">
     <wsdl:operation name="ChangePassword">
@@ -947,6 +956,11 @@
       <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Customers/CustomerService/UpdateCompanyPricelist" message="tns:CustomerService_UpdateCompanyPricelist_InputMessage" />
       <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Customers/CustomerService/UpdateCompanyPricelistResponse" message="tns:CustomerService_UpdateCompanyPricelist_OutputMessage" />
       <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Customers/CustomerService/UpdateCompanyPricelistErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:CustomerService_UpdateCompanyPricelist_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCompanyPricelist">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Customers/CustomerService/DeleteCompanyPricelist" message="tns:CustomerService_DeleteCompanyPricelist_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Customers/CustomerService/DeleteCompanyPricelistResponse" message="tns:CustomerService_DeleteCompanyPricelist_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Customers/CustomerService/DeleteCompanyPricelistErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:CustomerService_DeleteCompanyPricelist_ErrorMessage_v2Fault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="ListPriceRules">
       <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Customers/CustomerService/ListPriceRules" message="tns:CustomerService_ListPriceRules_InputMessage" />

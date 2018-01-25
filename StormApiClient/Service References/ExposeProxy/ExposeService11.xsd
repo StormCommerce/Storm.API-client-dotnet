@@ -32,6 +32,7 @@
           <xs:element minOccurs="0" name="AttestedBy" nillable="true" type="xs:int" />
           <xs:element minOccurs="0" name="TypeId" type="xs:int" />
           <xs:element minOccurs="0" name="DoHold" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsBuyable" type="xs:boolean" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
