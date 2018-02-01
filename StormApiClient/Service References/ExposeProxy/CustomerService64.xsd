@@ -125,6 +125,7 @@
           <xs:element minOccurs="0" name="CountryId" type="xs:int" />
           <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Region" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsValidated" type="xs:boolean" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

@@ -46475,6 +46475,9 @@ namespace Enferno.StormApiClient.Customers {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RegionField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsValidatedField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<int> Id {
             get {
@@ -46588,6 +46591,19 @@ namespace Enferno.StormApiClient.Customers {
                 if ((object.ReferenceEquals(this.RegionField, value) != true)) {
                     this.RegionField = value;
                     this.RaisePropertyChanged("Region");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
+        public bool IsValidated {
+            get {
+                return this.IsValidatedField;
+            }
+            set {
+                if ((this.IsValidatedField.Equals(value) != true)) {
+                    this.IsValidatedField = value;
+                    this.RaisePropertyChanged("IsValidated");
                 }
             }
         }
@@ -52374,6 +52390,9 @@ namespace Enferno.StormApiClient.Shopping {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<decimal> PriceStandardField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EanCodeField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<int> Id {
             get {
@@ -53072,6 +53091,19 @@ namespace Enferno.StormApiClient.Shopping {
                 if ((this.PriceStandardField.Equals(value) != true)) {
                     this.PriceStandardField = value;
                     this.RaisePropertyChanged("PriceStandard");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=54)]
+        public string EanCode {
+            get {
+                return this.EanCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EanCodeField, value) != true)) {
+                    this.EanCodeField = value;
+                    this.RaisePropertyChanged("EanCode");
                 }
             }
         }

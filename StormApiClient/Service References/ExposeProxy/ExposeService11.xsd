@@ -102,6 +102,7 @@
           <xs:element minOccurs="0" name="DescriptionHeader" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="IsPriceManual" type="xs:boolean" />
           <xs:element minOccurs="0" name="PriceStandard" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="EanCode" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

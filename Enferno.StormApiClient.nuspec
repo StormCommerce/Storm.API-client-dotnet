@@ -2,29 +2,33 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>1.8.11-Beta</version>
+    <version>1.8.11-Beta2</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
-    <projectUrl>https://enfernostormapiclient.codeplex.com/</projectUrl>
+    <projectUrl>https://github.com/StormCommerce/Storm.API/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Enferno Storm Commerce API Client library.</description>
     <releaseNotes>
-What's new?
-
-CustomerService:
-- #2297 A new method, DeleteCompanyPriceList, has been added. Some rewrites have been made in the data access layer that affect other methods related to CompanyPriceLists.
+## What's new?
+### CustomerService:
+- #2297: A new method, DeleteCompanyPriceList, has been added. Some rewrites have been made in the data access layer that affect other methods related to CompanyPriceLists.  
 https://servicesstage.enferno.se/api/1.1/docs/#/Customers/Operations/DeleteCompanyPricelist
 
-What's fixed?
+- #2295: A new property, IsValidated, has been added to Address used for Customer and Company. This property can be used by applications needing to keep track of validated addresses. Use normal address-methods to update this value.  
+https://servicesstage.enferno.se/api/1.1/docs/#/Customers/Entities/Address
 
+### ShoppingService:
+- #2216: A new property, EanCode, has been added to BasketItem.  
+https://servicesstage.enferno.se/api/1.1/docs/#/Shopping/Entities/BasketItem
+
+## What's fixed?
 N/A
 
-Miscellaneous changes? 
-
+## Miscellaneous changes?
 N/A
  
-Regards,
+Regards,  
 The Storm API Team
     </releaseNotes>
     <copyright>Copyright 2017</copyright>
