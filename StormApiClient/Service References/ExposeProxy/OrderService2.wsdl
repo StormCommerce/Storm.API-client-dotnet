@@ -79,6 +79,30 @@
         <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
+    <wsdl:operation name="GetInvoice">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Orders/OrderService/GetInvoice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListInvoices">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Orders/OrderService/ListInvoices" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
     <wsdl:operation name="ListOrders">
       <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Orders/OrderService/ListOrders" style="document" />
       <wsdl:input>
@@ -93,6 +117,18 @@
     </wsdl:operation>
     <wsdl:operation name="ListOrders2">
       <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Orders/OrderService/ListOrders2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListOrders3">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Orders/OrderService/ListOrders3" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

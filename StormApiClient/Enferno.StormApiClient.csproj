@@ -248,10 +248,16 @@
     <None Include="Service References\ExposeProxy\Enferno.StormApiClient.Orders.Invoice.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ExposeProxy\Enferno.StormApiClient.Orders.InvoicePagedList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ExposeProxy\Enferno.StormApiClient.Orders.Order.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ExposeProxy\Enferno.StormApiClient.Orders.OrderPagedList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExposeProxy\Enferno.StormApiClient.Orders.OrderPagedList2.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ExposeProxy\Enferno.StormApiClient.Products.CategoryItemList.datasource">

@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>1.8.11.0</version>
+    <version>1.8.12-beta</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -11,24 +11,28 @@
     <description>Enferno Storm Commerce API Client library.</description>
     <releaseNotes>
 ## What's new?
-### CustomerService:
-- #2297: A new method, DeleteCompanyPriceList, has been added. Some rewrites have been made in the data access layer that affect other methods related to CompanyPriceLists.  
-https://services.enferno.se/api/1.1/docs/#/Customers/Operations/DeleteCompanyPricelist
 
-- #2295: A new property, IsValidated, has been added to Address used for Customer and Company. This property can be used by applications needing to keep track of validated addresses. Use normal address-methods to update this value.  
-https://services.enferno.se/api/1.1/docs/#/Customers/Entities/Address
-
-### ShoppingService:
-- #2216: A new property, EanCode, has been added to BasketItem.  
-https://services.enferno.se/api/1.1/docs/#/Shopping/Entities/BasketItem
+### OrderService:
+- #2657: New, or modified, entities and methods now exist for Invoices. New methods are GetInvoice and ListInvoices. New entities are InvoicePagedList and InvoiceListItem. Invoice and InvoiceItem have been modified slightly.  
+https://servicesstage.enferno.se/api/1.1/docs/index2.html#/Orders/Invoices/ListInvoices  
+https://servicesstage.enferno.se/api/1.1/docs/index2.html#/Orders/Invoices/GetInvoice   
+https://servicesstage.enferno.se/api/1.1/docs/index2.html#/Orders/Invoices/InvoicePagedList  
+https://servicesstage.enferno.se/api/1.1/docs/index2.html#/Orders/Invoices/InvoiceListItem  
+https://servicesstage.enferno.se/api/1.1/docs/index2.html#/Orders/Invoices/Invoice  
+https://servicesstage.enferno.se/api/1.1/docs/index2.html#/Orders/Invoices/InvoiceItem  
 
 ## What's fixed?
-- #4323: When modifying a Subscription the changes did not take effect on upcoming orders. This has now been fixed.
 
-- #: Problem with ListProductByPartNos not returning correct product, when returnAllVariants = false, has been fixed. This error was introduced in last release.
+### OrderService:
+- #2212: Due to performance problems with OrderList and ListOrders, ListOrder2 they have now been deprecated. There is now a new ListOrders3 with a more light weight resultset, OrderPagedList2 with items as OrderListItem. Basically all references to DeliveryNotes have been removed from list results. The Order entity should be unchanged.  
+https://servicesstage.enferno.se/api/1.1/docs/index2.html#/Orders/Orders/ListOrders3  
+https://servicesstage.enferno.se/api/1.1/docs/index2.html#/Orders/Orders/OrderListItem  
 
 ## Miscellaneous changes?
-N/A
+
+- #2664: We now have an API client for PHP which is located at  
+https://github.com/StormCommerce/Storm.API-client-php  
+It can be used by those building solutions using PHP.
  
 Regards,  
 The Storm API Team

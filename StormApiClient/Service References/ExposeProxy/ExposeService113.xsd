@@ -172,30 +172,26 @@
     <xs:complexContent mixed="false">
       <xs:extension xmlns:q10="Enferno.Services.Contracts.Message" base="q10:Entity">
         <xs:sequence>
-          <xs:element minOccurs="0" name="Id" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Id" type="xs:long" />
           <xs:element minOccurs="0" name="InvoiceNo" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="InvoiceDate" type="xs:dateTime" />
-          <xs:element minOccurs="0" name="InvoiceDueDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="InvoiceDueDate" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="InvoiceText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrderId" type="xs:long" />
           <xs:element minOccurs="0" name="OrderNo" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="OrderDate" type="xs:dateTime" />
-          <xs:element minOccurs="0" name="DeliveryNoteNo" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="DeliveryDate" type="xs:dateTime" />
-          <xs:element minOccurs="0" name="Culture" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="YourReference" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DeliveryDate" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="DeliveryMode" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="SellTo" nillable="true" type="tns:CustomerData" />
           <xs:element minOccurs="0" name="BillTo" nillable="true" type="tns:CustomerData" />
-          <xs:element minOccurs="0" name="ShipTo" nillable="true" type="tns:CustomerData" />
-          <xs:element minOccurs="0" name="SMSNotificationNumber" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="OrderFreight" type="xs:decimal" />
-          <xs:element minOccurs="0" name="ServiceCharge" type="xs:decimal" />
           <xs:element minOccurs="0" name="InvoiceCharge" type="xs:decimal" />
           <xs:element minOccurs="0" name="InvoiceAmountExVat" type="xs:decimal" />
           <xs:element minOccurs="0" name="VatAmount" type="xs:decimal" />
-          <xs:element minOccurs="0" name="OrderComment" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Items" nillable="true" type="tns:InvoiceItems" />
           <xs:element minOccurs="0" name="Info" nillable="true" type="tns:InfoList" />
+          <xs:element minOccurs="0" name="InvoiceNoPsp" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreditedInvoiceNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsCredit" type="xs:boolean" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -211,19 +207,15 @@
     <xs:complexContent mixed="false">
       <xs:extension xmlns:q11="Enferno.Services.Contracts.Message" base="q11:Entity">
         <xs:sequence>
-          <xs:element minOccurs="0" name="Id" nillable="true" type="xs:int" />
-          <xs:element minOccurs="0" name="RowNumber" type="xs:decimal" />
+          <xs:element minOccurs="0" name="RowNumber" nillable="true" type="xs:decimal" />
           <xs:element minOccurs="0" name="ItemNo" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ItemDescription" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="QtyOrdered" type="xs:decimal" />
-          <xs:element minOccurs="0" name="QtyInvoiced" type="xs:decimal" />
-          <xs:element minOccurs="0" name="QtyBackordered" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Quantity" type="xs:decimal" />
           <xs:element minOccurs="0" name="UnitPrice" type="xs:decimal" />
           <xs:element minOccurs="0" name="UnitDiscount" type="xs:decimal" />
           <xs:element minOccurs="0" name="RowAmount" type="xs:decimal" />
           <xs:element minOccurs="0" name="RowAmountVat" type="xs:decimal" />
-          <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="DeliveryDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DeliveryDate" nillable="true" type="xs:dateTime" />
           <xs:element minOccurs="0" name="VatRate" type="xs:decimal" />
         </xs:sequence>
       </xs:extension>
@@ -295,9 +287,50 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DeliveryNotes" nillable="true" type="tns:DeliveryNotes" />
-  <xs:complexType name="OrderPagedList">
+  <xs:complexType name="InvoicePagedList">
     <xs:complexContent mixed="false">
       <xs:extension xmlns:q14="Enferno.Services.Contracts.Message" base="q14:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ItemCount" type="xs:int" />
+          <xs:element minOccurs="0" name="Items" nillable="true" type="tns:InvoiceList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InvoicePagedList" nillable="true" type="tns:InvoicePagedList" />
+  <xs:complexType name="InvoiceList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Invoice" nillable="true" type="tns:InvoiceListItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InvoiceList" nillable="true" type="tns:InvoiceList" />
+  <xs:complexType name="InvoiceListItem">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q15="Enferno.Services.Contracts.Message" base="q15:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:long" />
+          <xs:element minOccurs="0" name="InvoiceNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InvoiceDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="InvoiceDueDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="InvoiceText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrderNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrderDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DeliveryDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DeliveryMode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BillTo" nillable="true" type="tns:CustomerData" />
+          <xs:element minOccurs="0" name="InvoiceAmountExVat" type="xs:decimal" />
+          <xs:element minOccurs="0" name="VatAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="InvoiceNoPsp" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreditedInvoiceNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsCredit" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InvoiceListItem" nillable="true" type="tns:InvoiceListItem" />
+  <xs:complexType name="OrderPagedList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q16="Enferno.Services.Contracts.Message" base="q16:Entity">
         <xs:sequence>
           <xs:element minOccurs="0" name="ItemCount" type="xs:int" />
           <xs:element minOccurs="0" name="Items" nillable="true" type="tns:OrderList" />
@@ -312,4 +345,46 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="OrderList" nillable="true" type="tns:OrderList" />
+  <xs:complexType name="OrderPagedList2">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q17="Enferno.Services.Contracts.Message" base="q17:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ItemCount" type="xs:int" />
+          <xs:element minOccurs="0" name="Items" nillable="true" type="tns:OrderList2" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OrderPagedList2" nillable="true" type="tns:OrderPagedList2" />
+  <xs:complexType name="OrderList2">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Order" nillable="true" type="tns:OrderListItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderList2" nillable="true" type="tns:OrderList2" />
+  <xs:complexType name="OrderListItem">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q18="Enferno.Services.Contracts.Message" base="q18:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:long" />
+          <xs:element minOccurs="0" name="QuotationId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="OrderNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrderDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Currency" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SellTo" nillable="true" type="tns:CustomerData" />
+          <xs:element minOccurs="0" name="BillTo" nillable="true" type="tns:CustomerData" />
+          <xs:element minOccurs="0" name="ShipTo" nillable="true" type="tns:CustomerData" />
+          <xs:element minOccurs="0" name="OrderTotalIncVat" type="xs:decimal" />
+          <xs:element minOccurs="0" name="OrderTotalExVat" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PaymentMethod" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DeliveryMethod" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TypeId" type="xs:int" />
+          <xs:element minOccurs="0" name="DeliveryMark" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OrderListItem" nillable="true" type="tns:OrderListItem" />
 </xs:schema>
