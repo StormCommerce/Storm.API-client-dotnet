@@ -91,8 +91,32 @@
         <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
+    <wsdl:operation name="GetInvoiceByNo">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Orders/OrderService/GetInvoiceByNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
     <wsdl:operation name="ListInvoices">
       <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Orders/OrderService/ListInvoices" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListInvoicesByBasket">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Orders/OrderService/ListInvoicesByBasket" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

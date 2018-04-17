@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>1.8.12-beta</version>
+    <version>1.8.12-beta2</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -13,7 +13,7 @@
 ## What's new?
 
 ### OrderService:
-- #2657: New, or modified, entities and methods now exist for Invoices. New methods are GetInvoice and ListInvoices. New entities are InvoicePagedList and InvoiceListItem. Invoice and InvoiceItem have been modified slightly.  
+- #2657: New, or modified, entities and methods now exist for Invoices. New methods are GetInvoice and ListInvoices. New entities are InvoicePagedList and InvoiceListItem. Invoice and InvoiceItem have been modified slightly.  Invoice.DeliveryMode has changed name to DeliveryMethod. Invoice.IsCredit is now IsDebit. Invoice.GroupByKey can be used to group invoices as summary invoices. Two new methods have been added: ListInvoicesByBasket and GetInvoiceByNo.  
 https://servicesstage.enferno.se/api/1.1/docs/index2.html#/Orders/Invoices/ListInvoices  
 https://servicesstage.enferno.se/api/1.1/docs/index2.html#/Orders/Invoices/GetInvoice   
 https://servicesstage.enferno.se/api/1.1/docs/index2.html#/Orders/Invoices/InvoicePagedList  
@@ -22,6 +22,9 @@ https://servicesstage.enferno.se/api/1.1/docs/index2.html#/Orders/Invoices/Invoi
 https://servicesstage.enferno.se/api/1.1/docs/index2.html#/Orders/Invoices/InvoiceItem  
 
 ## What's fixed?
+
+### CustomerService:
+- #2798 Company.Pricelists now only gets populated with active company pricelist.
 
 ### OrderService:
 - #2212: Due to performance problems with OrderList and ListOrders, ListOrder2 they have now been deprecated. There is now a new ListOrders3 with a more light weight resultset, OrderPagedList2 with items as OrderListItem. Basically all references to DeliveryNotes have been removed from list results. The Order entity should be unchanged.  
@@ -36,6 +39,7 @@ It can be used by those building solutions using PHP.
  
 Regards,  
 The Storm API Team
+
     </releaseNotes>
     <copyright>Copyright 2017</copyright>
     <tags>Enferno Storm API Client</tags>

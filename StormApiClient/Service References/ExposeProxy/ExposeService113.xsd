@@ -180,8 +180,10 @@
           <xs:element minOccurs="0" name="OrderId" type="xs:long" />
           <xs:element minOccurs="0" name="OrderNo" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="OrderDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="DeliveryDate" nillable="true" type="xs:dateTime" />
-          <xs:element minOccurs="0" name="DeliveryMode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DeliveryMethod" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PaymentMethod" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="BillTo" nillable="true" type="tns:CustomerData" />
           <xs:element minOccurs="0" name="OrderFreight" type="xs:decimal" />
           <xs:element minOccurs="0" name="InvoiceCharge" type="xs:decimal" />
@@ -191,7 +193,9 @@
           <xs:element minOccurs="0" name="Info" nillable="true" type="tns:InfoList" />
           <xs:element minOccurs="0" name="InvoiceNoPsp" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CreditedInvoiceNo" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="IsCredit" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsDebit" type="xs:boolean" />
+          <xs:element minOccurs="0" name="GroupByKey" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -315,14 +319,16 @@
           <xs:element minOccurs="0" name="InvoiceText" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="OrderNo" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="OrderDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="DeliveryDate" nillable="true" type="xs:dateTime" />
-          <xs:element minOccurs="0" name="DeliveryMode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DeliveryMethod" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PaymentMethod" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="BillTo" nillable="true" type="tns:CustomerData" />
           <xs:element minOccurs="0" name="InvoiceAmountExVat" type="xs:decimal" />
           <xs:element minOccurs="0" name="VatAmount" type="xs:decimal" />
           <xs:element minOccurs="0" name="InvoiceNoPsp" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="CreditedInvoiceNo" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="IsCredit" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsDebit" type="xs:boolean" />
+          <xs:element minOccurs="0" name="GroupByKey" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

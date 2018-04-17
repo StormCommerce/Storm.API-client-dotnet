@@ -54,6 +54,15 @@
   <wsdl:message name="OrderService_GetInvoice_ErrorMessage_v2Fault_FaultMessage">
     <wsdl:part xmlns:q5="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q5:ErrorMessage" />
   </wsdl:message>
+  <wsdl:message name="OrderService_GetInvoiceByNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceByNo" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_GetInvoiceByNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceByNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_GetInvoiceByNo_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q6="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q6:ErrorMessage" />
+  </wsdl:message>
   <wsdl:message name="OrderService_ListInvoices_InputMessage">
     <wsdl:part name="parameters" element="tns:ListInvoices" />
   </wsdl:message>
@@ -61,7 +70,16 @@
     <wsdl:part name="parameters" element="tns:ListInvoicesResponse" />
   </wsdl:message>
   <wsdl:message name="OrderService_ListInvoices_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q6="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q6:ErrorMessage" />
+    <wsdl:part xmlns:q7="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q7:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_ListInvoicesByBasket_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListInvoicesByBasket" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_ListInvoicesByBasket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListInvoicesByBasketResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_ListInvoicesByBasket_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q8="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q8:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="OrderService_ListOrders_InputMessage">
     <wsdl:part name="parameters" element="tns:ListOrders" />
@@ -70,7 +88,7 @@
     <wsdl:part name="parameters" element="tns:ListOrdersResponse" />
   </wsdl:message>
   <wsdl:message name="OrderService_ListOrders_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q7="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q7:ErrorMessage" />
+    <wsdl:part xmlns:q9="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q9:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="OrderService_ListOrders2_InputMessage">
     <wsdl:part name="parameters" element="tns:ListOrders2" />
@@ -79,7 +97,7 @@
     <wsdl:part name="parameters" element="tns:ListOrders2Response" />
   </wsdl:message>
   <wsdl:message name="OrderService_ListOrders2_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q8="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q8:ErrorMessage" />
+    <wsdl:part xmlns:q10="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q10:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="OrderService_ListOrders3_InputMessage">
     <wsdl:part name="parameters" element="tns:ListOrders3" />
@@ -88,7 +106,7 @@
     <wsdl:part name="parameters" element="tns:ListOrders3Response" />
   </wsdl:message>
   <wsdl:message name="OrderService_ListOrders3_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q9="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q9:ErrorMessage" />
+    <wsdl:part xmlns:q11="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q11:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="OrderService_SearchOrder_InputMessage">
     <wsdl:part name="parameters" element="tns:SearchOrder" />
@@ -97,7 +115,7 @@
     <wsdl:part name="parameters" element="tns:SearchOrderResponse" />
   </wsdl:message>
   <wsdl:message name="OrderService_SearchOrder_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q10="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q10:ErrorMessage" />
+    <wsdl:part xmlns:q12="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q12:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="OrderService_UpdateDeliveryNotePackage_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateDeliveryNotePackage" />
@@ -106,7 +124,7 @@
     <wsdl:part name="parameters" element="tns:UpdateDeliveryNotePackageResponse" />
   </wsdl:message>
   <wsdl:message name="OrderService_UpdateDeliveryNotePackage_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q11="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q11:ErrorMessage" />
+    <wsdl:part xmlns:q13="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q13:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="OrderService_ListOrderStatuses_InputMessage">
     <wsdl:part name="parameters" element="tns:ListOrderStatuses" />
@@ -115,7 +133,7 @@
     <wsdl:part name="parameters" element="tns:ListOrderStatusesResponse" />
   </wsdl:message>
   <wsdl:message name="OrderService_ListOrderStatuses_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q12="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q12:ErrorMessage" />
+    <wsdl:part xmlns:q14="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q14:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="OrderService_ListOrderInfoTypes_InputMessage">
     <wsdl:part name="parameters" element="tns:ListOrderInfoTypes" />
@@ -124,7 +142,7 @@
     <wsdl:part name="parameters" element="tns:ListOrderInfoTypesResponse" />
   </wsdl:message>
   <wsdl:message name="OrderService_ListOrderInfoTypes_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q13="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q13:ErrorMessage" />
+    <wsdl:part xmlns:q15="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q15:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="OrderService_ListOrderItemInfoTypes_InputMessage">
     <wsdl:part name="parameters" element="tns:ListOrderItemInfoTypes" />
@@ -133,7 +151,7 @@
     <wsdl:part name="parameters" element="tns:ListOrderItemInfoTypesResponse" />
   </wsdl:message>
   <wsdl:message name="OrderService_ListOrderItemInfoTypes_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q14="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q14:ErrorMessage" />
+    <wsdl:part xmlns:q16="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q16:ErrorMessage" />
   </wsdl:message>
   <wsdl:portType name="OrderService">
     <wsdl:operation name="InsertDeliveryNote">
@@ -161,10 +179,20 @@
       <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/GetInvoiceResponse" message="tns:OrderService_GetInvoice_OutputMessage" />
       <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/GetInvoiceErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:OrderService_GetInvoice_ErrorMessage_v2Fault_FaultMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetInvoiceByNo">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/GetInvoiceByNo" message="tns:OrderService_GetInvoiceByNo_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/GetInvoiceByNoResponse" message="tns:OrderService_GetInvoiceByNo_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/GetInvoiceByNoErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:OrderService_GetInvoiceByNo_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
     <wsdl:operation name="ListInvoices">
       <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/ListInvoices" message="tns:OrderService_ListInvoices_InputMessage" />
       <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/ListInvoicesResponse" message="tns:OrderService_ListInvoices_OutputMessage" />
       <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/ListInvoicesErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:OrderService_ListInvoices_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListInvoicesByBasket">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/ListInvoicesByBasket" message="tns:OrderService_ListInvoicesByBasket_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/ListInvoicesByBasketResponse" message="tns:OrderService_ListInvoicesByBasket_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/ListInvoicesByBasketErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:OrderService_ListInvoicesByBasket_ErrorMessage_v2Fault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="ListOrders">
       <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Orders/OrderService/ListOrders" message="tns:OrderService_ListOrders_InputMessage" />
