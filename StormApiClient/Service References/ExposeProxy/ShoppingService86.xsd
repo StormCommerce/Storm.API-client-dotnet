@@ -76,6 +76,7 @@
           <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PaymentMethodIds" nillable="true" type="q11:ArrayOfint" />
           <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Flags" nillable="true" type="tns:FlagList" />
+          <xs:element minOccurs="0" name="VatNo" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -101,6 +102,7 @@
           <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Region" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="IsValidated" type="xs:boolean" />
+          <xs:element minOccurs="0" name="GlobalLocationNo" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
