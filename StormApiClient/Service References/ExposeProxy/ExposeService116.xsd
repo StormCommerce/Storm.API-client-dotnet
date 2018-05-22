@@ -211,6 +211,12 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="PricelistPopulationRule" nillable="true" type="tns:PricelistPopulationRule" />
+  <xs:complexType name="CustomerList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Customer" nillable="true" type="tns:Customer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerList" nillable="true" type="tns:CustomerList" />
   <xs:complexType name="ContactList">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Contact" nillable="true" type="tns:Contact" />
@@ -237,12 +243,6 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="Contact" nillable="true" type="tns:Contact" />
-  <xs:complexType name="CustomerList">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Customer" nillable="true" type="tns:Customer" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="CustomerList" nillable="true" type="tns:CustomerList" />
   <xs:complexType name="AgreementAccount">
     <xs:complexContent mixed="false">
       <xs:extension xmlns:q20="Enferno.Services.Contracts.Message" base="q20:Entity">

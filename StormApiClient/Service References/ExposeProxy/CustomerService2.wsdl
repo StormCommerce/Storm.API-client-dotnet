@@ -154,22 +154,22 @@
   <wsdl:message name="CustomerService_GetCompanyByCode_ErrorMessage_v2Fault_FaultMessage">
     <wsdl:part xmlns:q16="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q16:ErrorMessage" />
   </wsdl:message>
-  <wsdl:message name="CustomerService_GetCompanyByInfoType_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetCompanyByInfoType" />
+  <wsdl:message name="CustomerService_ListCompanyByInfoType_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListCompanyByInfoType" />
   </wsdl:message>
-  <wsdl:message name="CustomerService_GetCompanyByInfoType_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetCompanyByInfoTypeResponse" />
+  <wsdl:message name="CustomerService_ListCompanyByInfoType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListCompanyByInfoTypeResponse" />
   </wsdl:message>
-  <wsdl:message name="CustomerService_GetCompanyByInfoType_ErrorMessage_v2Fault_FaultMessage">
+  <wsdl:message name="CustomerService_ListCompanyByInfoType_ErrorMessage_v2Fault_FaultMessage">
     <wsdl:part xmlns:q17="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q17:ErrorMessage" />
   </wsdl:message>
-  <wsdl:message name="CustomerService_GetCustomerByInfoType_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetCustomerByInfoType" />
+  <wsdl:message name="CustomerService_ListCustomerByInfoType_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListCustomerByInfoType" />
   </wsdl:message>
-  <wsdl:message name="CustomerService_GetCustomerByInfoType_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetCustomerByInfoTypeResponse" />
+  <wsdl:message name="CustomerService_ListCustomerByInfoType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListCustomerByInfoTypeResponse" />
   </wsdl:message>
-  <wsdl:message name="CustomerService_GetCustomerByInfoType_ErrorMessage_v2Fault_FaultMessage">
+  <wsdl:message name="CustomerService_ListCustomerByInfoType_ErrorMessage_v2Fault_FaultMessage">
     <wsdl:part xmlns:q18="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q18:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="CustomerService_GetCompanyByOrgNoAndStoreId_InputMessage">
@@ -730,15 +730,15 @@
       <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Customers/CustomerService/GetCompanyByCodeResponse" message="tns:CustomerService_GetCompanyByCode_OutputMessage" />
       <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Customers/CustomerService/GetCompanyByCodeErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:CustomerService_GetCompanyByCode_ErrorMessage_v2Fault_FaultMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetCompanyByInfoType">
-      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Customers/CustomerService/GetCompanyByInfoType" message="tns:CustomerService_GetCompanyByInfoType_InputMessage" />
-      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Customers/CustomerService/GetCompanyByInfoTypeResponse" message="tns:CustomerService_GetCompanyByInfoType_OutputMessage" />
-      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Customers/CustomerService/GetCompanyByInfoTypeErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:CustomerService_GetCompanyByInfoType_ErrorMessage_v2Fault_FaultMessage" />
+    <wsdl:operation name="ListCompanyByInfoType">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Customers/CustomerService/ListCompanyByInfoType" message="tns:CustomerService_ListCompanyByInfoType_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Customers/CustomerService/ListCompanyByInfoTypeResponse" message="tns:CustomerService_ListCompanyByInfoType_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Customers/CustomerService/ListCompanyByInfoTypeErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:CustomerService_ListCompanyByInfoType_ErrorMessage_v2Fault_FaultMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetCustomerByInfoType">
-      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Customers/CustomerService/GetCustomerByInfoType" message="tns:CustomerService_GetCustomerByInfoType_InputMessage" />
-      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Customers/CustomerService/GetCustomerByInfoTypeResponse" message="tns:CustomerService_GetCustomerByInfoType_OutputMessage" />
-      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Customers/CustomerService/GetCustomerByInfoTypeErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:CustomerService_GetCustomerByInfoType_ErrorMessage_v2Fault_FaultMessage" />
+    <wsdl:operation name="ListCustomerByInfoType">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Customers/CustomerService/ListCustomerByInfoType" message="tns:CustomerService_ListCustomerByInfoType_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Customers/CustomerService/ListCustomerByInfoTypeResponse" message="tns:CustomerService_ListCustomerByInfoType_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Customers/CustomerService/ListCustomerByInfoTypeErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:CustomerService_ListCustomerByInfoType_ErrorMessage_v2Fault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetCompanyByOrgNoAndStoreId">
       <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Customers/CustomerService/GetCompanyByOrgNoAndStoreId" message="tns:CustomerService_GetCompanyByOrgNoAndStoreId_InputMessage" />

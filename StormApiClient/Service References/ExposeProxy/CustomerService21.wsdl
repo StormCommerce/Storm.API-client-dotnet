@@ -223,8 +223,8 @@
         <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
-    <wsdl:operation name="GetCompanyByInfoType">
-      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Customers/CustomerService/GetCompanyByInfoType" style="document" />
+    <wsdl:operation name="ListCompanyByInfoType">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Customers/CustomerService/ListCompanyByInfoType" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -235,8 +235,8 @@
         <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
-    <wsdl:operation name="GetCustomerByInfoType">
-      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Customers/CustomerService/GetCustomerByInfoType" style="document" />
+    <wsdl:operation name="ListCustomerByInfoType">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Customers/CustomerService/ListCustomerByInfoType" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

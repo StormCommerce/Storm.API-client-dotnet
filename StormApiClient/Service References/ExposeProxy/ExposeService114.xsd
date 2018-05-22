@@ -3166,7 +3166,7 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element xmlns:q457="Enferno.Services.Contracts.Expose" name="GetCompanyByCodeRequest" nillable="true" type="q457:GetCompanyByCodeRequest" />
-  <xs:complexType name="GetCompanyByInfoTypeRequest">
+  <xs:complexType name="ListCompanyByInfoTypeRequest">
     <xs:complexContent mixed="false">
       <xs:extension xmlns:q458="Enferno.Services.Contracts.Expose" base="q458:Request">
         <xs:sequence>
@@ -3177,8 +3177,8 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element xmlns:q459="Enferno.Services.Contracts.Expose" name="GetCompanyByInfoTypeRequest" nillable="true" type="q459:GetCompanyByInfoTypeRequest" />
-  <xs:complexType name="GetCustomerByInfoTypeRequest">
+  <xs:element xmlns:q459="Enferno.Services.Contracts.Expose" name="ListCompanyByInfoTypeRequest" nillable="true" type="q459:ListCompanyByInfoTypeRequest" />
+  <xs:complexType name="ListCustomerByInfoTypeRequest">
     <xs:complexContent mixed="false">
       <xs:extension xmlns:q460="Enferno.Services.Contracts.Expose" base="q460:Request">
         <xs:sequence>
@@ -3189,7 +3189,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element xmlns:q461="Enferno.Services.Contracts.Expose" name="GetCustomerByInfoTypeRequest" nillable="true" type="q461:GetCustomerByInfoTypeRequest" />
+  <xs:element xmlns:q461="Enferno.Services.Contracts.Expose" name="ListCustomerByInfoTypeRequest" nillable="true" type="q461:ListCustomerByInfoTypeRequest" />
   <xs:complexType name="GetCompanyByOrgNoAndStoreIdRequest">
     <xs:complexContent mixed="false">
       <xs:extension xmlns:q462="Enferno.Services.Contracts.Expose" base="q462:Request">
@@ -6565,143 +6565,22 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element xmlns:q1182="Enferno.Services.Contracts.Expose" name="GetCompanyByCodeResponse" nillable="true" type="q1182:GetCompanyByCodeResponse" />
-  <xs:complexType name="GetCompanyByInfoTypeResponse">
+  <xs:complexType name="ListCompanyByInfoTypeResponse">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q1183="Enferno.Services.Contracts.Expose" base="q1183:ResponseOfTypeCompany">
+      <xs:extension xmlns:q1183="Enferno.Services.Contracts.Expose" base="q1183:ResponseOfTypeCompanyList">
         <xs:sequence />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element xmlns:q1184="Enferno.Services.Contracts.Expose" name="GetCompanyByInfoTypeResponse" nillable="true" type="q1184:GetCompanyByInfoTypeResponse" />
-  <xs:complexType name="GetCustomerByInfoTypeResponse">
+  <xs:element xmlns:q1184="Enferno.Services.Contracts.Expose" name="ListCompanyByInfoTypeResponse" nillable="true" type="q1184:ListCompanyByInfoTypeResponse" />
+  <xs:complexType name="ListCustomerByInfoTypeResponse">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q1185="Enferno.Services.Contracts.Expose" base="q1185:ResponseOfTypeCustomer">
+      <xs:extension xmlns:q1185="Enferno.Services.Contracts.Expose" base="q1185:ResponseOfTypeCustomerList">
         <xs:sequence />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element xmlns:q1186="Enferno.Services.Contracts.Expose" name="GetCustomerByInfoTypeResponse" nillable="true" type="q1186:GetCustomerByInfoTypeResponse" />
-  <xs:complexType name="GetCompanyByOrgNoAndStoreIdResponse">
-    <xs:complexContent mixed="false">
-      <xs:extension xmlns:q1187="Enferno.Services.Contracts.Expose" base="q1187:ResponseOfTypeCompany">
-        <xs:sequence />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element xmlns:q1188="Enferno.Services.Contracts.Expose" name="GetCompanyByOrgNoAndStoreIdResponse" nillable="true" type="q1188:GetCompanyByOrgNoAndStoreIdResponse" />
-  <xs:complexType name="GetCustomerByEmailResponse">
-    <xs:complexContent mixed="false">
-      <xs:extension xmlns:q1189="Enferno.Services.Contracts.Expose" base="q1189:ResponseOfTypeCustomer">
-        <xs:sequence />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element xmlns:q1190="Enferno.Services.Contracts.Expose" name="GetCustomerByEmailResponse" nillable="true" type="q1190:GetCustomerByEmailResponse" />
-  <xs:complexType name="GetCustomerResponse">
-    <xs:complexContent mixed="false">
-      <xs:extension xmlns:q1191="Enferno.Services.Contracts.Expose" base="q1191:ResponseOfTypeCustomer">
-        <xs:sequence />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element xmlns:q1192="Enferno.Services.Contracts.Expose" name="GetCustomerResponse" nillable="true" type="q1192:GetCustomerResponse" />
-  <xs:complexType name="GetCustomerByKeyResponse">
-    <xs:complexContent mixed="false">
-      <xs:extension xmlns:q1193="Enferno.Services.Contracts.Expose" base="q1193:ResponseOfTypeCustomer">
-        <xs:sequence />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element xmlns:q1194="Enferno.Services.Contracts.Expose" name="GetCustomerByKeyResponse" nillable="true" type="q1194:GetCustomerByKeyResponse" />
-  <xs:complexType name="GetCustomerByCodeResponse">
-    <xs:complexContent mixed="false">
-      <xs:extension xmlns:q1195="Enferno.Services.Contracts.Expose" base="q1195:ResponseOfTypeCustomer">
-        <xs:sequence />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element xmlns:q1196="Enferno.Services.Contracts.Expose" name="GetCustomerByCodeResponse" nillable="true" type="q1196:GetCustomerByCodeResponse" />
-  <xs:complexType name="GetCustomerByAccountIdResponse">
-    <xs:complexContent mixed="false">
-      <xs:extension xmlns:q1197="Enferno.Services.Contracts.Expose" base="q1197:ResponseOfTypeCustomer">
-        <xs:sequence />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element xmlns:q1198="Enferno.Services.Contracts.Expose" name="GetCustomerByAccountIdResponse" nillable="true" type="q1198:GetCustomerByAccountIdResponse" />
-  <xs:complexType name="GetCustomerByLoginNameResponse">
-    <xs:complexContent mixed="false">
-      <xs:extension xmlns:q1199="Enferno.Services.Contracts.Expose" base="q1199:ResponseOfTypeCustomer">
-        <xs:sequence />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element xmlns:q1200="Enferno.Services.Contracts.Expose" name="GetCustomerByLoginNameResponse" nillable="true" type="q1200:GetCustomerByLoginNameResponse" />
-  <xs:complexType name="GetExternalCustomerAddressResponse">
-    <xs:complexContent mixed="false">
-      <xs:extension xmlns:q1201="Enferno.Services.Contracts.Expose" base="q1201:ResponseOfTypeCustomer">
-        <xs:sequence />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element xmlns:q1202="Enferno.Services.Contracts.Expose" name="GetExternalCustomerAddressResponse" nillable="true" type="q1202:GetExternalCustomerAddressResponse" />
-  <xs:complexType name="GetExternalCustomerAddress2Response">
-    <xs:complexContent mixed="false">
-      <xs:extension xmlns:q1203="Enferno.Services.Contracts.Expose" base="q1203:ResponseOfTypeCustomer">
-        <xs:sequence />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element xmlns:q1204="Enferno.Services.Contracts.Expose" name="GetExternalCustomerAddress2Response" nillable="true" type="q1204:GetExternalCustomerAddress2Response" />
-  <xs:complexType name="InactivateCompanyResponse">
-    <xs:complexContent mixed="false">
-      <xs:extension xmlns:q1205="Enferno.Services.Contracts.Expose" base="q1205:Response">
-        <xs:sequence />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element xmlns:q1206="Enferno.Services.Contracts.Expose" name="InactivateCompanyResponse" nillable="true" type="q1206:InactivateCompanyResponse" />
-  <xs:complexType name="InactivateCustomerResponse">
-    <xs:complexContent mixed="false">
-      <xs:extension xmlns:q1207="Enferno.Services.Contracts.Expose" base="q1207:Response">
-        <xs:sequence />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element xmlns:q1208="Enferno.Services.Contracts.Expose" name="InactivateCustomerResponse" nillable="true" type="q1208:InactivateCustomerResponse" />
-  <xs:complexType name="ListContactByCompanyResponse">
-    <xs:complexContent mixed="false">
-      <xs:extension xmlns:q1209="Enferno.Services.Contracts.Expose" base="q1209:ResponseOfTypeContactList">
-        <xs:sequence />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element xmlns:q1210="Enferno.Services.Contracts.Expose" name="ListContactByCompanyResponse" nillable="true" type="q1210:ListContactByCompanyResponse" />
-  <xs:complexType name="ResponseOfTypeContactList">
-    <xs:annotation>
-      <xs:appinfo>
-        <GenericType Name="ResponseOfType{0}" Namespace="Enferno.Services.Contracts.Expose" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="ContactList" Namespace="Enferno.Services.Contracts.Expose.Customers" />
-        </GenericType>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent mixed="false">
-      <xs:extension xmlns:q1211="Enferno.Services.Contracts.Expose" base="q1211:Response">
-        <xs:sequence>
-          <xs:element xmlns:q1212="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Result" nillable="true" type="q1212:ContactList" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element xmlns:q1213="Enferno.Services.Contracts.Expose" name="ResponseOfTypeContactList" nillable="true" type="q1213:ResponseOfTypeContactList" />
-  <xs:complexType name="ListCustomerByCompany2Response">
-    <xs:complexContent mixed="false">
-      <xs:extension xmlns:q1214="Enferno.Services.Contracts.Expose" base="q1214:ResponseOfTypeCustomerList">
-        <xs:sequence />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element xmlns:q1215="Enferno.Services.Contracts.Expose" name="ListCustomerByCompany2Response" nillable="true" type="q1215:ListCustomerByCompany2Response" />
+  <xs:element xmlns:q1186="Enferno.Services.Contracts.Expose" name="ListCustomerByInfoTypeResponse" nillable="true" type="q1186:ListCustomerByInfoTypeResponse" />
   <xs:complexType name="ResponseOfTypeCustomerList">
     <xs:annotation>
       <xs:appinfo>
@@ -6711,14 +6590,135 @@
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q1216="Enferno.Services.Contracts.Expose" base="q1216:Response">
+      <xs:extension xmlns:q1187="Enferno.Services.Contracts.Expose" base="q1187:Response">
         <xs:sequence>
-          <xs:element xmlns:q1217="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Result" nillable="true" type="q1217:CustomerList" />
+          <xs:element xmlns:q1188="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Result" nillable="true" type="q1188:CustomerList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element xmlns:q1218="Enferno.Services.Contracts.Expose" name="ResponseOfTypeCustomerList" nillable="true" type="q1218:ResponseOfTypeCustomerList" />
+  <xs:element xmlns:q1189="Enferno.Services.Contracts.Expose" name="ResponseOfTypeCustomerList" nillable="true" type="q1189:ResponseOfTypeCustomerList" />
+  <xs:complexType name="GetCompanyByOrgNoAndStoreIdResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1190="Enferno.Services.Contracts.Expose" base="q1190:ResponseOfTypeCompany">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q1191="Enferno.Services.Contracts.Expose" name="GetCompanyByOrgNoAndStoreIdResponse" nillable="true" type="q1191:GetCompanyByOrgNoAndStoreIdResponse" />
+  <xs:complexType name="GetCustomerByEmailResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1192="Enferno.Services.Contracts.Expose" base="q1192:ResponseOfTypeCustomer">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q1193="Enferno.Services.Contracts.Expose" name="GetCustomerByEmailResponse" nillable="true" type="q1193:GetCustomerByEmailResponse" />
+  <xs:complexType name="GetCustomerResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1194="Enferno.Services.Contracts.Expose" base="q1194:ResponseOfTypeCustomer">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q1195="Enferno.Services.Contracts.Expose" name="GetCustomerResponse" nillable="true" type="q1195:GetCustomerResponse" />
+  <xs:complexType name="GetCustomerByKeyResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1196="Enferno.Services.Contracts.Expose" base="q1196:ResponseOfTypeCustomer">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q1197="Enferno.Services.Contracts.Expose" name="GetCustomerByKeyResponse" nillable="true" type="q1197:GetCustomerByKeyResponse" />
+  <xs:complexType name="GetCustomerByCodeResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1198="Enferno.Services.Contracts.Expose" base="q1198:ResponseOfTypeCustomer">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q1199="Enferno.Services.Contracts.Expose" name="GetCustomerByCodeResponse" nillable="true" type="q1199:GetCustomerByCodeResponse" />
+  <xs:complexType name="GetCustomerByAccountIdResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1200="Enferno.Services.Contracts.Expose" base="q1200:ResponseOfTypeCustomer">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q1201="Enferno.Services.Contracts.Expose" name="GetCustomerByAccountIdResponse" nillable="true" type="q1201:GetCustomerByAccountIdResponse" />
+  <xs:complexType name="GetCustomerByLoginNameResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1202="Enferno.Services.Contracts.Expose" base="q1202:ResponseOfTypeCustomer">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q1203="Enferno.Services.Contracts.Expose" name="GetCustomerByLoginNameResponse" nillable="true" type="q1203:GetCustomerByLoginNameResponse" />
+  <xs:complexType name="GetExternalCustomerAddressResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1204="Enferno.Services.Contracts.Expose" base="q1204:ResponseOfTypeCustomer">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q1205="Enferno.Services.Contracts.Expose" name="GetExternalCustomerAddressResponse" nillable="true" type="q1205:GetExternalCustomerAddressResponse" />
+  <xs:complexType name="GetExternalCustomerAddress2Response">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1206="Enferno.Services.Contracts.Expose" base="q1206:ResponseOfTypeCustomer">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q1207="Enferno.Services.Contracts.Expose" name="GetExternalCustomerAddress2Response" nillable="true" type="q1207:GetExternalCustomerAddress2Response" />
+  <xs:complexType name="InactivateCompanyResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1208="Enferno.Services.Contracts.Expose" base="q1208:Response">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q1209="Enferno.Services.Contracts.Expose" name="InactivateCompanyResponse" nillable="true" type="q1209:InactivateCompanyResponse" />
+  <xs:complexType name="InactivateCustomerResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1210="Enferno.Services.Contracts.Expose" base="q1210:Response">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q1211="Enferno.Services.Contracts.Expose" name="InactivateCustomerResponse" nillable="true" type="q1211:InactivateCustomerResponse" />
+  <xs:complexType name="ListContactByCompanyResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1212="Enferno.Services.Contracts.Expose" base="q1212:ResponseOfTypeContactList">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q1213="Enferno.Services.Contracts.Expose" name="ListContactByCompanyResponse" nillable="true" type="q1213:ListContactByCompanyResponse" />
+  <xs:complexType name="ResponseOfTypeContactList">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseOfType{0}" Namespace="Enferno.Services.Contracts.Expose" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ContactList" Namespace="Enferno.Services.Contracts.Expose.Customers" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1214="Enferno.Services.Contracts.Expose" base="q1214:Response">
+        <xs:sequence>
+          <xs:element xmlns:q1215="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Result" nillable="true" type="q1215:ContactList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q1216="Enferno.Services.Contracts.Expose" name="ResponseOfTypeContactList" nillable="true" type="q1216:ResponseOfTypeContactList" />
+  <xs:complexType name="ListCustomerByCompany2Response">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1217="Enferno.Services.Contracts.Expose" base="q1217:ResponseOfTypeCustomerList">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q1218="Enferno.Services.Contracts.Expose" name="ListCustomerByCompany2Response" nillable="true" type="q1218:ListCustomerByCompany2Response" />
   <xs:complexType name="ListCustomerByCompanyResponse">
     <xs:complexContent mixed="false">
       <xs:extension xmlns:q1219="Enferno.Services.Contracts.Expose" base="q1219:ResponseOfTypeCustomerList">
