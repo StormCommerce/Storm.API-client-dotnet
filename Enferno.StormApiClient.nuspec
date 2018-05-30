@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>1.8.14-beta2</version>
+    <version>1.8.14.0</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -10,24 +10,20 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Enferno Storm Commerce API Client library.</description>    <releaseNotes>
 
-# New Storm API in Stage.
-
-**NOTE**: Changes from last releasenotes; GetCustomerByInfoType and GetCompanyByInfoType have been renamed to ListCustomerByInfoType and ListCompanyByInfoType and they are now returning lists.
-
 ## What's new?
 
 ### Customers:
 
 - #3061: New property, VatNo on Company and GlobalLocationNo on Address. This later property will only be populated on company invoice addresses.
-https://servicesstage.enferno.se/api/1.1/docs/index2.html#/Customers/Companies/Company
-https://servicesstage.enferno.se/api/1.1/docs/index2.html#/Customers/Address/Address
+https://services.enferno.se/api/1.1/docs/index2.html#/Customers/Companies/Company
+https://services.enferno.se/api/1.1/docs/index2.html#/Customers/Address/Address
 
 - #3027: New property, Code, on ApplicationRole is now populated.
-https://servicesstage.enferno.se/api/1.1/docs/index2.html#/Customers/Accounts/ListAccountRoles
+https://services.enferno.se/api/1.1/docs/index2.html#/Customers/Accounts/ListAccountRoles
 
 - #2953: Two new methods, GetCustomerByInfoType and GetCompanyByInfoType, has been added. Not that these methods are by infotype Code and not Id. This means that the defined info types must have Code set or null will be returned.
-https://servicesstage.enferno.se/api/1.1/docs/index2.html#/Customers/Customers/GetCustomerByInfoType
-https://servicesstage.enferno.se/api/1.1/docs/index2.html#/Customers/Companies/GetCompanyByInfoType
+https://services.enferno.se/api/1.1/docs/index2.html#/Customers/Customers/GetCustomerByInfoType
+https://services.enferno.se/api/1.1/docs/index2.html#/Customers/Companies/GetCompanyByInfoType
 
 ## What's fixed?
 
@@ -50,9 +46,9 @@ Regards,
 The Storm API Team
     </releaseNotes>
     <copyright>Copyright 2018</copyright>
-    <tags>Enferno Storm API Client</tags>
+    <tags>Enferno Storm API Client Commerce</tags>
     <dependencies>
-      <dependency id="Enferno.Public" version="1.0.17" />
+      <dependency id="Enferno.Public" version="[1.0.17,2.0.0)" />
     </dependencies>
   </metadata>
   <files>
