@@ -8,7 +8,7 @@ namespace Enferno.Web.StormUtils.Test
     [TestClass]
     public class BasicTests
     {
-        [TestMethod, Description("Tests the MachineKeyEncryption when dencrypting and decrypting with new methods")]
+        [TestMethod, TestCategory("UnitTest"), Description("Tests the MachineKeyEncryption when dencrypting and decrypting with new methods")]
         public void MachineKeyEncryptionTest1()
         {
             const string data = "Some text to encrypt";
@@ -17,7 +17,7 @@ namespace Enferno.Web.StormUtils.Test
             Assert.AreEqual(data, decrypted);
         }
 
-        [TestMethod, Description("Tests the MachineKeyEncryption when dencrypting and decrypting with new methods using old encrypted data.")]
+        [TestMethod, TestCategory("UnitTest"), Description("Tests the MachineKeyEncryption when dencrypting and decrypting with new methods using old encrypted data.")]
         public void MachineKeyEncryptionTest2()
         {
             const string originalText = "Some text to encrypt";
