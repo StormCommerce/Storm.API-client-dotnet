@@ -17,7 +17,7 @@ namespace Enferno.StormApiClient.Test
     [TestClass]
     public class AccessClientTest
     {
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         [Description("Test creation of cacheable proxy for ApplicationServiceClient")]
         public void CreateTest1()
         {
@@ -31,7 +31,7 @@ namespace Enferno.StormApiClient.Test
                 Assert.IsNotInstanceOfType(client.ApplicationProxy, typeof(ApplicationServiceClient));
             }
         }
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         [Description("Test creation of real proxy for ApplicationServiceClient. Non cached")]
         public void CreateTest2()
         {
@@ -46,7 +46,7 @@ namespace Enferno.StormApiClient.Test
             }
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void ExposeProcessRequestTest1()
         {
             //Arrange
@@ -71,7 +71,7 @@ namespace Enferno.StormApiClient.Test
             }
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void GetApplicationAsyncTest1()
         {
             //Arrange
@@ -95,7 +95,7 @@ namespace Enferno.StormApiClient.Test
             }
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void GetProductTest1()
         {
             //Arrange
@@ -117,7 +117,7 @@ namespace Enferno.StormApiClient.Test
             }
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         [ExpectedException(typeof(ApplicationException))]
         public void ExceptionWhenProcessingRequestsTest1()
         {

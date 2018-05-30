@@ -6,7 +6,7 @@ namespace Enferno.Web.StormUtils.Test
     [TestClass]
     public class LinkTest
     {
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void ImageUrlWithImageStringAndThumbnailPresetShouldReturnImageWithPreset()
         {
             // Arrange
@@ -23,7 +23,7 @@ namespace Enferno.Web.StormUtils.Test
             Assert.AreEqual(initialImageString, result);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void ImageWithGuidShouldReturnPresetAndExtension()
         {
             // Arrange
@@ -41,7 +41,7 @@ namespace Enferno.Web.StormUtils.Test
             Assert.AreEqual(initialImageString, result);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void ImageWithGuidOnlyShouldReturnNoPreset()
         {
             // Arrange

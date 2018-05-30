@@ -51,7 +51,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Enferno.Public, Version=1.0.0.0, Culture=neutral, PublicKeyToken=33afbde1e215b864, processorArchitecture=MSIL">
-      <HintPath>..\packages\Enferno.Public.2.0.0-beta\lib\net45\Enferno.Public.dll</HintPath>
+      <HintPath>..\packages\Enferno.Public.2.0.0\lib\net45\Enferno.Public.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">

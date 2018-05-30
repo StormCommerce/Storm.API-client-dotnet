@@ -10,7 +10,7 @@ namespace Enferno.Web.StormUtils.Test
     [TestClass]
     public class StormRoleProviderTest : TestBase
     {
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void InitializeTest1()
         {
             // Arrange
@@ -25,7 +25,7 @@ namespace Enferno.Web.StormUtils.Test
             Assert.AreEqual("TestApplication", provider.ApplicationName);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void InitializeWithDefaultTest1()
         {
             // Arrange
@@ -41,7 +41,7 @@ namespace Enferno.Web.StormUtils.Test
             Assert.AreEqual("TestApplication", provider.ApplicationName);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         [ExpectedException(typeof(ArgumentNullException))]
         public void InitializeWithNoConfigTest()
         {
@@ -56,7 +56,7 @@ namespace Enferno.Web.StormUtils.Test
             Assert.Fail("Should not get here");
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void GetAllRolesTest1()
         {
             // Arrange
@@ -79,7 +79,7 @@ namespace Enferno.Web.StormUtils.Test
             Assert.AreEqual("DefaultAuthorization", roles[0]);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void GetRolesForUserTest1()
         {
             // Arrange
@@ -105,7 +105,7 @@ namespace Enferno.Web.StormUtils.Test
             Assert.AreEqual("NormalUser", roles[0]);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void IsUserInRoleTest1()
         {
             // Arrange
@@ -130,7 +130,7 @@ namespace Enferno.Web.StormUtils.Test
             Assert.IsTrue(isInRole);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void RoleExistsTest()
         {
             // Arrange

@@ -10,7 +10,7 @@ namespace Enferno.Web.StormUtils.Test
     [TestClass]
     public class PayexCallbackHandlerTest : TestBase
     {
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void ProcessValidRequestTest1()
         {
             // Arrange
@@ -44,7 +44,7 @@ namespace Enferno.Web.StormUtils.Test
             repository.AssertWasNotCalled(x => x.PaymentCancel(null), o => o.IgnoreArguments());
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void ProcessRequestWithoutBasketTest1()
         {
             // Arrange
@@ -70,7 +70,7 @@ namespace Enferno.Web.StormUtils.Test
             repository.AssertWasNotCalled(x => x.GetBasket(1), o => o.IgnoreArguments());
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void ProcessRequestWithInvalidParametersTest1()
         {
             // Arrange
@@ -101,7 +101,7 @@ namespace Enferno.Web.StormUtils.Test
             repository.AssertWasCalled(x => x.PaymentCancel(null), o => o.IgnoreArguments());
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void ProcessValidRequestWithFailedResponseTest1()
         {
             // Arrange
