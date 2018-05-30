@@ -16,7 +16,7 @@ namespace Enferno.Web.StormUtils.Test
     [TestClass]
     public class StormContextTest : TestBase
     {      
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void DefaultConfigurationTest()
         {
             // arrange: from cfg
@@ -39,7 +39,7 @@ namespace Enferno.Web.StormUtils.Test
             Assert.IsNull(((StormConfigurationSection)ConfigurationManager.GetSection("stormSettings/storm")).ShowPricesIncVatInternal);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void EncryptCookieTrueTest()
         {
             //Arrange
@@ -55,7 +55,7 @@ namespace Enferno.Web.StormUtils.Test
             Assert.IsTrue(StormContext.Configuration.EncryptCookie);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void GetCookieTest()
         {
             // Arrange
@@ -72,7 +72,7 @@ namespace Enferno.Web.StormUtils.Test
             Assert.AreEqual("jalle", cookie.Name);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void GetLoginNameTest()
         {
             // Arrange
@@ -86,7 +86,7 @@ namespace Enferno.Web.StormUtils.Test
             Assert.AreEqual("kalle.anka@ankeborg.se", StormContext.LoginName);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void LoginUserTest1()
         {
             // Arrange
@@ -112,7 +112,7 @@ namespace Enferno.Web.StormUtils.Test
             Assert.AreEqual(2, StormContext.AccountId);
         }
         
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void LoginUserWithBasketTest1()
         {
             // Arrange
@@ -138,7 +138,7 @@ namespace Enferno.Web.StormUtils.Test
             repository.AssertWasCalled(x => x.UpdateBuyer(basket.Id.GetValueOrDefault(1), customer), o => o.IgnoreArguments());
         }       
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void LogoutUserTest1()
         {
             var application = CreateDefaultApplication();
@@ -166,7 +166,7 @@ namespace Enferno.Web.StormUtils.Test
             Assert.IsNull(StormContext.CustomerId);         
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void LogoutUserTest2()
         {
             // Arrange
@@ -198,7 +198,7 @@ namespace Enferno.Web.StormUtils.Test
             Assert.IsNull(StormContext.CustomerId);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void LoadCookieEmptyCookieTest1()
         {
             // Arrange
@@ -221,7 +221,7 @@ namespace Enferno.Web.StormUtils.Test
             Assert.AreEqual(1, StormContext.SalesAreaId);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void LoadCookieInvalidCookieWithRefreshTest1()
         {
             // Arrange
@@ -244,7 +244,7 @@ namespace Enferno.Web.StormUtils.Test
             Assert.AreEqual(1, StormContext.SalesAreaId);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void SaveCookieTest1()
         {
             // Arrange
@@ -269,7 +269,7 @@ namespace Enferno.Web.StormUtils.Test
             Assert.AreEqual("LoginName=kalle.anka@ankeborg.se&AccountId=!null!&CustomerId=123456&CompanyId=!null!&DivisionId=!null!&BasketId=1&CurrencyId=1&CultureCode=sv-SE&SalesAreaId=1&ShowPricesIncVat=!null!&IsPrivate=True&ReferId=!null!&RememberMe=True", httpContextWrapper.ResponseCookies["StormPersisted"].Value);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void LoadAndSaveWithBasketIdCookieTest1()
         {
             // Arrange
@@ -293,7 +293,7 @@ namespace Enferno.Web.StormUtils.Test
             Assert.AreEqual(4711, StormContext.BasketId);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void CreateNoHttpStormContextTest()
         {
             // Arrange

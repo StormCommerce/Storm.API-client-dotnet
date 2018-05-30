@@ -4,7 +4,7 @@
   <configSections xdt:Transform="InsertBefore(/configuration/*[1])" />
   <configSections xdt:Locator="XPath(/configuration/configSections[last()])">
     <section name="loggingConfiguration" type="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.LoggingSettings, Microsoft.Practices.EnterpriseLibrary.Logging" requirePermission="true" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
-    <section name="unity" type="Microsoft.Practices.Unity.Configuration.UnityConfigurationSection, Microsoft.Practices.Unity.Configuration" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+    <section name="unity" type="Microsoft.Practices.Unity.Configuration.UnityConfigurationSection, Unity.Configuration" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
     <sectionGroup name="stormSettings" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)">
       <section name="storm" type="Enferno.Web.StormUtils.StormConfigurationSection, Enferno.Web.StormUtils" allowLocation="true" allowDefinition="Everywhere" />
     </sectionGroup>

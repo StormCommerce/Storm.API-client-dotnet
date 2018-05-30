@@ -12,7 +12,7 @@ namespace Enferno.StormApiClient.Test
     [TestClass]
     public class CacheableProxyTests
     {
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void GetNonExistningCustomerAndCreateNewShouldAddToCacheTest()
         {
             // Arrange
@@ -50,7 +50,7 @@ namespace Enferno.StormApiClient.Test
             Assert.IsNotNull(customer, "Should not be null second time");
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void GetCustomerThenUpdateAndGetAgainShouldGetUpdatedCustomerFromCacheTest()
         {
             // Arrange

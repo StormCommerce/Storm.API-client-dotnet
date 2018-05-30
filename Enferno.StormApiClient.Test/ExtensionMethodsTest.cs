@@ -7,7 +7,7 @@ namespace Enferno.StormApiClient.Test
     [TestClass]
     public class ExtensionMethodsTest
     {
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void GetCacheKeyTest()
         {
             var request = new GetBasketRequest
@@ -23,7 +23,7 @@ namespace Enferno.StormApiClient.Test
             Assert.AreEqual("GetBasket:4711:1,2:sv:2:", key);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void GetCacheKeyTest2()
         {
             var request = new GetBasketRequest

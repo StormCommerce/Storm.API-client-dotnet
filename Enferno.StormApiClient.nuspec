@@ -2,13 +2,25 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>1.8.14.0</version>
+    <version>2.0.0</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
-    <projectUrl>https://github.com/StormCommerce/Storm.API/</projectUrl>
+    <projectUrl>https://github.com/StormCommerce/Storm.API-client-dotnet/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Enferno Storm Commerce API Client library.</description>    <releaseNotes>
+Upgraded to Enferno.Public 2.0.0.
+Updated references for dependent packages: CommonServiceLocator, Unity and Unity.Interception.
+Breakning changes that requires some changes due to renamed namespace.
+      
+Microsoft.Practices.Unity.Configuration is now located in Unity.Configuration.
+Change "using Microsoft.Practices.Unity;" to "using Unity;" in code.
+      
+Under the conficSections in the config file change:
+&lt;section name="unity" type="Microsoft.Practices.Unity.Configuration.UnityConfigurationSection, Microsoft.Practices.Unity.Configuration" /&gt;
+to:
+&lt;section name="unity" type="Microsoft.Practices.Unity.Configuration.UnityConfigurationSection, Unity.Configuration" /&gt;
+
 
 ## What's new?
 
@@ -48,7 +60,7 @@ The Storm API Team
     <copyright>Copyright 2018</copyright>
     <tags>Enferno Storm API Client Commerce</tags>
     <dependencies>
-      <dependency id="Enferno.Public" version="[1.0.17,2.0.0)" />
+      <dependency id="Enferno.Public" version="2.0.0" />
     </dependencies>
   </metadata>
   <files>

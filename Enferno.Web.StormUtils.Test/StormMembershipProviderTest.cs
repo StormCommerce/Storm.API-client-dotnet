@@ -11,7 +11,7 @@ namespace Enferno.Web.StormUtils.Test
     [TestClass]
     public class StormMembershipProviderTest : TestBase
     {
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void InitializeTest1()
         {
             // Arrange
@@ -26,7 +26,7 @@ namespace Enferno.Web.StormUtils.Test
             Assert.AreEqual("TestApplication", provider.ApplicationName);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void ChangePasswordWrongPassword1()
         {
             // Arrange
@@ -52,7 +52,7 @@ namespace Enferno.Web.StormUtils.Test
             Assert.IsFalse(success);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void ValidateUserTest1()
         {
             // Arrange
@@ -78,7 +78,7 @@ namespace Enferno.Web.StormUtils.Test
             Assert.IsTrue(success);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void ValidateUserTest2()
         {
             // Arrange
@@ -91,7 +91,7 @@ namespace Enferno.Web.StormUtils.Test
             Assert.IsFalse(success);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void ChangePassword1()
         {
             // Arrange
@@ -118,7 +118,7 @@ namespace Enferno.Web.StormUtils.Test
             repository.AssertWasCalled(x => x.ChangePassword("kalle.anka@ankeborg.se", "abc", "def", "def"), o => o.IgnoreArguments());
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void ResetPassword1()
         {
             // Arrange
@@ -143,7 +143,7 @@ namespace Enferno.Web.StormUtils.Test
             repository.AssertWasCalled(x => x.SendPasswordReminder("kalle.anka@ankeborg.se"), o => o.IgnoreArguments());
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void GetUserTest1()
         {
             // Arrange
@@ -170,7 +170,7 @@ namespace Enferno.Web.StormUtils.Test
             Assert.AreEqual("kalle.anka@ankeborg.se", member.UserName);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void GetUserTest2()
         {
             // Arrange
@@ -197,7 +197,7 @@ namespace Enferno.Web.StormUtils.Test
             Assert.AreEqual("kalle.anka@ankeborg.se", member.UserName);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void GetUserNameByEmail1()
         {
             // Arrange
@@ -223,7 +223,7 @@ namespace Enferno.Web.StormUtils.Test
             Assert.AreEqual("kalle.anka@ankeborg.se", name);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void CreateUserTest1()
         {
             // Arrange
@@ -253,7 +253,7 @@ namespace Enferno.Web.StormUtils.Test
             Assert.AreEqual("kalle.anka@ankeborg.se", user.UserName);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("UnitTest")]
         public void CreateUserWhenUserExistsTest1()
         {
             // Arrange
