@@ -384,6 +384,7 @@
           <xs:element minOccurs="0" name="WarehouseId" nillable="true" type="xs:int" />
           <xs:element minOccurs="0" name="LocationId" nillable="true" type="xs:int" />
           <xs:element minOccurs="0" name="DropPoints" nillable="true" type="tns:DropPointList" />
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -461,9 +462,22 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="Payment" nillable="true" type="tns:Payment" />
-  <xs:complexType name="BasketPagedList">
+  <xs:complexType name="BasketDeliveryMethodUpdate">
     <xs:complexContent mixed="false">
       <xs:extension xmlns:q31="Enferno.Services.Contracts.Message" base="q31:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Price" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="DropPoint" nillable="true" type="tns:DropPoint" />
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BasketDeliveryMethodUpdate" nillable="true" type="tns:BasketDeliveryMethodUpdate" />
+  <xs:complexType name="BasketPagedList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q32="Enferno.Services.Contracts.Message" base="q32:Entity">
         <xs:sequence>
           <xs:element minOccurs="0" name="ItemCount" type="xs:int" />
           <xs:element minOccurs="0" name="Items" nillable="true" type="tns:BasketList" />
@@ -486,7 +500,7 @@
   <xs:element name="SavedBasketList" nillable="true" type="tns:SavedBasketList" />
   <xs:complexType name="SavedBasket">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q32="Enferno.Services.Contracts.Message" base="q32:Entity">
+      <xs:extension xmlns:q33="Enferno.Services.Contracts.Message" base="q33:Entity">
         <xs:sequence>
           <xs:element minOccurs="0" name="Id" type="xs:int" />
           <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
@@ -506,11 +520,11 @@
   <xs:element name="SubscriptionList" nillable="true" type="tns:SubscriptionList" />
   <xs:complexType name="SubscriptionScheduleData">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q33="Enferno.Services.Contracts.Message" base="q33:Entity">
+      <xs:extension xmlns:q34="Enferno.Services.Contracts.Message" base="q34:Entity">
         <xs:sequence>
-          <xs:element xmlns:q34="Enferno.Services.Contracts.Expose" minOccurs="0" name="Frequencies" nillable="true" type="q34:IdValues" />
-          <xs:element xmlns:q35="Enferno.Services.Contracts.Expose" minOccurs="0" name="MonthlyIntervals" nillable="true" type="q35:IdValues" />
-          <xs:element xmlns:q36="Enferno.Services.Contracts.Expose" minOccurs="0" name="MonthlyIntervalValues" nillable="true" type="q36:IdValues" />
+          <xs:element xmlns:q35="Enferno.Services.Contracts.Expose" minOccurs="0" name="Frequencies" nillable="true" type="q35:IdValues" />
+          <xs:element xmlns:q36="Enferno.Services.Contracts.Expose" minOccurs="0" name="MonthlyIntervals" nillable="true" type="q36:IdValues" />
+          <xs:element xmlns:q37="Enferno.Services.Contracts.Expose" minOccurs="0" name="MonthlyIntervalValues" nillable="true" type="q37:IdValues" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -524,7 +538,7 @@
   <xs:element name="SubscriptionTypeList" nillable="true" type="tns:SubscriptionTypeList" />
   <xs:complexType name="PaymentResponse">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q37="Enferno.Services.Contracts.Message" base="q37:Entity">
+      <xs:extension xmlns:q38="Enferno.Services.Contracts.Message" base="q38:Entity">
         <xs:sequence>
           <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="StatusDescription" nillable="true" type="xs:string" />
@@ -533,7 +547,7 @@
           <xs:element minOccurs="0" name="PaymentCode" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="PaymentReference" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="RedirectUrl" nillable="true" type="xs:string" />
-          <xs:element xmlns:q38="Enferno.Services.Contracts.Expose" minOccurs="0" name="RedirectParameters" nillable="true" type="q38:NameValues" />
+          <xs:element xmlns:q39="Enferno.Services.Contracts.Expose" minOccurs="0" name="RedirectParameters" nillable="true" type="q39:NameValues" />
           <xs:element minOccurs="0" name="IsSyncronous" nillable="true" type="xs:boolean" />
           <xs:element minOccurs="0" name="PaymentServiceId" nillable="true" type="xs:int" />
         </xs:sequence>

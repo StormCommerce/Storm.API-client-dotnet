@@ -2,46 +2,44 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>1.8.14.0</version>
+    <version>1.8.15-beta</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
     <projectUrl>https://github.com/StormCommerce/Storm.API/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Enferno Storm Commerce API Client library.</description>    <releaseNotes>
-
 ## What's new?
 
-### Customers:
+### Orders:
 
-- #3061: New property, VatNo on Company and GlobalLocationNo on Address. This later property will only be populated on company invoice addresses.
-https://services.enferno.se/api/1.1/docs/index2.html#/Customers/Companies/Company
-https://services.enferno.se/api/1.1/docs/index2.html#/Customers/Address/Address
+- #3362: A new method, ListOrdersByEmail, has been added.  
+https://servicesstage.enferno.se/api/1.1/docs/index2.html#/Orders/Orders/ListOrdersByEmail
 
-- #3027: New property, Code, on ApplicationRole is now populated.
-https://services.enferno.se/api/1.1/docs/index2.html#/Customers/Accounts/ListAccountRoles
-
-- #2953: Two new methods, GetCustomerByInfoType and GetCompanyByInfoType, has been added. Not that these methods are by infotype Code and not Id. This means that the defined info types must have Code set or null will be returned.
-https://services.enferno.se/api/1.1/docs/index2.html#/Customers/Customers/GetCustomerByInfoType
-https://services.enferno.se/api/1.1/docs/index2.html#/Customers/Companies/GetCompanyByInfoType
-
-## What's fixed?
-
-### Customers:
-
-- #2968: Inactivated application roles did show up in Customer.Account.Roles. This has now been fixed.
-
-- #3109: Support for using Code instead of id has been added for customer and company info.
+- #2840: A new property, DropPoint has been added to Order.  
+https://servicesstage.enferno.se/api/1.1/docs/index2.html#/Orders/Orders/Order  
 
 ### Shopping:
 
-- #3109: InfoTypes with invalid ids could be added. This has now been fixed. Moreover support for using Code instead of id has been added as well.
+- #2840: Added support for external handling of delivery methods. A new method, UpdateDeliveryMethod4, has been added together with a new Entity for updating the delivery method, BasketDeliveryMethodUpdate.  
+https://servicesstage.enferno.se/api/1.1/docs/index2.html#/Shopping/Checkout/UpdateDeliveryMethod4  
+https://servicesstage.enferno.se/api/1.1/docs/index2.html#/Shopping/DeliveryMethods/BasketDeliveryMethodUpdate
+
+## What's fixed?
+
+### Products:
+
+- #3380: Problem with variant unique texts on Product has been resolved.
+
+### Shopping:
+
+- #3361: Problem with deactivated promotions in checkout process has been resolved.
 
 ## Miscellaneous changes?
 
 N/A
 
-Regards,
+Regards, 
 
 The Storm API Team
     </releaseNotes>

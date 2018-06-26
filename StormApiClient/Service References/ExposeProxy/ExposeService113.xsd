@@ -249,6 +249,7 @@
           <xs:element minOccurs="0" name="Info" nillable="true" type="tns:InfoList" />
           <xs:element minOccurs="0" name="TypeId" type="xs:int" />
           <xs:element minOccurs="0" name="DeliveryMark" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DropPoint" nillable="true" type="tns:CustomerData" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -388,6 +389,7 @@
           <xs:element minOccurs="0" name="DeliveryMethod" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="TypeId" type="xs:int" />
           <xs:element minOccurs="0" name="DeliveryMark" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DropPoint" nillable="true" type="tns:CustomerData" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
