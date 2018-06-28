@@ -2,28 +2,32 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>1.8.15-beta</version>
+    <version>1.8.15</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
     <projectUrl>https://github.com/StormCommerce/Storm.API/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Enferno Storm Commerce API Client library.</description>    <releaseNotes>
+    <description>Enferno Storm Commerce API Client library.</description>    
+    <releaseNotes>
+Please note that this branch is depricated and will not be supported for long. 
+Upgrade to &gt;= v2.0.0. See release notes for v2.0.0 for details.
+
 ## What's new?
 
 ### Orders:
 
 - #3362: A new method, ListOrdersByEmail, has been added.  
-https://servicesstage.enferno.se/api/1.1/docs/index2.html#/Orders/Orders/ListOrdersByEmail
+https://services.enferno.se/api/1.1/docs/index2.html#/Orders/Orders/ListOrdersByEmail
 
 - #2840: A new property, DropPoint has been added to Order.  
-https://servicesstage.enferno.se/api/1.1/docs/index2.html#/Orders/Orders/Order  
+https://services.enferno.se/api/1.1/docs/index2.html#/Orders/Orders/Order  
 
 ### Shopping:
 
 - #2840: Added support for external handling of delivery methods. A new method, UpdateDeliveryMethod4, has been added together with a new Entity for updating the delivery method, BasketDeliveryMethodUpdate.  
-https://servicesstage.enferno.se/api/1.1/docs/index2.html#/Shopping/Checkout/UpdateDeliveryMethod4  
-https://servicesstage.enferno.se/api/1.1/docs/index2.html#/Shopping/DeliveryMethods/BasketDeliveryMethodUpdate
+https://services.enferno.se/api/1.1/docs/index2.html#/Shopping/Checkout/UpdateDeliveryMethod4  
+https://services.enferno.se/api/1.1/docs/index2.html#/Shopping/DeliveryMethods/BasketDeliveryMethodUpdate
 
 ## What's fixed?
 
