@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>1.8.15</version>
+    <version>1.8.16-beta</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -17,33 +17,21 @@ Upgrade to &gt;= v2.0.0. See release notes for v2.0.0 for details.
 
 ### Orders:
 
-- #3362: A new method, ListOrdersByEmail, has been added.  
-https://services.enferno.se/api/1.1/docs/index2.html#/Orders/Orders/ListOrdersByEmail
-
-- #2840: A new property, DropPoint has been added to Order.  
-https://services.enferno.se/api/1.1/docs/index2.html#/Orders/Orders/Order  
-
-### Shopping:
-
-- #2840: Added support for external handling of delivery methods. A new method, UpdateDeliveryMethod4, has been added together with a new Entity for updating the delivery method, BasketDeliveryMethodUpdate.  
-https://services.enferno.se/api/1.1/docs/index2.html#/Shopping/Checkout/UpdateDeliveryMethod4  
-https://services.enferno.se/api/1.1/docs/index2.html#/Shopping/DeliveryMethods/BasketDeliveryMethodUpdate
+- #3440: New property, Items, has been added to OrderListItem.
+https://servicesstage.enferno.se/api/1.1/docs/index.html#/Orders/Orders/OrderListItem
 
 ## What's fixed?
 
-### Products:
-
-- #3380: Problem with variant unique texts on Product has been resolved.
-
 ### Shopping:
 
-- #3361: Problem with deactivated promotions in checkout process has been resolved.
+- #3454: Fixes in PaymentValidate. This method can now be called multiple times if no Callback has been received.
+https://servicesstage.enferno.se/api/1.1/docs/index.html#/Shopping/Payments/PaymentValidate
 
 ## Miscellaneous changes?
 
-N/A
+- #1120: Changes in documentation: Old page has been replace by index2.html. Index2.html will now redirect to new page at index.html. Minor changes in the layout and navigation.  https://servicesstage.enferno.se/api/1.1/docs/index.html
 
-Regards, 
+Regards,
 
 The Storm API Team
     </releaseNotes>
