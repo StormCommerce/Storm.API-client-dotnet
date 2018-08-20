@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>2.0.1</version>
+    <version>2.0.2-beta</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -14,34 +14,21 @@ Please see release notes for 2.0.0 for details if you are upgrading from &lt;= v
 
 ## What's new?
 
-### Customers:
+### Orders:
 
-- #3061: New property, VatNo on Company and GlobalLocationNo on Address. This later property will only be populated on company invoice addresses.
-https://services.enferno.se/api/1.1/docs/index2.html#/Customers/Companies/Company
-https://services.enferno.se/api/1.1/docs/index2.html#/Customers/Address/Address
-
-- #3027: New property, Code, on ApplicationRole is now populated.
-https://services.enferno.se/api/1.1/docs/index2.html#/Customers/Accounts/ListAccountRoles
-
-- #2953: Two new methods, GetCustomerByInfoType and GetCompanyByInfoType, has been added. Not that these methods are by infotype Code and not Id. This means that the defined info types must have Code set or null will be returned.
-https://services.enferno.se/api/1.1/docs/index2.html#/Customers/Customers/GetCustomerByInfoType
-https://services.enferno.se/api/1.1/docs/index2.html#/Customers/Companies/GetCompanyByInfoType
+- #3440: New property, Items, has been added to OrderListItem.
+https://servicesstage.enferno.se/api/1.1/docs/index.html#/Orders/Orders/OrderListItem
 
 ## What's fixed?
 
-### Customers:
-
-- #2968: Inactivated application roles did show up in Customer.Account.Roles. This has now been fixed.
-
-- #3109: Support for using Code instead of id has been added for customer and company info.
-
 ### Shopping:
 
-- #3109: InfoTypes with invalid ids could be added. This has now been fixed. Moreover support for using Code instead of id has been added as well.
+- #3454: Fixes in PaymentValidate. This method can now be called multiple times if no Callback has been received.
+https://servicesstage.enferno.se/api/1.1/docs/index.html#/Shopping/Payments/PaymentValidate
 
 ## Miscellaneous changes?
 
-N/A
+- #1120: Changes in documentation: Old page has been replace by index2.html. Index2.html will now redirect to new page at index.html. Minor changes in the layout and navigation.  https://servicesstage.enferno.se/api/1.1/docs/index.html
 
 Regards,
 

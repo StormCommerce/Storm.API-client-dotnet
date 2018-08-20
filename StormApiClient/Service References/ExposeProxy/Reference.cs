@@ -52694,6 +52694,9 @@ namespace Enferno.StormApiClient.Orders {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Enferno.StormApiClient.Orders.CustomerData DropPointField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Enferno.StormApiClient.Orders.OrderItems ItemsField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public long Id {
             get {
@@ -52911,6 +52914,19 @@ namespace Enferno.StormApiClient.Orders {
                 if ((object.ReferenceEquals(this.DropPointField, value) != true)) {
                     this.DropPointField = value;
                     this.RaisePropertyChanged("DropPoint");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=17)]
+        public Enferno.StormApiClient.Orders.OrderItems Items {
+            get {
+                return this.ItemsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ItemsField, value) != true)) {
+                    this.ItemsField = value;
+                    this.RaisePropertyChanged("Items");
                 }
             }
         }
