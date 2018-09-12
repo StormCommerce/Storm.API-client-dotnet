@@ -212,6 +212,8 @@
           <xs:element xmlns:q36="Enferno.Services.Contracts.Expose" minOccurs="0" name="Images" nillable="true" type="q36:FileList" />
           <xs:element xmlns:q37="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="ProductFilters" nillable="true" type="q37:PromotionProductFilterList" />
           <xs:element minOccurs="0" name="AppliedAmount" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="EffectSeed" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FreightDiscountPct" nillable="true" type="xs:decimal" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
