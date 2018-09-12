@@ -53372,6 +53372,12 @@ namespace Enferno.StormApiClient.Shopping {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<decimal> AppliedAmountField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EffectSeedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> FreightDiscountPctField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<int> Id {
             get {
@@ -53576,6 +53582,32 @@ namespace Enferno.StormApiClient.Shopping {
                 if ((this.AppliedAmountField.Equals(value) != true)) {
                     this.AppliedAmountField = value;
                     this.RaisePropertyChanged("AppliedAmount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=16)]
+        public string EffectSeed {
+            get {
+                return this.EffectSeedField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EffectSeedField, value) != true)) {
+                    this.EffectSeedField = value;
+                    this.RaisePropertyChanged("EffectSeed");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=17)]
+        public System.Nullable<decimal> FreightDiscountPct {
+            get {
+                return this.FreightDiscountPctField;
+            }
+            set {
+                if ((this.FreightDiscountPctField.Equals(value) != true)) {
+                    this.FreightDiscountPctField = value;
+                    this.RaisePropertyChanged("FreightDiscountPct");
                 }
             }
         }

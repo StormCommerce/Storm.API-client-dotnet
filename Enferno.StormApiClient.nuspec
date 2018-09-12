@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>1.8.16.0</version>
+    <version>1.8.17.0</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -15,23 +15,22 @@ Upgrade to &gt;= v2.0.0. See release notes for v2.0.0 for details.
 
 ## What's new?
 
-### Orders:
+### Promotions:
 
-- #3440: New property, Items, has been added to OrderListItem.
-https://servicesstage.enferno.se/api/1.1/docs/index.html#/Orders/Orders/OrderListItem
+- #3616: New properties, EffectSeed and FreightDiscountPct, has been added to Promotion.  
+https://services.enferno.se/api/1.1/docs/#/Shopping/Promotions/Promotion  
 
 ## What's fixed?
 
 ### Shopping:
 
-- #3454: Fixes in PaymentValidate. This method can now be called multiple times if no Callback has been received.
-https://servicesstage.enferno.se/api/1.1/docs/index.html#/Shopping/Payments/PaymentValidate
+- #: Fixed problem with UpdateBasketItemQuantityWithChildren in conjunction with promotions and splitted rows.
 
 ## Miscellaneous changes?
 
-- #1120: Changes in documentation: Old page has been replace by index2.html. Index2.html will now redirect to new page at index.html. Minor changes in the layout and navigation.  https://servicesstage.enferno.se/api/1.1/docs/index.html
+N/A
 
-Regards,
+Regards, 
 
 The Storm API Team
     </releaseNotes>
