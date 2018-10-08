@@ -128,6 +128,7 @@
           <xs:element minOccurs="0" name="Region" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="IsValidated" type="xs:boolean" />
           <xs:element minOccurs="0" name="GlobalLocationNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShippingPhoneNumber" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
