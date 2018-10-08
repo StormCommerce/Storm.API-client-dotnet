@@ -83,6 +83,7 @@
           <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Region" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShippingPhoneNumber" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

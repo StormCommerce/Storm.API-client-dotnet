@@ -375,6 +375,7 @@
           <xs:element minOccurs="0" name="TypeId" type="xs:int" />
           <xs:element minOccurs="0" name="GroupId" type="xs:int" />
           <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

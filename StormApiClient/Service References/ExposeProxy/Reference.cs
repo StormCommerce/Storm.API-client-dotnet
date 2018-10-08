@@ -34795,6 +34795,9 @@ namespace Enferno.StormApiClient.Products {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DescriptionField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CodeField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Id {
             get {
@@ -34856,6 +34859,19 @@ namespace Enferno.StormApiClient.Products {
                 if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
                     this.DescriptionField = value;
                     this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public string Code {
+            get {
+                return this.CodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CodeField, value) != true)) {
+                    this.CodeField = value;
+                    this.RaisePropertyChanged("Code");
                 }
             }
         }
@@ -47562,6 +47578,9 @@ namespace Enferno.StormApiClient.Customers {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string GlobalLocationNoField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ShippingPhoneNumberField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<int> Id {
             get {
@@ -47701,6 +47720,19 @@ namespace Enferno.StormApiClient.Customers {
                 if ((object.ReferenceEquals(this.GlobalLocationNoField, value) != true)) {
                     this.GlobalLocationNoField = value;
                     this.RaisePropertyChanged("GlobalLocationNo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=11)]
+        public string ShippingPhoneNumber {
+            get {
+                return this.ShippingPhoneNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ShippingPhoneNumberField, value) != true)) {
+                    this.ShippingPhoneNumberField = value;
+                    this.RaisePropertyChanged("ShippingPhoneNumber");
                 }
             }
         }
@@ -50640,6 +50672,9 @@ namespace Enferno.StormApiClient.Orders {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RegionField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ShippingPhoneNumberField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Line1 {
             get {
@@ -50740,6 +50775,19 @@ namespace Enferno.StormApiClient.Orders {
                 if ((object.ReferenceEquals(this.RegionField, value) != true)) {
                     this.RegionField = value;
                     this.RaisePropertyChanged("Region");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+        public string ShippingPhoneNumber {
+            get {
+                return this.ShippingPhoneNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ShippingPhoneNumberField, value) != true)) {
+                    this.ShippingPhoneNumberField = value;
+                    this.RaisePropertyChanged("ShippingPhoneNumber");
                 }
             }
         }

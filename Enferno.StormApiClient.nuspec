@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>1.8.17.0</version>
+    <version>1.8.18-beta</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -15,20 +15,34 @@ Upgrade to &gt;= v2.0.0. See release notes for v2.0.0 for details.
 
 ## What's new?
 
-### Promotions:
+### Customer and Order:
 
-- #3616: New properties, EffectSeed and FreightDiscountPct, has been added to Promotion.  
-https://services.enferno.se/api/1.1/docs/#/Shopping/Promotions/Promotion  
+- #4079: New property, ShippingPhoneNumber, on Address.
+https://servicesstage.enferno.se/api/1.1/docs/index.html#/Customers/Address/Address
+https://servicesstage.enferno.se/api/1.1/docs/index.html#/Orders/Address/Address  
+
+### Products:
+
+- #3981: New property, Code, has been added to Flag.  
+https://servicesstage.enferno.se/api/1.1/docs/index.html#/Products/Flags/Flag  
 
 ## What's fixed?
 
-### Shopping:
-
-- #: Fixed problem with UpdateBasketItemQuantityWithChildren in conjunction with promotions and splitted rows.
+N/A
 
 ## Miscellaneous changes?
 
-N/A
+- #2132: Rewrites of internal database code. This affects the following methods:
+- ListNavigationNodesEx
+- ListNavigationNodes
+- ListProductsByFamilies
+- ListProductsByNode2
+- ListProductsByPromotionRequirement
+- ListProductFiltersByNode2
+- ListProductItemFilterValues
+- ListProductItemFilterValuesById
+- ListProductItemFilterValuesByIds
+- ListProductItemFilterValuesByNode
 
 Regards, 
 
