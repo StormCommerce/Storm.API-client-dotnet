@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>1.8.18-beta</version>
+    <version>1.8.18.1</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -18,13 +18,13 @@ Upgrade to &gt;= v2.0.0. See release notes for v2.0.0 for details.
 ### Customer and Order:
 
 - #4079: New property, ShippingPhoneNumber, on Address.
-https://servicesstage.enferno.se/api/1.1/docs/index.html#/Customers/Address/Address
-https://servicesstage.enferno.se/api/1.1/docs/index.html#/Orders/Address/Address  
+https://services.enferno.se/api/1.1/docs/index.html#/Customers/Address/Address
+https://services.enferno.se/api/1.1/docs/index.html#/Orders/Address/Address  
 
 ### Products:
 
 - #3981: New property, Code, has been added to Flag.  
-https://servicesstage.enferno.se/api/1.1/docs/index.html#/Products/Flags/Flag  
+https://services.enferno.se/api/1.1/docs/index.html#/Products/Flags/Flag  
 
 ## What's fixed?
 
