@@ -214,6 +214,7 @@
           <xs:element minOccurs="0" name="AppliedAmount" nillable="true" type="xs:decimal" />
           <xs:element minOccurs="0" name="EffectSeed" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="FreightDiscountPct" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="IsStackable" type="xs:boolean" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

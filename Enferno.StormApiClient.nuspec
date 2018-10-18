@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>1.8.18.1</version>
+    <version>1.8.19-beta</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -15,16 +15,10 @@ Upgrade to &gt;= v2.0.0. See release notes for v2.0.0 for details.
 
 ## What's new?
 
-### Customer and Order:
+### Shopping:
 
-- #4079: New property, ShippingPhoneNumber, on Address.
-https://services.enferno.se/api/1.1/docs/index.html#/Customers/Address/Address
-https://services.enferno.se/api/1.1/docs/index.html#/Orders/Address/Address  
-
-### Products:
-
-- #3981: New property, Code, has been added to Flag.  
-https://services.enferno.se/api/1.1/docs/index.html#/Products/Flags/Flag  
+- #4087: Support for IsStackable in Promotions. This includes a new property, IsStackable, on Promotion.  
+https://servicesstage.enferno.se/api/1.1/docs/index.html#/Shopping/Promotions/Promotion  
 
 ## What's fixed?
 
@@ -33,16 +27,13 @@ N/A
 ## Miscellaneous changes?
 
 - #2132: Rewrites of internal database code. This affects the following methods:
-- ListNavigationNodesEx
-- ListNavigationNodes
-- ListProductsByFamilies
-- ListProductsByNode2
-- ListProductsByPromotionRequirement
+- ListPopularProductsByNode
+- ListPopularProductsByNode2
+- ListBestsellingProductsByNode
+- ListBestsellingProductsByNode2
+- ListProductFiltersByNode
 - ListProductFiltersByNode2
-- ListProductItemFilterValues
-- ListProductItemFilterValuesById
-- ListProductItemFilterValuesByIds
-- ListProductItemFilterValuesByNode
+- ListNavigationNodes
 
 Regards, 
 

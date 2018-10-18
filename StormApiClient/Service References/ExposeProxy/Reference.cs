@@ -53426,6 +53426,9 @@ namespace Enferno.StormApiClient.Shopping {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<decimal> FreightDiscountPctField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsStackableField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<int> Id {
             get {
@@ -53656,6 +53659,19 @@ namespace Enferno.StormApiClient.Shopping {
                 if ((this.FreightDiscountPctField.Equals(value) != true)) {
                     this.FreightDiscountPctField = value;
                     this.RaisePropertyChanged("FreightDiscountPct");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=18)]
+        public bool IsStackable {
+            get {
+                return this.IsStackableField;
+            }
+            set {
+                if ((this.IsStackableField.Equals(value) != true)) {
+                    this.IsStackableField = value;
+                    this.RaisePropertyChanged("IsStackable");
                 }
             }
         }
