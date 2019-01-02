@@ -673,11 +673,130 @@
           <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ImageKey" nillable="true" type="ser:guid" />
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="Family" nillable="true" type="tns:Family" />
+  <xs:complexType name="ProductItem2PagedList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q36="Enferno.Services.Contracts.Message" base="q36:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ItemCount" type="xs:int" />
+          <xs:element minOccurs="0" name="Items" nillable="true" type="tns:ProductItem2List" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProductItem2PagedList" nillable="true" type="tns:ProductItem2PagedList" />
+  <xs:complexType name="ProductItem2List">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductItem2" nillable="true" type="tns:ProductItem2" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductItem2List" nillable="true" type="tns:ProductItem2List" />
+  <xs:complexType name="ProductItem2">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q37="Enferno.Services.Contracts.Message" base="q37:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Key" type="ser:guid" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Manufacturer" nillable="true" type="tns:ProductManufacturer" />
+          <xs:element minOccurs="0" name="CategoryIdSeed" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Price" nillable="true" type="tns:ProductPrice" />
+          <xs:element minOccurs="0" name="OnHand" nillable="true" type="tns:OnHand" />
+          <xs:element minOccurs="0" name="OnHandStore" nillable="true" type="tns:OnHand" />
+          <xs:element minOccurs="0" name="OnHandSupplier" nillable="true" type="tns:OnHand" />
+          <xs:element minOccurs="0" name="Variants" nillable="true" type="tns:VariantItemList" />
+          <xs:element minOccurs="0" name="ImageKey" nillable="true" type="ser:guid" />
+          <xs:element minOccurs="0" name="AdditionalImageKeySeed" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FlagIdSeed" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Parametrics" nillable="true" type="tns:ParametricsSeed" />
+          <xs:element minOccurs="0" name="UniqueName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubHeader" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Synonyms" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StockDisplayBreakPoint" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IsSubscribable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PopularityRank" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SortOrder" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Updated" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProductItem2" nillable="true" type="tns:ProductItem2" />
+  <xs:complexType name="ProductPrice">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q38="Enferno.Services.Contracts.Message" base="q38:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Recommended" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Catalog" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="VatRate" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PriceListId" type="xs:int" />
+          <xs:element minOccurs="0" name="IsBuyable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="RecommendedQuantity" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="IsRecommendedQuantityFixed" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Standard" nillable="true" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProductPrice" nillable="true" type="tns:ProductPrice" />
+  <xs:complexType name="VariantItemList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:VariantItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VariantItemList" nillable="true" type="tns:VariantItemList" />
+  <xs:complexType name="VariantItem">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q39="Enferno.Services.Contracts.Message" base="q39:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="GroupByKey" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StatusId" type="xs:int" />
+          <xs:element minOccurs="0" name="TypeId" type="xs:int" />
+          <xs:element minOccurs="0" name="PartNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ManufacturerPartNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ImageKey" nillable="true" type="ser:guid" />
+          <xs:element minOccurs="0" name="FlagIdSeed" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Price" nillable="true" type="tns:ProductPrice" />
+          <xs:element minOccurs="0" name="OnHand" nillable="true" type="tns:OnHand" />
+          <xs:element minOccurs="0" name="OnHandStore" nillable="true" type="tns:OnHand" />
+          <xs:element minOccurs="0" name="OnHandSupplier" nillable="true" type="tns:OnHand" />
+          <xs:element minOccurs="0" name="Parametrics" nillable="true" type="tns:ParametricsSeed" />
+          <xs:element minOccurs="0" name="AdditionalImageKeySeed" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EanCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsBuyable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="UnitOfMeasurement" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UnitOfMeasurementCount" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="RecommendedQuantity" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="IsRecommendedQuantityFixed" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SubHeader" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubDescription" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VariantItem" nillable="true" type="tns:VariantItem" />
+  <xs:complexType name="ParametricsSeed">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q40="Enferno.Services.Contracts.Message" base="q40:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ListSeed" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MultipleSeed" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ValueSeed" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ParametricsSeed" nillable="true" type="tns:ParametricsSeed" />
   <xs:complexType name="ProductItemFilterValuesList">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:ProductItemFilterValues" />
@@ -686,7 +805,7 @@
   <xs:element name="ProductItemFilterValuesList" nillable="true" type="tns:ProductItemFilterValuesList" />
   <xs:complexType name="ProductItemFilterValues">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q36="Enferno.Services.Contracts.Message" base="q36:Entity">
+      <xs:extension xmlns:q41="Enferno.Services.Contracts.Message" base="q41:Entity">
         <xs:sequence>
           <xs:element minOccurs="0" name="ProductId" type="xs:int" />
           <xs:element minOccurs="0" name="GroupByKey" nillable="true" type="xs:string" />
@@ -714,7 +833,7 @@
   <xs:element name="FilterList" nillable="true" type="tns:FilterList" />
   <xs:complexType name="Filter">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q37="Enferno.Services.Contracts.Message" base="q37:Entity">
+      <xs:extension xmlns:q42="Enferno.Services.Contracts.Message" base="q42:Entity">
         <xs:sequence>
           <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
@@ -726,7 +845,7 @@
   <xs:element name="Filter" nillable="true" type="tns:Filter" />
   <xs:complexType name="ProductAccessories">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q38="Enferno.Services.Contracts.Message" base="q38:Entity">
+      <xs:extension xmlns:q43="Enferno.Services.Contracts.Message" base="q43:Entity">
         <xs:sequence>
           <xs:element minOccurs="0" name="Accessories" nillable="true" type="tns:ProductItemPagedList" />
           <xs:element minOccurs="0" name="VariantAccessories" nillable="true" type="tns:VariantAccessoriesList" />
@@ -743,7 +862,7 @@
   <xs:element name="VariantAccessoriesList" nillable="true" type="tns:VariantAccessoriesList" />
   <xs:complexType name="VariantAccessories">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q39="Enferno.Services.Contracts.Message" base="q39:Entity">
+      <xs:extension xmlns:q44="Enferno.Services.Contracts.Message" base="q44:Entity">
         <xs:sequence>
           <xs:element minOccurs="0" name="Id" type="xs:int" />
           <xs:element minOccurs="0" name="Accessories" nillable="true" type="tns:ProductItemPagedList" />
@@ -752,66 +871,6 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="VariantAccessories" nillable="true" type="tns:VariantAccessories" />
-  <xs:complexType name="VariantItemList">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:VariantItem" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="VariantItemList" nillable="true" type="tns:VariantItemList" />
-  <xs:complexType name="VariantItem">
-    <xs:complexContent mixed="false">
-      <xs:extension xmlns:q40="Enferno.Services.Contracts.Message" base="q40:Entity">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="Id" type="xs:int" />
-          <xs:element minOccurs="0" name="GroupByKey" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="StatusId" type="xs:int" />
-          <xs:element minOccurs="0" name="TypeId" type="xs:int" />
-          <xs:element minOccurs="0" name="PartNo" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="ManufacturerPartNo" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="ImageKey" nillable="true" type="ser:guid" />
-          <xs:element minOccurs="0" name="FlagIdSeed" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="Price" nillable="true" type="tns:ProductPrice" />
-          <xs:element minOccurs="0" name="OnHand" nillable="true" type="tns:OnHand" />
-          <xs:element minOccurs="0" name="OnHandStore" nillable="true" type="tns:OnHand" />
-          <xs:element minOccurs="0" name="OnHandSupplier" nillable="true" type="tns:OnHand" />
-          <xs:element minOccurs="0" name="Parametrics" nillable="true" type="tns:ParametricsSeed" />
-          <xs:element minOccurs="0" name="AdditionalImageKeySeed" nillable="true" type="xs:string" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="VariantItem" nillable="true" type="tns:VariantItem" />
-  <xs:complexType name="ProductPrice">
-    <xs:complexContent mixed="false">
-      <xs:extension xmlns:q41="Enferno.Services.Contracts.Message" base="q41:Entity">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="Value" type="xs:decimal" />
-          <xs:element minOccurs="0" name="Recommended" nillable="true" type="xs:decimal" />
-          <xs:element minOccurs="0" name="Catalog" nillable="true" type="xs:decimal" />
-          <xs:element minOccurs="0" name="VatRate" type="xs:decimal" />
-          <xs:element minOccurs="0" name="PriceListId" type="xs:int" />
-          <xs:element minOccurs="0" name="IsBuyable" type="xs:boolean" />
-          <xs:element minOccurs="0" name="RecommendedQuantity" nillable="true" type="xs:decimal" />
-          <xs:element minOccurs="0" name="IsRecommendedQuantityFixed" type="xs:boolean" />
-          <xs:element minOccurs="0" name="Standard" nillable="true" type="xs:decimal" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="ProductPrice" nillable="true" type="tns:ProductPrice" />
-  <xs:complexType name="ParametricsSeed">
-    <xs:complexContent mixed="false">
-      <xs:extension xmlns:q42="Enferno.Services.Contracts.Message" base="q42:Entity">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="ListSeed" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="MultipleSeed" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="ValueSeed" nillable="true" type="xs:string" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="ParametricsSeed" nillable="true" type="tns:ParametricsSeed" />
   <xs:complexType name="CategoryItemList">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:CategoryItem" />
@@ -820,7 +879,7 @@
   <xs:element name="CategoryItemList" nillable="true" type="tns:CategoryItemList" />
   <xs:complexType name="CategoryItem">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q43="Enferno.Services.Contracts.Message" base="q43:Entity">
+      <xs:extension xmlns:q45="Enferno.Services.Contracts.Message" base="q45:Entity">
         <xs:sequence>
           <xs:element minOccurs="0" name="Id" type="xs:int" />
           <xs:element minOccurs="0" name="ParentId" nillable="true" type="xs:int" />
@@ -848,7 +907,7 @@
   <xs:element name="WarehouseInfoList" nillable="true" type="tns:WarehouseInfoList" />
   <xs:complexType name="WarehouseInfo">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q44="Enferno.Services.Contracts.Message" base="q44:Entity">
+      <xs:extension xmlns:q46="Enferno.Services.Contracts.Message" base="q46:Entity">
         <xs:sequence>
           <xs:element minOccurs="0" name="Id" type="xs:int" />
           <xs:element minOccurs="0" name="Type" type="xs:int" />
@@ -869,7 +928,7 @@
   <xs:element name="WarehouseInfoLocationList" nillable="true" type="tns:WarehouseInfoLocationList" />
   <xs:complexType name="WarehouseInfoLocation">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q45="Enferno.Services.Contracts.Message" base="q45:Entity">
+      <xs:extension xmlns:q47="Enferno.Services.Contracts.Message" base="q47:Entity">
         <xs:sequence>
           <xs:element minOccurs="0" name="Id" type="xs:int" />
           <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
@@ -889,7 +948,7 @@
   <xs:element name="WarehouseInfoStoreList" nillable="true" type="tns:WarehouseInfoStoreList" />
   <xs:complexType name="WarehouseInfoStore">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q46="Enferno.Services.Contracts.Message" base="q46:Entity">
+      <xs:extension xmlns:q48="Enferno.Services.Contracts.Message" base="q48:Entity">
         <xs:sequence>
           <xs:element minOccurs="0" name="Id" type="xs:int" />
           <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
@@ -907,7 +966,7 @@
   <xs:element name="ProductIdNameList" nillable="true" type="tns:ProductIdNameList" />
   <xs:complexType name="ProductId">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q47="Enferno.Services.Contracts.Message" base="q47:Entity">
+      <xs:extension xmlns:q49="Enferno.Services.Contracts.Message" base="q49:Entity">
         <xs:sequence>
           <xs:element minOccurs="0" name="Id" type="xs:int" />
           <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
@@ -930,13 +989,13 @@
   <xs:element name="SkuTypeList" nillable="true" type="tns:SkuTypeList" />
   <xs:complexType name="SkuType">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q48="Enferno.Services.Contracts.Message" base="q48:Entity">
+      <xs:extension xmlns:q50="Enferno.Services.Contracts.Message" base="q50:Entity">
         <xs:sequence>
           <xs:element minOccurs="0" name="Id" type="xs:int" />
           <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="SortOrder" type="xs:int" />
-          <xs:element xmlns:q49="Enferno.Services.Contracts.Expose" minOccurs="0" name="Group" nillable="true" type="q49:IdNameDescription" />
+          <xs:element xmlns:q51="Enferno.Services.Contracts.Expose" minOccurs="0" name="Group" nillable="true" type="q51:IdNameDescription" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
