@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>1.8.19-beta</version>
+    <version>1.8.19</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -10,7 +10,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Enferno Storm Commerce API Client library.</description>    
     <releaseNotes>
-Please note that this branch is depricated and will not be supported for long. 
+Please note that this branch is deprecated and will not be supported for long. 
 Upgrade to &gt;= v2.0.0. See release notes for v2.0.0 for details.
 
 ## What's new?
