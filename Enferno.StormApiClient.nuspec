@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>2.0.6-beta</version>
+    <version>2.0.6</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -17,23 +17,23 @@ Please see release notes for 2.0.0 for details if you are upgrading from &lt;= v
 ### Order:
 
 - #4403: Added GlobalLocationNo to Order Address.  
-https://servicesstage.enferno.se/api/1.1/docs/#/Orders/Address/Address  
+https://api.storm.io/api/1.1/docs/#/Orders/Address/Address  
 
 ### Shopping
 
 - #4403: Added GlobalLocationNo to Customer Address in Checkout.  
-https://servicesstage.enferno.se/api/1.1/docs/#/Customers/Address/Address  
+https://api.storm.io/api/1.1/docs/#/Customers/Address/Address  
 
 ### Products
 
 - #4679: Added Code to Family.  
-https://servicesstage.enferno.se/api/1.1/docs/#/Expose/IdNameDescription  
-https://servicesstage.enferno.se/api/1.1/docs/#/Products/Families/Family
+https://api.storm.io/api/1.1/docs/#/Expose/IdNameDescription  
+https://api.storm.io/api/1.1/docs/#/Products/Families/Family  
 
 - #3466: New method, ListProductByPriceList2. Returns ProductItems2s which has product specific data and with Variants as VariantItems.  
-https://servicesstage.enferno.se/api/1.1/docs/#/Products/Products/ListProductsByPriceList2  
-https://servicesstage.enferno.se/api/1.1/docs/#/Products/Products/ProductItem2  
-https://servicesstage.enferno.se/api/1.1/docs/#/Products/Variants/VariantItem
+https://api.storm.io/api/1.1/docs/#/Products/Products/ListProductsByPriceList2  
+https://api.storm.io/api/1.1/docs/#/Products/Products/ProductItem2  
+https://api.storm.io/api/1.1/docs/#/Products/Variants/VariantItem
 
 ## What's fixed?
 - #: OrderRequest now gets UOM mapped.
