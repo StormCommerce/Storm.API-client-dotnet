@@ -326,6 +326,9 @@
     <None Include="Service References\ExposeProxy\Enferno.StormApiClient.Products.ProductParametricList.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ExposeProxy\Enferno.StormApiClient.Products.ProductPriceQtyBreakList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ExposeProxy\Enferno.StormApiClient.Products.ReviewList.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

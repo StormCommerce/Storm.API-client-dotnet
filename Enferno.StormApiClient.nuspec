@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>1.8.20</version>
+    <version>1.8.21</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -17,30 +17,21 @@ Upgrade to &gt;= v2.0.0. See release notes for v2.0.0 for details.
 
 ### Order:
 
-- #4403: Added GlobalLocationNo to Order Address.  
-https://api.storm.io/api/1.1/docs/#/Orders/Address/Address  
+- #4964: Added Info on Order and OrderItem in result from ListOrders3 and ListOrdersByEmail.  
+https://api.storm.io/api/1.1/docs/#/Orders/Orders/OrderListItem  
 
 ### Shopping
 
-- #4403: Added GlobalLocationNo to Customer Address in Checkout.  
-https://api.storm.io/api/1.1/docs/#/Customers/Address/Address  
+- #4929: Added support for product flags in Promotions.  
 
 ### Products
 
-- #4679: Added Code to Family.  
-https://api.storm.io/api/1.1/docs/#/Expose/IdNameDescription  
-https://api.storm.io/api/1.1/docs/#/Products/Families/Family  
-
-- #3466: New method, ListProductByPriceList2. Returns ProductItems2s which has product specific data and with Variants as VariantItems.  
-https://api.storm.io/api/1.1/docs/#/Products/Products/ListProductsByPriceList2  
-https://api.storm.io/api/1.1/docs/#/Products/Products/ProductItem2  
-https://api.storm.io/api/1.1/docs/#/Products/Variants/VariantItem
+- #4938: New method to list prices with quantity breaks.This method can be used when showing a product detail page to include prices with quantity breaks.  
+https://api.storm.io/api/1.1/docs/#/Products/Products/ListProductPriceQtyBreak  
+https://api.storm.io/api/1.1/docs/#/Products/Products/ProductPriceQtyBreak  
 
 ## What's fixed?
-- #: OrderRequest now gets UOM mapped.
-- #: Now validating DiscountCode in PaymentValidate.
-- #: Fixed "Account already exists" in RegisterCustomer3.
-- #: Fixed problem with IsStackable and percentage discount on Promotions.
+- #4971: Now we do not create a subscription order when activating recurring payments. Normal orders on subscriptions are created a before.
 
 ## Miscellaneous changes?
 

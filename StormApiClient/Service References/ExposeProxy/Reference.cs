@@ -110,6 +110,7 @@ namespace Enferno.StormApiClient.Expose {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetNavigationStructureRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListConfigurationItemsRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListProductPriceQtyBreakRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductByUniqueNameRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductByPartNoRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByProductIdRequest))]
@@ -712,6 +713,8 @@ namespace Enferno.StormApiClient.Expose {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductByUniqueNameResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductByPartNoResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ResponseOfTypeProductPriceQtyBreakList))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListProductPriceQtyBreakResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ResponseOfTypeProductOnHand))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductOnHandByPartNoResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductOnHandByProductResponse))]
@@ -2269,6 +2272,37 @@ namespace Enferno.StormApiClient.Expose {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfTypeProductPriceQtyBreakList", Namespace="Enferno.Services.Contracts.Expose")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListProductPriceQtyBreakResponse))]
+    public partial class ResponseOfTypeProductPriceQtyBreakList : Enferno.StormApiClient.Expose.Response {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Enferno.StormApiClient.Products.ProductPriceQtyBreakList ResultField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Enferno.StormApiClient.Products.ProductPriceQtyBreakList Result {
+            get {
+                return this.ResultField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ResultField, value) != true)) {
+                    this.ResultField = value;
+                    this.RaisePropertyChanged("Result");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ListProductPriceQtyBreakResponse", Namespace="Enferno.Services.Contracts.Expose")]
+    [System.SerializableAttribute()]
+    public partial class ListProductPriceQtyBreakResponse : Enferno.StormApiClient.Expose.ResponseOfTypeProductPriceQtyBreakList {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfTypeProductOnHand", Namespace="Enferno.Services.Contracts.Expose")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductOnHandByPartNoResponse))]
@@ -2632,6 +2666,9 @@ namespace Enferno.StormApiClient.Expose {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductParametricList))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductParametric))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductIdNameDescriptionList))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductPriceQtyBreakList))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductPriceQtyBreak))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductPrice))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.WarehouseList))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.Warehouse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductOnHand))]
@@ -2666,7 +2703,6 @@ namespace Enferno.StormApiClient.Expose {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductItem2PagedList))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductItem2List))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductItem2))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductPrice))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.VariantItemList))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.VariantItem))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ParametricsSeed))]
@@ -2806,6 +2842,7 @@ namespace Enferno.StormApiClient.Expose {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetNavigationStructureRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListConfigurationItemsRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListProductPriceQtyBreakRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductByUniqueNameRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductByPartNoRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByProductIdRequest))]
@@ -3105,6 +3142,8 @@ namespace Enferno.StormApiClient.Expose {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ResponseOfTypeConfigurationItemList))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ResponseOfTypeProduct))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListProductPriceQtyBreakResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ResponseOfTypeProductPriceQtyBreakList))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductByUniqueNameResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductByPartNoResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByProductIdResponse))]
@@ -11127,6 +11166,125 @@ namespace Enferno.StormApiClient.Expose {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public string CurrencyId {
+            get {
+                return this.CurrencyIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CurrencyIdField, value) != true)) {
+                    this.CurrencyIdField = value;
+                    this.RaisePropertyChanged("CurrencyId");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ListProductPriceQtyBreakRequest", Namespace="Enferno.Services.Contracts.Expose")]
+    [System.SerializableAttribute()]
+    public partial class ListProductPriceQtyBreakRequest : Enferno.StormApiClient.Expose.Request {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StoreSeedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PricelistSeedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompanyIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CultureCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CurrencyIdField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string StoreSeed {
+            get {
+                return this.StoreSeedField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StoreSeedField, value) != true)) {
+                    this.StoreSeedField = value;
+                    this.RaisePropertyChanged("StoreSeed");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public string PricelistSeed {
+            get {
+                return this.PricelistSeedField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PricelistSeedField, value) != true)) {
+                    this.PricelistSeedField = value;
+                    this.RaisePropertyChanged("PricelistSeed");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public string CustomerId {
+            get {
+                return this.CustomerIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerIdField, value) != true)) {
+                    this.CustomerIdField = value;
+                    this.RaisePropertyChanged("CustomerId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public string CompanyId {
+            get {
+                return this.CompanyIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompanyIdField, value) != true)) {
+                    this.CompanyIdField = value;
+                    this.RaisePropertyChanged("CompanyId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public string CultureCode {
+            get {
+                return this.CultureCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CultureCodeField, value) != true)) {
+                    this.CultureCodeField = value;
+                    this.RaisePropertyChanged("CultureCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
         public string CurrencyId {
             get {
                 return this.CurrencyIdField;
@@ -31714,6 +31872,8 @@ namespace Enferno.StormApiClient.Expose.Message {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductManufacturer))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductFile))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductParametric))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductPriceQtyBreak))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductPrice))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.Warehouse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductOnHand))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.Review))]
@@ -31735,7 +31895,6 @@ namespace Enferno.StormApiClient.Expose.Message {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.Family))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductItem2PagedList))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductItem2))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductPrice))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.VariantItem))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ParametricsSeed))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductItemFilterValues))]
@@ -31899,6 +32058,8 @@ namespace Enferno.StormApiClient.Expose.Message {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductByUniqueNameResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductByPartNoResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ResponseOfTypeProductPriceQtyBreakList))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListProductPriceQtyBreakResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ResponseOfTypeProductOnHand))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductOnHandByPartNoResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductOnHandByProductResponse))]
@@ -32194,6 +32355,7 @@ namespace Enferno.StormApiClient.Expose.Message {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetNavigationStructureRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListConfigurationItemsRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListProductPriceQtyBreakRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductByUniqueNameRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductByPartNoRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByProductIdRequest))]
@@ -34576,6 +34738,212 @@ namespace Enferno.StormApiClient.Products {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProductPriceQtyBreak", Namespace="Enferno.Services.Contracts.Expose.Products")]
+    [System.SerializableAttribute()]
+    public partial class ProductPriceQtyBreak : Enferno.StormApiClient.Expose.Message.Entity {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PartNoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal QtyBreakField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Enferno.StormApiClient.Products.ProductPrice ProductPriceField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartNo {
+            get {
+                return this.PartNoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartNoField, value) != true)) {
+                    this.PartNoField = value;
+                    this.RaisePropertyChanged("PartNo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal QtyBreak {
+            get {
+                return this.QtyBreakField;
+            }
+            set {
+                if ((this.QtyBreakField.Equals(value) != true)) {
+                    this.QtyBreakField = value;
+                    this.RaisePropertyChanged("QtyBreak");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public Enferno.StormApiClient.Products.ProductPrice ProductPrice {
+            get {
+                return this.ProductPriceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductPriceField, value) != true)) {
+                    this.ProductPriceField = value;
+                    this.RaisePropertyChanged("ProductPrice");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProductPrice", Namespace="Enferno.Services.Contracts.Expose.Products")]
+    [System.SerializableAttribute()]
+    public partial class ProductPrice : Enferno.StormApiClient.Expose.Message.Entity {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal ValueField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> RecommendedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> CatalogField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal VatRateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PriceListIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsBuyableField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> RecommendedQuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsRecommendedQuantityFixedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> StandardField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Value {
+            get {
+                return this.ValueField;
+            }
+            set {
+                if ((this.ValueField.Equals(value) != true)) {
+                    this.ValueField = value;
+                    this.RaisePropertyChanged("Value");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public System.Nullable<decimal> Recommended {
+            get {
+                return this.RecommendedField;
+            }
+            set {
+                if ((this.RecommendedField.Equals(value) != true)) {
+                    this.RecommendedField = value;
+                    this.RaisePropertyChanged("Recommended");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public System.Nullable<decimal> Catalog {
+            get {
+                return this.CatalogField;
+            }
+            set {
+                if ((this.CatalogField.Equals(value) != true)) {
+                    this.CatalogField = value;
+                    this.RaisePropertyChanged("Catalog");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public decimal VatRate {
+            get {
+                return this.VatRateField;
+            }
+            set {
+                if ((this.VatRateField.Equals(value) != true)) {
+                    this.VatRateField = value;
+                    this.RaisePropertyChanged("VatRate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public int PriceListId {
+            get {
+                return this.PriceListIdField;
+            }
+            set {
+                if ((this.PriceListIdField.Equals(value) != true)) {
+                    this.PriceListIdField = value;
+                    this.RaisePropertyChanged("PriceListId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public bool IsBuyable {
+            get {
+                return this.IsBuyableField;
+            }
+            set {
+                if ((this.IsBuyableField.Equals(value) != true)) {
+                    this.IsBuyableField = value;
+                    this.RaisePropertyChanged("IsBuyable");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public System.Nullable<decimal> RecommendedQuantity {
+            get {
+                return this.RecommendedQuantityField;
+            }
+            set {
+                if ((this.RecommendedQuantityField.Equals(value) != true)) {
+                    this.RecommendedQuantityField = value;
+                    this.RaisePropertyChanged("RecommendedQuantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public bool IsRecommendedQuantityFixed {
+            get {
+                return this.IsRecommendedQuantityFixedField;
+            }
+            set {
+                if ((this.IsRecommendedQuantityFixedField.Equals(value) != true)) {
+                    this.IsRecommendedQuantityFixedField = value;
+                    this.RaisePropertyChanged("IsRecommendedQuantityFixed");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+        public System.Nullable<decimal> Standard {
+            get {
+                return this.StandardField;
+            }
+            set {
+                if ((this.StandardField.Equals(value) != true)) {
+                    this.StandardField = value;
+                    this.RaisePropertyChanged("Standard");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Warehouse", Namespace="Enferno.Services.Contracts.Expose.Products")]
     [System.SerializableAttribute()]
     public partial class Warehouse : Enferno.StormApiClient.Expose.Message.Entity {
@@ -36094,6 +36462,9 @@ namespace Enferno.StormApiClient.Products {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductParametricList))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductParametric))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductIdNameDescriptionList))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductPriceQtyBreakList))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductPriceQtyBreak))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductPrice))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.WarehouseList))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.Warehouse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductOnHand))]
@@ -36127,7 +36498,6 @@ namespace Enferno.StormApiClient.Products {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductItem2PagedList))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductItem2List))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductItem2))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductPrice))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.VariantItemList))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.VariantItem))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ParametricsSeed))]
@@ -36267,6 +36637,7 @@ namespace Enferno.StormApiClient.Products {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetNavigationStructureRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListConfigurationItemsRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListProductPriceQtyBreakRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductByUniqueNameRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductByPartNoRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByProductIdRequest))]
@@ -36566,6 +36937,8 @@ namespace Enferno.StormApiClient.Products {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ResponseOfTypeConfigurationItemList))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ResponseOfTypeProduct))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListProductPriceQtyBreakResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ResponseOfTypeProductPriceQtyBreakList))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductByUniqueNameResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductByPartNoResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByProductIdResponse))]
@@ -37011,6 +37384,9 @@ namespace Enferno.StormApiClient.Products {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductParametricList))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductParametric))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductIdNameDescriptionList))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductPriceQtyBreakList))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductPriceQtyBreak))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductPrice))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.WarehouseList))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.Warehouse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductOnHand))]
@@ -37044,7 +37420,6 @@ namespace Enferno.StormApiClient.Products {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductItem2PagedList))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductItem2List))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductItem2))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductPrice))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.VariantItemList))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.VariantItem))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ParametricsSeed))]
@@ -37184,6 +37559,7 @@ namespace Enferno.StormApiClient.Products {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetNavigationStructureRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListConfigurationItemsRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListProductPriceQtyBreakRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductByUniqueNameRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductByPartNoRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByProductIdRequest))]
@@ -37483,6 +37859,8 @@ namespace Enferno.StormApiClient.Products {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ResponseOfTypeConfigurationItemList))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ResponseOfTypeProduct))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListProductPriceQtyBreakResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ResponseOfTypeProductPriceQtyBreakList))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductByUniqueNameResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductByPartNoResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByProductIdResponse))]
@@ -39503,157 +39881,6 @@ namespace Enferno.StormApiClient.Products {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ProductPrice", Namespace="Enferno.Services.Contracts.Expose.Products")]
-    [System.SerializableAttribute()]
-    public partial class ProductPrice : Enferno.StormApiClient.Expose.Message.Entity {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal ValueField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> RecommendedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> CatalogField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal VatRateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int PriceListIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool IsBuyableField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> RecommendedQuantityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool IsRecommendedQuantityFixedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> StandardField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal Value {
-            get {
-                return this.ValueField;
-            }
-            set {
-                if ((this.ValueField.Equals(value) != true)) {
-                    this.ValueField = value;
-                    this.RaisePropertyChanged("Value");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public System.Nullable<decimal> Recommended {
-            get {
-                return this.RecommendedField;
-            }
-            set {
-                if ((this.RecommendedField.Equals(value) != true)) {
-                    this.RecommendedField = value;
-                    this.RaisePropertyChanged("Recommended");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public System.Nullable<decimal> Catalog {
-            get {
-                return this.CatalogField;
-            }
-            set {
-                if ((this.CatalogField.Equals(value) != true)) {
-                    this.CatalogField = value;
-                    this.RaisePropertyChanged("Catalog");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public decimal VatRate {
-            get {
-                return this.VatRateField;
-            }
-            set {
-                if ((this.VatRateField.Equals(value) != true)) {
-                    this.VatRateField = value;
-                    this.RaisePropertyChanged("VatRate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public int PriceListId {
-            get {
-                return this.PriceListIdField;
-            }
-            set {
-                if ((this.PriceListIdField.Equals(value) != true)) {
-                    this.PriceListIdField = value;
-                    this.RaisePropertyChanged("PriceListId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-        public bool IsBuyable {
-            get {
-                return this.IsBuyableField;
-            }
-            set {
-                if ((this.IsBuyableField.Equals(value) != true)) {
-                    this.IsBuyableField = value;
-                    this.RaisePropertyChanged("IsBuyable");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
-        public System.Nullable<decimal> RecommendedQuantity {
-            get {
-                return this.RecommendedQuantityField;
-            }
-            set {
-                if ((this.RecommendedQuantityField.Equals(value) != true)) {
-                    this.RecommendedQuantityField = value;
-                    this.RaisePropertyChanged("RecommendedQuantity");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
-        public bool IsRecommendedQuantityFixed {
-            get {
-                return this.IsRecommendedQuantityFixedField;
-            }
-            set {
-                if ((this.IsRecommendedQuantityFixedField.Equals(value) != true)) {
-                    this.IsRecommendedQuantityFixedField = value;
-                    this.RaisePropertyChanged("IsRecommendedQuantityFixed");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
-        public System.Nullable<decimal> Standard {
-            get {
-                return this.StandardField;
-            }
-            set {
-                if ((this.StandardField.Equals(value) != true)) {
-                    this.StandardField = value;
-                    this.RaisePropertyChanged("Standard");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="VariantItem", Namespace="Enferno.Services.Contracts.Expose.Products")]
     [System.SerializableAttribute()]
     public partial class VariantItem : Enferno.StormApiClient.Expose.Message.Entity {
@@ -40412,6 +40639,9 @@ namespace Enferno.StormApiClient.Products {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductParametricList))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductParametric))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductIdNameDescriptionList))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductPriceQtyBreakList))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductPriceQtyBreak))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductPrice))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.WarehouseList))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.Warehouse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductOnHand))]
@@ -40446,7 +40676,6 @@ namespace Enferno.StormApiClient.Products {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductItem2PagedList))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductItem2List))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductItem2))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductPrice))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.VariantItemList))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.VariantItem))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ParametricsSeed))]
@@ -40585,6 +40814,7 @@ namespace Enferno.StormApiClient.Products {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetNavigationStructureRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListConfigurationItemsRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListProductPriceQtyBreakRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductByUniqueNameRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductByPartNoRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByProductIdRequest))]
@@ -40884,6 +41114,8 @@ namespace Enferno.StormApiClient.Products {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ResponseOfTypeConfigurationItemList))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ResponseOfTypeProduct))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListProductPriceQtyBreakResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ResponseOfTypeProductPriceQtyBreakList))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductByUniqueNameResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductByPartNoResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByProductIdResponse))]
@@ -42007,6 +42239,13 @@ namespace Enferno.StormApiClient.Products {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ProductPriceQtyBreakList", Namespace="Enferno.Services.Contracts.Expose.Products", ItemName="ProductPriceQtyBreak")]
+    [System.SerializableAttribute()]
+    public class ProductPriceQtyBreakList : System.Collections.Generic.List<Enferno.StormApiClient.Products.ProductPriceQtyBreak> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ReviewList", Namespace="Enferno.Services.Contracts.Expose.Products", ItemName="Item")]
     [System.SerializableAttribute()]
     public class ReviewList : System.Collections.Generic.List<Enferno.StormApiClient.Products.Review> {
@@ -42205,6 +42444,18 @@ namespace Enferno.StormApiClient.Products {
         
         [System.ServiceModel.OperationContractAttribute(Action="Enferno.Services.Contracts.Expose.Products/ProductService/GetProduct", ReplyAction="Enferno.Services.Contracts.Expose.Products/ProductService/GetProductResponse")]
         System.Threading.Tasks.Task<Enferno.StormApiClient.Products.Product> GetProductAsync(int id, string statusSeed, string storeSeed, string pricelistSeed, string customerId, string companyId, string cultureCode, string currencyId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductPriceQtyBrea" +
+            "k", ReplyAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductPriceQtyBrea" +
+            "kResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Enferno.StormApiClient.Expose.ErrorMessage_v2.ErrorMessage), Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductPriceQtyBrea" +
+            "kErrorMessage_v2Fault", Name="ErrorMessage", Namespace="http://Enferno.Native.Schemas.ErrorMessage_v2")]
+        Enferno.StormApiClient.Products.ProductPriceQtyBreakList ListProductPriceQtyBreak(int id, string storeSeed, string pricelistSeed, string customerId, string companyId, string cultureCode, string currencyId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductPriceQtyBrea" +
+            "k", ReplyAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductPriceQtyBrea" +
+            "kResponse")]
+        System.Threading.Tasks.Task<Enferno.StormApiClient.Products.ProductPriceQtyBreakList> ListProductPriceQtyBreakAsync(int id, string storeSeed, string pricelistSeed, string customerId, string companyId, string cultureCode, string currencyId);
         
         [System.ServiceModel.OperationContractAttribute(Action="Enferno.Services.Contracts.Expose.Products/ProductService/GetProductByUniqueName", ReplyAction="Enferno.Services.Contracts.Expose.Products/ProductService/GetProductByUniqueNameR" +
             "esponse")]
@@ -42559,6 +42810,9 @@ namespace Enferno.StormApiClient.Products {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductParametricList))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductParametric))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductIdNameDescriptionList))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductPriceQtyBreakList))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductPriceQtyBreak))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductPrice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Products.WarehouseList))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Products.Warehouse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductOnHand))]
@@ -42593,7 +42847,6 @@ namespace Enferno.StormApiClient.Products {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductItem2PagedList))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductItem2List))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductItem2))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ProductPrice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Products.VariantItemList))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Products.VariantItem))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Products.ParametricsSeed))]
@@ -42733,6 +42986,7 @@ namespace Enferno.StormApiClient.Products {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetNavigationStructureRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListConfigurationItemsRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListProductPriceQtyBreakRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductByUniqueNameRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductByPartNoRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByProductIdRequest))]
@@ -43032,6 +43286,8 @@ namespace Enferno.StormApiClient.Products {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ResponseOfTypeConfigurationItemList))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ResponseOfTypeProduct))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListProductPriceQtyBreakResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ResponseOfTypeProductPriceQtyBreakList))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductByUniqueNameResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.GetProductByPartNoResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Enferno.StormApiClient.Expose.ListPromotionsByProductIdResponse))]
@@ -44557,6 +44813,14 @@ namespace Enferno.StormApiClient.Products {
         
         public System.Threading.Tasks.Task<Enferno.StormApiClient.Products.Product> GetProductAsync(int id, string statusSeed, string storeSeed, string pricelistSeed, string customerId, string companyId, string cultureCode, string currencyId) {
             return base.Channel.GetProductAsync(id, statusSeed, storeSeed, pricelistSeed, customerId, companyId, cultureCode, currencyId);
+        }
+        
+        public Enferno.StormApiClient.Products.ProductPriceQtyBreakList ListProductPriceQtyBreak(int id, string storeSeed, string pricelistSeed, string customerId, string companyId, string cultureCode, string currencyId) {
+            return base.Channel.ListProductPriceQtyBreak(id, storeSeed, pricelistSeed, customerId, companyId, cultureCode, currencyId);
+        }
+        
+        public System.Threading.Tasks.Task<Enferno.StormApiClient.Products.ProductPriceQtyBreakList> ListProductPriceQtyBreakAsync(int id, string storeSeed, string pricelistSeed, string customerId, string companyId, string cultureCode, string currencyId) {
+            return base.Channel.ListProductPriceQtyBreakAsync(id, storeSeed, pricelistSeed, customerId, companyId, cultureCode, currencyId);
         }
         
         public Enferno.StormApiClient.Products.Product GetProductByUniqueName(string uniqueName, string statusSeed, string storeSeed, string pricelistSeed, string customerId, string companyId, string cultureCode, string currencyId) {
@@ -53814,6 +54078,9 @@ namespace Enferno.StormApiClient.Orders {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Enferno.StormApiClient.Orders.OrderItems ItemsField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Enferno.StormApiClient.Orders.InfoList InfoField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public long Id {
             get {
@@ -54044,6 +54311,19 @@ namespace Enferno.StormApiClient.Orders {
                 if ((object.ReferenceEquals(this.ItemsField, value) != true)) {
                     this.ItemsField = value;
                     this.RaisePropertyChanged("Items");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=18)]
+        public Enferno.StormApiClient.Orders.InfoList Info {
+            get {
+                return this.InfoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InfoField, value) != true)) {
+                    this.InfoField = value;
+                    this.RaisePropertyChanged("Info");
                 }
             }
         }
