@@ -393,6 +393,7 @@
           <xs:element minOccurs="0" name="DeliveryMark" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="DropPoint" nillable="true" type="tns:CustomerData" />
           <xs:element minOccurs="0" name="Items" nillable="true" type="tns:OrderItems" />
+          <xs:element minOccurs="0" name="Info" nillable="true" type="tns:InfoList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
