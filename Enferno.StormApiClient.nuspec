@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>2.0.7</version>
+    <version>2.1.0</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -12,29 +12,7 @@
     <releaseNotes>
 Please see release notes for 2.0.0 for details if you are upgrading from &lt;= v1.8.x.
 
-## What's new?
-
-### Order:
-
-- #4964: Added Info on Order and OrderItem in result from ListOrdres3 and ListOrdersByEmail.  
-https://api.storm.io/api/1.1/docs/#/Orders/Orders/OrderListItem  
-
-### Shopping
-
-- #4929: Added support for product flags in Promotions.  
-
-### Products
-
-- #4938: New method to list prices with quantity breaks.This method can be used when showing a product detail page to include prices with quantity breaks.  
-https://api.storm.io/api/1.1/docs/#/Products/Products/ListProductPriceQtyBreak  
-https://api.storm.io/api/1.1/docs/#/Products/Products/ProductPriceQtyBreak  
-
-## What's fixed?
-- #4971: Now we do not create a subscription order when activating recurring payments. Normal orders on subscriptions are created a before.
-
-## Miscellaneous changes?
-
-N/A  
+Upgraded dependency to Enferno.Public 2.2.0. If you run into problems upgrading to this, please uninstall previous version and ALL Unity NuGets. Then reinstall this and upgrade Unity to latest.
 
 Regards,  
 The Storm API Team
@@ -42,7 +20,7 @@ The Storm API Team
     <copyright>Copyright 2018</copyright>
     <tags>Enferno Storm API Client Commerce</tags>
     <dependencies>
-      <dependency id="Enferno.Public" version="2.0.0" />
+      <dependency id="Enferno.Public" version="2.2.0" />
     </dependencies>
   </metadata>
   <files>
