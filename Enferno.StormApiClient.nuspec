@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>1.8.21</version>
+    <version>1.8.22-beta</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -15,29 +15,23 @@ Upgrade to &gt;= v2.0.0. See release notes for v2.0.0 for details.
 
 ## What's new?
 
-### Order:
-
-- #4964: Added Info on Order and OrderItem in result from ListOrders3 and ListOrdersByEmail.  
-https://api.storm.io/api/1.1/docs/#/Orders/Orders/OrderListItem  
-
-### Shopping
-
-- #4929: Added support for product flags in Promotions.  
-
 ### Products
 
-- #4938: New method to list prices with quantity breaks.This method can be used when showing a product detail page to include prices with quantity breaks.  
-https://api.storm.io/api/1.1/docs/#/Products/Products/ListProductPriceQtyBreak  
-https://api.storm.io/api/1.1/docs/#/Products/Products/ProductPriceQtyBreak  
+- #5187: A new entity, CategoryParametric, has been added and it is used in CategoryItem.   
+https://servicesstage.enferno.se/api/1.1/docs/#/Products/Categories/CategoryParametric  
+
+- #5193: Height, Width and Depth have been added to Product.   
+https://servicesstage.enferno.se/api/1.1/docs/#/Products/Products/Product  
 
 ## What's fixed?
-- #4971: Now we do not create a subscription order when activating recurring payments. Normal orders on subscriptions are created a before.
+
+N/A
 
 ## Miscellaneous changes?
 
-N/A  
+N/A  
 
-Regards,  
+Regards,  
 The Storm API Team
     </releaseNotes>
     <copyright>Copyright 2018</copyright>
