@@ -112,6 +112,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\System.ServiceModel.Channels.Message.datasource" />
     <None Include="Properties\DataSources\System.Xml.Linq.XElement.datasource" />
+    <None Include="Properties\DataSources\System.Xml.XmlElement.datasource" />
     <None Include="Service References\ExportProxy\ExportService.wsdl" />
     <None Include="Service References\ExportProxy\ExportService.xsd">
       <SubType>Designer</SubType>
