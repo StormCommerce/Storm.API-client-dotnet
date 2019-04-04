@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>1.8.22-beta</version>
+    <version>1.8.22</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -18,10 +18,10 @@ Upgrade to &gt;= v2.0.0. See release notes for v2.0.0 for details.
 ### Products
 
 - #5187: A new entity, CategoryParametric, has been added and it is used in CategoryItem.   
-https://servicesstage.enferno.se/api/1.1/docs/#/Products/Categories/CategoryParametric  
+https://api.storm.io/api/1.1/docs/#/Products/Categories/CategoryParametric  
 
 - #5193: Height, Width and Depth have been added to Product.   
-https://servicesstage.enferno.se/api/1.1/docs/#/Products/Products/Product  
+https://api.storm.io/api/1.1/docs/#/Products/Products/Product  
 
 ## What's fixed?
 
