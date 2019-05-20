@@ -50,6 +50,8 @@
           <xs:element minOccurs="0" name="TypeId" type="xs:int" />
           <xs:element minOccurs="0" name="DoHold" type="xs:boolean" />
           <xs:element minOccurs="0" name="IsBuyable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="InvoiceReference" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PaymentMethodId" nillable="true" type="xs:int" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -215,6 +217,7 @@
           <xs:element minOccurs="0" name="EffectSeed" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="FreightDiscountPct" nillable="true" type="xs:decimal" />
           <xs:element minOccurs="0" name="IsStackable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="AppliedAmountIncVat" nillable="true" type="xs:decimal" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
