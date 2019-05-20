@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>2.1.1</version>
+    <version>2.1.2-Beta</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -14,21 +14,25 @@ Please see release notes for 2.0.0 for details if you are upgrading from &lt;= v
 
 ## What's new?
 
-### Products
-
-- #5187: A new entity, CategoryParametric, has been added and it is used in CategoryItem.   
-https://api.storm.io/api/1.1/docs/#/Products/Categories/CategoryParametric  
-
-- #5193: Height, Width and Depth have been added to Product.   
-https://api.storm.io/api/1.1/docs/#/Products/Products/Product  
+- #: Added method ActivateCustomer to CustomerService.  
+https://servicesstage.enferno.se/api/1.1/docs/#/Customers/Customers/ActivateCustomer  
+- #: 4543: Added PaymentMethodId to Basket. This can be used when creating baskets where the PaymentMethod will not change, hence allowing to skip calling UpdatePaymentMethod later.  
 
 ## What's fixed?
 
-N/A
+- #: Added AppliedAmountIncVat to Basket.AppliedPromotions. The amounts in AppliedPromotions are rounded to two decimals and should have the correct total for the Basket where as the amount on the Basket.Items.AppliedPromotions will have rounding differences.  
+https://servicesstage.enferno.se/api/1.1/docs/#/Shopping/Promotions/Promotion  
+https://servicesstage.enferno.se/api/1.1/docs/#/Shopping/Promotions/AppliedPromotionOnItem  
+
+- #: Fixed problem with "Ignored" from CollectorAdapter.  
+
+- #: Fixed missed mapping of Customer.PriceLists.  
+
+- #: Now supporting InvoiceReference from Collector Checkout.  
 
 ## Miscellaneous changes?
 
-N/A  
+- #: Minor changes in rounding. Now using 4 decimals for BasketItem.DisplayPrice.  
 
 Regards,  
 The Storm API Team

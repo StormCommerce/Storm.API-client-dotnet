@@ -616,6 +616,19 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="ActivateCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:int" />
+        <xs:element minOccurs="0" name="activatedBy" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivateCustomerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ListContactByCompany">
     <xs:complexType>
       <xs:sequence>
