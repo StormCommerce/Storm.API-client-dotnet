@@ -8,7 +8,7 @@ namespace Enferno.Web.StormUtils
     {
         protected override void Redirect(HttpContext context, PaymentResponse response)
         {
-            if (response.RedirectParameters != null && response.RedirectParameters.FirstOrDefault(p => p.Name == "s_paymentCode") != null)
+            if (response.RedirectParameters != null && response.RedirectParameters.FirstOrDefault(p => p.Name == "s_paymentCode" || p.Name == "s_quotationId") != null)
             {
                 StormContext.SessionItems["paymentcode"] = null;
 
