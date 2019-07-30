@@ -37,7 +37,7 @@ using System.Runtime.InteropServices;
 //
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
-[assembly: AssemblyVersion("1.5.*")]
+[assembly: AssemblyVersion("2.1.*")]
 
 [assembly: InternalsVisibleTo("Enferno.Web.StormUtils.Test,PublicKey="+
     "00240000048000009400000006020000002400005253413100040000010001004bcdc6bd4f8cc4"+
