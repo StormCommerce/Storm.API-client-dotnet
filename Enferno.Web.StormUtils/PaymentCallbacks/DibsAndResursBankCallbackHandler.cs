@@ -91,7 +91,7 @@ namespace Enferno.Web.StormUtils
             return ((paymentParameters.Exists(p => p.Name == "status") || paymentParameters.Exists(p => p.Name == "statuscode")) &&
                 paymentParameters.Exists(p => p.Name == "s_paymentCode" || p.Name == "s_quotationId") &&
                 paymentParameters.Exists(p => p.Name == "s_applicationKey")) || (paymentParameters.Exists(p => p.Name == "PaymentService") &&
-                paymentParameters.Exists(p => p.Name == "paymentcode"));
+                paymentParameters.Exists(p => p.Name == "paymentCode" || p.Name == "s_paymentCode"));
         }
 
         private Expose.NameValues GetParameters(HttpContext context)
