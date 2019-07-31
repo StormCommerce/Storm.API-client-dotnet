@@ -22,6 +22,8 @@ namespace Enferno.Web.StormUtils
                     context.Response.Write(string.Format(@"<input type=hidden name='{0}' value='{1}'>", item.Name,
                         item.Value));
                 }
+                if (response.RedirectParameters.All(p => p.Name != "s_paymentCode"))
+                    context.Response.Write(string.Format(@"<input type=hidden name='{0}' value='{1}'>", "s_paymentCode", response.PaymentCode));
 
                 context.Response.Write("</form>");
                 context.Response.Write("<SCRIPT LANGUAGE='JavaScript'>document.forms[0].submit();</SCRIPT>");

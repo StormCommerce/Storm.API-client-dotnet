@@ -89,7 +89,7 @@ namespace Enferno.Web.StormUtils
         private bool IsValid(Expose.NameValues paymentParameters)
         {
             return ((paymentParameters.Exists(p => p.Name == "status") || paymentParameters.Exists(p => p.Name == "statuscode")) &&
-                paymentParameters.Exists(p => p.Name == "s_paymentCode" || p.Name == "s_quotationId") &&
+                paymentParameters.Exists(p => p.Name == "s_paymentCode") &&
                 paymentParameters.Exists(p => p.Name == "s_applicationKey")) || (paymentParameters.Exists(p => p.Name == "PaymentService") &&
                 paymentParameters.Exists(p => p.Name == "paymentCode" || p.Name == "s_paymentCode"));
         }
