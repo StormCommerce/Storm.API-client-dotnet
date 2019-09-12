@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>2.1.4</version>
+    <version>2.3.0</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -11,26 +11,36 @@
     <description>Enferno Storm Commerce API Client library.</description>
     <releaseNotes>
 Please see release notes for 2.0.0 for details if you are upgrading from &lt;= v1.8.x.
+Note that the 1.8.x branch will no longer be updated.
+
+Also note the breaking change in Enferno.Public 2.3.0.
 
 ## What's new?
 
-N/A
+- #: Added support for Klarna Shipping. Shipping handled by Klarna.
+- #: Added support for new payment method, PayLater. Allows taking orders and get payed later, before shipping the order.
+- #: Added DeliveryMethodId to Basket. Baskets can now be created with default value for both PaymentMethod and DeliveryMethod.
+- #5387: Added support for sale of gift cards through Retain24.
 
 ## What's fixed?
 
-- #: Validation for s_paymentcode when Dibs setting UsePaymentCodeForOrderId is used
+- #: Fixed problem with promotions on variant flags. Now checking flags on variants as well.
+- #: Fixed problem with OrderInfoTypes cached by Client. Now caching on Application.
+- #: Fixed problem with wrong price on promotion effect AddProduct.
+- #: Fixed problem with ListProductParametrics. Showed integer values concatenated twice.
+- #: Fixed problem with wrong price calculation when using IsPriceSalePercentageAmount = true on DeliveryMethod pricing.
 
-## Miscellaneous changes
+## Miscellaneous changes?
 
 N/A
 
-Regards,  
+Regards,
 The Storm API Team
     </releaseNotes>
     <copyright>Copyright 2018</copyright>
     <tags>Enferno Storm API Client Commerce</tags>
     <dependencies>
-      <dependency id="Enferno.Public" version="2.2.0" />
+      <dependency id="Enferno.Public" version="2.3.0" />
     </dependencies>
   </metadata>
   <files>

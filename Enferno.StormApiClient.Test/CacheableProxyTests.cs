@@ -20,9 +20,8 @@ namespace Enferno.StormApiClient.Test
             const string email = "patrik@attentia.se";
             const string cultureCode = "sv-SE";
 
-            var cacheManager = new CacheManager();
             var cache = new InMemoryCache(cacheName);
-            cacheManager.AddCache(cache);
+            var cacheManager = new CacheManager(cache);
 
             var customer = new Customer{ Id = 1, Email = email};
             
@@ -57,9 +56,8 @@ namespace Enferno.StormApiClient.Test
             const string cacheName = "AccessClient";
             const string cultureCode = "sv-SE";
 
-            var cacheManager = new CacheManager();
             var cache = new InMemoryCache(cacheName);
-            cacheManager.AddCache(cache);
+            var cacheManager = new CacheManager(cache);
 
             var customer = new Customer { Id = 1, Email = "patrik@attentia.se" };
 

@@ -523,6 +523,18 @@
         <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
+    <wsdl:operation name="CreatePayment">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/CreatePayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
     <wsdl:operation name="PurchaseEx">
       <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/PurchaseEx" style="document" />
       <wsdl:input>

@@ -35,6 +35,7 @@
           <xs:element minOccurs="0" name="IsBuyable" type="xs:boolean" />
           <xs:element minOccurs="0" name="InvoiceReference" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="PaymentMethodId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="DeliveryMethodId" nillable="true" type="xs:int" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
