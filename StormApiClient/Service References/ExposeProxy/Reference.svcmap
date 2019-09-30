@@ -83,7 +83,7 @@
     <MetadataFile FileName="ShoppingService21.wsdl" MetadataType="Wsdl" ID="a7535a40-0687-422c-9d01-a0b7f6829bc5" SourceId="6" SourceUrl="https://servicesstage.enferno.se/api/1.1/ShoppingService.svc?wsdl" />
     <MetadataFile FileName="ShoppingService87.xsd" MetadataType="Schema" ID="9df08ae0-5d67-4169-bd62-6e2a3107c2e0" SourceId="6" SourceUrl="https://servicesstage.enferno.se/api/1.1/ShoppingService.svc?xsd=xsd5" />
     <MetadataFile FileName="ExposeService11.xsd" MetadataType="Schema" ID="3ba1be68-2f97-4cf9-893e-7d411b1bafb3" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd4" />
-    <MetadataFile FileName="ExposeService111.xsd" MetadataType="Schema" ID="0a6fcaf1-c468-4a92-9fd2-b7c759941549" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd7" />
+    <MetadataFile FileName="ExposeService116.xsd" MetadataType="Schema" ID="98537ba9-e7de-4c6f-a2b5-41df8f73b352" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd6" />
     <MetadataFile FileName="ExposeService2.wsdl" MetadataType="Wsdl" ID="91408421-b67e-432b-8a5b-a1f03bd4c266" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?wsdl=wsdl0" />
     <MetadataFile FileName="ExposeService112.xsd" MetadataType="Schema" ID="e464ab1c-5489-4fe6-a661-c0ffd2e3ccf6" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd10" />
     <MetadataFile FileName="ExposeService113.xsd" MetadataType="Schema" ID="84f3f096-4232-40fa-8b27-bd1097d835c0" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd9" />
@@ -91,7 +91,7 @@
     <MetadataFile FileName="ExposeService1.xsd" MetadataType="Schema" ID="a01fb023-0865-42a8-955d-d2bb02b4282a" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd12" />
     <MetadataFile FileName="ExposeService115.xsd" MetadataType="Schema" ID="d3cbcb99-b8cf-4a53-8920-8450c16d2f96" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd5" />
     <MetadataFile FileName="ExposeService21.wsdl" MetadataType="Wsdl" ID="eae8221a-d40e-4777-8c3b-c46b393e1af6" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?wsdl" />
-    <MetadataFile FileName="ExposeService116.xsd" MetadataType="Schema" ID="98537ba9-e7de-4c6f-a2b5-41df8f73b352" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd6" />
+    <MetadataFile FileName="ExposeService111.xsd" MetadataType="Schema" ID="0a6fcaf1-c468-4a92-9fd2-b7c759941549" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd7" />
     <MetadataFile FileName="ExposeService.xsd" MetadataType="Schema" ID="6a9d00de-7480-4d48-b421-fc87ef7f3380" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd11" />
     <MetadataFile FileName="ExposeService117.xsd" MetadataType="Schema" ID="85ff2194-788b-436d-acfe-bd9b873201be" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd1" />
     <MetadataFile FileName="ExposeService119.xsd" MetadataType="Schema" ID="0169c712-a90d-4732-a617-2fe8cce97136" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd8" />

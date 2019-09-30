@@ -55,6 +55,7 @@
           <xs:element minOccurs="0" name="VariantProductId" nillable="true" type="xs:int" />
           <xs:element minOccurs="0" name="PartNo" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="PricelistId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="FlagId" nillable="true" type="xs:int" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

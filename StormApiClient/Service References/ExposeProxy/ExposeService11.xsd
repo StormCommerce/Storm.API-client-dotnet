@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="Enferno.Services.Contracts.Expose.Shopping" elementFormDefault="qualified" targetNamespace="Enferno.Services.Contracts.Expose.Shopping" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd2" namespace="Enferno.Services.Contracts.Message" />
-  <xs:import schemaLocation="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd3" namespace="Enferno.Services.Contracts.Message" />
+  <xs:import schemaLocation="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:import schemaLocation="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd5" namespace="Enferno.Services.Contracts.Expose.Products" />
-  <xs:import schemaLocation="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd0" namespace="Enferno.Services.Contracts.Expose" />
+  <xs:import schemaLocation="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd2" namespace="Enferno.Services.Contracts.Expose" />
   <xs:import schemaLocation="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd6" namespace="Enferno.Services.Contracts.Expose.Customers" />
   <xs:import schemaLocation="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/System" />
   <xs:complexType name="Basket">
@@ -224,6 +224,7 @@
           <xs:element minOccurs="0" name="VariantProductId" nillable="true" type="xs:int" />
           <xs:element minOccurs="0" name="PartNo" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="PricelistId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="FlagId" nillable="true" type="xs:int" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

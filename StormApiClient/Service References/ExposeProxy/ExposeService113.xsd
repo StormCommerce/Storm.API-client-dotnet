@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="Enferno.Services.Contracts.Expose.Orders" elementFormDefault="qualified" targetNamespace="Enferno.Services.Contracts.Expose.Orders" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd2" namespace="Enferno.Services.Contracts.Message" />
-  <xs:import schemaLocation="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd3" namespace="Enferno.Services.Contracts.Message" />
+  <xs:import schemaLocation="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:complexType name="DeliveryNote">
     <xs:complexContent mixed="false">
       <xs:extension xmlns:q1="Enferno.Services.Contracts.Message" base="q1:Entity">
