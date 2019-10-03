@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>2.3.1-beta</version>
+    <version>2.3.1</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -11,35 +11,35 @@
     <description>Enferno Storm Commerce API Client library.</description>
     <releaseNotes>
 Please see release notes for 2.0.0 for details if you are upgrading from &lt;= v1.8.x.
-Note that the 1.8.x branch will no longer be updated.
+      Note that the 1.8.x branch will no longer be updated.
 
-Also note the breaking change in Enferno.Public 2.3.0.
+      Also note the breaking change in Enferno.Public 2.3.0.
 
 ## What's new?
 
-- #5909: Added a new method, ListPromotionProducts. It lists products added, or selectable, from promotion effects for a given product.  
-https://servicesstage.enferno.se/api/1.1/docs/#/Products/Promotions/ListPromotionProducts  
-https://servicesstage.enferno.se/api/1.1/docs/#/Products/Promotions/PromotionProducts  
+- #5909: Added a new method, ListPromotionProducts. It lists products added, or selectable, from promotion effects for a given product.
+https://api.storm.io/api/1.1/docs/#/Products/Promotions/ListPromotionProducts
+https://api.storm.io/api/1.1/docs/#/Products/Promotions/PromotionProducts
 
-- #5708: Popularity is now calculated per Application instead of per Client.  
+- #5708: Popularity is now calculated per Application instead of per Client.
 
-- #5728: Added Code and IsHidden to ProductParametric.  
-https://servicesstage.enferno.se/api/1.1/docs/#/Products/Parametric/ProductParametric  
+- #5728: Added Code and IsHidden to ProductParametric.
+https://api.storm.io/api/1.1/docs/#/Products/Parametric/ProductParametric
 
-- #5655: Added Code and IsHidden to ParametricInfo.  
-https://servicesstage.enferno.se/api/1.1/docs/#/Products/Parametric/ParametricInfo  
+- #5655: Added Code and IsHidden to ParametricInfo.
+https://api.storm.io/api/1.1/docs/#/Products/Parametric/ParametricInfo
 
 ## What's fixed?
 
-- #5663: Now only listing active manufacturers..    
+- #5663: Now only listing active manufacturers.
 
 ## Miscellaneous changes?
 
 - #5961: Added support for Swagger documentation. This can be used as the normal documentation to execute requests to the API. Moreover it can be used to generate client side code from the resulting swagger.json. Note that this is still very experimental and can be changed.
-Use /swagger instead of /docs.  
-https://servicesstage.enferno.se/api/1.1/swagger  
+Use /swagger instead of /docs. Minor changes has been made since the Stage release.
+https://api.storm.io/api/1.1/swagger
 
-Regards,  
+Regards,
 The Storm API Team
     </releaseNotes>
     <copyright>Copyright 2018</copyright>
