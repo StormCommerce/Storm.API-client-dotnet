@@ -245,6 +245,7 @@
           <xs:element minOccurs="0" name="Width" nillable="true" type="xs:decimal" />
           <xs:element minOccurs="0" name="Height" nillable="true" type="xs:decimal" />
           <xs:element minOccurs="0" name="Depth" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="IsDangerousGoods" type="xs:boolean" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -696,6 +697,7 @@
           <xs:element minOccurs="0" name="UnitOfMeasurementCount" nillable="true" type="xs:decimal" />
           <xs:element minOccurs="0" name="EanCode" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="PriceStandard" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="IsDangerousGoods" type="xs:boolean" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

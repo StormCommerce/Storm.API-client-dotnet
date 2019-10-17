@@ -33951,6 +33951,9 @@ namespace Enferno.StormApiClient.Products {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<decimal> DepthField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsDangerousGoodsField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Id {
             get {
@@ -34740,6 +34743,19 @@ namespace Enferno.StormApiClient.Products {
                 if ((this.DepthField.Equals(value) != true)) {
                     this.DepthField = value;
                     this.RaisePropertyChanged("Depth");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=61)]
+        public bool IsDangerousGoods {
+            get {
+                return this.IsDangerousGoodsField;
+            }
+            set {
+                if ((this.IsDangerousGoodsField.Equals(value) != true)) {
+                    this.IsDangerousGoodsField = value;
+                    this.RaisePropertyChanged("IsDangerousGoods");
                 }
             }
         }
@@ -39243,6 +39259,9 @@ namespace Enferno.StormApiClient.Products {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<decimal> PriceStandardField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsDangerousGoodsField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Id {
             get {
@@ -39889,6 +39908,19 @@ namespace Enferno.StormApiClient.Products {
                 if ((this.PriceStandardField.Equals(value) != true)) {
                     this.PriceStandardField = value;
                     this.RaisePropertyChanged("PriceStandard");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=50)]
+        public bool IsDangerousGoods {
+            get {
+                return this.IsDangerousGoodsField;
+            }
+            set {
+                if ((this.IsDangerousGoodsField.Equals(value) != true)) {
+                    this.IsDangerousGoodsField = value;
+                    this.RaisePropertyChanged("IsDangerousGoods");
                 }
             }
         }
