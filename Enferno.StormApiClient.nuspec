@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>2.3.2</version>
+    <version>2.3.3</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -11,28 +11,22 @@
     <description>Enferno Storm Commerce API Client library.</description>
     <releaseNotes>
 Please see release notes for 2.0.0 for details if you are upgrading from &lt;= v1.8.x.
-      Note that the 1.8.x branch will no longer be updated.
+Note that the 1.8.x branch will no longer be updated.
 
-      Also note the breaking change in Enferno.Public 2.3.0.
+Also note the breaking change in Enferno.Public 2.3.0.
 
 ## What's new?
-
-- #6143: Added a new property, IsDangerousGoods, on Product and ProductItem.
-https://api.storm.io/api/1.1/docs/#/Products/Products/Product
-https://api.storm.io/api/1.1/docs/#/Products/Products/ProductItem
-
-- #: Now mapping DiscountCode on Promotion in lists.
-https://api.storm.io/api/1.1/docs/#/Shopping/Promotions/Promotion
+- #6238/SP-26393: Added CostUnit to BasketItem.  
+https://api.storm.io/api/1.1/docs/#/Shopping/Basket/BasketItem  
 
 ## What's fixed?
-
-- #: Problems with ListPromotedProducts from previous release have been addressed.
-
+- #: Now validating CardNo existence upfront in PaymentGiftCardCheck. Cvc is no longer required.  
+https://api.storm.io/api/1.1/docs/#/Shopping/Checkout/PaymentGiftCardCheck  
+- #: Now using the same rounding in OrderRequest as for requests to payment service providers. All amounts are rounded to two decimals.  
 ## Miscellaneous changes?
+- #: Minor additions to documentation.  
 
-- #: Performance fixes for Order and Quotation. Some other tuning has been done as well.
-
-Regards,
+Regards,  
 The Storm API Team
     </releaseNotes>
     <copyright>Copyright 2019</copyright>

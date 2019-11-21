@@ -56565,6 +56565,9 @@ namespace Enferno.StormApiClient.Shopping {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EanCodeField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> CostUnitField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<int> Id {
             get {
@@ -57276,6 +57279,19 @@ namespace Enferno.StormApiClient.Shopping {
                 if ((object.ReferenceEquals(this.EanCodeField, value) != true)) {
                     this.EanCodeField = value;
                     this.RaisePropertyChanged("EanCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=55)]
+        public System.Nullable<decimal> CostUnit {
+            get {
+                return this.CostUnitField;
+            }
+            set {
+                if ((this.CostUnitField.Equals(value) != true)) {
+                    this.CostUnitField = value;
+                    this.RaisePropertyChanged("CostUnit");
                 }
             }
         }
