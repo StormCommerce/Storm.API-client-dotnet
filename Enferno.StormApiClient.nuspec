@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>2.3.3</version>
+    <version>2.3.4-beta</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -11,22 +11,26 @@
     <description>Enferno Storm Commerce API Client library.</description>
     <releaseNotes>
 Please see release notes for 2.0.0 for details if you are upgrading from &lt;= v1.8.x.
-Note that the 1.8.x branch will no longer be updated.
+      Note that the 1.8.x branch will no longer be updated.
 
-Also note the breaking change in Enferno.Public 2.3.0.
+      Also note the breaking change in Enferno.Public 2.3.0.
 
 ## What's new?
-- #6238/SP-26393: Added CostUnit to BasketItem.  
-https://api.storm.io/api/1.1/docs/#/Shopping/Basket/BasketItem  
+- #6681: Added IsExclusive to CompanyPriceLists(PriceList).  
+https://servicesstage.enferno.se/api/1.1/docs/#/Customers/PriceLists/Pricelist  
 
+- #6681: Added two new overloads for InsertCompanyPricelist and UpdateCompanyPricelist: InsertCompanyPricelist2 and UpdateCompanyPricelist2. 
+These new overloads allows updating of IsExclusive on CompanyPriceLists. The old methods are obsoleted and the new ones should be used with PriceList.IsExclusive set to correct value. 
+The old methods defaults to true for this new property.  
+https://servicesstage.enferno.se/api/1.1/docs/#/Customers/PriceLists/InsertCompanyPricelist2  
+https://servicesstage.enferno.se/api/1.1/docs/#/Customers/PriceLists/UpdateCompanyPricelist2
 ## What's fixed?
-- #: Now validating CardNo existence upfront in PaymentGiftCardCheck. Cvc is no longer required.  
-https://api.storm.io/api/1.1/docs/#/Shopping/Checkout/PaymentGiftCardCheck  
-- #: Now using the same rounding in OrderRequest as for requests to payment service providers. All amounts are rounded to two decimals.  
+N/A
 ## Miscellaneous changes?
-- #: Minor additions to documentation.  
+N/A  
 
 Regards,  
+
 The Storm API Team
     </releaseNotes>
     <copyright>Copyright 2019</copyright>

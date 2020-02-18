@@ -187,6 +187,7 @@
           <xs:element minOccurs="0" name="PriceRule" nillable="true" type="tns:PricelistPriceRule" />
           <xs:element minOccurs="0" name="PopulationRules" nillable="true" type="tns:PricelistPopulationRuleList" />
           <xs:element minOccurs="0" name="CurrencyId" type="xs:int" />
+          <xs:element minOccurs="0" name="IsExclusive" type="xs:boolean" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
