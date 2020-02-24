@@ -27,9 +27,14 @@
     <container xdt:Transform="InsertIfMissing">
       <register type="ICacheManager" mapTo="CacheManager" xdt:Transform="InsertIfMissing" xdt:Locator="Match(type)">
         <lifetime type="singleton" />
-        <method name="AddCache">
-          <param name="cache" dependencyName="AccessClient" />
-        </method>
+        <constructor>
+          <param name="caches">
+            <array>
+              <dependency name="AccessClient"/>
+            </array>
+          </param>
+        </constructor>
+        <method name="AddCache" xdt:Transform="Remove" xdt:Locator="Match(name)" />
       </register>
       <register name="AccessClient" type="ICache" mapTo="InMemoryCache" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)">
         <lifetime type="singleton" />
