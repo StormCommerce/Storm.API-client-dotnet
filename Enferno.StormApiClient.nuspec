@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>2.3.4-beta</version>
+    <version>2.3.4</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -16,20 +16,23 @@ Please see release notes for 2.0.0 for details if you are upgrading from &lt;= v
       Also note the breaking change in Enferno.Public 2.3.0.
 
 ## What's new?
-- #6681: Added IsExclusive to CompanyPriceLists(PriceList).  
-https://servicesstage.enferno.se/api/1.1/docs/#/Customers/PriceLists/Pricelist  
+- #6681: Added IsExclusive to CompanyPriceLists(PriceList).
+https://api.storm.io/api/1.1/docs/#/Customers/PriceLists/Pricelist
 
-- #6681: Added two new overloads for InsertCompanyPricelist and UpdateCompanyPricelist: InsertCompanyPricelist2 and UpdateCompanyPricelist2. 
-These new overloads allows updating of IsExclusive on CompanyPriceLists. The old methods are obsoleted and the new ones should be used with PriceList.IsExclusive set to correct value. 
-The old methods defaults to true for this new property.  
-https://servicesstage.enferno.se/api/1.1/docs/#/Customers/PriceLists/InsertCompanyPricelist2  
-https://servicesstage.enferno.se/api/1.1/docs/#/Customers/PriceLists/UpdateCompanyPricelist2
+- #6681: Added two new overloads for InsertCompanyPricelist and UpdateCompanyPricelist: InsertCompanyPricelist2 and UpdateCompanyPricelist2.
+These new overloads allows updating of IsExclusive on CompanyPriceLists. The old methods are obsoleted and the new ones should be used with PriceList.IsExclusive set to correct value.
+The old methods defaults to true for this new property.
+https://api.storm.io/api/1.1/docs/#/Customers/PriceLists/InsertCompanyPricelist2
+https://api.storm.io/api/1.1/docs/#/Customers/PriceLists/UpdateCompanyPricelist2
+- #6145: Additions in Klarna Shipping. Added support for Carrier, Class and DropPoint.
+
 ## What's fixed?
-N/A
-## Miscellaneous changes?
-N/A  
+- #5937: Fixed issue with duplicate freight items.
 
-Regards,  
+## Miscellaneous changes?
+- #6649: Minor rework of error handling for Payments.
+- #: Minor fixes in documentation.
+Regards,
 
 The Storm API Team
     </releaseNotes>
