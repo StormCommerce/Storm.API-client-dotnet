@@ -3,6 +3,8 @@ using System.Web;
 using Enferno.Web.StormUtils.InternalRepository;
 using Expose = Enferno.StormApiClient.Expose;
 using Enferno.Public.Logging;
+using Enferno.StormApiClient.Expose;
+using System;
 
 namespace Enferno.Web.StormUtils
 {
@@ -77,6 +79,8 @@ namespace Enferno.Web.StormUtils
             {
                 parameters.Add(new Expose.NameValue { Name = key, Value = context.Request.QueryString[key] });
             }
+
+            AddParameterIfNotExists(parameters, "PaymentService", "Paynova");
 
             Log.LogEntry.Categories(CategoryFlags.Debug).Message("Callback parameters: {0}", WriteParameters(parameters)).WriteVerbose();
             return parameters;

@@ -86,6 +86,8 @@ namespace Enferno.Web.StormUtils
                 parameters.Add(new Expose.NameValue { Name = key, Value = context.Request.Form[key] });
             }
 
+            AddParameterIfNotExists(parameters, "PaymentService", "Payex");
+
             return parameters;
         }
     }

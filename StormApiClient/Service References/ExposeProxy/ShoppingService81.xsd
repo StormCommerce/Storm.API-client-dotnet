@@ -53,6 +53,7 @@
           <xs:element minOccurs="0" name="InvoiceReference" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="PaymentMethodId" nillable="true" type="xs:int" />
           <xs:element minOccurs="0" name="DeliveryMethodId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SalesAreaId" type="xs:int" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -715,6 +716,7 @@
           <xs:element minOccurs="0" name="LocationId" nillable="true" type="xs:int" />
           <xs:element xmlns:q111="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="DropPoints" nillable="true" type="q111:DropPointList" />
           <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Carrier" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1745,6 +1747,7 @@
           <xs:element minOccurs="0" name="Price" nillable="true" type="xs:decimal" />
           <xs:element xmlns:q213="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="DropPoint" nillable="true" type="q213:DropPoint" />
           <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Carrier" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

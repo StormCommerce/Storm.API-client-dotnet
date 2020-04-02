@@ -220,6 +220,15 @@
   <wsdl:message name="ProductService_ListAccessoryTypes_ErrorMessage_v2Fault_FaultMessage">
     <wsdl:part xmlns:q23="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q23:ErrorMessage" />
   </wsdl:message>
+  <wsdl:message name="ProductService_ListProductRelationTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductRelationTypes" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductRelationTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductRelationTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductRelationTypes_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q24="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q24:ErrorMessage" />
+  </wsdl:message>
   <wsdl:message name="ProductService_ListParametricValues_InputMessage">
     <wsdl:part name="parameters" element="tns:ListParametricValues" />
   </wsdl:message>
@@ -227,7 +236,7 @@
     <wsdl:part name="parameters" element="tns:ListParametricValuesResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListParametricValues_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q24="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q24:ErrorMessage" />
+    <wsdl:part xmlns:q25="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q25:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListParametricInfo_InputMessage">
     <wsdl:part name="parameters" element="tns:ListParametricInfo" />
@@ -236,7 +245,7 @@
     <wsdl:part name="parameters" element="tns:ListParametricInfoResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListParametricInfo_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q25="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q25:ErrorMessage" />
+    <wsdl:part xmlns:q26="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q26:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListParametricValues2_InputMessage">
     <wsdl:part name="parameters" element="tns:ListParametricValues2" />
@@ -245,7 +254,7 @@
     <wsdl:part name="parameters" element="tns:ListParametricValues2Response" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListParametricValues2_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q26="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q26:ErrorMessage" />
+    <wsdl:part xmlns:q27="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q27:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListStatuses_InputMessage">
     <wsdl:part name="parameters" element="tns:ListStatuses" />
@@ -254,7 +263,7 @@
     <wsdl:part name="parameters" element="tns:ListStatusesResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListStatuses_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q27="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q27:ErrorMessage" />
+    <wsdl:part xmlns:q28="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q28:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListFlags_InputMessage">
     <wsdl:part name="parameters" element="tns:ListFlags" />
@@ -263,7 +272,7 @@
     <wsdl:part name="parameters" element="tns:ListFlagsResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListFlags_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q28="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q28:ErrorMessage" />
+    <wsdl:part xmlns:q29="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q29:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListFileTypeIds_InputMessage">
     <wsdl:part name="parameters" element="tns:ListFileTypeIds" />
@@ -272,7 +281,7 @@
     <wsdl:part name="parameters" element="tns:ListFileTypeIdsResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListFileTypeIds_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q29="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q29:ErrorMessage" />
+    <wsdl:part xmlns:q30="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q30:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListFocusParametrics_InputMessage">
     <wsdl:part name="parameters" element="tns:ListFocusParametrics" />
@@ -281,7 +290,7 @@
     <wsdl:part name="parameters" element="tns:ListFocusParametricsResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListFocusParametrics_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q30="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q30:ErrorMessage" />
+    <wsdl:part xmlns:q31="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q31:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListManufacturers_InputMessage">
     <wsdl:part name="parameters" element="tns:ListManufacturers" />
@@ -290,7 +299,7 @@
     <wsdl:part name="parameters" element="tns:ListManufacturersResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListManufacturers_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q31="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q31:ErrorMessage" />
+    <wsdl:part xmlns:q32="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q32:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListManufacturersEx_InputMessage">
     <wsdl:part name="parameters" element="tns:ListManufacturersEx" />
@@ -299,7 +308,7 @@
     <wsdl:part name="parameters" element="tns:ListManufacturersExResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListManufacturersEx_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q32="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q32:ErrorMessage" />
+    <wsdl:part xmlns:q33="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q33:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListNavigationNodeTypeIds_InputMessage">
     <wsdl:part name="parameters" element="tns:ListNavigationNodeTypeIds" />
@@ -308,7 +317,7 @@
     <wsdl:part name="parameters" element="tns:ListNavigationNodeTypeIdsResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListNavigationNodeTypeIds_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q33="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q33:ErrorMessage" />
+    <wsdl:part xmlns:q34="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q34:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListNavigationNodes_InputMessage">
     <wsdl:part name="parameters" element="tns:ListNavigationNodes" />
@@ -317,7 +326,7 @@
     <wsdl:part name="parameters" element="tns:ListNavigationNodesResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListNavigationNodes_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q34="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q34:ErrorMessage" />
+    <wsdl:part xmlns:q35="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q35:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListNavigationNodesEx_InputMessage">
     <wsdl:part name="parameters" element="tns:ListNavigationNodesEx" />
@@ -326,7 +335,7 @@
     <wsdl:part name="parameters" element="tns:ListNavigationNodesExResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListNavigationNodesEx_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q35="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q35:ErrorMessage" />
+    <wsdl:part xmlns:q36="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q36:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListBestsellingProducts_InputMessage">
     <wsdl:part name="parameters" element="tns:ListBestsellingProducts" />
@@ -335,7 +344,7 @@
     <wsdl:part name="parameters" element="tns:ListBestsellingProductsResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListBestsellingProducts_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q36="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q36:ErrorMessage" />
+    <wsdl:part xmlns:q37="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q37:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListBestsellingProducts2_InputMessage">
     <wsdl:part name="parameters" element="tns:ListBestsellingProducts2" />
@@ -344,7 +353,7 @@
     <wsdl:part name="parameters" element="tns:ListBestsellingProducts2Response" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListBestsellingProducts2_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q37="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q37:ErrorMessage" />
+    <wsdl:part xmlns:q38="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q38:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListBestsellingProductsByNode_InputMessage">
     <wsdl:part name="parameters" element="tns:ListBestsellingProductsByNode" />
@@ -353,7 +362,7 @@
     <wsdl:part name="parameters" element="tns:ListBestsellingProductsByNodeResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListBestsellingProductsByNode_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q38="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q38:ErrorMessage" />
+    <wsdl:part xmlns:q39="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q39:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListBestsellingProductsByNode2_InputMessage">
     <wsdl:part name="parameters" element="tns:ListBestsellingProductsByNode2" />
@@ -362,7 +371,7 @@
     <wsdl:part name="parameters" element="tns:ListBestsellingProductsByNode2Response" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListBestsellingProductsByNode2_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q39="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q39:ErrorMessage" />
+    <wsdl:part xmlns:q40="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q40:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListIncludedProducts_InputMessage">
     <wsdl:part name="parameters" element="tns:ListIncludedProducts" />
@@ -371,7 +380,7 @@
     <wsdl:part name="parameters" element="tns:ListIncludedProductsResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListIncludedProducts_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q40="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q40:ErrorMessage" />
+    <wsdl:part xmlns:q41="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q41:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListFamilies_InputMessage">
     <wsdl:part name="parameters" element="tns:ListFamilies" />
@@ -380,7 +389,7 @@
     <wsdl:part name="parameters" element="tns:ListFamiliesResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListFamilies_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q41="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q41:ErrorMessage" />
+    <wsdl:part xmlns:q42="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q42:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProducts_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProducts" />
@@ -389,7 +398,7 @@
     <wsdl:part name="parameters" element="tns:ListProductsResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProducts_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q42="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q42:ErrorMessage" />
+    <wsdl:part xmlns:q43="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q43:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductsByNode_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductsByNode" />
@@ -398,7 +407,7 @@
     <wsdl:part name="parameters" element="tns:ListProductsByNodeResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductsByNode_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q43="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q43:ErrorMessage" />
+    <wsdl:part xmlns:q44="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q44:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProducts2_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProducts2" />
@@ -407,7 +416,7 @@
     <wsdl:part name="parameters" element="tns:ListProducts2Response" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProducts2_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q44="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q44:ErrorMessage" />
+    <wsdl:part xmlns:q45="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q45:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListBestSellingProductsByCompany_InputMessage">
     <wsdl:part name="parameters" element="tns:ListBestSellingProductsByCompany" />
@@ -416,7 +425,7 @@
     <wsdl:part name="parameters" element="tns:ListBestSellingProductsByCompanyResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListBestSellingProductsByCompany_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q45="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q45:ErrorMessage" />
+    <wsdl:part xmlns:q46="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q46:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductsByCustomer_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductsByCustomer" />
@@ -425,7 +434,7 @@
     <wsdl:part name="parameters" element="tns:ListProductsByCustomerResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductsByCustomer_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q46="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q46:ErrorMessage" />
+    <wsdl:part xmlns:q47="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q47:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductsByPricelist_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductsByPricelist" />
@@ -434,7 +443,7 @@
     <wsdl:part name="parameters" element="tns:ListProductsByPricelistResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductsByPricelist_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q47="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q47:ErrorMessage" />
+    <wsdl:part xmlns:q48="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q48:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductsByPriceList2_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductsByPriceList2" />
@@ -443,7 +452,7 @@
     <wsdl:part name="parameters" element="tns:ListProductsByPriceList2Response" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductsByPriceList2_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q48="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q48:ErrorMessage" />
+    <wsdl:part xmlns:q49="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q49:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductsByFamilies_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductsByFamilies" />
@@ -452,7 +461,7 @@
     <wsdl:part name="parameters" element="tns:ListProductsByFamiliesResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductsByFamilies_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q49="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q49:ErrorMessage" />
+    <wsdl:part xmlns:q50="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q50:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductsByPromotionRequirement_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductsByPromotionRequirement" />
@@ -461,7 +470,7 @@
     <wsdl:part name="parameters" element="tns:ListProductsByPromotionRequirementResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductsByPromotionRequirement_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q50="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q50:ErrorMessage" />
+    <wsdl:part xmlns:q51="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q51:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListPromotionProducts_InputMessage">
     <wsdl:part name="parameters" element="tns:ListPromotionProducts" />
@@ -470,7 +479,7 @@
     <wsdl:part name="parameters" element="tns:ListPromotionProductsResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListPromotionProducts_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q51="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q51:ErrorMessage" />
+    <wsdl:part xmlns:q52="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q52:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductsByIds_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductsByIds" />
@@ -479,7 +488,7 @@
     <wsdl:part name="parameters" element="tns:ListProductsByIdsResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductsByIds_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q52="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q52:ErrorMessage" />
+    <wsdl:part xmlns:q53="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q53:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductsByIds2_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductsByIds2" />
@@ -488,7 +497,7 @@
     <wsdl:part name="parameters" element="tns:ListProductsByIds2Response" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductsByIds2_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q53="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q53:ErrorMessage" />
+    <wsdl:part xmlns:q54="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q54:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductsByIds3_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductsByIds3" />
@@ -497,7 +506,7 @@
     <wsdl:part name="parameters" element="tns:ListProductsByIds3Response" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductsByIds3_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q54="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q54:ErrorMessage" />
+    <wsdl:part xmlns:q55="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q55:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductsByPartNos_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductsByPartNos" />
@@ -506,7 +515,7 @@
     <wsdl:part name="parameters" element="tns:ListProductsByPartNosResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductsByPartNos_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q55="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q55:ErrorMessage" />
+    <wsdl:part xmlns:q56="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q56:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductsById_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductsById" />
@@ -515,7 +524,7 @@
     <wsdl:part name="parameters" element="tns:ListProductsByIdResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductsById_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q56="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q56:ErrorMessage" />
+    <wsdl:part xmlns:q57="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q57:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductsByNode2_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductsByNode2" />
@@ -524,7 +533,7 @@
     <wsdl:part name="parameters" element="tns:ListProductsByNode2Response" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductsByNode2_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q57="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q57:ErrorMessage" />
+    <wsdl:part xmlns:q58="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q58:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductItemFilterValues_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductItemFilterValues" />
@@ -533,7 +542,7 @@
     <wsdl:part name="parameters" element="tns:ListProductItemFilterValuesResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductItemFilterValues_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q58="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q58:ErrorMessage" />
+    <wsdl:part xmlns:q59="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q59:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductItemFilterValuesByNode_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductItemFilterValuesByNode" />
@@ -542,7 +551,7 @@
     <wsdl:part name="parameters" element="tns:ListProductItemFilterValuesByNodeResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductItemFilterValuesByNode_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q59="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q59:ErrorMessage" />
+    <wsdl:part xmlns:q60="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q60:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductItemFilterValuesByIds_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductItemFilterValuesByIds" />
@@ -551,7 +560,7 @@
     <wsdl:part name="parameters" element="tns:ListProductItemFilterValuesByIdsResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductItemFilterValuesByIds_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q60="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q60:ErrorMessage" />
+    <wsdl:part xmlns:q61="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q61:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductItemFilterValuesById_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductItemFilterValuesById" />
@@ -560,7 +569,7 @@
     <wsdl:part name="parameters" element="tns:ListProductItemFilterValuesByIdResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductItemFilterValuesById_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q61="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q61:ErrorMessage" />
+    <wsdl:part xmlns:q62="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q62:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductItemFilterValuesByCustomer_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductItemFilterValuesByCustomer" />
@@ -569,7 +578,7 @@
     <wsdl:part name="parameters" element="tns:ListProductItemFilterValuesByCustomerResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductItemFilterValuesByCustomer_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q62="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q62:ErrorMessage" />
+    <wsdl:part xmlns:q63="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q63:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductFilters_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductFilters" />
@@ -578,7 +587,7 @@
     <wsdl:part name="parameters" element="tns:ListProductFiltersResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductFilters_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q63="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q63:ErrorMessage" />
+    <wsdl:part xmlns:q64="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q64:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductFiltersByNode_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductFiltersByNode" />
@@ -587,7 +596,7 @@
     <wsdl:part name="parameters" element="tns:ListProductFiltersByNodeResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductFiltersByNode_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q64="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q64:ErrorMessage" />
+    <wsdl:part xmlns:q65="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q65:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductFilters2_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductFilters2" />
@@ -596,7 +605,7 @@
     <wsdl:part name="parameters" element="tns:ListProductFilters2Response" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductFilters2_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q65="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q65:ErrorMessage" />
+    <wsdl:part xmlns:q66="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q66:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductFiltersByNode2_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductFiltersByNode2" />
@@ -605,7 +614,7 @@
     <wsdl:part name="parameters" element="tns:ListProductFiltersByNode2Response" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductFiltersByNode2_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q66="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q66:ErrorMessage" />
+    <wsdl:part xmlns:q67="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q67:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductFiltersByCustomer_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductFiltersByCustomer" />
@@ -614,7 +623,7 @@
     <wsdl:part name="parameters" element="tns:ListProductFiltersByCustomerResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductFiltersByCustomer_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q67="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q67:ErrorMessage" />
+    <wsdl:part xmlns:q68="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q68:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductFiltersByPricelist_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductFiltersByPricelist" />
@@ -623,7 +632,7 @@
     <wsdl:part name="parameters" element="tns:ListProductFiltersByPricelistResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductFiltersByPricelist_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q68="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q68:ErrorMessage" />
+    <wsdl:part xmlns:q69="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q69:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductFiltersByIds_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductFiltersByIds" />
@@ -632,7 +641,7 @@
     <wsdl:part name="parameters" element="tns:ListProductFiltersByIdsResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductFiltersByIds_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q69="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q69:ErrorMessage" />
+    <wsdl:part xmlns:q70="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q70:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductAccessories_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductAccessories" />
@@ -641,7 +650,7 @@
     <wsdl:part name="parameters" element="tns:ListProductAccessoriesResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductAccessories_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q70="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q70:ErrorMessage" />
+    <wsdl:part xmlns:q71="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q71:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductAccessories2_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductAccessories2" />
@@ -650,7 +659,7 @@
     <wsdl:part name="parameters" element="tns:ListProductAccessories2Response" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductAccessories2_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q71="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q71:ErrorMessage" />
+    <wsdl:part xmlns:q72="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q72:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductAccessories3_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductAccessories3" />
@@ -659,7 +668,7 @@
     <wsdl:part name="parameters" element="tns:ListProductAccessories3Response" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductAccessories3_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q72="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q72:ErrorMessage" />
+    <wsdl:part xmlns:q73="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q73:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductAccessories4_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductAccessories4" />
@@ -668,7 +677,7 @@
     <wsdl:part name="parameters" element="tns:ListProductAccessories4Response" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductAccessories4_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q73="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q73:ErrorMessage" />
+    <wsdl:part xmlns:q74="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q74:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductAccessories5_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductAccessories5" />
@@ -677,7 +686,16 @@
     <wsdl:part name="parameters" element="tns:ListProductAccessories5Response" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductAccessories5_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q74="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q74:ErrorMessage" />
+    <wsdl:part xmlns:q75="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q75:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductRelations_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductRelations" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductRelations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProductRelationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_ListProductRelations_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q76="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q76:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductCrossSell_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductCrossSell" />
@@ -686,7 +704,7 @@
     <wsdl:part name="parameters" element="tns:ListProductCrossSellResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductCrossSell_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q75="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q75:ErrorMessage" />
+    <wsdl:part xmlns:q77="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q77:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductCrossSell2_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductCrossSell2" />
@@ -695,7 +713,7 @@
     <wsdl:part name="parameters" element="tns:ListProductCrossSell2Response" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductCrossSell2_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q76="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q76:ErrorMessage" />
+    <wsdl:part xmlns:q78="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q78:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductCrossSell3_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductCrossSell3" />
@@ -704,7 +722,7 @@
     <wsdl:part name="parameters" element="tns:ListProductCrossSell3Response" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductCrossSell3_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q77="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q77:ErrorMessage" />
+    <wsdl:part xmlns:q79="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q79:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductCrossSell4_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductCrossSell4" />
@@ -713,7 +731,7 @@
     <wsdl:part name="parameters" element="tns:ListProductCrossSell4Response" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductCrossSell4_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q78="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q78:ErrorMessage" />
+    <wsdl:part xmlns:q80="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q80:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductParametrics_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductParametrics" />
@@ -722,7 +740,7 @@
     <wsdl:part name="parameters" element="tns:ListProductParametricsResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductParametrics_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q79="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q79:ErrorMessage" />
+    <wsdl:part xmlns:q81="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q81:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductUpsell_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductUpsell" />
@@ -731,7 +749,7 @@
     <wsdl:part name="parameters" element="tns:ListProductUpsellResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductUpsell_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q80="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q80:ErrorMessage" />
+    <wsdl:part xmlns:q82="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q82:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductUpsell2_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductUpsell2" />
@@ -740,7 +758,7 @@
     <wsdl:part name="parameters" element="tns:ListProductUpsell2Response" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductUpsell2_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q81="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q81:ErrorMessage" />
+    <wsdl:part xmlns:q83="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q83:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductUpSell3_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductUpSell3" />
@@ -749,7 +767,7 @@
     <wsdl:part name="parameters" element="tns:ListProductUpSell3Response" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductUpSell3_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q82="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q82:ErrorMessage" />
+    <wsdl:part xmlns:q84="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q84:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductUpSell4_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductUpSell4" />
@@ -758,7 +776,7 @@
     <wsdl:part name="parameters" element="tns:ListProductUpSell4Response" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductUpSell4_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q83="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q83:ErrorMessage" />
+    <wsdl:part xmlns:q85="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q85:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductsInFamilies_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductsInFamilies" />
@@ -767,7 +785,7 @@
     <wsdl:part name="parameters" element="tns:ListProductsInFamiliesResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductsInFamilies_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q84="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q84:ErrorMessage" />
+    <wsdl:part xmlns:q86="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q86:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductsInFamilies2_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductsInFamilies2" />
@@ -776,7 +794,7 @@
     <wsdl:part name="parameters" element="tns:ListProductsInFamilies2Response" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductsInFamilies2_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q85="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q85:ErrorMessage" />
+    <wsdl:part xmlns:q87="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q87:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListTopProducts_InputMessage">
     <wsdl:part name="parameters" element="tns:ListTopProducts" />
@@ -785,7 +803,7 @@
     <wsdl:part name="parameters" element="tns:ListTopProductsResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListTopProducts_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q86="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q86:ErrorMessage" />
+    <wsdl:part xmlns:q88="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q88:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListPopularProducts_InputMessage">
     <wsdl:part name="parameters" element="tns:ListPopularProducts" />
@@ -794,7 +812,7 @@
     <wsdl:part name="parameters" element="tns:ListPopularProductsResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListPopularProducts_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q87="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q87:ErrorMessage" />
+    <wsdl:part xmlns:q89="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q89:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListPopularProductsByNode_InputMessage">
     <wsdl:part name="parameters" element="tns:ListPopularProductsByNode" />
@@ -803,7 +821,7 @@
     <wsdl:part name="parameters" element="tns:ListPopularProductsByNodeResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListPopularProductsByNode_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q88="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q88:ErrorMessage" />
+    <wsdl:part xmlns:q90="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q90:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListPopularProducts2_InputMessage">
     <wsdl:part name="parameters" element="tns:ListPopularProducts2" />
@@ -812,7 +830,7 @@
     <wsdl:part name="parameters" element="tns:ListPopularProducts2Response" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListPopularProducts2_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q89="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q89:ErrorMessage" />
+    <wsdl:part xmlns:q91="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q91:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListPopularProductsByNode2_InputMessage">
     <wsdl:part name="parameters" element="tns:ListPopularProductsByNode2" />
@@ -821,7 +839,7 @@
     <wsdl:part name="parameters" element="tns:ListPopularProductsByNode2Response" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListPopularProductsByNode2_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q90="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q90:ErrorMessage" />
+    <wsdl:part xmlns:q92="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q92:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListVariantItems_InputMessage">
     <wsdl:part name="parameters" element="tns:ListVariantItems" />
@@ -830,7 +848,7 @@
     <wsdl:part name="parameters" element="tns:ListVariantItemsResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListVariantItems_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q91="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q91:ErrorMessage" />
+    <wsdl:part xmlns:q93="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q93:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListCategories_InputMessage">
     <wsdl:part name="parameters" element="tns:ListCategories" />
@@ -839,7 +857,7 @@
     <wsdl:part name="parameters" element="tns:ListCategoriesResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListCategories_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q92="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q92:ErrorMessage" />
+    <wsdl:part xmlns:q94="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q94:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductReviews_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductReviews" />
@@ -848,7 +866,7 @@
     <wsdl:part name="parameters" element="tns:ListProductReviewsResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductReviews_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q93="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q93:ErrorMessage" />
+    <wsdl:part xmlns:q95="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q95:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductReviewsAll_InputMessage">
     <wsdl:part name="parameters" element="tns:ListProductReviewsAll" />
@@ -857,7 +875,7 @@
     <wsdl:part name="parameters" element="tns:ListProductReviewsAllResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListProductReviewsAll_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q94="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q94:ErrorMessage" />
+    <wsdl:part xmlns:q96="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q96:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListCategoryItems_InputMessage">
     <wsdl:part name="parameters" element="tns:ListCategoryItems" />
@@ -866,7 +884,7 @@
     <wsdl:part name="parameters" element="tns:ListCategoryItemsResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListCategoryItems_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q95="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q95:ErrorMessage" />
+    <wsdl:part xmlns:q97="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q97:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListCategoryItemsByPricelists_InputMessage">
     <wsdl:part name="parameters" element="tns:ListCategoryItemsByPricelists" />
@@ -875,7 +893,7 @@
     <wsdl:part name="parameters" element="tns:ListCategoryItemsByPricelistsResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListCategoryItemsByPricelists_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q96="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q96:ErrorMessage" />
+    <wsdl:part xmlns:q98="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q98:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListWarehouseInfo_InputMessage">
     <wsdl:part name="parameters" element="tns:ListWarehouseInfo" />
@@ -884,7 +902,7 @@
     <wsdl:part name="parameters" element="tns:ListWarehouseInfoResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListWarehouseInfo_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q97="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q97:ErrorMessage" />
+    <wsdl:part xmlns:q99="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q99:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_SearchCategories_InputMessage">
     <wsdl:part name="parameters" element="tns:SearchCategories" />
@@ -893,7 +911,7 @@
     <wsdl:part name="parameters" element="tns:SearchCategoriesResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_SearchCategories_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q98="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q98:ErrorMessage" />
+    <wsdl:part xmlns:q100="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q100:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_SearchManufacturers_InputMessage">
     <wsdl:part name="parameters" element="tns:SearchManufacturers" />
@@ -902,7 +920,7 @@
     <wsdl:part name="parameters" element="tns:SearchManufacturersResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_SearchManufacturers_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q99="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q99:ErrorMessage" />
+    <wsdl:part xmlns:q101="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q101:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_SearchProductsLite_InputMessage">
     <wsdl:part name="parameters" element="tns:SearchProductsLite" />
@@ -911,7 +929,7 @@
     <wsdl:part name="parameters" element="tns:SearchProductsLiteResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_SearchProductsLite_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q100="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q100:ErrorMessage" />
+    <wsdl:part xmlns:q102="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q102:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_SearchProductsLite2_InputMessage">
     <wsdl:part name="parameters" element="tns:SearchProductsLite2" />
@@ -920,7 +938,7 @@
     <wsdl:part name="parameters" element="tns:SearchProductsLite2Response" />
   </wsdl:message>
   <wsdl:message name="ProductService_SearchProductsLite2_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q101="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q101:ErrorMessage" />
+    <wsdl:part xmlns:q103="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q103:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListSkuTypes_InputMessage">
     <wsdl:part name="parameters" element="tns:ListSkuTypes" />
@@ -929,7 +947,7 @@
     <wsdl:part name="parameters" element="tns:ListSkuTypesResponse" />
   </wsdl:message>
   <wsdl:message name="ProductService_ListSkuTypes_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q102="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q102:ErrorMessage" />
+    <wsdl:part xmlns:q104="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q104:ErrorMessage" />
   </wsdl:message>
   <wsdl:portType name="ProductService">
     <wsdl:operation name="GetManufacturer">
@@ -1046,6 +1064,11 @@
       <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListAccessoryTypes" message="tns:ProductService_ListAccessoryTypes_InputMessage" />
       <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListAccessoryTypesResponse" message="tns:ProductService_ListAccessoryTypes_OutputMessage" />
       <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListAccessoryTypesErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListAccessoryTypes_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductRelationTypes">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductRelationTypes" message="tns:ProductService_ListProductRelationTypes_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductRelationTypesResponse" message="tns:ProductService_ListProductRelationTypes_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductRelationTypesErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductRelationTypes_ErrorMessage_v2Fault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="ListParametricValues">
       <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListParametricValues" message="tns:ProductService_ListParametricValues_InputMessage" />
@@ -1301,6 +1324,11 @@
       <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductAccessories5" message="tns:ProductService_ListProductAccessories5_InputMessage" />
       <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductAccessories5Response" message="tns:ProductService_ListProductAccessories5_OutputMessage" />
       <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductAccessories5ErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductAccessories5_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductRelations">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductRelations" message="tns:ProductService_ListProductRelations_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductRelationsResponse" message="tns:ProductService_ListProductRelations_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductRelationsErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ProductService_ListProductRelations_ErrorMessage_v2Fault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="ListProductCrossSell">
       <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductCrossSell" message="tns:ProductService_ListProductCrossSell_InputMessage" />

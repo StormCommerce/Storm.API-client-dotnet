@@ -104,7 +104,7 @@ namespace Enferno.Web.StormUtils
                 Debug.WriteLine(key + ": " + context.Request.QueryString[key]);
             }
 
-            parameters.Add(new Expose.NameValue { Name = "PaymentService", Value = paymentService });
+            AddParameterIfNotExists(parameters, "PaymentService", paymentService);
 
             Log.LogEntry.Categories(CategoryFlags.Debug).Message("Callback parameters: {0}", WriteParameters(parameters)).WriteVerbose();
             return parameters;
@@ -115,7 +115,7 @@ namespace Enferno.Web.StormUtils
             var parameters = new Expose.NameValues();
             if (StormContext.SessionItems["paymentcode"] != null)
             {
-                parameters.Add(new Expose.NameValue { Name = "PaymentService", Value = "ResursBank" });
+                AddParameterIfNotExists(parameters, "PaymentService", "ResursBank");
                 parameters.Add(new Expose.NameValue { Name = "paymentcode", Value = StormContext.SessionItems["paymentcode"] });
 
                 completeAfterCallback = false;

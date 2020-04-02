@@ -1,5 +1,4 @@
 ﻿
-using System;
 using System.Text;
 using System.Web;
 using Enferno.Web.StormUtils.InternalRepository;
@@ -112,7 +111,8 @@ namespace Enferno.Web.StormUtils
 
             if (!string.IsNullOrEmpty(StormContext.SessionItems["paymentcode"]))
             {
-                parameters.Add(new Expose.NameValue { Name = "PaymentService", Value = "ResursBank" });
+                AddParameterIfNotExists(parameters, "PaymentService", "ResursBank");
+
                 parameters.Add(new Expose.NameValue { Name = "paymentcode", Value = StormContext.SessionItems["paymentcode"] });
 
                 useCompanyCard = false;
@@ -123,6 +123,10 @@ namespace Enferno.Web.StormUtils
                 }
 
                 StormContext.SessionItems["paymentcode"] = null;
+            }
+            else
+            {
+                AddParameterIfNotExists(parameters, "PaymentService", "Dibs");
             }
 
             Log.LogEntry.Categories(CategoryFlags.Debug).Message("Callback parameters: {0}", WriteParameters(parameters)).WriteVerbose();

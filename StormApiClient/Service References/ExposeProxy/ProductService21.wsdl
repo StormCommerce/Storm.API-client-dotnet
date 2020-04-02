@@ -307,6 +307,18 @@
         <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
+    <wsdl:operation name="ListProductRelationTypes">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductRelationTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
     <wsdl:operation name="ListParametricValues">
       <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListParametricValues" style="document" />
       <wsdl:input>
@@ -909,6 +921,18 @@
     </wsdl:operation>
     <wsdl:operation name="ListProductAccessories5">
       <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductAccessories5" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListProductRelations">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Products/ProductService/ListProductRelations" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

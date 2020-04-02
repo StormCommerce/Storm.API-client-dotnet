@@ -1,4 +1,5 @@
 ﻿
+using Enferno.StormApiClient.Expose;
 using System;
 using System.Web;
 
@@ -15,56 +16,64 @@ namespace Enferno.Web.StormUtils
         string StatusMessage { get; set; }
     }
 
-	public abstract class AbstractCallbackHandler : ICallbackHandler {
+	public abstract class AbstractCallbackHandler : ICallbackHandler
+	{
 		public event EventHandler DefaultRedirect;
 		public event EventHandler SuccessRedirect;
 		public event EventHandler FailRedirect;
 		public event NotificationEventHandler OnOrderCallbackNotification;
 
-		public virtual void ProcessRequest(HttpContext context) {
+		public virtual void ProcessRequest(HttpContext context) 
+		{
 			throw new NotImplementedException();
 		}
 
 		public string StatusMessage { get; set; }
 
-		public bool IsReusable {
-			get { return true; }
+		public bool IsReusable  => true; 		
+
+		public void Default(HttpContext context) 
+		{
+			if (DefaultRedirect != null) DefaultRedirect(this, new EventArgs());
+			else RedirectToDefault(context);
 		}
 
-		public void Default(HttpContext context) {
-			if(DefaultRedirect != null)
-				DefaultRedirect(this, new EventArgs());
-			else
-				RedirectToDefault(context);
-		}
-
-		public void Success(HttpContext context) {
+		public void Success(HttpContext context) 
+		{
 		    OnOrderCallbackNotification?.Invoke(this, new NotificationEventArgs(StormContext.BasketId.Value));
 		    StormContext.ConfirmedBasketId = StormContext.BasketId;
 			StormContext.BasketId = null;
-			if(SuccessRedirect != null)
-				SuccessRedirect(this, new EventArgs());
-			else
-				RedirectToConfirmed(context);
+
+			if (SuccessRedirect != null) SuccessRedirect(this, new EventArgs());
+			else RedirectToConfirmed(context);
 		}
 
-		public void Fail(HttpContext context) {
-			if(FailRedirect != null)
-				FailRedirect(this, new EventArgs());
-			else
-				RedirectToCheckout(context);
+		public void Fail(HttpContext context)
+		{
+			if (FailRedirect != null) FailRedirect(this, new EventArgs());
+			else RedirectToCheckout(context);
 		}
 
-		protected virtual void RedirectToDefault(HttpContext context) {
+		protected virtual void RedirectToDefault(HttpContext context) 
+		{
 			new Link(StormContext.Configuration.DefaultUrl).Redirect();
 		}
 
-		protected virtual void RedirectToConfirmed(HttpContext context) {
+		protected virtual void RedirectToConfirmed(HttpContext context)
+		{
 			new Link(StormContext.Configuration.ConfirmedUrl).Redirect();
 		}
 
-		protected virtual void RedirectToCheckout(HttpContext context) {
+		protected virtual void RedirectToCheckout(HttpContext context) 
+		{
 			new Link(StormContext.Configuration.CheckoutUrl).Set("paymentstatus", this.StatusMessage).Redirect();
+		}
+
+		protected static void AddParameterIfNotExists(NameValues parameters, string name, string value)
+		{
+			if (parameters.Exists(p => p.Name.Equals(name, StringComparison.OrdinalIgnoreCase))) return;
+
+			parameters.Add(new NameValue { Name = name, Value = value });
 		}
 	}
 }

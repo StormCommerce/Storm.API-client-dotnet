@@ -95,6 +95,8 @@ namespace Enferno.Web.StormUtils
                 parameters.Add(new Expose.NameValue { Name = key, Value = context.Request.QueryString[key] });
             }
 
+            AddParameterIfNotExists(parameters, "PaymentService", "Dibs");
+
             Log.LogEntry.Categories(CategoryFlags.Debug).Message("Callback parameters: {0}", WriteParameters(parameters)).WriteVerbose();
             return parameters;
         }
