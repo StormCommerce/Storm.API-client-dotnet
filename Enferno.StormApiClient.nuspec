@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>2.3.5-beta</version>
+    <version>2.3.5</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -16,12 +16,12 @@ Note that the 1.8.x branch will no longer be updated.
 Also note the breaking change in Enferno.Public 2.3.0.
 
 ## What's new?
-- #5795: Added support for SalesArea on ClientPriceLists. The SalesArea's default VAT code will be used, if present, instead of the Applications's default.  
-- #6407: Added support for SalesArea on Basket. The SalesArea's default VAT code will be used, if present, instead of the Applications's default. Baskets can now be created with a SalesArea. Both SalesArea and Currency can now be updated with UpdateBasket. Note that the currency on the Basket is used when sending the order to the PSP. Also note that Admin today has no support for showing the correct currency on baskets. This will be added as soon as possible.  
-https://servicesstage.enferno.se/api/1.1/docs/#/Shopping/Basket/Basket  
+- #5795: Added support for SalesArea on ClientPriceLists. The SalesArea's default VAT code will be used, if present, instead of the Application's default.  
+- #6407: Added support for SalesArea on Basket. The SalesArea's default VAT code will be used, if present, instead of the Application's default. Baskets can now be created with a SalesArea. Both SalesArea and Currency can now be updated with UpdateBasket. Note that the currency on the Basket is used when sending the order to the PSP. Also note that Admin today has no support for showing the correct currency on baskets. This will be added as soon as possible.  
+https://api.storm.io/api/1.1/docs/#/Shopping/Basket/Basket  
 - #5570: Added support for ProductRelations. ProductRelations will replace Accessories, Crossell and Upsell and give more flexibility in defining various relations. The old types are ported as Accessory-x, Crossell-y and Upsell-z where x, y, z are the old type ids. Use ListProductRelationTypes to check what the new ids are. Note that the new ids should be used in the new method, ListProductRelations, whereas the old ids should still be used for calls to the old methods.  
-https://servicesstage.enferno.se/api/1.1/docs/#/Products/Relations/ListProductRelationTypes  
-https://servicesstage.enferno.se/api/1.1/docs/#/Products/Relations/ListProductRelations
+https://api.storm.io/api/1.1/docs/#/Products/Relations/ListProductRelationTypes  
+https://api.storm.io/api/1.1/docs/#/Products/Relations/ListProductRelations
 
 ## What's fixed?
 - SP-68935/#7066: Fixed issues with Promotion not taking all promoted prices into account when comparing best price. 
@@ -35,7 +35,7 @@ Regards,
 
 The Storm API Team
     </releaseNotes>
-    <copyright>Copyright 2019</copyright>
+    <copyright>Copyright 2020</copyright>
     <tags>Enferno Storm API Client Commerce</tags>
     <dependencies>
       <group targetFramework=".NETFramework4.5">
