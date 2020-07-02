@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="Enferno.Services.Contracts.Expose.Customers" elementFormDefault="qualified" targetNamespace="Enferno.Services.Contracts.Expose.Customers" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://localhost/api/1.1/ShoppingService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://localhost/api/1.1/ShoppingService.svc?xsd=xsd4" namespace="Enferno.Services.Contracts.Expose" />
+  <xs:import schemaLocation="https://localhost/api/1.1/ShoppingService.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://localhost/api/1.1/ShoppingService.svc?xsd=xsd2" namespace="Enferno.Services.Contracts.Message" />
+  <xs:complexType name="Customer">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Enferno.Services.Contracts.Message" base="q1:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Key" type="ser:guid" />
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SSN" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CellPhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReferId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ReferUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Account" nillable="true" type="tns:Account" />
+          <xs:element minOccurs="0" name="Companies" nillable="true" type="tns:CompanyList" />
+          <xs:element minOccurs="0" name="DeliveryAddresses" nillable="true" type="tns:AddressList" />
+          <xs:element minOccurs="0" name="InvoiceAddress" nillable="true" type="tns:Address" />
+          <xs:element minOccurs="0" name="Flags" nillable="true" type="tns:FlagList" />
+          <xs:element minOccurs="0" name="UseInvoiceAddressAsDeliveryAddress" type="xs:boolean" />
+          <xs:element xmlns:q2="Enferno.Services.Contracts.Expose" minOccurs="0" name="Info" nillable="true" type="q2:IdValues" />
+          <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PricelistIds" nillable="true" type="q3:ArrayOfint" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Customer" nillable="true" type="tns:Customer" />
+  <xs:complexType name="Account">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="Enferno.Services.Contracts.Message" base="q4:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Key" type="ser:guid" />
+          <xs:element minOccurs="0" name="LoginName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Roles" nillable="true" type="q5:ArrayOfint" />
+          <xs:element xmlns:q6="Enferno.Services.Contracts.Expose" minOccurs="0" name="Authorizations" nillable="true" type="q6:IdValues" />
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Account" nillable="true" type="tns:Account" />
+  <xs:complexType name="CompanyList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Company" nillable="true" type="tns:Company" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompanyList" nillable="true" type="tns:CompanyList" />
+  <xs:complexType name="Company">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="Enferno.Services.Contracts.Message" base="q7:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Key" type="ser:guid" />
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrgNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReferId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ReferUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DeliveryAddresses" nillable="true" type="tns:AddressList" />
+          <xs:element minOccurs="0" name="InvoiceAddress" nillable="true" type="tns:Address" />
+          <xs:element minOccurs="0" name="UseInvoiceAddressAsDeliveryAddress" type="xs:boolean" />
+          <xs:element xmlns:q8="Enferno.Services.Contracts.Expose" minOccurs="0" name="Info" nillable="true" type="q8:IdValues" />
+          <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PricelistIds" nillable="true" type="q9:ArrayOfint" />
+          <xs:element minOccurs="0" name="ParentId" nillable="true" type="xs:int" />
+          <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DeliveryMethodIds" nillable="true" type="q10:ArrayOfint" />
+          <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PaymentMethodIds" nillable="true" type="q11:ArrayOfint" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Flags" nillable="true" type="tns:FlagList" />
+          <xs:element minOccurs="0" name="VatNo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Company" nillable="true" type="tns:Company" />
+  <xs:complexType name="AddressList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Address" nillable="true" type="tns:Address" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddressList" nillable="true" type="tns:AddressList" />
+  <xs:complexType name="Address">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="Enferno.Services.Contracts.Message" base="q12:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CareOf" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Line1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Line2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Zip" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CountryId" type="xs:int" />
+          <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Region" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsValidated" type="xs:boolean" />
+          <xs:element minOccurs="0" name="GlobalLocationNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShippingPhoneNumber" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Address" nillable="true" type="tns:Address" />
+  <xs:complexType name="FlagList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Flag" nillable="true" type="tns:Flag" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FlagList" nillable="true" type="tns:FlagList" />
+  <xs:complexType name="Flag">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="Enferno.Services.Contracts.Message" base="q13:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Group" type="xs:int" />
+          <xs:element minOccurs="0" name="IsSelected" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Flag" nillable="true" type="tns:Flag" />
+</xs:schema>

@@ -1,80 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="Enferno.Services.Contracts.Expose" elementFormDefault="qualified" targetNamespace="Enferno.Services.Contracts.Expose" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="https://servicesstage.enferno.se/api/1.1/ShoppingService.svc?xsd=xsd2" namespace="Enferno.Services.Contracts.Message" />
-  <xs:import schemaLocation="https://servicesstage.enferno.se/api/1.1/ShoppingService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-  <xs:complexType name="IdValues">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:IdValue" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="IdValues" nillable="true" type="tns:IdValues" />
-  <xs:complexType name="IdValue">
-    <xs:complexContent mixed="false">
-      <xs:extension xmlns:q1="Enferno.Services.Contracts.Message" base="q1:Entity">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="Id" type="xs:int" />
-          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="IdValue" nillable="true" type="tns:IdValue" />
-  <xs:complexType name="FileList">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="File" nillable="true" type="tns:File" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="FileList" nillable="true" type="tns:FileList" />
-  <xs:complexType name="File">
-    <xs:complexContent mixed="false">
-      <xs:extension xmlns:q2="Enferno.Services.Contracts.Message" base="q2:Entity">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="Id" type="xs:int" />
-          <xs:element minOccurs="0" name="Type" type="xs:int" />
-          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="Key" nillable="true" type="ser:guid" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="File" nillable="true" type="tns:File" />
-  <xs:complexType name="NameValues">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:NameValue" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="NameValues" nillable="true" type="tns:NameValues" />
-  <xs:complexType name="NameValue">
-    <xs:complexContent mixed="false">
-      <xs:extension xmlns:q3="Enferno.Services.Contracts.Message" base="q3:Entity">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="NameValue" nillable="true" type="tns:NameValue" />
-  <xs:complexType name="IdNameDescriptions">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="IdNameDescription" nillable="true" type="tns:IdNameDescription" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="IdNameDescriptions" nillable="true" type="tns:IdNameDescriptions" />
-  <xs:complexType name="IdNameDescription">
-    <xs:complexContent mixed="false">
-      <xs:extension xmlns:q4="Enferno.Services.Contracts.Message" base="q4:Entity">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="Id" type="xs:int" />
-          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="ImageKey" nillable="true" type="ser:guid" />
-          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="IdNameDescription" nillable="true" type="tns:IdNameDescription" />
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/System" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="DayOfWeek">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Sunday" />
+      <xs:enumeration value="Monday" />
+      <xs:enumeration value="Tuesday" />
+      <xs:enumeration value="Wednesday" />
+      <xs:enumeration value="Thursday" />
+      <xs:enumeration value="Friday" />
+      <xs:enumeration value="Saturday" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DayOfWeek" nillable="true" type="tns:DayOfWeek" />
 </xs:schema>

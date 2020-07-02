@@ -28,75 +28,75 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://servicesstage.enferno.se/api/1.1/ApplicationService.svc?wsdl" Protocol="http" SourceId="1" />
-    <MetadataSource Address="https://servicesstage.enferno.se/api/1.1/CustomerService.svc?wsdl" Protocol="http" SourceId="2" />
-    <MetadataSource Address="https://servicesstage.enferno.se/api/1.1/OrderService.svc?wsdl" Protocol="http" SourceId="4" />
-    <MetadataSource Address="https://servicesstage.enferno.se/api/1.1/ProductService.svc?wsdl" Protocol="http" SourceId="5" />
-    <MetadataSource Address="https://servicesstage.enferno.se/api/1.1/ShoppingService.svc?wsdl" Protocol="http" SourceId="6" />
-    <MetadataSource Address="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?wsdl" Protocol="http" SourceId="7" />
+    <MetadataSource Address="https://localhost/api/1.1/ApplicationService.svc?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://localhost/api/1.1/CustomerService.svc?wsdl" Protocol="http" SourceId="2" />
+    <MetadataSource Address="https://localhost/api/1.1/OrderService.svc?wsdl" Protocol="http" SourceId="4" />
+    <MetadataSource Address="https://localhost/api/1.1/ProductService.svc?wsdl" Protocol="http" SourceId="5" />
+    <MetadataSource Address="https://localhost/api/1.1/ShoppingService.svc?wsdl" Protocol="http" SourceId="6" />
+    <MetadataSource Address="https://localhost/api/1.1/ExposeService.svc?wsdl" Protocol="http" SourceId="7" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ApplicationService7.xsd" MetadataType="Schema" ID="6b7d68c7-82fb-4a0d-9322-befb41ce943d" SourceId="1" SourceUrl="https://servicesstage.enferno.se/api/1.1/ApplicationService.svc?xsd=xsd6" />
-    <MetadataFile FileName="ApplicationService2.wsdl" MetadataType="Wsdl" ID="20952c5c-c595-4531-87a3-0fd2217ed78b" SourceId="1" SourceUrl="https://servicesstage.enferno.se/api/1.1/ApplicationService.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="ApplicationService71.xsd" MetadataType="Schema" ID="790023b9-aae4-40fd-8cae-655bc97c1e32" SourceId="1" SourceUrl="https://servicesstage.enferno.se/api/1.1/ApplicationService.svc?xsd=xsd4" />
-    <MetadataFile FileName="ApplicationService72.xsd" MetadataType="Schema" ID="ece2760f-7251-4b5e-9efd-2de5d37016bd" SourceId="1" SourceUrl="https://servicesstage.enferno.se/api/1.1/ApplicationService.svc?xsd=xsd3" />
-    <MetadataFile FileName="ApplicationService73.xsd" MetadataType="Schema" ID="fbe0609e-226e-4618-9727-6034c61941e1" SourceId="1" SourceUrl="https://servicesstage.enferno.se/api/1.1/ApplicationService.svc?xsd=xsd1" />
-    <MetadataFile FileName="ApplicationService74.xsd" MetadataType="Schema" ID="fde93562-d625-412a-831b-8bade25dc637" SourceId="1" SourceUrl="https://servicesstage.enferno.se/api/1.1/ApplicationService.svc?xsd=xsd2" />
-    <MetadataFile FileName="ApplicationService21.wsdl" MetadataType="Wsdl" ID="cc43865f-9390-4ab8-bc75-55f78c6e3604" SourceId="1" SourceUrl="https://servicesstage.enferno.se/api/1.1/ApplicationService.svc?wsdl" />
-    <MetadataFile FileName="ApplicationService75.xsd" MetadataType="Schema" ID="4e3896d6-1a82-4082-94f7-8ae89fd24c3e" SourceId="1" SourceUrl="https://servicesstage.enferno.se/api/1.1/ApplicationService.svc?xsd=xsd0" />
-    <MetadataFile FileName="ApplicationService76.xsd" MetadataType="Schema" ID="d081821c-8df0-4429-b531-7a10c75e163b" SourceId="1" SourceUrl="https://servicesstage.enferno.se/api/1.1/ApplicationService.svc?xsd=xsd5" />
-    <MetadataFile FileName="CustomerService6.xsd" MetadataType="Schema" ID="16bc7b42-bb37-4057-926f-17df1e8f4dbf" SourceId="2" SourceUrl="https://servicesstage.enferno.se/api/1.1/CustomerService.svc?xsd=xsd2" />
-    <MetadataFile FileName="CustomerService2.wsdl" MetadataType="Wsdl" ID="fb4de39d-d0f8-471a-9a85-970925ede718" SourceId="2" SourceUrl="https://servicesstage.enferno.se/api/1.1/CustomerService.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="CustomerService61.xsd" MetadataType="Schema" ID="28c9a6af-c917-452c-93b3-0c2d1f1e20e3" SourceId="2" SourceUrl="https://servicesstage.enferno.se/api/1.1/CustomerService.svc?xsd=xsd5" />
-    <MetadataFile FileName="CustomerService62.xsd" MetadataType="Schema" ID="31dc9b4b-fe2c-4c79-a331-b0f15944ba31" SourceId="2" SourceUrl="https://servicesstage.enferno.se/api/1.1/CustomerService.svc?xsd=xsd4" />
-    <MetadataFile FileName="CustomerService63.xsd" MetadataType="Schema" ID="e30fccb4-aedb-4782-acf6-a223085a85fb" SourceId="2" SourceUrl="https://servicesstage.enferno.se/api/1.1/CustomerService.svc?xsd=xsd3" />
-    <MetadataFile FileName="CustomerService64.xsd" MetadataType="Schema" ID="fc880981-8426-468b-9b09-8aec215039aa" SourceId="2" SourceUrl="https://servicesstage.enferno.se/api/1.1/CustomerService.svc?xsd=xsd0" />
-    <MetadataFile FileName="CustomerService65.xsd" MetadataType="Schema" ID="6fa04f3f-3f60-453f-9df2-3c0c6fa8be20" SourceId="2" SourceUrl="https://servicesstage.enferno.se/api/1.1/CustomerService.svc?xsd=xsd1" />
-    <MetadataFile FileName="CustomerService21.wsdl" MetadataType="Wsdl" ID="6730d2b9-2ea1-4a11-b591-ac897cfd7ec6" SourceId="2" SourceUrl="https://servicesstage.enferno.se/api/1.1/CustomerService.svc?wsdl" />
-    <MetadataFile FileName="OrderService.xsd" MetadataType="Schema" ID="f1ceb6ca-7def-47bb-95cf-2dd2bb956454" SourceId="4" SourceUrl="https://servicesstage.enferno.se/api/1.1/OrderService.svc?xsd=xsd4" />
-    <MetadataFile FileName="OrderService4.xsd" MetadataType="Schema" ID="5f92e23f-fce0-4fd9-acdb-35064f93d414" SourceId="4" SourceUrl="https://servicesstage.enferno.se/api/1.1/OrderService.svc?xsd=xsd2" />
-    <MetadataFile FileName="OrderService41.xsd" MetadataType="Schema" ID="1082791d-c985-4446-a59f-68c65a30be83" SourceId="4" SourceUrl="https://servicesstage.enferno.se/api/1.1/OrderService.svc?xsd=xsd3" />
-    <MetadataFile FileName="OrderService42.xsd" MetadataType="Schema" ID="0719045b-1b6d-4fcb-adc8-2053d7e61347" SourceId="4" SourceUrl="https://servicesstage.enferno.se/api/1.1/OrderService.svc?xsd=xsd0" />
-    <MetadataFile FileName="OrderService43.xsd" MetadataType="Schema" ID="e9e9debe-80bc-4a2c-ae39-afff4a91def0" SourceId="4" SourceUrl="https://servicesstage.enferno.se/api/1.1/OrderService.svc?xsd=xsd1" />
-    <MetadataFile FileName="OrderService2.wsdl" MetadataType="Wsdl" ID="2ff658a8-021f-4e1f-9632-0e7767dc5bd7" SourceId="4" SourceUrl="https://servicesstage.enferno.se/api/1.1/OrderService.svc?wsdl" />
-    <MetadataFile FileName="OrderService21.wsdl" MetadataType="Wsdl" ID="c98e4388-c060-46f8-900d-b3ebc72982f2" SourceId="4" SourceUrl="https://servicesstage.enferno.se/api/1.1/OrderService.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="ProductService8.xsd" MetadataType="Schema" ID="95adebda-9e4e-40e7-b136-e2c7a3c447be" SourceId="5" SourceUrl="https://servicesstage.enferno.se/api/1.1/ProductService.svc?xsd=xsd1" />
-    <MetadataFile FileName="ProductService81.xsd" MetadataType="Schema" ID="0daace6f-0475-4ec1-9b8c-01f49ef5d182" SourceId="5" SourceUrl="https://servicesstage.enferno.se/api/1.1/ProductService.svc?xsd=xsd3" />
-    <MetadataFile FileName="ProductService82.xsd" MetadataType="Schema" ID="d2246dd8-8090-4196-9c1d-4c7ca0f4023d" SourceId="5" SourceUrl="https://servicesstage.enferno.se/api/1.1/ProductService.svc?xsd=xsd7" />
-    <MetadataFile FileName="ProductService83.xsd" MetadataType="Schema" ID="3ee0215e-a2ef-4b44-9a73-b4bdb7542562" SourceId="5" SourceUrl="https://servicesstage.enferno.se/api/1.1/ProductService.svc?xsd=xsd4" />
-    <MetadataFile FileName="ProductService1.xsd" MetadataType="Schema" ID="643dfbe1-36b0-4260-84d4-3ea700608557" SourceId="5" SourceUrl="https://servicesstage.enferno.se/api/1.1/ProductService.svc?xsd=xsd8" />
-    <MetadataFile FileName="ProductService84.xsd" MetadataType="Schema" ID="2095f412-d8e3-412b-be8a-16116a710aba" SourceId="5" SourceUrl="https://servicesstage.enferno.se/api/1.1/ProductService.svc?xsd=xsd5" />
-    <MetadataFile FileName="ProductService2.wsdl" MetadataType="Wsdl" ID="c7915567-d592-48ee-b5f1-79b210e7896a" SourceId="5" SourceUrl="https://servicesstage.enferno.se/api/1.1/ProductService.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="ProductService85.xsd" MetadataType="Schema" ID="7d36fc74-50b7-4be9-bf5a-d49771f4f0d8" SourceId="5" SourceUrl="https://servicesstage.enferno.se/api/1.1/ProductService.svc?xsd=xsd0" />
-    <MetadataFile FileName="ProductService21.wsdl" MetadataType="Wsdl" ID="8bb816cb-f3e9-4cdb-83c3-e567b2defb04" SourceId="5" SourceUrl="https://servicesstage.enferno.se/api/1.1/ProductService.svc?wsdl" />
-    <MetadataFile FileName="ProductService86.xsd" MetadataType="Schema" ID="112d1944-1ed6-4e01-9fa5-89a9f4f3145a" SourceId="5" SourceUrl="https://servicesstage.enferno.se/api/1.1/ProductService.svc?xsd=xsd6" />
-    <MetadataFile FileName="ProductService87.xsd" MetadataType="Schema" ID="b1e76bdf-f167-4899-90b3-4bbf399dc724" SourceId="5" SourceUrl="https://servicesstage.enferno.se/api/1.1/ProductService.svc?xsd=xsd2" />
-    <MetadataFile FileName="ShoppingService8.xsd" MetadataType="Schema" ID="ef177816-f576-451b-9d14-19571d84b322" SourceId="6" SourceUrl="https://servicesstage.enferno.se/api/1.1/ShoppingService.svc?xsd=xsd4" />
-    <MetadataFile FileName="ShoppingService2.wsdl" MetadataType="Wsdl" ID="fca62e18-2ab4-4ca2-b0ce-c18ab227719f" SourceId="6" SourceUrl="https://servicesstage.enferno.se/api/1.1/ShoppingService.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="ShoppingService81.xsd" MetadataType="Schema" ID="011ec465-0fa3-422f-976e-d452a71b773d" SourceId="6" SourceUrl="https://servicesstage.enferno.se/api/1.1/ShoppingService.svc?xsd=xsd0" />
-    <MetadataFile FileName="ShoppingService82.xsd" MetadataType="Schema" ID="54aabeea-6de4-4798-bc66-fb0f1e3ab0ef" SourceId="6" SourceUrl="https://servicesstage.enferno.se/api/1.1/ShoppingService.svc?xsd=xsd1" />
-    <MetadataFile FileName="ShoppingService83.xsd" MetadataType="Schema" ID="d82ca345-e7c4-428b-86e0-10369f9a9c92" SourceId="6" SourceUrl="https://servicesstage.enferno.se/api/1.1/ShoppingService.svc?xsd=xsd2" />
-    <MetadataFile FileName="ShoppingService84.xsd" MetadataType="Schema" ID="63c32637-849f-4c0f-9786-6fe112c22da1" SourceId="6" SourceUrl="https://servicesstage.enferno.se/api/1.1/ShoppingService.svc?xsd=xsd3" />
-    <MetadataFile FileName="ShoppingService85.xsd" MetadataType="Schema" ID="adffcc99-620e-4a97-8c8d-0ecb92d48daa" SourceId="6" SourceUrl="https://servicesstage.enferno.se/api/1.1/ShoppingService.svc?xsd=xsd7" />
-    <MetadataFile FileName="ShoppingService.xsd" MetadataType="Schema" ID="527ad642-e6a3-46bb-abd4-c64372d8ba3b" SourceId="6" SourceUrl="https://servicesstage.enferno.se/api/1.1/ShoppingService.svc?xsd=xsd8" />
-    <MetadataFile FileName="ShoppingService86.xsd" MetadataType="Schema" ID="284196b2-bd12-4250-808d-21af829c2e0c" SourceId="6" SourceUrl="https://servicesstage.enferno.se/api/1.1/ShoppingService.svc?xsd=xsd6" />
-    <MetadataFile FileName="ShoppingService21.wsdl" MetadataType="Wsdl" ID="a7535a40-0687-422c-9d01-a0b7f6829bc5" SourceId="6" SourceUrl="https://servicesstage.enferno.se/api/1.1/ShoppingService.svc?wsdl" />
-    <MetadataFile FileName="ShoppingService87.xsd" MetadataType="Schema" ID="9df08ae0-5d67-4169-bd62-6e2a3107c2e0" SourceId="6" SourceUrl="https://servicesstage.enferno.se/api/1.1/ShoppingService.svc?xsd=xsd5" />
-    <MetadataFile FileName="ExposeService11.xsd" MetadataType="Schema" ID="3ba1be68-2f97-4cf9-893e-7d411b1bafb3" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd4" />
-    <MetadataFile FileName="ExposeService116.xsd" MetadataType="Schema" ID="98537ba9-e7de-4c6f-a2b5-41df8f73b352" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd6" />
-    <MetadataFile FileName="ExposeService2.wsdl" MetadataType="Wsdl" ID="91408421-b67e-432b-8a5b-a1f03bd4c266" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="ExposeService112.xsd" MetadataType="Schema" ID="e464ab1c-5489-4fe6-a661-c0ffd2e3ccf6" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd10" />
-    <MetadataFile FileName="ExposeService113.xsd" MetadataType="Schema" ID="84f3f096-4232-40fa-8b27-bd1097d835c0" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd9" />
-    <MetadataFile FileName="ExposeService114.xsd" MetadataType="Schema" ID="e9226049-4535-4e37-911d-62835cc54c19" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd0" />
-    <MetadataFile FileName="ExposeService1.xsd" MetadataType="Schema" ID="a01fb023-0865-42a8-955d-d2bb02b4282a" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd12" />
-    <MetadataFile FileName="ExposeService115.xsd" MetadataType="Schema" ID="d3cbcb99-b8cf-4a53-8920-8450c16d2f96" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd5" />
-    <MetadataFile FileName="ExposeService21.wsdl" MetadataType="Wsdl" ID="eae8221a-d40e-4777-8c3b-c46b393e1af6" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?wsdl" />
-    <MetadataFile FileName="ExposeService111.xsd" MetadataType="Schema" ID="0a6fcaf1-c468-4a92-9fd2-b7c759941549" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd7" />
-    <MetadataFile FileName="ExposeService.xsd" MetadataType="Schema" ID="6a9d00de-7480-4d48-b421-fc87ef7f3380" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd11" />
-    <MetadataFile FileName="ExposeService117.xsd" MetadataType="Schema" ID="85ff2194-788b-436d-acfe-bd9b873201be" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd1" />
-    <MetadataFile FileName="ExposeService119.xsd" MetadataType="Schema" ID="0169c712-a90d-4732-a617-2fe8cce97136" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd8" />
-    <MetadataFile FileName="ExposeService118.xsd" MetadataType="Schema" ID="b7cb9d24-7508-421a-9a34-a65f578d94ef" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd3" />
-    <MetadataFile FileName="ExposeService1110.xsd" MetadataType="Schema" ID="1cb87e7a-fb42-4f60-b9bf-8e84fbb7a77c" SourceId="7" SourceUrl="https://servicesstage.enferno.se/api/1.1/ExposeService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ApplicationService.xsd" MetadataType="Schema" ID="7c50c91c-ea86-4f78-9888-53d360750e05" SourceId="1" SourceUrl="https://localhost/api/1.1/ApplicationService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ApplicationService1.xsd" MetadataType="Schema" ID="40857636-5141-4b1f-881e-e28bb5d6afb8" SourceId="1" SourceUrl="https://localhost/api/1.1/ApplicationService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ApplicationService2.xsd" MetadataType="Schema" ID="783b4577-a643-403e-89d6-b34121b4d3fe" SourceId="1" SourceUrl="https://localhost/api/1.1/ApplicationService.svc?xsd=xsd4" />
+    <MetadataFile FileName="ApplicationService3.xsd" MetadataType="Schema" ID="3ec03686-b427-4592-86d7-edf708f7f5b9" SourceId="1" SourceUrl="https://localhost/api/1.1/ApplicationService.svc?xsd=xsd5" />
+    <MetadataFile FileName="ApplicationService4.xsd" MetadataType="Schema" ID="96974fd7-e68e-4f1c-b775-ff12edff0009" SourceId="1" SourceUrl="https://localhost/api/1.1/ApplicationService.svc?xsd=xsd6" />
+    <MetadataFile FileName="ApplicationService.wsdl" MetadataType="Wsdl" ID="b84700b9-afdd-4e3c-8d36-3b851e5879ac" SourceId="1" SourceUrl="https://localhost/api/1.1/ApplicationService.svc?wsdl" />
+    <MetadataFile FileName="ApplicationService1.wsdl" MetadataType="Wsdl" ID="2626f5ba-33fd-4771-bea6-04b1a09acec9" SourceId="1" SourceUrl="https://localhost/api/1.1/ApplicationService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ApplicationService5.xsd" MetadataType="Schema" ID="09987832-0276-4aa3-afd1-84b888df9421" SourceId="1" SourceUrl="https://localhost/api/1.1/ApplicationService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ApplicationService6.xsd" MetadataType="Schema" ID="9cf212f8-cef1-4ad5-9099-9137dc6c7aa9" SourceId="1" SourceUrl="https://localhost/api/1.1/ApplicationService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CustomerService.xsd" MetadataType="Schema" ID="9e46b500-8736-4b6d-b48a-13ff9c834515" SourceId="2" SourceUrl="https://localhost/api/1.1/CustomerService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CustomerService1.xsd" MetadataType="Schema" ID="5bc4a89c-8eb5-4981-881f-39620e9e68bb" SourceId="2" SourceUrl="https://localhost/api/1.1/CustomerService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CustomerService2.xsd" MetadataType="Schema" ID="d557f857-6dbd-4d86-8c74-63281ff205e7" SourceId="2" SourceUrl="https://localhost/api/1.1/CustomerService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CustomerService3.xsd" MetadataType="Schema" ID="8f1f9482-0f15-4cc3-8357-d2523ec936ee" SourceId="2" SourceUrl="https://localhost/api/1.1/CustomerService.svc?xsd=xsd3" />
+    <MetadataFile FileName="CustomerService.wsdl" MetadataType="Wsdl" ID="b93c83a4-5e10-4554-a393-f338b80a2aee" SourceId="2" SourceUrl="https://localhost/api/1.1/CustomerService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="CustomerService1.wsdl" MetadataType="Wsdl" ID="09e4dd82-0a1d-4687-b11c-54ab6f7fab99" SourceId="2" SourceUrl="https://localhost/api/1.1/CustomerService.svc?wsdl" />
+    <MetadataFile FileName="CustomerService4.xsd" MetadataType="Schema" ID="cef71d1c-9813-47ae-b9b5-dffe891af6c3" SourceId="2" SourceUrl="https://localhost/api/1.1/CustomerService.svc?xsd=xsd4" />
+    <MetadataFile FileName="CustomerService5.xsd" MetadataType="Schema" ID="8f674b65-7097-444f-a3d2-04666994bf3c" SourceId="2" SourceUrl="https://localhost/api/1.1/CustomerService.svc?xsd=xsd5" />
+    <MetadataFile FileName="OrderService.xsd" MetadataType="Schema" ID="42b5ca60-542b-48a1-8966-c877af567cad" SourceId="4" SourceUrl="https://localhost/api/1.1/OrderService.svc?xsd=xsd1" />
+    <MetadataFile FileName="OrderService.wsdl" MetadataType="Wsdl" ID="e6365ed2-4b32-4670-9e9f-20c667b31870" SourceId="4" SourceUrl="https://localhost/api/1.1/OrderService.svc?wsdl" />
+    <MetadataFile FileName="OrderService1.xsd" MetadataType="Schema" ID="42926d34-0636-408f-badb-23a9c4d8e4a1" SourceId="4" SourceUrl="https://localhost/api/1.1/OrderService.svc?xsd=xsd4" />
+    <MetadataFile FileName="OrderService2.xsd" MetadataType="Schema" ID="02a9bf4a-1cb4-434a-9c46-641dd7e9a7b3" SourceId="4" SourceUrl="https://localhost/api/1.1/OrderService.svc?xsd=xsd3" />
+    <MetadataFile FileName="OrderService3.xsd" MetadataType="Schema" ID="367e9972-649f-45c9-891a-5e2254c4bd01" SourceId="4" SourceUrl="https://localhost/api/1.1/OrderService.svc?xsd=xsd0" />
+    <MetadataFile FileName="OrderService1.wsdl" MetadataType="Wsdl" ID="a2aaa656-bb60-4628-a199-e1b89ba8ba72" SourceId="4" SourceUrl="https://localhost/api/1.1/OrderService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="OrderService4.xsd" MetadataType="Schema" ID="6b8bc767-26ce-4df4-b60c-7b2c5c8169fd" SourceId="4" SourceUrl="https://localhost/api/1.1/OrderService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ProductService.xsd" MetadataType="Schema" ID="46ce226a-cd27-47d2-90c1-2d54763da8c0" SourceId="5" SourceUrl="https://localhost/api/1.1/ProductService.svc?xsd=xsd8" />
+    <MetadataFile FileName="ProductService.wsdl" MetadataType="Wsdl" ID="df86ec94-018c-442b-addb-fce8ba33a492" SourceId="5" SourceUrl="https://localhost/api/1.1/ProductService.svc?wsdl" />
+    <MetadataFile FileName="ProductService1.wsdl" MetadataType="Wsdl" ID="a066c18f-ef7a-4af7-9fd8-90001c6344da" SourceId="5" SourceUrl="https://localhost/api/1.1/ProductService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ProductService1.xsd" MetadataType="Schema" ID="af6d254c-0475-4df5-9aac-e813273488ab" SourceId="5" SourceUrl="https://localhost/api/1.1/ProductService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ProductService2.xsd" MetadataType="Schema" ID="b17bd3b4-fb01-4414-99d3-eb3a34a3f576" SourceId="5" SourceUrl="https://localhost/api/1.1/ProductService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ProductService3.xsd" MetadataType="Schema" ID="5d5dfa3e-13df-4adc-958a-b5163729698b" SourceId="5" SourceUrl="https://localhost/api/1.1/ProductService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ProductService4.xsd" MetadataType="Schema" ID="9d8d1656-7878-4c90-82de-2e9b1d4ecabb" SourceId="5" SourceUrl="https://localhost/api/1.1/ProductService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ProductService5.xsd" MetadataType="Schema" ID="5363624f-a2ce-4a2c-8301-b3fbc40ad903" SourceId="5" SourceUrl="https://localhost/api/1.1/ProductService.svc?xsd=xsd4" />
+    <MetadataFile FileName="ProductService6.xsd" MetadataType="Schema" ID="f4552a5c-7b5e-41f9-b400-fbe21e79403b" SourceId="5" SourceUrl="https://localhost/api/1.1/ProductService.svc?xsd=xsd5" />
+    <MetadataFile FileName="ProductService7.xsd" MetadataType="Schema" ID="90be950c-8bc0-451f-90a8-4aa80c346d32" SourceId="5" SourceUrl="https://localhost/api/1.1/ProductService.svc?xsd=xsd6" />
+    <MetadataFile FileName="ProductService8.xsd" MetadataType="Schema" ID="81a5d54b-12b3-44d8-b425-d834b28014e7" SourceId="5" SourceUrl="https://localhost/api/1.1/ProductService.svc?xsd=xsd7" />
+    <MetadataFile FileName="ShoppingService.xsd" MetadataType="Schema" ID="c926383b-5ac9-479d-b1d7-c93493178322" SourceId="6" SourceUrl="https://localhost/api/1.1/ShoppingService.svc?xsd=xsd7" />
+    <MetadataFile FileName="ShoppingService1.xsd" MetadataType="Schema" ID="92157909-87f7-437c-ae8e-219e1622a463" SourceId="6" SourceUrl="https://localhost/api/1.1/ShoppingService.svc?xsd=xsd4" />
+    <MetadataFile FileName="ShoppingService.wsdl" MetadataType="Wsdl" ID="53c55e14-584e-4c9b-8916-1afbf0781637" SourceId="6" SourceUrl="https://localhost/api/1.1/ShoppingService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ShoppingService2.xsd" MetadataType="Schema" ID="fb5e0543-3e1a-4d3a-9ff0-c4c7de9593d3" SourceId="6" SourceUrl="https://localhost/api/1.1/ShoppingService.svc?xsd=xsd6" />
+    <MetadataFile FileName="ShoppingService3.xsd" MetadataType="Schema" ID="2e513ffb-fd6f-4247-a3a3-f96c1e448b79" SourceId="6" SourceUrl="https://localhost/api/1.1/ShoppingService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ShoppingService4.xsd" MetadataType="Schema" ID="a087faac-14f3-4f42-a1e0-3939cdc7d620" SourceId="6" SourceUrl="https://localhost/api/1.1/ShoppingService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ShoppingService5.xsd" MetadataType="Schema" ID="a0142cb2-6a1f-4e93-a8c8-c45426283afc" SourceId="6" SourceUrl="https://localhost/api/1.1/ShoppingService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ShoppingService6.xsd" MetadataType="Schema" ID="bd4c5f04-6253-4709-97a8-74e1b09f76d7" SourceId="6" SourceUrl="https://localhost/api/1.1/ShoppingService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ShoppingService7.xsd" MetadataType="Schema" ID="c2c54a2d-3fdf-4078-a6de-5f8e0a8ef2e4" SourceId="6" SourceUrl="https://localhost/api/1.1/ShoppingService.svc?xsd=xsd5" />
+    <MetadataFile FileName="ShoppingService1.wsdl" MetadataType="Wsdl" ID="41e3c365-841b-414b-bb13-ded0df7adad5" SourceId="6" SourceUrl="https://localhost/api/1.1/ShoppingService.svc?wsdl" />
+    <MetadataFile FileName="ShoppingService8.xsd" MetadataType="Schema" ID="2e949190-d98c-4bd0-81f2-941afc79ad3c" SourceId="6" SourceUrl="https://localhost/api/1.1/ShoppingService.svc?xsd=xsd8" />
+    <MetadataFile FileName="ExposeService.xsd" MetadataType="Schema" ID="ad43d446-8624-409b-83a5-b5feb610c335" SourceId="7" SourceUrl="https://localhost/api/1.1/ExposeService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ExposeService1.xsd" MetadataType="Schema" ID="6741511d-08b7-47dd-9548-4d5edca124e8" SourceId="7" SourceUrl="https://localhost/api/1.1/ExposeService.svc?xsd=xsd10" />
+    <MetadataFile FileName="ExposeService2.xsd" MetadataType="Schema" ID="2abfb242-1f6b-4148-82fd-193fe3a173e1" SourceId="7" SourceUrl="https://localhost/api/1.1/ExposeService.svc?xsd=xsd11" />
+    <MetadataFile FileName="ExposeService.wsdl" MetadataType="Wsdl" ID="ac8600b3-6ba4-442f-a82d-960211aa181b" SourceId="7" SourceUrl="https://localhost/api/1.1/ExposeService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ExposeService3.xsd" MetadataType="Schema" ID="6b8d13c7-45bd-4a67-9384-ba81aa606ad8" SourceId="7" SourceUrl="https://localhost/api/1.1/ExposeService.svc?xsd=xsd6" />
+    <MetadataFile FileName="ExposeService4.xsd" MetadataType="Schema" ID="c801f01f-f23f-4c7d-a501-38c56019a153" SourceId="7" SourceUrl="https://localhost/api/1.1/ExposeService.svc?xsd=xsd4" />
+    <MetadataFile FileName="ExposeService5.xsd" MetadataType="Schema" ID="5ba1e08c-5fdb-493c-8784-bf6c740f79e7" SourceId="7" SourceUrl="https://localhost/api/1.1/ExposeService.svc?xsd=xsd9" />
+    <MetadataFile FileName="ExposeService6.xsd" MetadataType="Schema" ID="e55c0c1a-105b-49f0-8e29-2fe4283357a8" SourceId="7" SourceUrl="https://localhost/api/1.1/ExposeService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ExposeService7.xsd" MetadataType="Schema" ID="a029f937-d51f-4fd3-a67e-bdf4df23cbfc" SourceId="7" SourceUrl="https://localhost/api/1.1/ExposeService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ExposeService8.xsd" MetadataType="Schema" ID="d738c703-95ca-4149-9e7e-d63473dfd70a" SourceId="7" SourceUrl="https://localhost/api/1.1/ExposeService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ExposeService9.xsd" MetadataType="Schema" ID="197511d3-9a65-433a-9f5c-342384686f11" SourceId="7" SourceUrl="https://localhost/api/1.1/ExposeService.svc?xsd=xsd12" />
+    <MetadataFile FileName="ExposeService1.wsdl" MetadataType="Wsdl" ID="e0830dd6-c4de-4b59-afd4-3a73990fb253" SourceId="7" SourceUrl="https://localhost/api/1.1/ExposeService.svc?wsdl" />
+    <MetadataFile FileName="ExposeService10.xsd" MetadataType="Schema" ID="55e3ed9e-51f3-4c2e-8118-80a9356ec86a" SourceId="7" SourceUrl="https://localhost/api/1.1/ExposeService.svc?xsd=xsd7" />
+    <MetadataFile FileName="ExposeService11.xsd" MetadataType="Schema" ID="710a68d2-9f17-48df-bd32-532c14ab618a" SourceId="7" SourceUrl="https://localhost/api/1.1/ExposeService.svc?xsd=xsd5" />
+    <MetadataFile FileName="ExposeService12.xsd" MetadataType="Schema" ID="70aa1d01-19ba-4d50-92e4-2dad802d0c40" SourceId="7" SourceUrl="https://localhost/api/1.1/ExposeService.svc?xsd=xsd8" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

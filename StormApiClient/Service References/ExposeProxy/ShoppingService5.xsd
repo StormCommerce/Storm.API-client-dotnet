@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="Enferno.Services.Contracts.Expose.Products" elementFormDefault="qualified" targetNamespace="Enferno.Services.Contracts.Expose.Products" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://localhost/api/1.1/ShoppingService.svc?xsd=xsd4" namespace="Enferno.Services.Contracts.Expose" />
+  <xs:import schemaLocation="https://localhost/api/1.1/ShoppingService.svc?xsd=xsd2" namespace="Enferno.Services.Contracts.Message" />
+  <xs:complexType name="OnHand">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Enferno.Services.Contracts.Message" base="q1:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:decimal" />
+          <xs:element minOccurs="0" name="IncomingValue" type="xs:decimal" />
+          <xs:element minOccurs="0" name="NextDeliveryDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LeadtimeDayCount" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="LastChecked" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsReturnable" type="xs:boolean" />
+          <xs:element xmlns:q2="Enferno.Services.Contracts.Expose" minOccurs="0" name="Info" nillable="true" type="q2:IdValues" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OnHand" nillable="true" type="tns:OnHand" />
+  <xs:complexType name="Warehouse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="Enferno.Services.Contracts.Message" base="q3:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="StoreId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="WarehouseId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="LocationId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="OnHand" nillable="true" type="tns:OnHand" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Warehouse" nillable="true" type="tns:Warehouse" />
+  <xs:complexType name="ProductOnHandList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:ProductOnHand" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductOnHandList" nillable="true" type="tns:ProductOnHandList" />
+  <xs:complexType name="ProductOnHand">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="Enferno.Services.Contracts.Message" base="q4:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ProductId" type="xs:int" />
+          <xs:element minOccurs="0" name="Warehouses" nillable="true" type="tns:WarehouseList" />
+          <xs:element minOccurs="0" name="Variants" nillable="true" type="tns:ProductOnHandList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProductOnHand" nillable="true" type="tns:ProductOnHand" />
+  <xs:complexType name="WarehouseList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:Warehouse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WarehouseList" nillable="true" type="tns:WarehouseList" />
+</xs:schema>
