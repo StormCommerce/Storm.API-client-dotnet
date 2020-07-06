@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>2.3.6-beta</version>
+    <version>2.3.6</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -18,7 +18,7 @@ Also note the breaking change in Enferno.Public 2.3.0.
 ## What's new?
 - #7780: Gift card balance checks will no more be visible i Admin. They are just balance checks. Redundant Callbacks are also removed when making gift card reservations.
 - #7990: A new property, DropPoionCode has been added to Order.DropPoint.  Order.DropPoint is a CustomerData and this new property will only have a value when the CustomerData is a DropPoint.
-https://servicesstage.enferno.se/api/1.1/docs/#/Orders/CustomerData
+https://api.storm.io/api/1.1/docs/#/Orders/CustomerData
 
 ## What's fixed?
 - #7242,#6426: Fixed problem with PromotionEffect ChooseProduct where items in packages where checked for existence of the optional products. Now package included products are not in scope for that check.
