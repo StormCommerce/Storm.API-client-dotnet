@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="Enferno.Services.Contracts.Expose.Applications" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="Enferno.Services.Contracts.Expose.Applications" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="Enferno.Services.Contracts.Expose.Applications/Imports">
+      <xsd:import schemaLocation="https://web01.stage.storm.io/api/1.1/ApplicationService.svc?xsd=xsd0" namespace="Enferno.Services.Contracts.Expose.Applications" />
+      <xsd:import schemaLocation="https://web01.stage.storm.io/api/1.1/ApplicationService.svc?xsd=xsd5" namespace="http://Enferno.Native.Schemas.ErrorMessage_v2" />
+      <xsd:import schemaLocation="https://web01.stage.storm.io/api/1.1/ApplicationService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://web01.stage.storm.io/api/1.1/ApplicationService.svc?xsd=xsd2" namespace="Enferno.Services.Contracts.Message" />
+      <xsd:import schemaLocation="https://web01.stage.storm.io/api/1.1/ApplicationService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="https://web01.stage.storm.io/api/1.1/ApplicationService.svc?xsd=xsd4" namespace="Enferno.Services.Contracts.Expose" />
+      <xsd:import schemaLocation="https://web01.stage.storm.io/api/1.1/ApplicationService.svc?xsd=xsd6" namespace="Enferno.Services.Contracts.Expose.Products" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ApplicationService_GetApplication_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplication" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_GetApplication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_GetApplication_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q1="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q1:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_ListApplicationFlagGroups_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListApplicationFlagGroups" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_ListApplicationFlagGroups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListApplicationFlagGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_ListApplicationFlagGroups_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q2="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q2:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_ListApplicationFlags_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListApplicationFlags" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_ListApplicationFlags_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListApplicationFlagsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_ListApplicationFlags_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q3="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q3:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_ListStoreInfoTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListStoreInfoTypes" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_ListStoreInfoTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListStoreInfoTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_ListStoreInfoTypes_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q4="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q4:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_ListStores_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListStores" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_ListStores_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListStoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_ListStores_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q5="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q5:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_GetLocationInfoByZipCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocationInfoByZipCode" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_GetLocationInfoByZipCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocationInfoByZipCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_GetLocationInfoByZipCode_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q6="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q6:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_GetStoreItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStoreItem" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_GetStoreItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStoreItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_GetStoreItem_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q7="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q7:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_GetStoreItemByUniqueName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStoreItemByUniqueName" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_GetStoreItemByUniqueName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStoreItemByUniqueNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_GetStoreItemByUniqueName_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q8="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q8:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_GetStoreItemByCountryAndZipCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStoreItemByCountryAndZipCode" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_GetStoreItemByCountryAndZipCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStoreItemByCountryAndZipCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_GetStoreItemByCountryAndZipCode_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q9="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q9:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_ListStoreItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListStoreItems" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_ListStoreItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListStoreItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_ListStoreItems_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q10="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q10:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_ListStoreInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListStoreInfo" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_ListStoreInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListStoreInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_ListStoreInfo_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q11="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q11:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_GetStore_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStore" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_GetStore_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_GetStore_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q12="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q12:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_GetStoreByUniqueName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStoreByUniqueName" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_GetStoreByUniqueName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStoreByUniqueNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_GetStoreByUniqueName_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q13="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q13:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_ListStores2_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListStores2" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_ListStores2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListStores2Response" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_ListStores2_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q14="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q14:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_UpdateDivisionInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDivisionInfo" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_UpdateDivisionInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDivisionInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_UpdateDivisionInfo_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q15="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q15:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_ListInfoTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListInfoTypes" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_ListInfoTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListInfoTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ApplicationService_ListInfoTypes_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q16="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q16:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:portType name="ApplicationService">
+    <wsdl:operation name="GetApplication">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/GetApplication" message="tns:ApplicationService_GetApplication_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/GetApplicationResponse" message="tns:ApplicationService_GetApplication_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/GetApplicationErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ApplicationService_GetApplication_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListApplicationFlagGroups">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/ListApplicationFlagGroups" message="tns:ApplicationService_ListApplicationFlagGroups_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/ListApplicationFlagGroupsResponse" message="tns:ApplicationService_ListApplicationFlagGroups_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/ListApplicationFlagGroupsErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ApplicationService_ListApplicationFlagGroups_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListApplicationFlags">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/ListApplicationFlags" message="tns:ApplicationService_ListApplicationFlags_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/ListApplicationFlagsResponse" message="tns:ApplicationService_ListApplicationFlags_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/ListApplicationFlagsErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ApplicationService_ListApplicationFlags_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListStoreInfoTypes">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/ListStoreInfoTypes" message="tns:ApplicationService_ListStoreInfoTypes_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/ListStoreInfoTypesResponse" message="tns:ApplicationService_ListStoreInfoTypes_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/ListStoreInfoTypesErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ApplicationService_ListStoreInfoTypes_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListStores">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/ListStores" message="tns:ApplicationService_ListStores_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/ListStoresResponse" message="tns:ApplicationService_ListStores_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/ListStoresErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ApplicationService_ListStores_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocationInfoByZipCode">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/GetLocationInfoByZipCode" message="tns:ApplicationService_GetLocationInfoByZipCode_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/GetLocationInfoByZipCodeResponse" message="tns:ApplicationService_GetLocationInfoByZipCode_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/GetLocationInfoByZipCodeErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ApplicationService_GetLocationInfoByZipCode_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStoreItem">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/GetStoreItem" message="tns:ApplicationService_GetStoreItem_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/GetStoreItemResponse" message="tns:ApplicationService_GetStoreItem_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/GetStoreItemErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ApplicationService_GetStoreItem_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStoreItemByUniqueName">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/GetStoreItemByUniqueName" message="tns:ApplicationService_GetStoreItemByUniqueName_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/GetStoreItemByUniqueNameResponse" message="tns:ApplicationService_GetStoreItemByUniqueName_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/GetStoreItemByUniqueNameErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ApplicationService_GetStoreItemByUniqueName_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStoreItemByCountryAndZipCode">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/GetStoreItemByCountryAndZipCode" message="tns:ApplicationService_GetStoreItemByCountryAndZipCode_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/GetStoreItemByCountryAndZipCodeResponse" message="tns:ApplicationService_GetStoreItemByCountryAndZipCode_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/GetStoreItemByCountryAndZipCodeErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ApplicationService_GetStoreItemByCountryAndZipCode_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListStoreItems">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/ListStoreItems" message="tns:ApplicationService_ListStoreItems_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/ListStoreItemsResponse" message="tns:ApplicationService_ListStoreItems_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/ListStoreItemsErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ApplicationService_ListStoreItems_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListStoreInfo">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/ListStoreInfo" message="tns:ApplicationService_ListStoreInfo_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/ListStoreInfoResponse" message="tns:ApplicationService_ListStoreInfo_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/ListStoreInfoErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ApplicationService_ListStoreInfo_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStore">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/GetStore" message="tns:ApplicationService_GetStore_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/GetStoreResponse" message="tns:ApplicationService_GetStore_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/GetStoreErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ApplicationService_GetStore_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStoreByUniqueName">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/GetStoreByUniqueName" message="tns:ApplicationService_GetStoreByUniqueName_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/GetStoreByUniqueNameResponse" message="tns:ApplicationService_GetStoreByUniqueName_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/GetStoreByUniqueNameErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ApplicationService_GetStoreByUniqueName_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListStores2">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/ListStores2" message="tns:ApplicationService_ListStores2_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/ListStores2Response" message="tns:ApplicationService_ListStores2_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/ListStores2ErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ApplicationService_ListStores2_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDivisionInfo">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/UpdateDivisionInfo" message="tns:ApplicationService_UpdateDivisionInfo_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/UpdateDivisionInfoResponse" message="tns:ApplicationService_UpdateDivisionInfo_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/UpdateDivisionInfoErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ApplicationService_UpdateDivisionInfo_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListInfoTypes">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/ListInfoTypes" message="tns:ApplicationService_ListInfoTypes_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/ListInfoTypesResponse" message="tns:ApplicationService_ListInfoTypes_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Applications/ApplicationService/ListInfoTypesErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ApplicationService_ListInfoTypes_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="Enferno.Services.Contracts.Expose" elementFormDefault="qualified" targetNamespace="Enferno.Services.Contracts.Expose" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1/ApplicationService.svc?xsd=xsd2" namespace="Enferno.Services.Contracts.Message" />
+  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1/ApplicationService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="IdValues">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:IdValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IdValues" nillable="true" type="tns:IdValues" />
+  <xs:complexType name="IdValue">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Enferno.Services.Contracts.Message" base="q1:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdValue" nillable="true" type="tns:IdValue" />
+  <xs:complexType name="IdNameDescriptions">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IdNameDescription" nillable="true" type="tns:IdNameDescription" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IdNameDescriptions" nillable="true" type="tns:IdNameDescriptions" />
+  <xs:complexType name="IdNameDescription">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="Enferno.Services.Contracts.Message" base="q2:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ImageKey" nillable="true" type="ser:guid" />
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdNameDescription" nillable="true" type="tns:IdNameDescription" />
+</xs:schema>

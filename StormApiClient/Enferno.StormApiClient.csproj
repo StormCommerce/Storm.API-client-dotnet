@@ -127,47 +127,47 @@
     <None Include="Service References\ExportProxy\ExportService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ApplicationService.wsdl" />
-    <None Include="Service References\ExposeProxy\ApplicationService.xsd">
+    <None Include="Service References\ExposeProxy\ApplicationService2.wsdl" />
+    <None Include="Service References\ExposeProxy\ApplicationService21.wsdl" />
+    <None Include="Service References\ExposeProxy\ApplicationService7.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ApplicationService1.wsdl" />
-    <None Include="Service References\ExposeProxy\ApplicationService1.xsd">
+    <None Include="Service References\ExposeProxy\ApplicationService71.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ApplicationService2.xsd">
+    <None Include="Service References\ExposeProxy\ApplicationService72.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ApplicationService3.xsd">
+    <None Include="Service References\ExposeProxy\ApplicationService73.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ApplicationService4.xsd">
+    <None Include="Service References\ExposeProxy\ApplicationService74.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ApplicationService5.xsd">
+    <None Include="Service References\ExposeProxy\ApplicationService75.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ApplicationService6.xsd">
+    <None Include="Service References\ExposeProxy\ApplicationService76.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\CustomerService.wsdl" />
-    <None Include="Service References\ExposeProxy\CustomerService.xsd">
+    <None Include="Service References\ExposeProxy\CustomerService2.wsdl" />
+    <None Include="Service References\ExposeProxy\CustomerService21.wsdl" />
+    <None Include="Service References\ExposeProxy\CustomerService6.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\CustomerService1.wsdl" />
-    <None Include="Service References\ExposeProxy\CustomerService1.xsd">
+    <None Include="Service References\ExposeProxy\CustomerService61.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\CustomerService2.xsd">
+    <None Include="Service References\ExposeProxy\CustomerService62.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\CustomerService3.xsd">
+    <None Include="Service References\ExposeProxy\CustomerService63.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\CustomerService4.xsd">
+    <None Include="Service References\ExposeProxy\CustomerService64.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\CustomerService5.xsd">
+    <None Include="Service References\ExposeProxy\CustomerService65.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ExposeProxy\Enferno.StormApiClient.Applications.Application.datasource">
@@ -380,120 +380,120 @@
     <None Include="Service References\ExposeProxy\Enferno.StormApiClient.Shopping.SubscriptionTypeList.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ExposeProxy\ExposeService.wsdl" />
-    <None Include="Service References\ExposeProxy\ExposeService.xsd">
+    <None Include="Service References\ExposeProxy\ExposeService13.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ExposeService1.wsdl" />
-    <None Include="Service References\ExposeProxy\ExposeService1.xsd">
+    <None Include="Service References\ExposeProxy\ExposeService131.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ExposeService10.xsd">
+    <None Include="Service References\ExposeProxy\ExposeService1310.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ExposeService11.xsd">
+    <None Include="Service References\ExposeProxy\ExposeService1311.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ExposeService12.xsd">
+    <None Include="Service References\ExposeProxy\ExposeService1312.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ExposeService2.xsd">
+    <None Include="Service References\ExposeProxy\ExposeService132.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ExposeService3.xsd">
+    <None Include="Service References\ExposeProxy\ExposeService133.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ExposeService4.xsd">
+    <None Include="Service References\ExposeProxy\ExposeService134.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ExposeService5.xsd">
+    <None Include="Service References\ExposeProxy\ExposeService135.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ExposeService6.xsd">
+    <None Include="Service References\ExposeProxy\ExposeService136.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ExposeService7.xsd">
+    <None Include="Service References\ExposeProxy\ExposeService137.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ExposeService8.xsd">
+    <None Include="Service References\ExposeProxy\ExposeService138.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ExposeService9.xsd">
+    <None Include="Service References\ExposeProxy\ExposeService139.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\OrderService.wsdl" />
-    <None Include="Service References\ExposeProxy\OrderService.xsd">
+    <None Include="Service References\ExposeProxy\ExposeService2.wsdl" />
+    <None Include="Service References\ExposeProxy\ExposeService21.wsdl" />
+    <None Include="Service References\ExposeProxy\OrderService2.wsdl" />
+    <None Include="Service References\ExposeProxy\OrderService21.wsdl" />
+    <None Include="Service References\ExposeProxy\OrderService5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\OrderService1.wsdl" />
-    <None Include="Service References\ExposeProxy\OrderService1.xsd">
+    <None Include="Service References\ExposeProxy\OrderService51.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\OrderService2.xsd">
+    <None Include="Service References\ExposeProxy\OrderService52.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\OrderService3.xsd">
+    <None Include="Service References\ExposeProxy\OrderService53.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\OrderService4.xsd">
+    <None Include="Service References\ExposeProxy\OrderService54.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ProductService.wsdl" />
-    <None Include="Service References\ExposeProxy\ProductService.xsd">
+    <None Include="Service References\ExposeProxy\ProductService2.wsdl" />
+    <None Include="Service References\ExposeProxy\ProductService21.wsdl" />
+    <None Include="Service References\ExposeProxy\ProductService9.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ProductService1.wsdl" />
-    <None Include="Service References\ExposeProxy\ProductService1.xsd">
+    <None Include="Service References\ExposeProxy\ProductService91.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ProductService2.xsd">
+    <None Include="Service References\ExposeProxy\ProductService92.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ProductService3.xsd">
+    <None Include="Service References\ExposeProxy\ProductService93.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ProductService4.xsd">
+    <None Include="Service References\ExposeProxy\ProductService94.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ProductService5.xsd">
+    <None Include="Service References\ExposeProxy\ProductService95.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ProductService6.xsd">
+    <None Include="Service References\ExposeProxy\ProductService96.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ProductService7.xsd">
+    <None Include="Service References\ExposeProxy\ProductService97.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ProductService8.xsd">
+    <None Include="Service References\ExposeProxy\ProductService98.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ShoppingService.wsdl" />
-    <None Include="Service References\ExposeProxy\ShoppingService.xsd">
+    <None Include="Service References\ExposeProxy\ShoppingService2.wsdl" />
+    <None Include="Service References\ExposeProxy\ShoppingService21.wsdl" />
+    <None Include="Service References\ExposeProxy\ShoppingService9.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ShoppingService1.wsdl" />
-    <None Include="Service References\ExposeProxy\ShoppingService1.xsd">
+    <None Include="Service References\ExposeProxy\ShoppingService91.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ShoppingService2.xsd">
+    <None Include="Service References\ExposeProxy\ShoppingService92.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ShoppingService3.xsd">
+    <None Include="Service References\ExposeProxy\ShoppingService93.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ShoppingService4.xsd">
+    <None Include="Service References\ExposeProxy\ShoppingService94.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ShoppingService5.xsd">
+    <None Include="Service References\ExposeProxy\ShoppingService95.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ShoppingService6.xsd">
+    <None Include="Service References\ExposeProxy\ShoppingService96.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ShoppingService7.xsd">
+    <None Include="Service References\ExposeProxy\ShoppingService97.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExposeProxy\ShoppingService8.xsd">
+    <None Include="Service References\ExposeProxy\ShoppingService98.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Web.config.install.xdt">

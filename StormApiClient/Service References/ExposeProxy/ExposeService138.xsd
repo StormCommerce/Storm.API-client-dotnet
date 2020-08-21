@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="Enferno.Services.Contracts.Expose.Core" elementFormDefault="qualified" targetNamespace="Enferno.Services.Contracts.Expose.Core" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1/ExposeService.svc?xsd=xsd2" namespace="Enferno.Services.Contracts.Expose" />
+  <xs:complexType name="ListErrorMessagesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="Enferno.Services.Contracts.Expose" base="q1:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CultureCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListErrorMessagesRequest" nillable="true" type="tns:ListErrorMessagesRequest" />
+  <xs:complexType name="ListErrorMessagesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="Enferno.Services.Contracts.Expose" base="q2:ResponseOfTypeNameValues">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListErrorMessagesResponse" nillable="true" type="tns:ListErrorMessagesResponse" />
+</xs:schema>
