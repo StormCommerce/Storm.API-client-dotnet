@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>2.3.7</version>
+    <version>2.3.8</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -15,15 +15,12 @@ Please see release notes for 2.0.0 for details if you are upgrading from &lt;= v
 
       Also note the breaking change in Enferno.Public 2.3.0.
 
-
 ## What's new?
-- #5997: A new property, NextRun,  had been added to Subscription. It's a calculated date for when the next order will be triggered.
-https://api.storm.io/api/1.1/docs/#/Shopping/Subscriptions/Subscription
+- #7980: A new property, CrmId, has been added to Customer. Used to save the Customers external id from a crm-system.
+https://api.storm.io/api/1.1/docs/#/Customers/Customers/Customer
 
 ## What's fixed?
-- #8002: Minor issues with promotions fixed. Related to splitting of rows when adding items. Fixed missed mapping of BasketItem.Name.
-- #8024: UpdateDeliveryMethod4 now handles manual prices if delivery service is not "External".
-- #8043: Api-Export now ignores null entities and they will not be returned in the result.
+- #8067: Klarna Shipping: Fixed problem with correct VAT not showing up on freights.
 
 ## Miscellaneous changes?
 N/A

@@ -49684,6 +49684,9 @@ namespace Enferno.StormApiClient.Customers {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int[] PricelistIdsField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CrmIdField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<int> Id {
             get {
@@ -49927,6 +49930,19 @@ namespace Enferno.StormApiClient.Customers {
                 if ((object.ReferenceEquals(this.PricelistIdsField, value) != true)) {
                     this.PricelistIdsField = value;
                     this.RaisePropertyChanged("PricelistIds");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=19)]
+        public string CrmId {
+            get {
+                return this.CrmIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CrmIdField, value) != true)) {
+                    this.CrmIdField = value;
+                    this.RaisePropertyChanged("CrmId");
                 }
             }
         }

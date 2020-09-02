@@ -52,6 +52,7 @@
           <xs:element minOccurs="0" name="UseInvoiceAddressAsDeliveryAddress" type="xs:boolean" />
           <xs:element xmlns:q8="Enferno.Services.Contracts.Expose" minOccurs="0" name="Info" nillable="true" type="q8:IdValues" />
           <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PricelistIds" nillable="true" type="q9:ArrayOfint" />
+          <xs:element minOccurs="0" name="CrmId" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
