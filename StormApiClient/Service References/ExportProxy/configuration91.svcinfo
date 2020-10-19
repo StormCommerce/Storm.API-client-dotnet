@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="Lw+29Af1NrL8UWOTgxB7qXufqQg=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="d7/HHkUIDviKpcuuUtQKj0KE/p/ITugRieU0x82uFLI=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_ExportService">
       <properties>
@@ -34,7 +34,7 @@
           <serializedValue>65536</serializedValue>
         </property>
         <property path="/maxReceivedMessageSize" isComplexType="false" isExplicitlyDefined="true" clrType="System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue />
+          <serializedValue>2147483647</serializedValue>
         </property>
         <property path="/proxyAddress" isComplexType="false" isExplicitlyDefined="false" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_ExportService" contract="ExportProxy.ExportService" bindingType="basicHttpBinding" address="https://stormstage.enferno.se/api/1.1/Export/ExportService.svc" bindingConfiguration="BasicHttpBinding_ExportService">
+    <endpoint name="BasicHttpBinding_ExportService" contract="ExportProxy.ExportService" bindingType="basicHttpBinding" address="https://web01.stage.storm.io/api/1.1b/Export/ExportService.svc" bindingConfiguration="BasicHttpBinding_ExportService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://stormstage.enferno.se/api/1.1/Export/ExportService.svc</serializedValue>
+          <serializedValue>https://web01.stage.storm.io/api/1.1b/Export/ExportService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

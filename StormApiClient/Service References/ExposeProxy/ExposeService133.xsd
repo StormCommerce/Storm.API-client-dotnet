@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="Enferno.Services.Contracts.Expose" elementFormDefault="qualified" targetNamespace="Enferno.Services.Contracts.Expose" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1/ExposeService.svc?xsd=xsd3" namespace="Enferno.Services.Contracts.Message" />
-  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1/ExposeService.svc?xsd=xsd4" namespace="Enferno.Services.Contracts.Expose.Shopping" />
-  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1/ExposeService.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1/ExposeService.svc?xsd=xsd5" namespace="Enferno.Services.Contracts.Expose.Products" />
-  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1/ExposeService.svc?xsd=xsd6" namespace="Enferno.Services.Contracts.Expose.Customers" />
-  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1/ExposeService.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1/ExposeService.svc?xsd=xsd9" namespace="Enferno.Services.Contracts.Expose.Orders" />
-  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1/ExposeService.svc?xsd=xsd10" namespace="Enferno.Services.Contracts.Expose.Applications" />
+  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1b/ExposeService.svc?xsd=xsd3" namespace="Enferno.Services.Contracts.Message" />
+  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1b/ExposeService.svc?xsd=xsd4" namespace="Enferno.Services.Contracts.Expose.Shopping" />
+  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1b/ExposeService.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1b/ExposeService.svc?xsd=xsd5" namespace="Enferno.Services.Contracts.Expose.Products" />
+  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1b/ExposeService.svc?xsd=xsd6" namespace="Enferno.Services.Contracts.Expose.Customers" />
+  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1b/ExposeService.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1b/ExposeService.svc?xsd=xsd9" namespace="Enferno.Services.Contracts.Expose.Orders" />
+  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1b/ExposeService.svc?xsd=xsd10" namespace="Enferno.Services.Contracts.Expose.Applications" />
   <xs:complexType name="Request">
     <xs:complexContent mixed="false">
       <xs:extension xmlns:q1="Enferno.Services.Contracts.Message" base="q1:Entity">
@@ -3321,6 +3321,19 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="ListCustomerByInfoTypeRequest" nillable="true" type="tns:ListCustomerByInfoTypeRequest" />
+  <xs:complexType name="ListCustomerByInfoType2Request">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShowInactive" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CultureCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListCustomerByInfoType2Request" nillable="true" type="tns:ListCustomerByInfoType2Request" />
   <xs:complexType name="GetCompanyByOrgNoAndStoreIdRequest">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
@@ -3466,18 +3479,6 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="ListContactByCompanyRequest" nillable="true" type="tns:ListContactByCompanyRequest" />
-  <xs:complexType name="ListCustomerByCompany2Request">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:Request">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="Id" type="xs:int" />
-          <xs:element minOccurs="0" name="AccountRoleId" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="CultureCode" nillable="true" type="xs:string" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="ListCustomerByCompany2Request" nillable="true" type="tns:ListCustomerByCompany2Request" />
   <xs:complexType name="ListCustomerByCompanyRequest">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
@@ -3500,6 +3501,43 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="ListCustomerBySSNRequest" nillable="true" type="tns:ListCustomerBySSNRequest" />
+  <xs:complexType name="ListCustomerByCompany2Request">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="AccountRoleId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CultureCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListCustomerByCompany2Request" nillable="true" type="tns:ListCustomerByCompany2Request" />
+  <xs:complexType name="ListCustomerByCompany3Request">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="AccountRoleId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShowInactive" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CultureCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListCustomerByCompany3Request" nillable="true" type="tns:ListCustomerByCompany3Request" />
+  <xs:complexType name="ListCustomerBySSN2Request">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Ssn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShowInactive" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CultureCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListCustomerBySSN2Request" nillable="true" type="tns:ListCustomerBySSN2Request" />
   <xs:complexType name="SearchCustomerRequest">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
@@ -3515,6 +3553,22 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="SearchCustomerRequest" nillable="true" type="tns:SearchCustomerRequest" />
+  <xs:complexType name="SearchCustomer2Request">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SearchString" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CompanyId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Sort" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Size" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Expand" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShowInactive" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CultureCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchCustomer2Request" nillable="true" type="tns:SearchCustomer2Request" />
   <xs:complexType name="ListContactResponsibilitiesRequest">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
@@ -6899,6 +6953,14 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="ResponseOfTypeCustomerList" nillable="true" type="tns:ResponseOfTypeCustomerList" />
+  <xs:complexType name="ListCustomerByInfoType2Response">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseOfTypeCustomerList">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListCustomerByInfoType2Response" nillable="true" type="tns:ListCustomerByInfoType2Response" />
   <xs:complexType name="GetCompanyByOrgNoAndStoreIdResponse">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ResponseOfTypeCompany">
@@ -7020,14 +7082,6 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="ResponseOfTypeContactList" nillable="true" type="tns:ResponseOfTypeContactList" />
-  <xs:complexType name="ListCustomerByCompany2Response">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:ResponseOfTypeCustomerList">
-        <xs:sequence />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="ListCustomerByCompany2Response" nillable="true" type="tns:ListCustomerByCompany2Response" />
   <xs:complexType name="ListCustomerByCompanyResponse">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ResponseOfTypeCustomerList">
@@ -7044,6 +7098,30 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="ListCustomerBySSNResponse" nillable="true" type="tns:ListCustomerBySSNResponse" />
+  <xs:complexType name="ListCustomerByCompany2Response">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseOfTypeCustomerList">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListCustomerByCompany2Response" nillable="true" type="tns:ListCustomerByCompany2Response" />
+  <xs:complexType name="ListCustomerByCompany3Response">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseOfTypeCustomerList">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListCustomerByCompany3Response" nillable="true" type="tns:ListCustomerByCompany3Response" />
+  <xs:complexType name="ListCustomerBySSN2Response">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseOfTypeCustomerList">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListCustomerBySSN2Response" nillable="true" type="tns:ListCustomerBySSN2Response" />
   <xs:complexType name="SearchCustomerResponse">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ResponseOfTypeCustomerList">
@@ -7052,6 +7130,14 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="SearchCustomerResponse" nillable="true" type="tns:SearchCustomerResponse" />
+  <xs:complexType name="SearchCustomer2Response">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseOfTypeCustomerList">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchCustomer2Response" nillable="true" type="tns:SearchCustomer2Response" />
   <xs:complexType name="ListContactResponsibilitiesResponse">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ResponseOfTypeIdValues">

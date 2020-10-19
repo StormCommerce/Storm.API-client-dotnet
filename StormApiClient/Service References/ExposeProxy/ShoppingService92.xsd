@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="Enferno.Services.Contracts.Expose.Shopping" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1/ShoppingService.svc?xsd=xsd2" namespace="Enferno.Services.Contracts.Message" />
-  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1/ShoppingService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1/ShoppingService.svc?xsd=xsd3" namespace="Enferno.Services.Contracts.Expose.Products" />
-  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1/ShoppingService.svc?xsd=xsd4" namespace="Enferno.Services.Contracts.Expose" />
-  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1/ShoppingService.svc?xsd=xsd6" namespace="Enferno.Services.Contracts.Expose.Customers" />
-  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1/ShoppingService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1b/ShoppingService.svc?xsd=xsd2" namespace="Enferno.Services.Contracts.Message" />
+  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1b/ShoppingService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1b/ShoppingService.svc?xsd=xsd3" namespace="Enferno.Services.Contracts.Expose.Products" />
+  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1b/ShoppingService.svc?xsd=xsd4" namespace="Enferno.Services.Contracts.Expose" />
+  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1b/ShoppingService.svc?xsd=xsd6" namespace="Enferno.Services.Contracts.Expose.Customers" />
+  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1b/ShoppingService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/System" />
   <xs:element name="ClearBasket">
     <xs:complexType>
       <xs:sequence>

@@ -7,7 +7,7 @@
           <wsp:Policy>
             <sp:TransportToken>
               <wsp:Policy>
-                <sp:HttpsToken RequireClientCertificate="true" />
+                <sp:HttpsToken RequireClientCertificate="false" />
               </wsp:Policy>
             </sp:TransportToken>
             <sp:AlgorithmSuite>
@@ -26,7 +26,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsdl:import namespace="Enferno.Services.Contracts.Expose.Customers" location="https://web01.stage.storm.io/api/1.1/CustomerService.svc?wsdl=wsdl0" />
+  <wsdl:import namespace="Enferno.Services.Contracts.Expose.Customers" location="https://web01.stage.storm.io/api/1.1b/CustomerService.svc?wsdl=wsdl0" />
   <wsdl:types />
   <wsdl:binding name="SOAP" type="i0:CustomerService">
     <wsp:PolicyReference URI="#SOAP_policy" />
@@ -247,6 +247,18 @@
         <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
+    <wsdl:operation name="ListCustomerByInfoType2">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Customers/CustomerService/ListCustomerByInfoType2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
     <wsdl:operation name="GetCompanyByOrgNoAndStoreId">
       <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Customers/CustomerService/GetCompanyByOrgNoAndStoreId" style="document" />
       <wsdl:input>
@@ -403,6 +415,18 @@
         <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
+    <wsdl:operation name="ListCustomerByCompany">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Customers/CustomerService/ListCustomerByCompany" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
     <wsdl:operation name="ListCustomerByCompany2">
       <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Customers/CustomerService/ListCustomerByCompany2" style="document" />
       <wsdl:input>
@@ -415,8 +439,8 @@
         <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
-    <wsdl:operation name="ListCustomerByCompany">
-      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Customers/CustomerService/ListCustomerByCompany" style="document" />
+    <wsdl:operation name="ListCustomerByCompany3">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Customers/CustomerService/ListCustomerByCompany3" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -439,8 +463,32 @@
         <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
+    <wsdl:operation name="ListCustomerBySSN2">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Customers/CustomerService/ListCustomerBySSN2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
     <wsdl:operation name="SearchCustomer">
       <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Customers/CustomerService/SearchCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessage_v2Fault">
+        <soap12:fault use="literal" name="ErrorMessage_v2Fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCustomer2">
+      <soap12:operation soapAction="Enferno.Services.Contracts.Expose.Customers/CustomerService/SearchCustomer2" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -922,9 +970,9 @@
   </wsdl:binding>
   <wsdl:service name="CustomerService">
     <wsdl:port name="SOAP" binding="tns:SOAP">
-      <soap12:address location="https://web01.stage.storm.io/api/1.1/CustomerService.svc/soap" />
+      <soap12:address location="https://web01.stage.storm.io/api/1.1b/CustomerService.svc/soap" />
       <wsa10:EndpointReference>
-        <wsa10:Address>https://web01.stage.storm.io/api/1.1/CustomerService.svc/soap</wsa10:Address>
+        <wsa10:Address>https://web01.stage.storm.io/api/1.1b/CustomerService.svc/soap</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
   </wsdl:service>

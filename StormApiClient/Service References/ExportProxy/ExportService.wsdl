@@ -25,7 +25,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsdl:import namespace="Enferno.Services" location="https://stormstage.enferno.se/api/1.1/Export/ExportService.svc?wsdl=wsdl0" />
+  <wsdl:import namespace="Enferno.Services" location="https://web01.stage.storm.io/api/1.1b/Export/ExportService.svc?wsdl=wsdl0" />
   <wsdl:types />
   <wsdl:binding name="BasicHttpBinding_ExportService" type="i0:ExportService">
     <wsp:PolicyReference URI="#BasicHttpBinding_ExportService_policy" />
@@ -57,7 +57,7 @@
   </wsdl:binding>
   <wsdl:service name="ExportService">
     <wsdl:port name="BasicHttpBinding_ExportService" binding="tns:BasicHttpBinding_ExportService">
-      <soap:address location="https://stormstage.enferno.se/api/1.1/Export/ExportService.svc" />
+      <soap:address location="https://web01.stage.storm.io/api/1.1b/Export/ExportService.svc" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

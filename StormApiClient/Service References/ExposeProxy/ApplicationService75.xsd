@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="Enferno.Services.Contracts.Expose" elementFormDefault="qualified" targetNamespace="Enferno.Services.Contracts.Expose" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1/ApplicationService.svc?xsd=xsd2" namespace="Enferno.Services.Contracts.Message" />
-  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1/ApplicationService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1b/ApplicationService.svc?xsd=xsd2" namespace="Enferno.Services.Contracts.Message" />
+  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1b/ApplicationService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:complexType name="IdValues">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:IdValue" />

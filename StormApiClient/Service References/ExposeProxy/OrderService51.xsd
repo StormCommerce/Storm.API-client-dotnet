@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="Enferno.Services.Contracts.Expose.Orders" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1/OrderService.svc?xsd=xsd2" namespace="Enferno.Services.Contracts.Message" />
-  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1/OrderService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1/OrderService.svc?xsd=xsd4" namespace="Enferno.Services.Contracts.Expose" />
+  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1b/OrderService.svc?xsd=xsd2" namespace="Enferno.Services.Contracts.Message" />
+  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1b/OrderService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1b/OrderService.svc?xsd=xsd4" namespace="Enferno.Services.Contracts.Expose" />
   <xs:element name="InsertDeliveryNote">
     <xs:complexType>
       <xs:sequence>

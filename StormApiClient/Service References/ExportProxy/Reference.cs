@@ -37,6 +37,9 @@ namespace Enferno.StormApiClient.ExportProxy {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Xml.Linq.XElement RecordField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Enferno.StormApiClient.ExportProxy.Messages MessagesField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -112,6 +115,19 @@ namespace Enferno.StormApiClient.ExportProxy {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public Enferno.StormApiClient.ExportProxy.Messages Messages {
+            get {
+                return this.MessagesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessagesField, value) != true)) {
+                    this.MessagesField = value;
+                    this.RaisePropertyChanged("Messages");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -120,6 +136,13 @@ namespace Enferno.StormApiClient.ExportProxy {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="Messages", Namespace="http://Enferno.Native.Schemas.ErrorMessage_v2", ItemName="Message", KeyName="Key", ValueName="Value")]
+    [System.SerializableAttribute()]
+    public class Messages : System.Collections.Generic.Dictionary<string, string> {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

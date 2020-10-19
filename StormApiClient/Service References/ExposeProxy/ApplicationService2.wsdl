@@ -26,7 +26,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsdl:import namespace="Enferno.Services.Contracts.Expose.Applications" location="https://web01.stage.storm.io/api/1.1/ApplicationService.svc?wsdl=wsdl0" />
+  <wsdl:import namespace="Enferno.Services.Contracts.Expose.Applications" location="https://web01.stage.storm.io/api/1.1b/ApplicationService.svc?wsdl=wsdl0" />
   <wsdl:types />
   <wsdl:binding name="SOAP" type="i0:ApplicationService">
     <wsp:PolicyReference URI="#SOAP_policy" />
@@ -226,9 +226,9 @@
   </wsdl:binding>
   <wsdl:service name="ApplicationService">
     <wsdl:port name="SOAP" binding="tns:SOAP">
-      <soap12:address location="https://web01.stage.storm.io/api/1.1/ApplicationService.svc/soap" />
+      <soap12:address location="https://web01.stage.storm.io/api/1.1b/ApplicationService.svc/soap" />
       <wsa10:EndpointReference>
-        <wsa10:Address>https://web01.stage.storm.io/api/1.1/ApplicationService.svc/soap</wsa10:Address>
+        <wsa10:Address>https://web01.stage.storm.io/api/1.1b/ApplicationService.svc/soap</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
   </wsdl:service>

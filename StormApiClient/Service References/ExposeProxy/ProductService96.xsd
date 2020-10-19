@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="Enferno.Services.Contracts.Expose.Applications" elementFormDefault="qualified" targetNamespace="Enferno.Services.Contracts.Expose.Applications" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1/ProductService.svc?xsd=xsd2" namespace="Enferno.Services.Contracts.Message" />
+  <xs:import schemaLocation="https://web01.stage.storm.io/api/1.1b/ProductService.svc?xsd=xsd2" namespace="Enferno.Services.Contracts.Message" />
   <xs:complexType name="Currency">
     <xs:complexContent mixed="false">
       <xs:extension xmlns:q1="Enferno.Services.Contracts.Message" base="q1:Entity">

@@ -7,7 +7,7 @@
           <wsp:Policy>
             <sp:TransportToken>
               <wsp:Policy>
-                <sp:HttpsToken RequireClientCertificate="true" />
+                <sp:HttpsToken RequireClientCertificate="false" />
               </wsp:Policy>
             </sp:TransportToken>
             <sp:AlgorithmSuite>
@@ -26,7 +26,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsdl:import namespace="Enferno.Services.Contracts.Expose.Orders" location="https://web01.stage.storm.io/api/1.1/OrderService.svc?wsdl=wsdl0" />
+  <wsdl:import namespace="Enferno.Services.Contracts.Expose.Orders" location="https://web01.stage.storm.io/api/1.1b/OrderService.svc?wsdl=wsdl0" />
   <wsdl:types />
   <wsdl:binding name="SOAP" type="i0:OrderService">
     <wsp:PolicyReference URI="#SOAP_policy" />
@@ -238,9 +238,9 @@
   </wsdl:binding>
   <wsdl:service name="OrderService">
     <wsdl:port name="SOAP" binding="tns:SOAP">
-      <soap12:address location="https://web01.stage.storm.io/api/1.1/OrderService.svc/soap" />
+      <soap12:address location="https://web01.stage.storm.io/api/1.1b/OrderService.svc/soap" />
       <wsa10:EndpointReference>
-        <wsa10:Address>https://web01.stage.storm.io/api/1.1/OrderService.svc/soap</wsa10:Address>
+        <wsa10:Address>https://web01.stage.storm.io/api/1.1b/OrderService.svc/soap</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
   </wsdl:service>
