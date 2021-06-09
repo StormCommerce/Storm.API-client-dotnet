@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="Enferno.Services.Contracts.Expose" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="Enferno.Services.Contracts.Expose" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="Enferno.Services.Contracts.Expose/Imports">
+      <xsd:import schemaLocation="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd2" namespace="Enferno.Services.Contracts.Expose" />
+      <xsd:import schemaLocation="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd12" namespace="http://Enferno.Native.Schemas.ErrorMessage_v2" />
+      <xsd:import schemaLocation="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd1" namespace="Enferno.Services.Contracts.Expose.Core" />
+      <xsd:import schemaLocation="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd3" namespace="Enferno.Services.Contracts.Message" />
+      <xsd:import schemaLocation="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd4" namespace="Enferno.Services.Contracts.Expose.Shopping" />
+      <xsd:import schemaLocation="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd5" namespace="Enferno.Services.Contracts.Expose.Products" />
+      <xsd:import schemaLocation="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd6" namespace="Enferno.Services.Contracts.Expose.Customers" />
+      <xsd:import schemaLocation="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd9" namespace="Enferno.Services.Contracts.Expose.Orders" />
+      <xsd:import schemaLocation="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd10" namespace="Enferno.Services.Contracts.Expose.Applications" />
+      <xsd:import schemaLocation="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/Enferno.Services.Contracts.Expose" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ExposeService_Process_InputMessage">
+    <wsdl:part name="parameters" element="tns:Process" />
+  </wsdl:message>
+  <wsdl:message name="ExposeService_Process_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeService_Process_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q1="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q1:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ExposeService_Ping_InputMessage">
+    <wsdl:part name="parameters" element="tns:Ping" />
+  </wsdl:message>
+  <wsdl:message name="ExposeService_Ping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeService_Ping_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q2="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q2:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ExposeService_ListErrorMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListErrorMessages" />
+  </wsdl:message>
+  <wsdl:message name="ExposeService_ListErrorMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListErrorMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeService_ListErrorMessages_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q3="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q3:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:portType name="ExposeService">
+    <wsdl:operation name="Process">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose/ExposeService/Process" message="tns:ExposeService_Process_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose/ExposeService/ProcessResponse" message="tns:ExposeService_Process_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose/ExposeService/ProcessErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ExposeService_Process_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose/ExposeService/Ping" message="tns:ExposeService_Ping_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose/ExposeService/PingResponse" message="tns:ExposeService_Ping_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose/ExposeService/PingErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ExposeService_Ping_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListErrorMessages">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose/ExposeService/ListErrorMessages" message="tns:ExposeService_ListErrorMessages_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose/ExposeService/ListErrorMessagesResponse" message="tns:ExposeService_ListErrorMessages_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose/ExposeService/ListErrorMessagesErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ExposeService_ListErrorMessages_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

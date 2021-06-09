@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="Y7xb3kjcIxIqKIP6DcYlIGfjNqxzXZ4uIjZ5nx4WEm8=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="nFz5Li+zlWSbuTd4+9ff8b1W1aSbaIfSGQRx4GUrvYk=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="wsHttpBinding" name="SOAP">
       <properties>
@@ -127,10 +127,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="SOAP" contract="Enferno.StormApiClient.Expose.ExposeService" bindingType="wsHttpBinding" address="https://web01.stage.storm.io/api/1.1b/ApplicationService.svc/soap" bindingConfiguration="SOAP">
+    <endpoint name="SOAP" contract="Enferno.StormApiClient.Expose.ExposeService" bindingType="wsHttpBinding" address="https://api.lab.storm.io/api/1.1b/ApplicationService.svc/soap" bindingConfiguration="SOAP">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://web01.stage.storm.io/api/1.1b/ApplicationService.svc/soap</serializedValue>
+          <serializedValue>https://api.lab.storm.io/api/1.1b/ApplicationService.svc/soap</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -212,10 +212,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="SOAP1" contract="Enferno.StormApiClient.Expose.ExposeService" bindingType="wsHttpBinding" address="https://web01.stage.storm.io/api/1.1b/CustomerService.svc/soap" bindingConfiguration="SOAP">
+    <endpoint name="SOAP1" contract="Enferno.StormApiClient.Expose.ExposeService" bindingType="wsHttpBinding" address="https://api.lab.storm.io/api/1.1b/CustomerService.svc/soap" bindingConfiguration="SOAP">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://web01.stage.storm.io/api/1.1b/CustomerService.svc/soap</serializedValue>
+          <serializedValue>https://api.lab.storm.io/api/1.1b/CustomerService.svc/soap</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -297,10 +297,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="SOAP2" contract="Enferno.StormApiClient.Expose.ExposeService" bindingType="wsHttpBinding" address="https://web01.stage.storm.io/api/1.1b/OrderService.svc/soap" bindingConfiguration="SOAP">
+    <endpoint name="SOAP2" contract="Enferno.StormApiClient.Expose.ExposeService" bindingType="wsHttpBinding" address="https://api.lab.storm.io/api/1.1b/OrderService.svc/soap" bindingConfiguration="SOAP">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://web01.stage.storm.io/api/1.1b/OrderService.svc/soap</serializedValue>
+          <serializedValue>https://api.lab.storm.io/api/1.1b/OrderService.svc/soap</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -382,10 +382,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="SOAP3" contract="Enferno.StormApiClient.Expose.ExposeService" bindingType="wsHttpBinding" address="https://web01.stage.storm.io/api/1.1b/ProductService.svc/soap" bindingConfiguration="SOAP">
+    <endpoint name="SOAP3" contract="Enferno.StormApiClient.Expose.ExposeService" bindingType="wsHttpBinding" address="https://api.lab.storm.io/api/1.1b/ProductService.svc/soap" bindingConfiguration="SOAP">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://web01.stage.storm.io/api/1.1b/ProductService.svc/soap</serializedValue>
+          <serializedValue>https://api.lab.storm.io/api/1.1b/ProductService.svc/soap</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -467,10 +467,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="SOAP4" contract="Enferno.StormApiClient.Expose.ExposeService" bindingType="wsHttpBinding" address="https://web01.stage.storm.io/api/1.1b/ShoppingService.svc/soap" bindingConfiguration="SOAP">
+    <endpoint name="SOAP4" contract="Enferno.StormApiClient.Expose.ExposeService" bindingType="wsHttpBinding" address="https://api.lab.storm.io/api/1.1b/ShoppingService.svc/soap" bindingConfiguration="SOAP">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://web01.stage.storm.io/api/1.1b/ShoppingService.svc/soap</serializedValue>
+          <serializedValue>https://api.lab.storm.io/api/1.1b/ShoppingService.svc/soap</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -552,10 +552,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="SOAP5" contract="Enferno.StormApiClient.Expose.ExposeService" bindingType="wsHttpBinding" address="https://web01.stage.storm.io/api/1.1b/ExposeService.svc/soap" bindingConfiguration="SOAP">
+    <endpoint name="SOAP5" contract="Enferno.StormApiClient.Expose.ExposeService" bindingType="wsHttpBinding" address="https://api.lab.storm.io/api/1.1b/ExposeService.svc/soap" bindingConfiguration="SOAP">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://web01.stage.storm.io/api/1.1b/ExposeService.svc/soap</serializedValue>
+          <serializedValue>https://api.lab.storm.io/api/1.1b/ExposeService.svc/soap</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

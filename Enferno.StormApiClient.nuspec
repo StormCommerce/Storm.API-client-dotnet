@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>2.3.9</version>
+    <version>2.4.0</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -10,54 +10,20 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Enferno Storm Commerce API Client library.</description>
     <releaseNotes>
-Please see release notes for 2.0.0 for details if you are upgrading from &lt;= v1.8.x.
+      Please see release notes for 2.0.0 for details if you are upgrading from &lt;= v1.8.x.
       Note that the 1.8.x branch will no longer be updated.
 
       Also note the breaking change in Enferno.Public 2.3.0.
 
+      Make sure to use our new addresses:
+      Stage/Lab: https://api.lab.storm.io/api/1.1
+      Production: https://api.storm.io/api/1.1
+
       What's new?
-      #FR-11: Changes for Customer. You will now be able to list, view and update customers when they are inactive.
+      
+      Updated with the latest functions in the API .
+      
 
-      Changed customer entity: Added field isActive.
-
-      New endpoints: Added new endpoints with a new parameter: showInactive. If you set it to true, the endpoint will include inactive customers to the result.
-
-      ListCustomerByInfoType2
-      ListCustomerByCompany3
-      ListCustomerBySSN2
-      SearchCustomer2
-      #FR-27: New field on Product, HasQuantityBreaks. It shows if the product price has quantityBreaks.
-
-      What's fixed?
-      #FR-11: fixed a bug with ListCustomerByInfoType, where it did not list by customer info types.
-      #FR-11: fixed a bug with ActivateCustomer.
-
-      Miscellaneous changes?
-      #FR-11:Changed behavior for endpoints:
-
-      Endpoint should now also return inactive Customer. Previously it returned null if the customer was inactive. Now you can see if the Customer is active by checking the isActive field.
-
-      GetCustomer
-      GetCustomerByAccountId
-      GetCustomerByCode
-      GetCustomerByEmail
-      GetCustomerByKey
-      GetCustomerByLoginName
-      ActivateCustomer and InactivateCustomer will now only inactivate/activate the customer, it will not update the account. Previously it also inactivate/activated the accounts for the customer.
-
-      UpdateCustomer3, The Customer has now a field isActive. If you set it, the value will be updated. If you set it to null, we will leave it as it is.
-
-      CreateCustomer3, If the email exists on an active customer, you will get an error. If the email exists on an inactive customer, we will create a new Customer. The Customer has now a field isActive. If you set it, the value will be updated. If you set it to null, the Customer will be set to active.
-      RegisterCustomer3, If the email exists on a customer (inactive or active) it will be updated, if not a new customer will be created. The Customer has now a field isActive. If you set it, the value will be updated. If you set it to null, the customer will be set to active.
-
-      Endpoint should now also work if the Customer used as parameter is inactive.
-
-      Customer/SetDefaultCompany
-      Accounts/UpdateAccountStatus
-      Companies/UpdateCustomerDeliveryAddress
-      Companies/DeleteCustomerDeliveryAddress
-      Companies/GetExternalCustomerAddress2
-      Companies/InsertCustomerDeliveryAddress
 
       Regards,
       The Storm API Team

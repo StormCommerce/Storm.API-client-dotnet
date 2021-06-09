@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.ServiceModel;
+using System.ServiceModel.Channels;
 using System.ServiceModel.Description;
 using System.Threading;
 using System.Threading.Tasks;
@@ -12,6 +14,7 @@ using Unity;
 using Enferno.Public.Caching;
 using Enferno.Public.InversionOfControl;
 using Enferno.Public.Logging;
+using Enferno.StormApiClient.EndpointBehavior;
 using Enferno.StormApiClient.Expose;
 
 namespace Enferno.StormApiClient
@@ -146,7 +149,14 @@ namespace Enferno.StormApiClient
         {
             var retval = serviceFactory.CreateProxy<TS, T>(UseCache, cacheManager, cacheName, ref proxy);
             if(proxy != null) CheckAndSetCertificateFromFile(proxy.ClientCredentials);
+           
+            var httpHeaders = new Dictionary<string, string>();
+            httpHeaders.Add("user-agent", "Storm-API-Client: " + typeof(AccessClient).AssemblyQualifiedName);
+
+            proxy.Endpoint.Behaviors.Add(new HttpHeadersEndpointBehavior(httpHeaders));
+
             return retval;
+            
         }
 
         private void CheckAndSetCertificateFromFile(ClientCredentials clientCredentials)

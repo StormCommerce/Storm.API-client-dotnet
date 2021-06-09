@@ -19,15 +19,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://web01.stage.storm.io/API/1.1b/Export/ExportService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://api.lab.storm.io/api/1.1/Export/ExportService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ExportService.wsdl" MetadataType="Wsdl" ID="1d25b8b6-cc0f-4372-be67-2e585e2bff8e" SourceId="1" SourceUrl="https://web01.stage.storm.io/api/1.1b/Export/ExportService.svc?wsdl" />
-    <MetadataFile FileName="ExportService.disco" MetadataType="Disco" ID="02da888e-cb79-4f78-b848-8b4e0c862596" SourceId="1" SourceUrl="https://web01.stage.storm.io/api/1.1b/Export/ExportService.svc?disco" />
-    <MetadataFile FileName="ExportService1.wsdl" MetadataType="Wsdl" ID="734920c7-361e-4bf8-b336-9a0e0b938814" SourceId="1" SourceUrl="https://web01.stage.storm.io/api/1.1b/Export/ExportService.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="ExportService1.xsd" MetadataType="Schema" ID="10301878-4008-4821-8e8c-9660a2d5f493" SourceId="1" SourceUrl="https://web01.stage.storm.io/api/1.1b/Export/ExportService.svc?xsd=xsd1" />
-    <MetadataFile FileName="ExportService2.xsd" MetadataType="Schema" ID="3c1c1df1-3281-4d81-a22f-d27049899e31" SourceId="1" SourceUrl="https://web01.stage.storm.io/api/1.1b/Export/ExportService.svc?xsd=xsd2" />
-    <MetadataFile FileName="ExportService.xsd" MetadataType="Schema" ID="416a62b1-75cc-49f0-ad9b-0c9c948cba14" SourceId="1" SourceUrl="https://web01.stage.storm.io/api/1.1b/Export/ExportService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ExportService3.xsd" MetadataType="Schema" ID="6debe6cc-050d-4e9f-849d-c640f02b1f40" SourceId="1" SourceUrl="https://api.lab.storm.io/api/1.1b/Export/ExportService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ExportService2.wsdl" MetadataType="Wsdl" ID="de3b17df-99f6-44bb-a393-a52132112f5d" SourceId="1" SourceUrl="https://api.lab.storm.io/api/1.1b/Export/ExportService.svc?wsdl" />
+    <MetadataFile FileName="ExportService31.xsd" MetadataType="Schema" ID="2b2341af-fcc6-49c5-b8ca-0a225d95a6c4" SourceId="1" SourceUrl="https://api.lab.storm.io/api/1.1b/Export/ExportService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ExportService1.disco" MetadataType="Disco" ID="10d1225b-e634-456e-b071-0c6134fdd35d" SourceId="1" SourceUrl="https://api.lab.storm.io/api/1.1b/Export/ExportService.svc?disco" />
+    <MetadataFile FileName="ExportService21.wsdl" MetadataType="Wsdl" ID="9df2b96b-c247-4ab4-b898-053378afb50a" SourceId="1" SourceUrl="https://api.lab.storm.io/api/1.1b/Export/ExportService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ExportService32.xsd" MetadataType="Schema" ID="ec33a845-587e-4a76-8cde-134b096da035" SourceId="1" SourceUrl="https://api.lab.storm.io/api/1.1b/Export/ExportService.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

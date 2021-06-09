@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="Enferno.Services" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="Enferno.Services" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="Enferno.Services/Imports">
+      <xsd:import schemaLocation="https://api.lab.storm.io/api/1.1b/Export/ExportService.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/Message" />
+      <xsd:import schemaLocation="https://api.lab.storm.io/api/1.1b/Export/ExportService.svc?xsd=xsd2" namespace="http://Enferno.Native.Schemas.ErrorMessage_v2" />
+      <xsd:import schemaLocation="https://api.lab.storm.io/api/1.1b/Export/ExportService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ExportService_ListProducts_InputMessage">
+    <wsdl:part xmlns:q1="http://schemas.microsoft.com/Message" name="request" type="q1:MessageBody" />
+  </wsdl:message>
+  <wsdl:message name="ExportService_ListProducts_OutputMessage">
+    <wsdl:part xmlns:q2="http://schemas.microsoft.com/Message" name="ListProductsResult" type="q2:MessageBody" />
+  </wsdl:message>
+  <wsdl:message name="ExportService_ListProducts_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q3="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q3:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ExportService_ListProductItems_InputMessage">
+    <wsdl:part xmlns:q4="http://schemas.microsoft.com/Message" name="request" type="q4:MessageBody" />
+  </wsdl:message>
+  <wsdl:message name="ExportService_ListProductItems_OutputMessage">
+    <wsdl:part xmlns:q5="http://schemas.microsoft.com/Message" name="ListProductItemsResult" type="q5:MessageBody" />
+  </wsdl:message>
+  <wsdl:message name="ExportService_ListProductItems_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q6="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q6:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:portType name="ExportService">
+    <wsdl:operation name="ListProducts">
+      <wsdl:input wsaw:Action="Enferno.Services/ExportService/ListProducts" message="tns:ExportService_ListProducts_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services/ExportService/ListProductsResponse" message="tns:ExportService_ListProducts_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services/ExportService/ListProductsErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ExportService_ListProducts_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProductItems">
+      <wsdl:input wsaw:Action="Enferno.Services/ExportService/ListProductItems" message="tns:ExportService_ListProductItems_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services/ExportService/ListProductItemsResponse" message="tns:ExportService_ListProductItems_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services/ExportService/ListProductItemsErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ExportService_ListProductItems_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
