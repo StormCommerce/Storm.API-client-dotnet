@@ -148,15 +148,25 @@ namespace Enferno.StormApiClient
         private TS CreateProxy<TS, T>(ref T proxy) where TS: class where T : ClientBase<TS>, TS, new()
         {
             var retval = serviceFactory.CreateProxy<TS, T>(UseCache, cacheManager, cacheName, ref proxy);
-            if(proxy != null) CheckAndSetCertificateFromFile(proxy.ClientCredentials);
-           
+
+            if (proxy == null)
+            {
+                return retval;
+            }
+
+            CheckAndSetCertificateFromFile(proxy.ClientCredentials);
+
+            if (proxy.Endpoint.Behaviors.Contains(typeof(HttpHeadersEndpointBehavior)))
+            {
+                return retval;
+            }
+
             var httpHeaders = new Dictionary<string, string>();
             httpHeaders.Add("user-agent", "Storm-API-Client: " + typeof(AccessClient).AssemblyQualifiedName);
 
             proxy.Endpoint.Behaviors.Add(new HttpHeadersEndpointBehavior(httpHeaders));
 
             return retval;
-            
         }
 
         private void CheckAndSetCertificateFromFile(ClientCredentials clientCredentials)
