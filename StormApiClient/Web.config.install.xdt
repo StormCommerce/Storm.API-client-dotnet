@@ -42,9 +42,6 @@
           <param name="name" value="AccessClient" />
         </constructor>
       </register>
-      <register type="ICertificateResolver" mapTo="CertificateResolver" xdt:Transform="InsertIfMissing" xdt:Locator="Match(type)">
-        <constructor />
-      </register>
     </container>
   </unity>
 

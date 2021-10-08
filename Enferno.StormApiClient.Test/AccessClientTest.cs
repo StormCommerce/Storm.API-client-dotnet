@@ -1,9 +1,12 @@
 ﻿
 using Enferno.Public.Caching;
+using Enferno.Public.InversionOfControl;
 using Enferno.StormApiClient.Applications;
 using Enferno.StormApiClient.Expose;
+using Enferno.StormApiClient.OAuth2;
 using Enferno.StormApiClient.Products;
 using Enferno.StormApiClient.Shopping;
+using Enferno.StormApiClient.Test.Builders;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Rhino.Mocks;
@@ -17,13 +20,28 @@ namespace Enferno.StormApiClient.Test
     [TestClass]
     public class AccessClientTest
     {
+        private IServiceFactory factory;
+        private IOAuth2TokenResolver oAuth2TokenResolver;
+
+        [TestInitialize]
+        public void Initialize()
+        {
+            var oAuth2CredentialsProvider = MockRepository.GenerateMock<IOAuth2CredentialsProvider>();
+            oAuth2CredentialsProvider.Stub(p => p.GetOAuth2Credentials()).Return(Builder.OAuth2Credentials);
+            IoC.RegisterInstance(typeof(IOAuth2CredentialsProvider), oAuth2CredentialsProvider);
+            factory = MockRepository.GenerateMock<IServiceFactory>();
+            oAuth2TokenResolver = MockRepository.GenerateMock<IOAuth2TokenResolver>();
+            oAuth2TokenResolver.Stub(r => r.GetToken(Arg<OAuth2Credentials>.Is.Anything))
+                .Return(Task.FromResult(Builder.OAuth2Token.Build()));
+        }
+
         [TestMethod, TestCategory("UnitTest")]
         [Description("Test creation of cacheable proxy for ApplicationServiceClient")]
         public void CreateTest1()
         {
             //Arrange
             // Act
-            using (var client = new AccessClient())
+            using (var client = CreateSutWithRealFactory())
             {
                 // Assert
                 Assert.IsInstanceOfType(client.ApplicationProxy, typeof(ApplicationService));
@@ -37,7 +55,7 @@ namespace Enferno.StormApiClient.Test
         {
             //Arrange
             // Act
-            using (var client = new AccessClient())
+            using (var client = CreateSutWithRealFactory())
             {
                 client.UseCache = false;
                 // Assert
@@ -53,12 +71,11 @@ namespace Enferno.StormApiClient.Test
             var exposeService = MockRepository.GenerateMock<ExposeService>();
             exposeService.Stub(x => x.Process(null)).IgnoreArguments().Return(new ResponseList { new UpdateBasketItemResponse { Result = new Basket() } });
 
-            var factory = MockRepository.GenerateMock<IServiceFactory>();
             factory.Stub(x => x.CreateProxy<ExposeService, ExposeServiceClient>(Arg<bool>.Is.Anything, Arg<ICacheManager>.Is.Anything, Arg<string>.Is.Anything, ref Arg<ExposeServiceClient>.Ref(Is.Anything(), null).Dummy))
                 .Return(exposeService);
 
             // Act
-            using (var client = new AccessClient(factory))
+            using (var client = CreateSutWithMockFactory())
             {
                 client.RegisterRequest("1", new UpdateBasketItemRequest());
                 client.ProcessRequests();
@@ -78,12 +95,11 @@ namespace Enferno.StormApiClient.Test
             var svc = MockRepository.GenerateMock<ApplicationService>();
             svc.Stub(async x => await x.GetApplicationAsync(null)).IgnoreArguments().Return(Task.FromResult(new Application { Id = 1 }));
 
-            var factory = MockRepository.GenerateMock<IServiceFactory>();
             factory.Stub(x => x.CreateProxy<ApplicationService, ApplicationServiceClient>(Arg<bool>.Is.Anything, Arg<ICacheManager>.Is.Anything, Arg<string>.Is.Anything, ref Arg<ApplicationServiceClient>.Ref(Is.Anything(), null).Dummy))
                 .Return(svc);
 
             // Act
-            using (var client = new AccessClient(factory))
+            using (var client = CreateSutWithMockFactory())
             {
                 var task = client.ApplicationProxy.GetApplicationAsync("sv");
                 task.Wait();
@@ -100,16 +116,15 @@ namespace Enferno.StormApiClient.Test
         {
             //Arrange
             var svc = MockRepository.GenerateMock<ProductService>();
-            svc.Stub(x => x.GetProduct(4711,"1,2,3", null, null, null, null, "sv-SE", "2")).IgnoreArguments().Return(new Product {Id = 4711});
+            svc.Stub(x => x.GetProduct(4711, "1,2,3", null, null, null, null, "sv-SE", "2")).IgnoreArguments().Return(new Product { Id = 4711 });
 
-            var factory = MockRepository.GenerateMock<IServiceFactory>();
             factory.Stub(x => x.CreateProxy<ProductService, ProductServiceClient>(Arg<bool>.Is.Anything, Arg<ICacheManager>.Is.Anything, Arg<string>.Is.Anything, ref Arg<ProductServiceClient>.Ref(Is.Anything(), null).Dummy))
                 .Return(svc);
 
             // Act
-            using (var client = new AccessClient(factory))
+            using (var client = CreateSutWithMockFactory())
             {
-                var product = client.ProductProxy.GetProduct(4711,"1,2,3", null, null, null, null, "sv-SE", "2");
+                var product = client.ProductProxy.GetProduct(4711, "1,2,3", null, null, null, null, "sv-SE", "2");
 
                 // Assert
                 Assert.IsNotNull(product);
@@ -125,12 +140,11 @@ namespace Enferno.StormApiClient.Test
             var exposeService = MockRepository.GenerateMock<ExposeService>();
             exposeService.Stub(x => x.Process(null)).IgnoreArguments().Throw(new ApplicationException());
 
-            var factory = MockRepository.GenerateMock<IServiceFactory>();
             factory.Stub(x => x.CreateProxy<ExposeService, ExposeServiceClient>(Arg<bool>.Is.Anything, Arg<ICacheManager>.Is.Anything, Arg<string>.Is.Anything, ref Arg<ExposeServiceClient>.Ref(Is.Anything(), null).Dummy))
                 .Return(exposeService);
 
             // Act
-            using (var client = new AccessClient(factory))
+            using (var client = CreateSutWithMockFactory())
             {
                 client.RegisterRequest("1", new UpdateBasketItemRequest());
                 client.ProcessRequests();
@@ -139,5 +153,9 @@ namespace Enferno.StormApiClient.Test
             // Assert
             Assert.Fail("Should not get here. ProcessRequest throws exeption.");
         }
+
+        private AccessClient CreateSutWithMockFactory() => new AccessClient(factory, oAuth2TokenResolver);
+
+        private AccessClient CreateSutWithRealFactory() => new AccessClient(new ServiceFactory(), oAuth2TokenResolver);
     }
 }

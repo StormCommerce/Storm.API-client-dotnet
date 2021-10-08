@@ -55,9 +55,13 @@
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
@@ -89,11 +93,14 @@
   <ItemGroup>
     <Compile Include="AccessClient.cs" />
     <Compile Include="CacheableProxy.cs" />
-    <Compile Include="CertificateResolver.cs" />
     <Compile Include="EndpointBehavior\HttpHeaderMessageInspector.cs" />
     <Compile Include="EndpointBehavior\HttpHeadersEndpointBehavior.cs" />
     <Compile Include="EntityExtension.cs" />
     <Compile Include="Export\ExportHelper.cs" />
+    <Compile Include="OAuth2\CacheableOAuth2TokenResolver.cs" />
+    <Compile Include="OAuth2\OAuth2Credentials.cs" />
+    <Compile Include="OAuth2\OAuth2Token.cs" />
+    <Compile Include="OAuth2\OAuth2TokenResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\ExposeProxy\Reference.cs">
       <AutoGen>True</AutoGen>

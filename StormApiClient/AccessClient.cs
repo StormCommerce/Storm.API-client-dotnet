@@ -1,7 +1,14 @@
 ﻿
+using Enferno.Public.Caching;
+using Enferno.Public.InversionOfControl;
+using Enferno.Public.Logging;
+using Enferno.StormApiClient.EndpointBehavior;
+using Enferno.StormApiClient.Expose;
+using Enferno.StormApiClient.OAuth2;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Reflection;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
@@ -10,12 +17,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web.UI;
 using Unity;
-
-using Enferno.Public.Caching;
-using Enferno.Public.InversionOfControl;
-using Enferno.Public.Logging;
-using Enferno.StormApiClient.EndpointBehavior;
-using Enferno.StormApiClient.Expose;
 
 namespace Enferno.StormApiClient
 {
@@ -52,7 +53,7 @@ namespace Enferno.StormApiClient
     /// <summary>
     ///  ServiceFactory used to create the service factory. Creates  cacheable proxies or a real proxies for the service clients (interfaces).
     /// </summary>
-    public class ServiceFactory: IServiceFactory
+    public class ServiceFactory : IServiceFactory
     {
         public TS CreateProxy<TS, T>(bool useCache, ICacheManager cacheManager, string cacheName, ref T proxy)
             where TS : class
@@ -62,7 +63,7 @@ namespace Enferno.StormApiClient
             return useCache ? CacheableProxy<T, TS>.CreateProxy(cacheManager, cacheName, proxy) : proxy;
         }
     }
-    
+
     public class AccessClient : IAccessClient
     {
         public static readonly string LogCategory = "Enferno.StormApiClient.AccessClient";
@@ -100,7 +101,8 @@ namespace Enferno.StormApiClient
         private readonly ICacheManager cacheManager;
 
         readonly IServiceFactory serviceFactory;
-
+        private readonly IOAuth2TokenResolver oAuth2TokenResolver;
+        private readonly HttpClient httpClient;
         private bool useCache = true;
         /// <summary>
         /// Set this to false to temporarilly disable caching. When the uncached call is done revert to caching by setting it to true again. True is default.
@@ -117,9 +119,13 @@ namespace Enferno.StormApiClient
         /// <summary>
         /// This AccessClient instance should be instantiated in tests only. Enables injection of a ServiceFactory.
         /// </summary>
-        public AccessClient(IServiceFactory factory) : this("AccessClient")
+        internal AccessClient(
+            IServiceFactory serviceFactory,
+            IOAuth2TokenResolver oAuth2TokenResolver)
+            : this("AccessClient")
         {
-            serviceFactory = factory;
+            this.serviceFactory = serviceFactory;
+            this.oAuth2TokenResolver = oAuth2TokenResolver;
         }
 
         /// <summary>
@@ -131,6 +137,8 @@ namespace Enferno.StormApiClient
             isProcessed = false;
             this.cacheName = cacheName;
             cacheManager = CacheManager.Instance;
+            this.httpClient = new HttpClient();
+            this.oAuth2TokenResolver = new CacheableOAuth2TokenResolver(cacheName, new OAuth2TokenResolver(this.httpClient));
         }
 
         public Applications.ApplicationService ApplicationProxy => CreateProxy<Applications.ApplicationService, Applications.ApplicationServiceClient>(ref applicationProxy);
@@ -145,7 +153,7 @@ namespace Enferno.StormApiClient
 
         public ExposeService ExposeProxy => CreateProxy<ExposeService, ExposeServiceClient>(ref exposeProxy);
 
-        private TS CreateProxy<TS, T>(ref T proxy) where TS: class where T : ClientBase<TS>, TS, new()
+        private TS CreateProxy<TS, T>(ref T proxy) where TS : class where T : ClientBase<TS>, TS, new()
         {
             var retval = serviceFactory.CreateProxy<TS, T>(UseCache, cacheManager, cacheName, ref proxy);
 
@@ -154,52 +162,28 @@ namespace Enferno.StormApiClient
                 return retval;
             }
 
-            CheckAndSetCertificateFromFile(proxy.ClientCredentials);
-
             if (proxy.Endpoint.Behaviors.Contains(typeof(HttpHeadersEndpointBehavior)))
             {
-                return retval;
+                proxy.Endpoint.Behaviors.Remove(typeof(HttpHeadersEndpointBehavior));
             }
+
+            var oAuth2Credentials = IoC.Resolve<IOAuth2CredentialsProvider>().GetOAuth2Credentials();
+            var token = oAuth2TokenResolver.GetToken(oAuth2Credentials).GetAwaiter().GetResult();
 
             var httpHeaders = new Dictionary<string, string>();
             httpHeaders.Add("user-agent", "Storm-API-Client: " + typeof(AccessClient).AssemblyQualifiedName);
+            httpHeaders.Add("Authorization", $"{token.TokenType} {token.AccessToken}");
+            httpHeaders.Add("ApplicationId", oAuth2Credentials.ApplicationId.ToString());
 
             proxy.Endpoint.Behaviors.Add(new HttpHeadersEndpointBehavior(httpHeaders));
 
             return retval;
         }
 
-        private void CheckAndSetCertificateFromFile(ClientCredentials clientCredentials)
-        {
-            try
-            {
-                if (clientCredentials == null || clientCredentials.ClientCertificate.Certificate != null)
-                {
-                    if (clientCredentials == null) Log.LogEntry.Categories(LogCategory).Categories(CategoryFlags.Debug).Message("CheckAndSetCertificateFromFile: No clientCredentials.").WriteVerbose();
-                    else Log.LogEntry.Categories(LogCategory).Categories(CategoryFlags.Debug).Message("CheckAndSetCertificateFromFile: Using existing certificate.").Property("Certificate", clientCredentials.ClientCertificate.Certificate.FriendlyName).WriteVerbose();
-
-                    return;
-                }
-
-                var certResolver = IoC.Resolve<ICertificateResolver>();
-                var certificate = certResolver.GetCertificate();
-                if(certificate != null) clientCredentials.ClientCertificate.Certificate = certificate;
-                else Log.LogEntry.Categories(LogCategory).Categories(CategoryFlags.Debug).Message("CheckAndSetCertificateFromFile: Could not find certificate.").WriteWarning();
-            }
-            catch (Exception ex)
-            {
-                Log.LogEntry.Categories(LogCategory).Categories(CategoryFlags.Alert)
-                    .Property("Certificate", clientCredentials?.ClientCertificate.Certificate?.ToString())
-                    .Message("Failed CheckAndSetCertificateFromFile.").Exceptions(ex).WriteError();
-
-                throw;
-            }
-        }
-
         private List<RequestResponseData> UncachedData { get { return requests.Where(d => !d.Value.IsCached).Select(d => d.Value).ToList(); } }
 
-        private RequestList RequestList 
-        { 
+        private RequestList RequestList
+        {
             get
             {
                 var list = new RequestList();
@@ -221,7 +205,7 @@ namespace Enferno.StormApiClient
             {
                 Log.LogEntry.Categories(CategoryFlags.Debug).Message("{0} is cached. Thread: [{1}]", key, Thread.CurrentThread.ManagedThreadId).WriteVerbose();
             }
-                
+
             if (requests == null)
             {
                 requests = new Dictionary<string, RequestResponseData>();
@@ -244,7 +228,7 @@ namespace Enferno.StormApiClient
         {
             if (exposeProxy == null)
             {
-// ReSharper disable once UnusedVariable
+                // ReSharper disable once UnusedVariable
                 var justARefToCreateProxy = ExposeProxy.GetType();
             }
             return exposeProxy?.ClientCredentials?.ClientCertificate.Certificate?.Thumbprint;
@@ -329,7 +313,7 @@ namespace Enferno.StormApiClient
                 if (AllIsCached)
                 {
                     OnResponseReady();
-                }            
+                }
                 return;
             }
 
@@ -427,6 +411,7 @@ namespace Enferno.StormApiClient
                 Cleanup(orderProxy);
                 Cleanup(productProxy);
                 Cleanup(shoppingProxy);
+                httpClient.Dispose();
             }
             disposed = true;
         }
