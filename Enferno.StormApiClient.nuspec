@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>2.4.0</version>
+    <version>2.5.0</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -19,20 +19,48 @@
       Stage/Lab: https://api.lab.storm.io/api/1.1
       Production: https://api.storm.io/api/1.1
 
+      Breaking changes in 2.5.0
+
+      Using Oauth2 instead of certificates.
+
       What's new?
-      
-      Updated with the latest functions in the API .
-      
+
+      Use OAuth2 instead of certificates.
+      Use appSettings in web.config to update your credentials:
+      create/setup your oauth2 users at https://admin.storm.io/admin/settings/user under the OAUTH tab.
+
+      changes in web.config:
+      appSettings:
+
+      API.OAuth2.ClientId     : clientId guid.
+      API.OAuth2.ClientSecret : clientsecret guid.
+      API.OAuth2.Scope        : lab/production
+      API.ApplicationId       : applicationId you want to use
+
+      client.endpoints:
+      removed: behaviorConfiguration
+      changed: bindingConfiguration from SOAP -> Auth2-SOAP
+
+      bindings.wsHttpBinding Auth2-SOAP.
+      transport clientCredentialType="None" proxyCredentialType="None" realm=""
+      message clientCredentialType="None"
+
+      Removed endpointBehaviors: CertificateBehavior.
 
 
       Regards,
       The Storm API Team
     </releaseNotes>
-    <copyright>Copyright 2020</copyright>
+    <copyright>Copyright 2021</copyright>
     <tags>Enferno Storm API Client Commerce</tags>
     <dependencies>
       <group targetFramework=".NETFramework4.5">
         <dependency id="Enferno.Public" version="2.3.1" />
+
+        <dependency id="Newtonsoft.Json" version="13.0.0.0" />
+        <dependency id="Unity.Abstractions" version="5.11.7.0" />
+        <dependency id="Unity.Configuration" version="5.11.2.0" />
+        <dependency id="Unity.Container" version="5.11.11.0" />
       </group>
     </dependencies>
   </metadata>

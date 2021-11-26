@@ -39,7 +39,7 @@ namespace Enferno.StormApiClient.OAuth2
                 return token;
             }
 
-            token = await oAuth2TokenResolver.GetToken(parameters);
+            token = await oAuth2TokenResolver.GetToken(parameters).ConfigureAwait(false);
 
             cacheManager.Add(cacheName, CacheKey, token);
 

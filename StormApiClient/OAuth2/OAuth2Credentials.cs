@@ -2,11 +2,7 @@
 
 namespace Enferno.StormApiClient.OAuth2
 {
-    public interface IOAuth2CredentialsProvider
-    {
-        OAuth2Credentials GetOAuth2Credentials();
-    }
-
+  
     public class OAuth2Credentials
     {
         public OAuth2Credentials(

@@ -22,11 +22,12 @@ namespace Enferno.StormApiClient.Test
     {
         private IServiceFactory factory;
         private IOAuth2TokenResolver oAuth2TokenResolver;
+        private IOAuth2CredentialsProvider oAuth2CredentialsProvider;
 
         [TestInitialize]
         public void Initialize()
         {
-            var oAuth2CredentialsProvider = MockRepository.GenerateMock<IOAuth2CredentialsProvider>();
+            oAuth2CredentialsProvider = MockRepository.GenerateMock<IOAuth2CredentialsProvider>();
             oAuth2CredentialsProvider.Stub(p => p.GetOAuth2Credentials()).Return(Builder.OAuth2Credentials);
             IoC.RegisterInstance(typeof(IOAuth2CredentialsProvider), oAuth2CredentialsProvider);
             factory = MockRepository.GenerateMock<IServiceFactory>();
@@ -154,8 +155,8 @@ namespace Enferno.StormApiClient.Test
             Assert.Fail("Should not get here. ProcessRequest throws exeption.");
         }
 
-        private AccessClient CreateSutWithMockFactory() => new AccessClient(factory, oAuth2TokenResolver);
+        private AccessClient CreateSutWithMockFactory() => new AccessClient(factory, oAuth2TokenResolver, oAuth2CredentialsProvider);
 
-        private AccessClient CreateSutWithRealFactory() => new AccessClient(new ServiceFactory(), oAuth2TokenResolver);
+        private AccessClient CreateSutWithRealFactory() => new AccessClient(new ServiceFactory(), oAuth2TokenResolver, oAuth2CredentialsProvider);
     }
 }

@@ -99,6 +99,7 @@
     <Compile Include="Export\ExportHelper.cs" />
     <Compile Include="OAuth2\CacheableOAuth2TokenResolver.cs" />
     <Compile Include="OAuth2\OAuth2Credentials.cs" />
+    <Compile Include="OAuth2\OAuth2AppSettingsCredentialsProvider.cs" />
     <Compile Include="OAuth2\OAuth2Token.cs" />
     <Compile Include="OAuth2\OAuth2TokenResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

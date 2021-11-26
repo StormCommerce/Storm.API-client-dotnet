@@ -29,14 +29,14 @@ namespace Enferno.StormApiClient.OAuth2
             var requestBody = CreateRequestBody(parameters);
             var tokenRequest = CreateTokenRequest(requestBody);
 
-            var httpResponse = await httpClient.SendAsync(tokenRequest);
+            var httpResponse = await httpClient.SendAsync(tokenRequest).ConfigureAwait(false);
 
             if (!httpResponse.IsSuccessStatusCode)
             {
-                throw new HttpRequestException(await httpResponse.Content.ReadAsStringAsync());
+                throw new HttpRequestException(await httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false));
             }
 
-            return GetToken(await httpResponse.Content.ReadAsStringAsync());
+            return GetToken(await httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false));
         }
 
         private static HttpRequestMessage CreateTokenRequest(Dictionary<string, string> requestBody)

@@ -12,8 +12,12 @@
   <configSections xdt:Transform="RemoveAll" xdt:Locator="Condition(count(*)=0)" />
 
   <appSettings xdt:Transform="InsertIfMissing">
-    <add key="API.CertFile" value="App_Data/MyCertFile.pfx" xdt:Transform="InsertIfMissing"/>
-    <add key="API.CertPwd" value="abc123" xdt:Transform="InsertIfMissing"/>
+    <add key="API.CertFile" value="App_Data/MyCertFile.pfx" xdt:Transform="Remove" xdt:Locator="Match(key)"/>
+    <add key="API.CertPwd" value="abc123" xdt:Transform="Remove" xdt:Locator="Match(key)"/>
+    <add key="API.OAuth2.ClientId" value="oauth2.clientId.guid" xdt:Transform="InsertIfMissing" xdt:Locator="Match(key)"/>
+    <add key="API.OAuth2.ClientSecret" value="oauth2.secret.guid" xdt:Transform="InsertIfMissing" xdt:Locator="Match(key)"/>
+    <add key="API.OAuth2.Scope" value="lab" xdt:Transform="InsertIfMissing" xdt:Locator="Match(key)"/>
+    <add key="API.ApplicationId" value="appId" xdt:Transform="InsertIfMissing" xdt:Locator="Match(key)"/>
   </appSettings>
 
   <unity xmlns="http://schemas.microsoft.com/practices/2010/unity" xdt:Transform="InsertIfMissing">
@@ -41,6 +45,9 @@
         <constructor>
           <param name="name" value="AccessClient" />
         </constructor>
+      </register>
+      <register type="ICertificateResolver"  xdt:Transform="Remove" xdt:Locator="Match(type)">
+        <constructor />
       </register>
     </container>
   </unity>
@@ -94,25 +101,40 @@
   <system.serviceModel xdt:Transform="InsertIfMissing">
     <bindings>
       <wsHttpBinding>
-        <binding name="SOAP" maxReceivedMessageSize="10000000" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)">
+        <binding name="SOAP" maxReceivedMessageSize="10000000" xdt:Transform="Remove" xdt:Locator="Match(name)" />
+        <binding name="Auth2-SOAP" maxReceivedMessageSize="10000000" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)">
           <security mode="Transport">
-            <transport clientCredentialType="Certificate" proxyCredentialType="None" realm="" />
-            <message clientCredentialType="Windows" negotiateServiceCredential="true" />
+            <transport clientCredentialType="None" proxyCredentialType="None" realm="" />
+            <message clientCredentialType="None"  />
           </security>
         </binding>
       </wsHttpBinding>
     </bindings>
     <client>
-      <endpoint name="APPLICATION" address="https://api.lab.storm.io/api/1.1/ApplicationService.svc/soap" behaviorConfiguration="CertificateBehavior" binding="wsHttpBinding" bindingConfiguration="SOAP" contract="Enferno.StormApiClient.Applications.ApplicationService" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
-      <endpoint name="PRODUCT" address="https://api.lab.storm.io/api/1.1/ProductService.svc/soap" behaviorConfiguration="CertificateBehavior" binding="wsHttpBinding" bindingConfiguration="SOAP" contract="Enferno.StormApiClient.Products.ProductService" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
-      <endpoint name="CUSTOMER" address="https://api.lab.storm.io/api/1.1/CustomerService.svc/soap" behaviorConfiguration="CertificateBehavior" binding="wsHttpBinding" bindingConfiguration="SOAP" contract="Enferno.StormApiClient.Customers.CustomerService" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
-      <endpoint name="SHOPPING" address="https://api.lab.storm.io/api/1.1/ShoppingService.svc/soap" behaviorConfiguration="CertificateBehavior" binding="wsHttpBinding" bindingConfiguration="SOAP" contract="Enferno.StormApiClient.Shopping.ShoppingService" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
-      <endpoint name="ORDER" address="https://api.lab.storm.io/api/1.1/OrderService.svc/soap" behaviorConfiguration="CertificateBehavior" binding="wsHttpBinding" bindingConfiguration="SOAP" contract="Enferno.StormApiClient.Orders.OrderService" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
-      <endpoint name="EXPOSE" address="https://api.lab.storm.io/api/1.1/ExposeService.svc/soap" behaviorConfiguration="CertificateBehavior" binding="wsHttpBinding" bindingConfiguration="SOAP" contract="Enferno.StormApiClient.Expose.ExposeService" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+      <endpoint name="APPLICATION" xdt:Transform="RemoveAttributes(behaviorConfiguration)" xdt:Locator="Match(name)"/>
+      <endpoint name="PRODUCT" xdt:Transform="RemoveAttributes(behaviorConfiguration)" xdt:Locator="Match(name)"/>
+      <endpoint name="CUSTOMER" xdt:Transform="RemoveAttributes(behaviorConfiguration)" xdt:Locator="Match(name)"/>
+      <endpoint name="SHOPPING" xdt:Transform="RemoveAttributes(behaviorConfiguration)" xdt:Locator="Match(name)"/>
+      <endpoint name="ORDER"  xdt:Transform="RemoveAttributes(behaviorConfiguration)" xdt:Locator="Match(name)"/>
+      <endpoint name="EXPOSE" xdt:Transform="RemoveAttributes(behaviorConfiguration)" xdt:Locator="Match(name)"/>
+
+      <endpoint name="APPLICATION" address="https://api.lab.storm.io/api/1.1/ApplicationService.svc/soap"  xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+      <endpoint name="PRODUCT" address="https://api.lab.storm.io/api/1.1/ProductService.svc/soap"  xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+      <endpoint name="CUSTOMER" address="https://api.lab.storm.io/api/1.1/CustomerService.svc/soap" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+      <endpoint name="SHOPPING" address="https://api.lab.storm.io/api/1.1/ShoppingService.svc/soap" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+      <endpoint name="ORDER" address="https://api.lab.storm.io/api/1.1/OrderService.svc/soap" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+      <endpoint name="EXPOSE" address="https://api.lab.storm.io/api/1.1/ExposeService.svc/soap" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+
+      <endpoint name="APPLICATION"  binding="wsHttpBinding" bindingConfiguration="Auth2-SOAP" contract="Enferno.StormApiClient.Applications.ApplicationService" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
+      <endpoint name="PRODUCT"   binding="wsHttpBinding" bindingConfiguration="Auth2-SOAP" contract="Enferno.StormApiClient.Products.ProductService" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
+      <endpoint name="CUSTOMER"  binding="wsHttpBinding" bindingConfiguration="Auth2-SOAP" contract="Enferno.StormApiClient.Customers.CustomerService" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
+      <endpoint name="SHOPPING"  binding="wsHttpBinding" bindingConfiguration="Auth2-SOAP" contract="Enferno.StormApiClient.Shopping.ShoppingService" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
+      <endpoint name="ORDER" binding="wsHttpBinding" bindingConfiguration="Auth2-SOAP" contract="Enferno.StormApiClient.Orders.OrderService" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
+      <endpoint name="EXPOSE" binding="wsHttpBinding" bindingConfiguration="Auth2-SOAP" contract="Enferno.StormApiClient.Expose.ExposeService" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
     </client>
     <behaviors>
       <endpointBehaviors>
-        <behavior name="CertificateBehavior" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)">
+        <behavior name="CertificateBehavior" xdt:Transform="Remove" xdt:Locator="Match(name)">
           <clientCredentials>
             <!--<clientCertificate findValue="2fd56862e6cf6a080e316849dfc079f9522887ea" storeLocation="LocalMachine" storeName="My" x509FindType="FindByThumbprint" />-->
             <serviceCertificate>

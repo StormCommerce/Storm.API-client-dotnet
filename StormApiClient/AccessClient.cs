@@ -102,6 +102,7 @@ namespace Enferno.StormApiClient
 
         readonly IServiceFactory serviceFactory;
         private readonly IOAuth2TokenResolver oAuth2TokenResolver;
+        private readonly IOAuth2CredentialsProvider oAuth2CredentialsProvider;
         private readonly HttpClient httpClient;
         private bool useCache = true;
         /// <summary>
@@ -121,11 +122,13 @@ namespace Enferno.StormApiClient
         /// </summary>
         internal AccessClient(
             IServiceFactory serviceFactory,
-            IOAuth2TokenResolver oAuth2TokenResolver)
+            IOAuth2TokenResolver oAuth2TokenResolver, 
+            IOAuth2CredentialsProvider oAuth2CredentialsProvider)
             : this("AccessClient")
         {
             this.serviceFactory = serviceFactory;
             this.oAuth2TokenResolver = oAuth2TokenResolver;
+            this.oAuth2CredentialsProvider = oAuth2CredentialsProvider;
         }
 
         /// <summary>
@@ -139,6 +142,7 @@ namespace Enferno.StormApiClient
             cacheManager = CacheManager.Instance;
             this.httpClient = new HttpClient();
             this.oAuth2TokenResolver = new CacheableOAuth2TokenResolver(cacheName, new OAuth2TokenResolver(this.httpClient));
+            this.oAuth2CredentialsProvider = new OAuth2AppSettingsCredentialsProvider();
         }
 
         public Applications.ApplicationService ApplicationProxy => CreateProxy<Applications.ApplicationService, Applications.ApplicationServiceClient>(ref applicationProxy);
@@ -167,7 +171,7 @@ namespace Enferno.StormApiClient
                 proxy.Endpoint.Behaviors.Remove(typeof(HttpHeadersEndpointBehavior));
             }
 
-            var oAuth2Credentials = IoC.Resolve<IOAuth2CredentialsProvider>().GetOAuth2Credentials();
+            var oAuth2Credentials = oAuth2CredentialsProvider.GetOAuth2Credentials();
             var token = oAuth2TokenResolver.GetToken(oAuth2Credentials).GetAwaiter().GetResult();
 
             var httpHeaders = new Dictionary<string, string>();
