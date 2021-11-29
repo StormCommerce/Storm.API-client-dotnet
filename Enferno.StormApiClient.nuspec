@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>2.5.0</version>
+    <version>2.5.0-beta</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -29,7 +29,7 @@
       Use appSettings in web.config to update your credentials:
       create/setup your oauth2 users at https://admin.storm.io/admin/settings/user under the OAUTH tab.
 
-      changes in web.config:
+      Changes in web.config:
       appSettings:
 
       API.OAuth2.ClientId     : clientId guid.
@@ -37,15 +37,22 @@
       API.OAuth2.Scope        : lab/production
       API.ApplicationId       : applicationId you want to use
 
-      client.endpoints:
-      removed: behaviorConfiguration
-      changed: bindingConfiguration from SOAP -> Auth2-SOAP
+      attributes under client.endpoint:
+      remove: behaviorConfiguration
+      change: bindingConfiguration from SOAP -> Auth2-SOAP
 
+      added a new binding under
       bindings.wsHttpBinding Auth2-SOAP.
-      transport clientCredentialType="None" proxyCredentialType="None" realm=""
-      message clientCredentialType="None"
+      &lt;binding name="Auth2-SOAP" maxReceivedMessageSize="10000000" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"&gt;
+          &lt;security mode="Transport"&gt;
+            &lt;transport clientCredentialType="None" proxyCredentialType="None" realm="" /&gt;
+            &lt;message clientCredentialType="None"  /&gt;
+          &lt;/security&gt;
+        &lt;/binding&gt;
 
-      Removed endpointBehaviors: CertificateBehavior.
+      Remove SOAP under bindings.wsHttpBinding.
+
+      Remove endpointBehaviors: CertificateBehavior.
 
 
       Regards,
