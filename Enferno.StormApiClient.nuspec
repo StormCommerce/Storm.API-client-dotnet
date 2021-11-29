@@ -43,7 +43,7 @@
 
       added a new binding under
       bindings.wsHttpBinding Auth2-SOAP.
-      &lt;binding name="Auth2-SOAP" maxReceivedMessageSize="10000000" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"&gt;
+      &lt;binding name="Auth2-SOAP" maxReceivedMessageSize="10000000" &gt;
           &lt;security mode="Transport"&gt;
             &lt;transport clientCredentialType="None" proxyCredentialType="None" realm="" /&gt;
             &lt;message clientCredentialType="None"  /&gt;
