@@ -6,6 +6,7 @@ using Enferno.StormApiClient.EndpointBehavior;
 using Enferno.StormApiClient.Expose;
 using Enferno.StormApiClient.OAuth2;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -59,8 +60,12 @@ namespace Enferno.StormApiClient
             where TS : class
             where T : ClientBase<TS>, TS, new()
         {
-            if (proxy == null) proxy = new T();
-            return useCache ? CacheableProxy<T, TS>.CreateProxy(cacheManager, cacheName, proxy) : proxy;
+            if (proxy == null)
+            {
+                proxy = new T();
+            }
+        
+        return useCache ? CacheableProxy<T, TS>.CreateProxy(cacheManager, cacheName, proxy) : proxy;
         }
     }
 
@@ -95,16 +100,19 @@ namespace Enferno.StormApiClient
 
         private bool isProcessed;
         private Exception exception;
-        private Dictionary<string, RequestResponseData> requests;
+        private ConcurrentDictionary<string, RequestResponseData> requests;
 
         private readonly string cacheName;
         private readonly ICacheManager cacheManager;
+       
+        private readonly object tokenLock = new object();
 
         readonly IServiceFactory serviceFactory;
         private readonly IOAuth2TokenResolver oAuth2TokenResolver;
         private readonly IOAuth2CredentialsProvider oAuth2CredentialsProvider;
-        private readonly HttpClient httpClient;
+        private static readonly HttpClient httpClient = new HttpClient();
         private bool useCache = true;
+
         /// <summary>
         /// Set this to false to temporarilly disable caching. When the uncached call is done revert to caching by setting it to true again. True is default.
         /// </summary>
@@ -129,6 +137,7 @@ namespace Enferno.StormApiClient
             this.serviceFactory = serviceFactory;
             this.oAuth2TokenResolver = oAuth2TokenResolver;
             this.oAuth2CredentialsProvider = oAuth2CredentialsProvider;
+           
         }
 
         /// <summary>
@@ -140,9 +149,9 @@ namespace Enferno.StormApiClient
             isProcessed = false;
             this.cacheName = cacheName;
             cacheManager = CacheManager.Instance;
-            this.httpClient = new HttpClient();
-            this.oAuth2TokenResolver = new CacheableOAuth2TokenResolver(cacheName, new OAuth2TokenResolver(this.httpClient));
+            this.oAuth2TokenResolver = new CacheableOAuth2TokenResolver(cacheName, new OAuth2TokenResolver(AccessClient.httpClient));
             this.oAuth2CredentialsProvider = new OAuth2AppSettingsCredentialsProvider();
+            requests = new ConcurrentDictionary<string, RequestResponseData>();
         }
 
         public Applications.ApplicationService ApplicationProxy => CreateProxy<Applications.ApplicationService, Applications.ApplicationServiceClient>(ref applicationProxy);
@@ -159,31 +168,48 @@ namespace Enferno.StormApiClient
 
         private TS CreateProxy<TS, T>(ref T proxy) where TS : class where T : ClientBase<TS>, TS, new()
         {
-            var retval = serviceFactory.CreateProxy<TS, T>(UseCache, cacheManager, cacheName, ref proxy);
-
-            if (proxy == null)
+            TS retval;
+            lock (tokenLock)
             {
-                return retval;
+                retval = serviceFactory.CreateProxy<TS, T>(UseCache, cacheManager, cacheName, ref proxy);
+
+                if (proxy == null)
+                {
+                    return retval;
+                }
+                
+                SetTokenToHeader<TS, T>(proxy);
+
             }
-
-            if (proxy.Endpoint.Behaviors.Contains(typeof(HttpHeadersEndpointBehavior)))
-            {
-                proxy.Endpoint.Behaviors.Remove(typeof(HttpHeadersEndpointBehavior));
-            }
-
-            var oAuth2Credentials = oAuth2CredentialsProvider.GetOAuth2Credentials();
-            var token = oAuth2TokenResolver.GetToken(oAuth2Credentials).GetAwaiter().GetResult();
-
-            var httpHeaders = new Dictionary<string, string>();
-            httpHeaders.Add("user-agent", "Storm-API-Client: " + typeof(AccessClient).AssemblyQualifiedName);
-            httpHeaders.Add("Authorization", $"{token.TokenType} {token.AccessToken}");
-            httpHeaders.Add("ApplicationId", oAuth2Credentials.ApplicationId.ToString());
-
-            proxy.Endpoint.Behaviors.Add(new HttpHeadersEndpointBehavior(httpHeaders));
 
             return retval;
         }
 
+
+        private void SetTokenToHeader<TS, T>(T proxy)
+            where TS : class where T : ClientBase<TS>, TS, new()
+        {
+            var token = oAuth2TokenResolver.GetToken(oAuth2CredentialsProvider.GetOAuth2Credentials()).GetAwaiter().GetResult();
+            if (proxy.Endpoint.Behaviors.Contains(typeof(HttpHeadersEndpointBehavior)))
+            {
+                var httpHeader = proxy.Endpoint.Behaviors.Find<HttpHeadersEndpointBehavior>();
+                httpHeader.SetHeader("Authorization", $"{token.TokenType} {token.AccessToken}");
+                
+            }
+            else
+            {
+                var httpHeader = new HttpHeadersEndpointBehavior();
+                httpHeader.SetHeader("user-agent", "Storm-API-Client: " + typeof(AccessClient).AssemblyQualifiedName);
+                httpHeader.SetHeader("Authorization", $"{token.TokenType} {token.AccessToken}");
+                httpHeader.SetHeader("ApplicationId", oAuth2CredentialsProvider.GetOAuth2Credentials().ApplicationId.ToString());
+                
+                proxy.Endpoint.Behaviors.Add(httpHeader);
+            }
+
+            
+        }
+
+    
         private List<RequestResponseData> UncachedData { get { return requests.Where(d => !d.Value.IsCached).Select(d => d.Value).ToList(); } }
 
         private RequestList RequestList
@@ -210,12 +236,12 @@ namespace Enferno.StormApiClient
                 Log.LogEntry.Categories(CategoryFlags.Debug).Message("{0} is cached. Thread: [{1}]", key, Thread.CurrentThread.ManagedThreadId).WriteVerbose();
             }
 
-            if (requests == null)
-            {
-                requests = new Dictionary<string, RequestResponseData>();
-            }
+            //if (requests == null)
+            //{
+            //    requests = new Dictionary<string, RequestResponseData>();
+            //}
 
-            requests.Add(key, new RequestResponseData(request, response, GetCertificateThumbprint()));
+            requests.TryAdd(key, new RequestResponseData(request, response, GetCertificateThumbprint()));
         }
 
         public bool IsCached(string method, params object[] parameters)
@@ -415,7 +441,6 @@ namespace Enferno.StormApiClient
                 Cleanup(orderProxy);
                 Cleanup(productProxy);
                 Cleanup(shoppingProxy);
-                httpClient.Dispose();
             }
             disposed = true;
         }

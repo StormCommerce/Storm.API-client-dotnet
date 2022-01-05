@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel.Channels;
@@ -11,11 +12,11 @@ namespace Enferno.StormApiClient.EndpointBehavior
 {
     public class HttpHeadersEndpointBehavior : IEndpointBehavior
     {
-        public Dictionary<string, string> _httpHeaders { get; set; }
+        private ConcurrentDictionary<string, string> _httpHeaders;
 
-        public HttpHeadersEndpointBehavior(Dictionary<string, string> httpHeaders)
+        public HttpHeadersEndpointBehavior()
         {
-            this._httpHeaders = httpHeaders;
+            this._httpHeaders = new ConcurrentDictionary<string, string>();
         }
 
         public void Validate(ServiceEndpoint endpoint)
@@ -36,6 +37,12 @@ namespace Enferno.StormApiClient.EndpointBehavior
             var inspector = new HttpHeaderMessageInspector(this._httpHeaders);
 
             clientRuntime.MessageInspectors.Add(inspector);
+        }
+
+        public void SetHeader(string key, string value)
+        {
+            _httpHeaders.AddOrUpdate(key, value,(k,oldValue)=>value);
+
         }
     }
 }

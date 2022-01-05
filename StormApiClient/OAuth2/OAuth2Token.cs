@@ -32,7 +32,7 @@ namespace Enferno.StormApiClient.OAuth2
 
             AccessToken = accessToken;
             TokenType = tokenType;
-            Lifetime = TimeSpan.FromSeconds(expiresInSeconds);
+            Lifetime = TimeSpan.FromSeconds(expiresInSeconds)-TimeSpan.FromSeconds(60);
             ExpirationDate = DateTime.UtcNow + Lifetime;
             Scope = scope;
         }
