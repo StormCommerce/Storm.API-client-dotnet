@@ -3,8 +3,10 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
+using Enferno.Public.Logging;
 
 namespace Enferno.StormApiClient.OAuth2
 {
@@ -28,12 +30,24 @@ namespace Enferno.StormApiClient.OAuth2
         {
             var requestBody = CreateRequestBody(parameters);
             var tokenRequest = CreateTokenRequest(requestBody);
-
+            Log.LogEntry
+                .Categories("TokenDebug")
+                .Message("GetToken httpClient")
+                .Property("AbsoluteUri", tokenRequest?.RequestUri?.AbsoluteUri)
+                .WriteVerbose();
             var httpResponse = await httpClient.SendAsync(tokenRequest).ConfigureAwait(false);
 
             if (!httpResponse.IsSuccessStatusCode)
             {
+                Log.LogEntry
+                    .Categories("TokenDebug")
+                    .Message("GetToken httpClient Failed ")
+                    .Property("AbsoluteUri", tokenRequest?.RequestUri?.AbsoluteUri)
+                    .Property("IsSuccessStatusCode", httpResponse.IsSuccessStatusCode)
+                    .WriteError();
+
                 throw new HttpRequestException(await httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false));
+
             }
 
             return GetToken(await httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false));
@@ -65,7 +79,14 @@ namespace Enferno.StormApiClient.OAuth2
         private static OAuth2Token GetToken(string content)
         {
             var response = JsonConvert.DeserializeObject<Dictionary<string, object>>(content);
-
+            Log.LogEntry
+                .Categories("TokenDebug")
+                .Message("GetToken Received")
+                .Property("access_token", response["access_token"].ToString())
+                .Property("token_type", response["token_type"].ToString())
+                .Property("expires_in", response["expires_in"].ToString())
+                .Property("scope", response["scope"].ToString())
+                .WriteVerbose();
             return new OAuth2Token(
                 response["access_token"].ToString(),
                 response["token_type"].ToString(),

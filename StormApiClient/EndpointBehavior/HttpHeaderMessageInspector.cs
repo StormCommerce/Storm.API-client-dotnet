@@ -8,6 +8,7 @@ using System.ServiceModel.Description;
 using System.ServiceModel.Dispatcher;
 using System.Text;
 using System.Threading.Tasks;
+using Enferno.Public.Logging;
 
 namespace Enferno.StormApiClient.EndpointBehavior
 {
@@ -24,6 +25,11 @@ namespace Enferno.StormApiClient.EndpointBehavior
 
         public object BeforeSendRequest(ref Message request, IClientChannel channel)
         {
+            Log.LogEntry
+                .Categories("TokenDebug")
+                .Message("BeforeSendRequest")
+                .WriteVerbose();
+
             HttpRequestMessageProperty httpRequestMessage;
             object httpRequestMessageObject;
             if (request.Properties.TryGetValue(HttpRequestMessageProperty.Name, out httpRequestMessageObject))
@@ -48,7 +54,12 @@ namespace Enferno.StormApiClient.EndpointBehavior
             {
                 if (_httpHeaders.TryGetValue(key, out string value))
                 {
-                   httpRequestMessage.Headers[key] = value;
+                    Log.LogEntry
+                        .Categories("TokenDebug")
+                        .Message("AddHeader")
+                        .Property(key, value)
+                        .WriteVerbose();
+                    httpRequestMessage.Headers[key] = value;
                 }
 
                

@@ -7,6 +7,7 @@ using System.ServiceModel.Description;
 using System.ServiceModel.Dispatcher;
 using System.Text;
 using System.Threading.Tasks;
+using Enferno.Public.Logging;
 
 namespace Enferno.StormApiClient.EndpointBehavior
 {
@@ -34,6 +35,10 @@ namespace Enferno.StormApiClient.EndpointBehavior
 
         public void ApplyClientBehavior(ServiceEndpoint endpoint, ClientRuntime clientRuntime)
         {
+            Log.LogEntry
+                .Categories("TokenDebug")
+                .Message("ApplyClientBehavior")
+                .WriteVerbose();
             var inspector = new HttpHeaderMessageInspector(this._httpHeaders);
 
             clientRuntime.MessageInspectors.Add(inspector);

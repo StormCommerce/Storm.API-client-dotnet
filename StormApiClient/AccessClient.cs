@@ -8,6 +8,7 @@ using Enferno.StormApiClient.OAuth2;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Reflection;
@@ -137,7 +138,7 @@ namespace Enferno.StormApiClient
             this.serviceFactory = serviceFactory;
             this.oAuth2TokenResolver = oAuth2TokenResolver;
             this.oAuth2CredentialsProvider = oAuth2CredentialsProvider;
-           
+            requests = new ConcurrentDictionary<string, RequestResponseData>();
         }
 
         /// <summary>
@@ -175,6 +176,10 @@ namespace Enferno.StormApiClient
 
                 if (proxy == null)
                 {
+                    Log.LogEntry
+                        .Categories("TokenDebug")
+                        .Message("proxy is null")
+                        .WriteVerbose();
                     return retval;
                 }
                 
@@ -194,11 +199,22 @@ namespace Enferno.StormApiClient
             {
                 var httpHeader = proxy.Endpoint.Behaviors.Find<HttpHeadersEndpointBehavior>();
                 httpHeader.SetHeader("Authorization", $"{token.TokenType} {token.AccessToken}");
-                
+                Log.LogEntry
+                    .Categories("TokenDebug")
+                    .Message("Update Token Header")
+                    .Property("token", $"{token.TokenType} {token.AccessToken}")
+                    .WriteVerbose();
             }
             else
             {
                 var httpHeader = new HttpHeadersEndpointBehavior();
+
+                Log.LogEntry
+                    .Categories("TokenDebug")
+                    .Message("Set Token Header")
+                    .Property("token", $"{token.TokenType} {token.AccessToken}")
+                    .WriteVerbose();
+
                 httpHeader.SetHeader("user-agent", "Storm-API-Client: " + typeof(AccessClient).AssemblyQualifiedName);
                 httpHeader.SetHeader("Authorization", $"{token.TokenType} {token.AccessToken}");
                 httpHeader.SetHeader("ApplicationId", oAuth2CredentialsProvider.GetOAuth2Credentials().ApplicationId.ToString());
