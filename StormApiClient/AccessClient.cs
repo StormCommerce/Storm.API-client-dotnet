@@ -113,16 +113,29 @@ namespace Enferno.StormApiClient
         private readonly IOAuth2CredentialsProvider oAuth2CredentialsProvider;
         private static readonly HttpClient httpClient = new HttpClient();
         private bool useCache = true;
+        private int? applicationId;
+
 
         /// <summary>
         /// Set this to false to temporarilly disable caching. When the uncached call is done revert to caching by setting it to true again. True is default.
         /// </summary>
         public bool UseCache { get { return useCache; } set { useCache = value; } }
 
+
+
+
         /// <summary>
         /// This AccessClient instance should be instantiated as private variable on the page requiring StormAPI access. It serves as a wrapper for the different services provided.
         /// </summary>
         public AccessClient() : this("AccessClient")
+        {
+
+        }
+		
+		/// <summary>
+        /// This AccessClient instance should be instantiated as private variable on the page requiring StormAPI access. It serves as a wrapper for the different services provided.
+        /// </summary>
+        public AccessClient(int? applicationId) : this("AccessClient", applicationId)
         {
         }
 
@@ -132,8 +145,9 @@ namespace Enferno.StormApiClient
         internal AccessClient(
             IServiceFactory serviceFactory,
             IOAuth2TokenResolver oAuth2TokenResolver, 
-            IOAuth2CredentialsProvider oAuth2CredentialsProvider)
-            : this("AccessClient")
+            IOAuth2CredentialsProvider oAuth2CredentialsProvider,
+            int? applicationId =null)
+            : this("AccessClient",applicationId)
         {
             this.serviceFactory = serviceFactory;
             this.oAuth2TokenResolver = oAuth2TokenResolver;
@@ -144,14 +158,24 @@ namespace Enferno.StormApiClient
         /// <summary>
         /// This AccessClient instance should be instantiated as private variable on the page requiring StormAPI access. It serves as a wrapper for the different services provided.
         /// </summary>
-        public AccessClient(string cacheName)
+        public AccessClient(string cacheName) : this (cacheName,null)
+        {
+
+        }
+		
+		/// <summary>
+        /// This AccessClient instance should be instantiated as private variable on the page requiring StormAPI access. It serves as a wrapper for the different services provided.
+        /// </summary>
+        public AccessClient(string cacheName,int? applicationId)
         {
             serviceFactory = new ServiceFactory();
             isProcessed = false;
             this.cacheName = cacheName;
             cacheManager = CacheManager.Instance;
             this.oAuth2TokenResolver = new CacheableOAuth2TokenResolver(cacheName, new OAuth2TokenResolver(AccessClient.httpClient));
-            this.oAuth2CredentialsProvider = new OAuth2AppSettingsCredentialsProvider();
+            this.oAuth2CredentialsProvider = IoC.Resolve<IOAuth2CredentialsProvider>();
+            this.applicationId = applicationId;
+
             requests = new ConcurrentDictionary<string, RequestResponseData>();
         }
 
@@ -195,10 +219,12 @@ namespace Enferno.StormApiClient
             where TS : class where T : ClientBase<TS>, TS, new()
         {
             var token = oAuth2TokenResolver.GetToken(oAuth2CredentialsProvider.GetOAuth2Credentials()).GetAwaiter().GetResult();
+
             if (proxy.Endpoint.Behaviors.Contains(typeof(HttpHeadersEndpointBehavior)))
             {
                 var httpHeader = proxy.Endpoint.Behaviors.Find<HttpHeadersEndpointBehavior>();
                 httpHeader.SetHeader("Authorization", $"{token.TokenType} {token.AccessToken}");
+                httpHeader.SetHeader("ApplicationId", ApplicationId);
                 Log.LogEntry
                     .Categories("TokenDebug")
                     .Message("Update Token Header")
@@ -217,7 +243,7 @@ namespace Enferno.StormApiClient
 
                 httpHeader.SetHeader("user-agent", "Storm-API-Client: " + typeof(AccessClient).AssemblyQualifiedName);
                 httpHeader.SetHeader("Authorization", $"{token.TokenType} {token.AccessToken}");
-                httpHeader.SetHeader("ApplicationId", oAuth2CredentialsProvider.GetOAuth2Credentials().ApplicationId.ToString());
+                httpHeader.SetHeader("ApplicationId", ApplicationId);
                 
                 proxy.Endpoint.Behaviors.Add(httpHeader);
             }
@@ -225,7 +251,21 @@ namespace Enferno.StormApiClient
             
         }
 
-    
+        private string ApplicationId
+        {
+            get
+            {
+                if (this.applicationId.HasValue)
+                {
+                    return this.applicationId.Value.ToString();
+                }
+
+                return oAuth2CredentialsProvider.ApplicationId.ToString();
+            }
+         
+        }
+
+
         private List<RequestResponseData> UncachedData { get { return requests.Where(d => !d.Value.IsCached).Select(d => d.Value).ToList(); } }
 
         private RequestList RequestList

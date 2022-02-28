@@ -47,8 +47,8 @@ namespace Enferno.StormApiClient.Test.Builders
             return new OAuth2Credentials(
                 clientId,
                 clientSecretId,
-                scope,
-                applicationId);
+                scope
+                );
         }
     }
 }

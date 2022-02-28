@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>2.5.1</version>
+    <version>2.5.2</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -11,48 +11,96 @@
     <description>Enferno Storm Commerce API Client library.</description>
     <releaseNotes>
       Please see release notes for 2.0.0 for details if you are upgrading from &lt;= v1.8.x.
-      Note that the 1.8.x branch will no longer be updated.
+		Note that the 1.8.x branch will no longer be updated.
 
-      Also note the breaking change in Enferno.Public 2.3.0.
+		Also note the breaking change in Enferno.Public 2.3.0.
 
-      Make sure to use our new addresses:
-      Stage/Lab: https://api.lab.storm.io/api/1.1
-      Production: https://api.storm.io/api/1.1
+		Make sure to use our new addresses:
+		Stage/Lab: https://api.lab.storm.io/api/1.1
+		Production: https://api.storm.io/api/1.1
 
-      Breaking changes in 2.5.0
+		Breaking changes in 2.5.0
 
-      Using Oauth2 instead of certificates.
+		Using Oauth2 instead of certificates.
 
-      What's new?
+		What's new?
 
-      Use OAuth2 instead of certificates.
-      Use appSettings in web.config to update your credentials:
-      create/setup your oauth2 users at https://admin.storm.io/admin/settings/user under the OAUTH tab.
+		To use OAUTH2 you need 4 settings.
 
-      Changes in web.config:
-      appSettings:
+		* Client Id
+		* Client Secret
+		* Scope
+		* Application Id.
 
-      API.OAuth2.ClientId     : clientId guid.
-      API.OAuth2.ClientSecret : clientsecret guid.
-      API.OAuth2.Scope        : lab/production
-      API.ApplicationId       : applicationId you want to use
+		- Client Id and Secret is created in Storm Admin. At https://admin.storm.io/admin/settings/user under the OAUTH tab.
 
-      attributes under client.endpoint:
-      remove: behaviorConfiguration
-      change: bindingConfiguration from SOAP -> Auth2-SOAP
+		- Scope tells us if you are trying to access lab/qa/production data. (This will not point the request to a specific environment, it will only say that you gives the client access to the specified environment.)
+		Existing scopes: lab / qa / production
 
-      added a new binding under
-      bindings.wsHttpBinding Auth2-SOAP.
-      &lt;binding name="Auth2-SOAP" maxReceivedMessageSize="10000000" &gt;
-          &lt;security mode="Transport"&gt;
-            &lt;transport clientCredentialType="None" proxyCredentialType="None" realm="" /&gt;
-            &lt;message clientCredentialType="None"  /&gt;
-          &lt;/security&gt;
-        &lt;/binding&gt;
+		- Application Id is the application that you want to use.
 
-      Remove SOAP under bindings.wsHttpBinding.
 
-      Remove endpointBehaviors: CertificateBehavior.
+		To read these settings we use the Interface IOAuth2CredentialsProvider registed with DI.
+		You can create your own if you want, or you can use our OAuth2AppSettingsCredentialsProvider.
+
+
+		Our OAuth2AppSettingsCredentialsProvider will read the settings from the appsettings in web.config.
+
+		The AccessClient will for each request check IOAuth2CredentialsProvider.ApplicationId to see what application it should use.
+		You can override this by using the applicationId parameter when creating an AccessClient.
+		So with help of these(parameter in AccessClient,your own IOAuth2CredentialsProvider) you can use multiple applications.
+
+		*** If you are using Enferno.Web.StormUtils with multiple applications you must create your own IOAuth2CredentialsProvider. ***
+
+
+
+
+
+		** Checklist of changes that may have to be updated after an upgrade.
+
+		- Register IOAuth2CredentialsProvider to DI
+		Ex: in web.config
+		&lt;register type="IOAuth2CredentialsProvider" mapTo="OAuth2AppSettingsCredentialsProvider"&gt;
+			&lt;lifetime type="singleton" /&gt;
+		&lt;/register&gt;
+
+		Ex: via code:
+		IoC.RegisterType&lt;IOAuth2CredentialsProvider, OAuth2AppSettingsCredentialsProvider=""&gt;
+			();
+
+
+			- If you are using OAuth2AppSettingsCredentialsProvider add these appsettings to your web.config
+
+			appSettings:
+
+			API.OAuth2.ClientId     : clientId guid.
+			API.OAuth2.ClientSecret : clientsecret guid.
+			API.OAuth2.Scope        : lab/qa/production
+			API.ApplicationId       : applicationId you want to use
+
+
+			- Update Endpoints in web.config
+
+			attributes under client.endpoint:
+			remove: behaviorConfiguration
+			change: bindingConfiguration from SOAP -> Auth2-SOAP
+
+			add a new binding under bindings.wsHttpBinding with name "Auth2-SOAP".
+
+			&lt;binding name="Auth2-SOAP" maxReceivedMessageSize="10000000" &gt;
+				&lt;security mode="Transport"&gt;
+					&lt;transport clientCredentialType="None" proxyCredentialType="None" realm="" /&gt;
+					&lt;message clientCredentialType="None"  /&gt;
+				&lt;/security&gt;
+			&lt;/binding&gt;
+
+
+
+			Remove SOAP under bindings.wsHttpBinding.
+
+			Remove endpointBehaviors: CertificateBehavior.
+
+			- If you are using Enferno.Web.StormUtils with multiple applications you must create your own IOAuth2CredentialsProvider.
 
 
       Regards,

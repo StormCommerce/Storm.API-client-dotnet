@@ -8,8 +8,7 @@ namespace Enferno.StormApiClient.OAuth2
         public OAuth2Credentials(
             string clientId,
             string clientSecretId,
-            string scope,
-            int applicationId)
+            string scope)
         {
             if (string.IsNullOrWhiteSpace(clientId))
             {
@@ -26,20 +25,13 @@ namespace Enferno.StormApiClient.OAuth2
                 throw new ArgumentException($"'{nameof(scope)}' cannot be null or whitespace.", nameof(scope));
             }
 
-            if (applicationId < 1)
-            {
-                throw new ArgumentException($"'{nameof(applicationId)}' must be greater then 0.", nameof(applicationId));
-            }
-
             ClientId = clientId;
             ClientSecretId = clientSecretId;
             Scope = scope;
-            ApplicationId = applicationId;
         }
 
         public string ClientId { get; }
         public string ClientSecretId { get; }
         public string Scope { get; }
-        public int ApplicationId { get; }
     }
 }

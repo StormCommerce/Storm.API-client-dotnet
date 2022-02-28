@@ -9,24 +9,80 @@ Documentation for Storm API can be found at https://storm.io/docs/storm-api
 
 Watch this project to follow our releases.
 
-## How to use
-### OAuth2 authentication
-In order to setup OAuth2 authentication `IOAuth2CredentialsProvider` interface has to be implemented.
-Example:
-```
-public class OAuth2CredentialsProvider : IOAuth2CredentialsProvider
-{
-    public OAuth2Credentials GetOAuth2Credentials()
-        return new OAuth2Credentials(
-            clientId: "11111111-1111-1111-1111-111111111111",
-            clientSecretId: "22222222-2222-2222-2222-222222222222",
-            scope: "lab",
-            applicationId: 1);
-    }
-}
-```
+## How to use OAUTH2
 
-Than register the implementation in the IoC:
-```
-IoC.RegisterType<IOAuth2CredentialsProvider, OAuth2CredentialsProvider>();
-```
+To use OAUTH2 you need 4 settings.
+
+    * Client Id 
+    * Client Secret
+    * Scope
+    * Application Id.
+
+- Client Id and Secret is created in Storm Admin. At https://admin.storm.io/admin/settings/user under the OAUTH tab.
+
+- Scope tells us if you are trying to access lab/qa/production data. (This will not point the request to a specific environment, it will only say that you gives the client access to the specified environment.)
+    Existing scopes: lab / qa / production
+
+- Application Id is the application that you want to use.
+
+
+To read these settings we use the Interface IOAuth2CredentialsProvider registed with DI.
+You can create your own if you want, or you can use our OAuth2AppSettingsCredentialsProvider.
+
+
+Our OAuth2AppSettingsCredentialsProvider will read the settings from the appsettings in web.config.
+
+The AccessClient will for each request check IOAuth2CredentialsProvider.ApplicationId to see what application it should use.
+    You can override this by using the applicationId parameter when creating an AccessClient.
+    So with help of these(parameter in AccessClient,your own IOAuth2CredentialsProvider) you can use multiple applications.
+
+*** If you are using Enferno.Web.StormUtils with multiple applications you must create your own IOAuth2CredentialsProvider. ***
+  
+
+
+
+
+** Checklist of changes that may have to be updated after an upgrade.
+
+- Register IOAuth2CredentialsProvider to DI
+Ex: in web.config
+      <register type="IOAuth2CredentialsProvider" mapTo="OAuth2AppSettingsCredentialsProvider">
+        <lifetime type="singleton" /> 
+      </register>
+
+Ex: via code:
+    IoC.RegisterType<IOAuth2CredentialsProvider, OAuth2AppSettingsCredentialsProvider>();
+
+
+- If you are using OAuth2AppSettingsCredentialsProvider add these appsettings to your web.config
+     
+      appSettings:
+
+      API.OAuth2.ClientId     : clientId guid.
+      API.OAuth2.ClientSecret : clientsecret guid.
+      API.OAuth2.Scope        : lab/qa/production
+      API.ApplicationId       : applicationId you want to use
+
+
+- Update Endpoints in web.config
+
+    attributes under client.endpoint:
+        remove: behaviorConfiguration
+        change: bindingConfiguration from SOAP -> Auth2-SOAP
+
+    add a new binding under bindings.wsHttpBinding with name "Auth2-SOAP".
+
+    <binding name="Auth2-SOAP" maxReceivedMessageSize="10000000" >
+        <security mode="Transport">
+        <transport clientCredentialType="None" proxyCredentialType="None" realm="" />
+        <message clientCredentialType="None"  />
+        </security>
+    </binding>
+
+
+
+    Remove SOAP under bindings.wsHttpBinding.
+
+    Remove endpointBehaviors: CertificateBehavior.
+
+- If you are using Enferno.Web.StormUtils with multiple applications you must create your own IOAuth2CredentialsProvider.

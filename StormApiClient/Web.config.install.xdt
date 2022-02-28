@@ -1,155 +1,158 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
 
-  <configSections xdt:Transform="InsertBefore(/configuration/*[1])" />
-  <configSections xdt:Locator="XPath(/configuration/configSections[last()])">
-    <section name="loggingConfiguration" type="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.LoggingSettings, Microsoft.Practices.EnterpriseLibrary.Logging" requirePermission="true" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
-    <section name="unity" type="Microsoft.Practices.Unity.Configuration.UnityConfigurationSection, Unity.Configuration" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
-    <sectionGroup name="stormSettings" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)">
-      <section name="storm" type="Enferno.Web.StormUtils.StormConfigurationSection, Enferno.Web.StormUtils" allowLocation="true" allowDefinition="Everywhere" />
-    </sectionGroup>
-  </configSections>
-  <configSections xdt:Transform="RemoveAll" xdt:Locator="Condition(count(*)=0)" />
+	<configSections xdt:Transform="InsertBefore(/configuration/*[1])" />
+	<configSections xdt:Locator="XPath(/configuration/configSections[last()])">
+		<section name="loggingConfiguration" type="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.LoggingSettings, Microsoft.Practices.EnterpriseLibrary.Logging" requirePermission="true" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+		<section name="unity" type="Microsoft.Practices.Unity.Configuration.UnityConfigurationSection, Unity.Configuration" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+		<sectionGroup name="stormSettings" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)">
+			<section name="storm" type="Enferno.Web.StormUtils.StormConfigurationSection, Enferno.Web.StormUtils" allowLocation="true" allowDefinition="Everywhere" />
+		</sectionGroup>
+	</configSections>
+	<configSections xdt:Transform="RemoveAll" xdt:Locator="Condition(count(*)=0)" />
 
-  <appSettings xdt:Transform="InsertIfMissing">
-    <add key="API.CertFile" value="App_Data/MyCertFile.pfx" xdt:Transform="Remove" xdt:Locator="Match(key)"/>
-    <add key="API.CertPwd" value="abc123" xdt:Transform="Remove" xdt:Locator="Match(key)"/>
-    <add key="API.OAuth2.ClientId" value="oauth2.clientId.guid" xdt:Transform="InsertIfMissing" xdt:Locator="Match(key)"/>
-    <add key="API.OAuth2.ClientSecret" value="oauth2.secret.guid" xdt:Transform="InsertIfMissing" xdt:Locator="Match(key)"/>
-    <add key="API.OAuth2.Scope" value="lab" xdt:Transform="InsertIfMissing" xdt:Locator="Match(key)"/>
-    <add key="API.ApplicationId" value="appId" xdt:Transform="InsertIfMissing" xdt:Locator="Match(key)"/>
-  </appSettings>
+	<appSettings xdt:Transform="InsertIfMissing">
+		<add key="API.CertFile" value="App_Data/MyCertFile.pfx" xdt:Transform="Remove" xdt:Locator="Match(key)"/>
+		<add key="API.CertPwd" value="abc123" xdt:Transform="Remove" xdt:Locator="Match(key)"/>
+		<add key="API.OAuth2.ClientId" value="oauth2.clientId.guid" xdt:Transform="InsertIfMissing" xdt:Locator="Match(key)"/>
+		<add key="API.OAuth2.ClientSecret" value="oauth2.secret.guid" xdt:Transform="InsertIfMissing" xdt:Locator="Match(key)"/>
+		<add key="API.OAuth2.Scope" value="lab" xdt:Transform="InsertIfMissing" xdt:Locator="Match(key)"/>
+		<add key="API.ApplicationId" value="appId" xdt:Transform="InsertIfMissing" xdt:Locator="Match(key)"/>
+	</appSettings>
 
-  <unity xmlns="http://schemas.microsoft.com/practices/2010/unity" xdt:Transform="InsertIfMissing">
-    <assembly name="Enferno.Public" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
-    <assembly name="Enferno.StormApiClient" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
-    <assembly name="Enferno.Web.StormUtils" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
-    <namespace name="Enferno.Public.Caching" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
-    <namespace name="Enferno.StormApiClient" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
-    <namespace name="Enferno.Web.StormUtils" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+	<unity xmlns="http://schemas.microsoft.com/practices/2010/unity" xdt:Transform="InsertIfMissing">
+		<assembly name="Enferno.Public" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+		<assembly name="Enferno.StormApiClient" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+		<assembly name="Enferno.Web.StormUtils" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+		<namespace name="Enferno.Public.Caching" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+		<namespace name="Enferno.StormApiClient" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+		<namespace name="Enferno.Web.StormUtils" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+		<namespace name="Enferno.StormApiClient.OAuth2"  xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+		<container xdt:Transform="InsertIfMissing">
+			<register type="ICacheManager" mapTo="CacheManager" xdt:Transform="InsertIfMissing" xdt:Locator="Match(type)">
+				<lifetime type="singleton" />
+				<constructor>
+					<param name="caches">
+						<array>
+							<dependency name="AccessClient"/>
+						</array>
+					</param>
+				</constructor>
+				<method name="AddCache" xdt:Transform="Remove" xdt:Locator="Match(name)" />
+			</register>
+			<register name="AccessClient" type="ICache" mapTo="InMemoryCache" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)">
+				<lifetime type="singleton" />
+				<constructor>
+					<param name="name" value="AccessClient" />
+				</constructor>
+			</register>
+			<register type="ICertificateResolver"  xdt:Transform="Remove" xdt:Locator="Match(type)">
+				<constructor />
+			</register>
+			<register type="IOAuth2CredentialsProvider" mapTo="OAuth2AppSettingsCredentialsProvider" xdt:Transform="InsertIfMissing" xdt:Locator="Match(type)">
+				<lifetime type="singleton" />
+			</register>
+		</container>
+	</unity>
 
-    <container xdt:Transform="InsertIfMissing">
-      <register type="ICacheManager" mapTo="CacheManager" xdt:Transform="InsertIfMissing" xdt:Locator="Match(type)">
-        <lifetime type="singleton" />
-        <constructor>
-          <param name="caches">
-            <array>
-              <dependency name="AccessClient"/>
-            </array>
-          </param>
-        </constructor>
-        <method name="AddCache" xdt:Transform="Remove" xdt:Locator="Match(name)" />
-      </register>
-      <register name="AccessClient" type="ICache" mapTo="InMemoryCache" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)">
-        <lifetime type="singleton" />
-        <constructor>
-          <param name="name" value="AccessClient" />
-        </constructor>
-      </register>
-      <register type="ICertificateResolver"  xdt:Transform="Remove" xdt:Locator="Match(type)">
-        <constructor />
-      </register>
-    </container>
-  </unity>
+	<stormSettings xdt:Transform="InsertIfMissing">
+		<storm maxNavigationLevels="3" encryptCookie="false" assortmentIdSeed="1,2,3,4,5" productStatusIdSeed="1,2,3" imageUrl="http://services.enferno.se/image/" xdt:Transform="InsertIfMissing"/>
+	</stormSettings>
 
-  <stormSettings xdt:Transform="InsertIfMissing">
-    <storm maxNavigationLevels="3" encryptCookie="false" assortmentIdSeed="1,2,3,4,5" productStatusIdSeed="1,2,3" imageUrl="http://services.enferno.se/image/" xdt:Transform="InsertIfMissing"/>
-  </stormSettings>
+	<loggingConfiguration name="" tracingEnabled="true" defaultCategory="Debug" logWarningsWhenNoCategoriesMatch="true" xdt:Transform="InsertIfMissing">
+		<listeners>
+			<add name="UnprocessedListener" type="Enferno.Public.Logging.RollingXmlTraceListener, Enferno.Public" listenerDataType="Enferno.Public.Logging.Configuration.RollingXmlTraceListenerData, Enferno.Public" fileName="C:\Temp\Logs\YourApplication\Unprocessed.svclog" rollFileExistsBehavior="Increment" rollInterval="Day" maxArchivedFiles="6" traceOutputOptions="LogicalOperationStack, DateTime, Timestamp, ProcessId, ThreadId" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+			<add name="AlertListener" type="Enferno.Public.Logging.RollingXmlTraceListener, Enferno.Public" listenerDataType="Enferno.Public.Logging.Configuration.RollingXmlTraceListenerData, Enferno.Public" fileName="C:\Temp\Logs\YourApplication\Alert.svclog" rollFileExistsBehavior="Increment" rollInterval="Month" maxArchivedFiles="2" traceOutputOptions="LogicalOperationStack, DateTime, Timestamp, ProcessId, ThreadId" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+			<add name="DebugListener" type="Enferno.Public.Logging.RollingXmlTraceListener, Enferno.Public" listenerDataType="Enferno.Public.Logging.Configuration.RollingXmlTraceListenerData, Enferno.Public" fileName="C:\Temp\Logs\YourApplication\Debug.svclog" rollFileExistsBehavior="Increment" rollSizeKB="100000" maxArchivedFiles="4" traceOutputOptions="LogicalOperationStack, DateTime, Timestamp, ProcessId, ThreadId" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+		</listeners>
+		<formatters>
+		</formatters>
+		<logFilters>
+			<add type="Microsoft.Practices.EnterpriseLibrary.Logging.Filters.LogEnabledFilter, Microsoft.Practices.EnterpriseLibrary.Logging" enabled="true" name="Logging Enabled Filter" />
+		</logFilters>
+		<categorySources>
+			<add switchValue="Error" name="Alert">
+				<listeners>
+					<add name="AlertListener" />
+				</listeners>
+			</add>
+			<add switchValue="All" name="Debug">
+				<listeners>
+					<add name="DebugListener" />
+				</listeners>
+			</add>
+		</categorySources>
+		<specialSources>
+			<allEvents switchValue="Off" name="All Events">
+				<listeners>
+					<add name="UnprocessedListener" />
+				</listeners>
+			</allEvents>
+			<notProcessed switchValue="All" name="Unprocessed Category">
+				<listeners>
+					<add name="UnprocessedListener" />
+				</listeners>
+			</notProcessed>
+			<errors switchValue="All" name="Logging Errors &amp; Warnings">
+				<listeners>
+					<add name="UnprocessedListener" />
+				</listeners>
+			</errors>
+		</specialSources>
+	</loggingConfiguration>
 
-  <loggingConfiguration name="" tracingEnabled="true" defaultCategory="Debug" logWarningsWhenNoCategoriesMatch="true" xdt:Transform="InsertIfMissing">
-    <listeners>
-      <add name="UnprocessedListener" type="Enferno.Public.Logging.RollingXmlTraceListener, Enferno.Public" listenerDataType="Enferno.Public.Logging.Configuration.RollingXmlTraceListenerData, Enferno.Public" fileName="C:\Temp\Logs\YourApplication\Unprocessed.svclog" rollFileExistsBehavior="Increment" rollInterval="Day" maxArchivedFiles="6" traceOutputOptions="LogicalOperationStack, DateTime, Timestamp, ProcessId, ThreadId" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
-      <add name="AlertListener" type="Enferno.Public.Logging.RollingXmlTraceListener, Enferno.Public" listenerDataType="Enferno.Public.Logging.Configuration.RollingXmlTraceListenerData, Enferno.Public" fileName="C:\Temp\Logs\YourApplication\Alert.svclog" rollFileExistsBehavior="Increment" rollInterval="Month" maxArchivedFiles="2" traceOutputOptions="LogicalOperationStack, DateTime, Timestamp, ProcessId, ThreadId" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
-      <add name="DebugListener" type="Enferno.Public.Logging.RollingXmlTraceListener, Enferno.Public" listenerDataType="Enferno.Public.Logging.Configuration.RollingXmlTraceListenerData, Enferno.Public" fileName="C:\Temp\Logs\YourApplication\Debug.svclog" rollFileExistsBehavior="Increment" rollSizeKB="100000" maxArchivedFiles="4" traceOutputOptions="LogicalOperationStack, DateTime, Timestamp, ProcessId, ThreadId" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
-    </listeners>
-    <formatters>
-    </formatters>
-    <logFilters>
-      <add type="Microsoft.Practices.EnterpriseLibrary.Logging.Filters.LogEnabledFilter, Microsoft.Practices.EnterpriseLibrary.Logging" enabled="true" name="Logging Enabled Filter" />
-    </logFilters>
-    <categorySources>
-      <add switchValue="Error" name="Alert">
-        <listeners>
-          <add name="AlertListener" />
-        </listeners>
-      </add>
-      <add switchValue="All" name="Debug">
-        <listeners>
-          <add name="DebugListener" />
-        </listeners>
-      </add>
-    </categorySources>
-    <specialSources>
-      <allEvents switchValue="Off" name="All Events">
-        <listeners>
-          <add name="UnprocessedListener" />
-        </listeners>
-      </allEvents>
-      <notProcessed switchValue="All" name="Unprocessed Category">
-        <listeners>
-          <add name="UnprocessedListener" />
-        </listeners>
-      </notProcessed>
-      <errors switchValue="All" name="Logging Errors &amp; Warnings">
-        <listeners>
-          <add name="UnprocessedListener" />
-        </listeners>
-      </errors>
-    </specialSources>
-  </loggingConfiguration>
+	<system.serviceModel xdt:Transform="InsertIfMissing">
+		<bindings>
+			<wsHttpBinding>
+				<binding name="SOAP" maxReceivedMessageSize="10000000" xdt:Transform="Remove" xdt:Locator="Match(name)" />
+				<binding name="Auth2-SOAP" maxReceivedMessageSize="10000000" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)">
+					<security mode="Transport">
+						<transport clientCredentialType="None" proxyCredentialType="None" realm="" />
+						<message clientCredentialType="None"  />
+					</security>
+				</binding>
+			</wsHttpBinding>
+		</bindings>
+		<client>
+			<endpoint name="APPLICATION" xdt:Transform="RemoveAttributes(behaviorConfiguration)" xdt:Locator="Match(name)"/>
+			<endpoint name="PRODUCT" xdt:Transform="RemoveAttributes(behaviorConfiguration)" xdt:Locator="Match(name)"/>
+			<endpoint name="CUSTOMER" xdt:Transform="RemoveAttributes(behaviorConfiguration)" xdt:Locator="Match(name)"/>
+			<endpoint name="SHOPPING" xdt:Transform="RemoveAttributes(behaviorConfiguration)" xdt:Locator="Match(name)"/>
+			<endpoint name="ORDER"  xdt:Transform="RemoveAttributes(behaviorConfiguration)" xdt:Locator="Match(name)"/>
+			<endpoint name="EXPOSE" xdt:Transform="RemoveAttributes(behaviorConfiguration)" xdt:Locator="Match(name)"/>
 
-  <system.serviceModel xdt:Transform="InsertIfMissing">
-    <bindings>
-      <wsHttpBinding>
-        <binding name="SOAP" maxReceivedMessageSize="10000000" xdt:Transform="Remove" xdt:Locator="Match(name)" />
-        <binding name="Auth2-SOAP" maxReceivedMessageSize="10000000" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)">
-          <security mode="Transport">
-            <transport clientCredentialType="None" proxyCredentialType="None" realm="" />
-            <message clientCredentialType="None"  />
-          </security>
-        </binding>
-      </wsHttpBinding>
-    </bindings>
-    <client>
-      <endpoint name="APPLICATION" xdt:Transform="RemoveAttributes(behaviorConfiguration)" xdt:Locator="Match(name)"/>
-      <endpoint name="PRODUCT" xdt:Transform="RemoveAttributes(behaviorConfiguration)" xdt:Locator="Match(name)"/>
-      <endpoint name="CUSTOMER" xdt:Transform="RemoveAttributes(behaviorConfiguration)" xdt:Locator="Match(name)"/>
-      <endpoint name="SHOPPING" xdt:Transform="RemoveAttributes(behaviorConfiguration)" xdt:Locator="Match(name)"/>
-      <endpoint name="ORDER"  xdt:Transform="RemoveAttributes(behaviorConfiguration)" xdt:Locator="Match(name)"/>
-      <endpoint name="EXPOSE" xdt:Transform="RemoveAttributes(behaviorConfiguration)" xdt:Locator="Match(name)"/>
+			<endpoint name="APPLICATION" address="https://api.lab.storm.io/api/1.1/ApplicationService.svc/soap"  xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+			<endpoint name="PRODUCT" address="https://api.lab.storm.io/api/1.1/ProductService.svc/soap"  xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+			<endpoint name="CUSTOMER" address="https://api.lab.storm.io/api/1.1/CustomerService.svc/soap" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+			<endpoint name="SHOPPING" address="https://api.lab.storm.io/api/1.1/ShoppingService.svc/soap" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+			<endpoint name="ORDER" address="https://api.lab.storm.io/api/1.1/OrderService.svc/soap" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+			<endpoint name="EXPOSE" address="https://api.lab.storm.io/api/1.1/ExposeService.svc/soap" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
 
-      <endpoint name="APPLICATION" address="https://api.lab.storm.io/api/1.1/ApplicationService.svc/soap"  xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
-      <endpoint name="PRODUCT" address="https://api.lab.storm.io/api/1.1/ProductService.svc/soap"  xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
-      <endpoint name="CUSTOMER" address="https://api.lab.storm.io/api/1.1/CustomerService.svc/soap" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
-      <endpoint name="SHOPPING" address="https://api.lab.storm.io/api/1.1/ShoppingService.svc/soap" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
-      <endpoint name="ORDER" address="https://api.lab.storm.io/api/1.1/OrderService.svc/soap" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
-      <endpoint name="EXPOSE" address="https://api.lab.storm.io/api/1.1/ExposeService.svc/soap" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+			<endpoint name="APPLICATION"  binding="wsHttpBinding" bindingConfiguration="Auth2-SOAP" contract="Enferno.StormApiClient.Applications.ApplicationService" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
+			<endpoint name="PRODUCT"   binding="wsHttpBinding" bindingConfiguration="Auth2-SOAP" contract="Enferno.StormApiClient.Products.ProductService" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
+			<endpoint name="CUSTOMER"  binding="wsHttpBinding" bindingConfiguration="Auth2-SOAP" contract="Enferno.StormApiClient.Customers.CustomerService" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
+			<endpoint name="SHOPPING"  binding="wsHttpBinding" bindingConfiguration="Auth2-SOAP" contract="Enferno.StormApiClient.Shopping.ShoppingService" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
+			<endpoint name="ORDER" binding="wsHttpBinding" bindingConfiguration="Auth2-SOAP" contract="Enferno.StormApiClient.Orders.OrderService" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
+			<endpoint name="EXPOSE" binding="wsHttpBinding" bindingConfiguration="Auth2-SOAP" contract="Enferno.StormApiClient.Expose.ExposeService" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
+		</client>
+		<behaviors>
+			<endpointBehaviors>
+				<behavior name="CertificateBehavior" xdt:Transform="Remove" xdt:Locator="Match(name)">
+					<clientCredentials>
+						<!--<clientCertificate findValue="2fd56862e6cf6a080e316849dfc079f9522887ea" storeLocation="LocalMachine" storeName="My" x509FindType="FindByThumbprint" />-->
+						<serviceCertificate>
+							<authentication certificateValidationMode="PeerOrChainTrust" revocationMode="Online" />
+						</serviceCertificate>
+					</clientCredentials>
+				</behavior>
+			</endpointBehaviors>
+		</behaviors>
+	</system.serviceModel>
 
-      <endpoint name="APPLICATION"  binding="wsHttpBinding" bindingConfiguration="Auth2-SOAP" contract="Enferno.StormApiClient.Applications.ApplicationService" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
-      <endpoint name="PRODUCT"   binding="wsHttpBinding" bindingConfiguration="Auth2-SOAP" contract="Enferno.StormApiClient.Products.ProductService" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
-      <endpoint name="CUSTOMER"  binding="wsHttpBinding" bindingConfiguration="Auth2-SOAP" contract="Enferno.StormApiClient.Customers.CustomerService" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
-      <endpoint name="SHOPPING"  binding="wsHttpBinding" bindingConfiguration="Auth2-SOAP" contract="Enferno.StormApiClient.Shopping.ShoppingService" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
-      <endpoint name="ORDER" binding="wsHttpBinding" bindingConfiguration="Auth2-SOAP" contract="Enferno.StormApiClient.Orders.OrderService" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
-      <endpoint name="EXPOSE" binding="wsHttpBinding" bindingConfiguration="Auth2-SOAP" contract="Enferno.StormApiClient.Expose.ExposeService" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
-    </client>
-    <behaviors>
-      <endpointBehaviors>
-        <behavior name="CertificateBehavior" xdt:Transform="Remove" xdt:Locator="Match(name)">
-          <clientCredentials>
-            <!--<clientCertificate findValue="2fd56862e6cf6a080e316849dfc079f9522887ea" storeLocation="LocalMachine" storeName="My" x509FindType="FindByThumbprint" />-->
-            <serviceCertificate>
-              <authentication certificateValidationMode="PeerOrChainTrust" revocationMode="Online" />
-            </serviceCertificate>
-          </clientCredentials>
-        </behavior>
-      </endpointBehaviors>
-    </behaviors>
-  </system.serviceModel>
+	<system.webServer xdt:Transform="InsertIfMissing">
+		<modules runAllManagedModulesForAllRequests="true" xdt:Transform="InsertIfMissing">
+			<add name="StormModule" type="Enferno.Web.StormUtils.StormModule, Enferno.Web.StormUtils" preCondition="" xdt:Transform="InsertIfMissing"/>
+		</modules>
+	</system.webServer>
 
-  <system.webServer xdt:Transform="InsertIfMissing">
-    <modules runAllManagedModulesForAllRequests="true" xdt:Transform="InsertIfMissing">
-      <add name="StormModule" type="Enferno.Web.StormUtils.StormModule, Enferno.Web.StormUtils" preCondition="" xdt:Transform="InsertIfMissing"/>
-    </modules>
-  </system.webServer>
-  
 </configuration>

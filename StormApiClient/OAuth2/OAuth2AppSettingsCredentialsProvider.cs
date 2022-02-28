@@ -9,19 +9,39 @@ namespace Enferno.StormApiClient.OAuth2
 {
     public class OAuth2AppSettingsCredentialsProvider : IOAuth2CredentialsProvider
     {
+        private OAuth2Credentials credentials;
+
+        public OAuth2AppSettingsCredentialsProvider()
+        {
+
+        }
+
         public OAuth2Credentials GetOAuth2Credentials()
         {
-            return new OAuth2Credentials(
+            return credentials ?? (credentials = new OAuth2Credentials(
                 ConfigurationManager.AppSettings["API.OAuth2.ClientId"],
                 ConfigurationManager.AppSettings["API.OAuth2.ClientSecret"],
-                ConfigurationManager.AppSettings["API.OAuth2.Scope"],
-                Int32.Parse(ConfigurationManager.AppSettings["API.ApplicationId"]));
+                ConfigurationManager.AppSettings["API.OAuth2.Scope"]
+            ));
         }
+
+        public int ApplicationId
+        {
+            get
+            {
+                return Int32.Parse(ConfigurationManager.AppSettings["API.ApplicationId"]);
+            }
+          
+        }
+
+
     }
 
     public interface IOAuth2CredentialsProvider
     {
         OAuth2Credentials GetOAuth2Credentials();
+        int ApplicationId { get; }
+        
     }
 
 }

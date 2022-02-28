@@ -1,5 +1,8 @@
-﻿using Enferno.StormApiClient;
+﻿using System.Threading;
+using Enferno.Public.InversionOfControl;
+using Enferno.StormApiClient;
 using Enferno.StormApiClient.Applications;
+using Enferno.StormApiClient.OAuth2;
 using Enferno.Web.StormUtils.InternalRepository;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Rhino.Mocks;
@@ -8,7 +11,15 @@ namespace Enferno.Web.StormUtils.Test
 {
     [TestClass]
     public class RepositoryTest : TestBase
-    {       
+    {
+
+        [TestInitialize]
+        public void Initialize()
+        {
+           var oAuth2CredentialsProvider = MockRepository.GenerateMock<IOAuth2CredentialsProvider>();
+            IoC.RegisterInstance(typeof(IOAuth2CredentialsProvider), oAuth2CredentialsProvider);
+        }
+
         [TestMethod, TestCategory("UnitTest")]
         [Description("Tests creation of default AccessClient for the repository")]
         public void GetBatchTest1()
