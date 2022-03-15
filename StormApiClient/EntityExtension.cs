@@ -11,14 +11,14 @@ namespace Enferno.StormApiClient
 {
     public static class EntityExtension
     {
-        public static string GetCacheKey(this Expose.Request request, string thumbprint = null)
+        public static string GetCacheKey(this Expose.Request request, string applicationId = null)
         {
             var type = request.GetType();
             var properties = type.GetProperties();
 
             var buff = new StringBuilder();
             buff.AppendFormat("{0}:", RemoveRequestFromName(type.Name));
-            if (thumbprint != null) buff.AppendFormat("{0}:", thumbprint);
+            if (applicationId != null) buff.AppendFormat("{0}:", applicationId);
             foreach (var property in properties.Where(p => p.Name != "ExtensionData"))
             {
                 buff.AppendFormat("{0}:", property.GetValue(request, null));

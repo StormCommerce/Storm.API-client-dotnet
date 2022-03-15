@@ -49,5 +49,11 @@ namespace Enferno.StormApiClient.EndpointBehavior
             _httpHeaders.AddOrUpdate(key, value,(k,oldValue)=>value);
 
         }
+        public string GetHeader(string key)
+        {
+            _httpHeaders.TryGetValue(key, out var value);
+            return value;
+
+        }
     }
 }

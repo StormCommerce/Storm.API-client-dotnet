@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>2.5.2</version>
+    <version>2.5.3</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -20,6 +20,9 @@
 		Production: https://api.storm.io/api/1.1
 
 		Breaking changes in 2.5.0
+
+		Bugfixes in 2.5.3
+			* Caching bug. Each caching key should now also depend on the application the request is using.
 
 		Using Oauth2 instead of certificates.
 

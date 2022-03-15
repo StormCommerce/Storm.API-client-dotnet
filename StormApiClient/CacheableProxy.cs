@@ -7,6 +7,7 @@ using System.Reflection;
 using System.ServiceModel;
 using Enferno.Public.Caching;
 using Enferno.Public.Logging;
+using Enferno.StormApiClient.EndpointBehavior;
 
 namespace Enferno.StormApiClient
 {
@@ -58,10 +59,16 @@ namespace Enferno.StormApiClient
 
         private object[] ApplicationArgs(object[] args)
         {
-            if (instance.ClientCredentials?.ClientCertificate.Certificate == null) return args;
-            
-            var thumbprint = instance.ClientCredentials.ClientCertificate.Certificate.Thumbprint;
-            return new object[] { thumbprint }.Union(args).ToArray();
+            var appId= GetApplicationId();
+            if (string.IsNullOrEmpty(appId)) return args;
+
+            return new object[] { appId }.Union(args).ToArray();
+        }
+
+        private string GetApplicationId()
+        {
+            var endpointBehavior = instance.Endpoint.Behaviors.Find<HttpHeadersEndpointBehavior>();
+            return endpointBehavior?.GetHeader("ApplicationId");
         }
 
         private static ReturnMessage CreateReturnMessage(MethodCallMessageWrapper mc, object res)
@@ -83,7 +90,7 @@ namespace Enferno.StormApiClient
             catch (TargetInvocationException ex)
             {
                 Log.LogEntry.Categories(AccessClient.LogCategory).Categories(CategoryFlags.Alert)
-                    .Property("Certificate", instance.ClientCredentials?.ClientCertificate.Certificate?.ToString())
+                    .Property("ApplicationId", GetApplicationId())
                     .Message("Failed CacheableProxy.InvokeMethod.").Exceptions(ex).WriteError();
 
                 throw ex.InnerException;

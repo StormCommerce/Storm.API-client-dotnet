@@ -9,6 +9,9 @@ Documentation for Storm API can be found at https://storm.io/docs/storm-api
 
 Watch this project to follow our releases.
 
+Bugfixes in 2.5.3
+    * Caching bug. Each caching key should now also depend on the application the request is using.
+
 ## How to use OAUTH2
 
 To use OAUTH2 you need 4 settings.

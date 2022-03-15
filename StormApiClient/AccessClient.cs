@@ -83,10 +83,10 @@ namespace Enferno.StormApiClient
             public string CacheKey { get; }
             public bool IsCached { get; set; }
 
-            public RequestResponseData(Request request, object response, string thumbprint)
+            public RequestResponseData(Request request, object response, string applicationId)
             {
                 Request = request;
-                CacheKey = request.GetCacheKey(thumbprint);
+                CacheKey = request.GetCacheKey(applicationId);
                 IsCached = (response != null);
                 Response = response;
             }
@@ -297,33 +297,24 @@ namespace Enferno.StormApiClient
             //    requests = new Dictionary<string, RequestResponseData>();
             //}
 
-            requests.TryAdd(key, new RequestResponseData(request, response, GetCertificateThumbprint()));
+            requests.TryAdd(key, new RequestResponseData(request, response, ApplicationId));
         }
 
         public bool IsCached(string method, params object[] parameters)
         {
             object res;
-            string key = cacheManager.GetKey(method, PrependCertificateThumbprint(parameters));
+            string key = cacheManager.GetKey(method, PrependApplicationId(parameters));
 
             if (!useCache) return false;
             if (!cacheManager.HasConfiguration(cacheName)) return false;
             return cacheManager.TryGet(cacheName, key, out res);
         }
 
-        private string GetCertificateThumbprint()
-        {
-            if (exposeProxy == null)
-            {
-                // ReSharper disable once UnusedVariable
-                var justARefToCreateProxy = ExposeProxy.GetType();
-            }
-            return exposeProxy?.ClientCredentials?.ClientCertificate.Certificate?.Thumbprint;
-        }
+     
 
-        private object[] PrependCertificateThumbprint(object[] args)
+        private object[] PrependApplicationId(object[] args)
         {
-            var thumbprint = GetCertificateThumbprint();
-            return thumbprint != null ? new object[] { thumbprint }.Union(args).ToArray() : args;
+            return ApplicationId != null ? new object[] { ApplicationId }.Union(args).ToArray() : args;
         }
 
         /// <summary>
@@ -365,7 +356,7 @@ namespace Enferno.StormApiClient
             if (!useCache) return false;
             if (!cacheManager.HasConfiguration(cacheName)) return false;
 
-            return cacheManager.TryGet(cacheName, request.GetCacheKey(GetCertificateThumbprint()), out response);
+            return cacheManager.TryGet(cacheName, request.GetCacheKey(ApplicationId), out response);
         }
 
         private void AddToCache(string key, RequestResponseData data)
