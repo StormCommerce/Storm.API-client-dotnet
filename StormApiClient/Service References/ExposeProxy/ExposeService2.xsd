@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="Enferno.Services.Contracts.Expose.Customers" elementFormDefault="qualified" targetNamespace="Enferno.Services.Contracts.Expose.Customers" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:tns="Enferno.Services.Contracts.Expose.Customers" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="Enferno.Services.Contracts.Expose.Customers" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:import schemaLocation="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd2" namespace="Enferno.Services.Contracts.Expose" />
   <xs:import schemaLocation="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
@@ -262,6 +262,19 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="AgreementAccount" nillable="true" type="tns:AgreementAccount" />
+  <xs:complexType name="CompanyPaymentMethod">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q21="Enferno.Services.Contracts.Message" base="q21:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CompanyCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PaymentMethodCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InvoiceCaptureSettingsCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CompanyPaymentMethod" nillable="true" type="tns:CompanyPaymentMethod" />
   <xs:complexType name="CustomerPricelistList">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Pricelist" nillable="true" type="tns:Pricelist" />
@@ -276,13 +289,13 @@
   <xs:element name="CustomerFlags" nillable="true" type="tns:CustomerFlags" />
   <xs:complexType name="CustomerFlag">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q21="Enferno.Services.Contracts.Message" base="q21:Entity">
+      <xs:extension xmlns:q22="Enferno.Services.Contracts.Message" base="q22:Entity">
         <xs:sequence>
           <xs:element minOccurs="0" name="Id" type="xs:int" />
           <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="SortOrder" type="xs:int" />
-          <xs:element xmlns:q22="Enferno.Services.Contracts.Expose" minOccurs="0" name="Group" nillable="true" type="q22:IdNameDescription" />
+          <xs:element xmlns:q23="Enferno.Services.Contracts.Expose" minOccurs="0" name="Group" nillable="true" type="q23:IdNameDescription" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

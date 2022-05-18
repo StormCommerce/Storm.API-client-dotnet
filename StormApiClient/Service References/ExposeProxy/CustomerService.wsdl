@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="Enferno.Services.Contracts.Expose.Customers" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="Enferno.Services.Contracts.Expose.Customers" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="Enferno.Services.Contracts.Expose.Customers" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" targetNamespace="Enferno.Services.Contracts.Expose.Customers" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <xsd:schema targetNamespace="Enferno.Services.Contracts.Expose.Customers/Imports">
       <xsd:import schemaLocation="https://api.lab.storm.io/api/1.1b/CustomerService.svc?xsd=xsd0" namespace="Enferno.Services.Contracts.Expose.Customers" />
@@ -622,6 +622,24 @@
   <wsdl:message name="CustomerService_InsertCompanyPaymentMethod_ErrorMessage_v2Fault_FaultMessage">
     <wsdl:part xmlns:q68="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q68:ErrorMessage" />
   </wsdl:message>
+  <wsdl:message name="CustomerService_InsertCompanyPaymentMethod2_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCompanyPaymentMethod2" />
+  </wsdl:message>
+  <wsdl:message name="CustomerService_InsertCompanyPaymentMethod2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCompanyPaymentMethod2Response" />
+  </wsdl:message>
+  <wsdl:message name="CustomerService_InsertCompanyPaymentMethod2_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q69="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q69:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="CustomerService_GetCompanyPaymentMethod_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyPaymentMethod" />
+  </wsdl:message>
+  <wsdl:message name="CustomerService_GetCompanyPaymentMethod_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyPaymentMethodResponse" />
+  </wsdl:message>
+  <wsdl:message name="CustomerService_GetCompanyPaymentMethod_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q70="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q70:ErrorMessage" />
+  </wsdl:message>
   <wsdl:message name="CustomerService_GetCompanyPricelist_InputMessage">
     <wsdl:part name="parameters" element="tns:GetCompanyPricelist" />
   </wsdl:message>
@@ -629,7 +647,7 @@
     <wsdl:part name="parameters" element="tns:GetCompanyPricelistResponse" />
   </wsdl:message>
   <wsdl:message name="CustomerService_GetCompanyPricelist_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q69="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q69:ErrorMessage" />
+    <wsdl:part xmlns:q71="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q71:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="CustomerService_ListCompanyPricelists_InputMessage">
     <wsdl:part name="parameters" element="tns:ListCompanyPricelists" />
@@ -638,7 +656,7 @@
     <wsdl:part name="parameters" element="tns:ListCompanyPricelistsResponse" />
   </wsdl:message>
   <wsdl:message name="CustomerService_ListCompanyPricelists_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q70="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q70:ErrorMessage" />
+    <wsdl:part xmlns:q72="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q72:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="CustomerService_InsertCompanyPricelist_InputMessage">
     <wsdl:part name="parameters" element="tns:InsertCompanyPricelist" />
@@ -647,7 +665,7 @@
     <wsdl:part name="parameters" element="tns:InsertCompanyPricelistResponse" />
   </wsdl:message>
   <wsdl:message name="CustomerService_InsertCompanyPricelist_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q71="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q71:ErrorMessage" />
+    <wsdl:part xmlns:q73="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q73:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="CustomerService_InsertCompanyPricelist2_InputMessage">
     <wsdl:part name="parameters" element="tns:InsertCompanyPricelist2" />
@@ -656,7 +674,7 @@
     <wsdl:part name="parameters" element="tns:InsertCompanyPricelist2Response" />
   </wsdl:message>
   <wsdl:message name="CustomerService_InsertCompanyPricelist2_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q72="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q72:ErrorMessage" />
+    <wsdl:part xmlns:q74="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q74:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="CustomerService_UpdateCompanyPricelist_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateCompanyPricelist" />
@@ -665,7 +683,7 @@
     <wsdl:part name="parameters" element="tns:UpdateCompanyPricelistResponse" />
   </wsdl:message>
   <wsdl:message name="CustomerService_UpdateCompanyPricelist_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q73="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q73:ErrorMessage" />
+    <wsdl:part xmlns:q75="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q75:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="CustomerService_UpdateCompanyPricelist2_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateCompanyPricelist2" />
@@ -674,7 +692,7 @@
     <wsdl:part name="parameters" element="tns:UpdateCompanyPricelist2Response" />
   </wsdl:message>
   <wsdl:message name="CustomerService_UpdateCompanyPricelist2_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q74="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q74:ErrorMessage" />
+    <wsdl:part xmlns:q76="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q76:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="CustomerService_DeleteCompanyPricelist_InputMessage">
     <wsdl:part name="parameters" element="tns:DeleteCompanyPricelist" />
@@ -683,7 +701,7 @@
     <wsdl:part name="parameters" element="tns:DeleteCompanyPricelistResponse" />
   </wsdl:message>
   <wsdl:message name="CustomerService_DeleteCompanyPricelist_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q75="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q75:ErrorMessage" />
+    <wsdl:part xmlns:q77="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q77:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="CustomerService_ListPriceRules_InputMessage">
     <wsdl:part name="parameters" element="tns:ListPriceRules" />
@@ -692,7 +710,7 @@
     <wsdl:part name="parameters" element="tns:ListPriceRulesResponse" />
   </wsdl:message>
   <wsdl:message name="CustomerService_ListPriceRules_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q76="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q76:ErrorMessage" />
+    <wsdl:part xmlns:q78="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q78:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="CustomerService_ListCustomerFlags_InputMessage">
     <wsdl:part name="parameters" element="tns:ListCustomerFlags" />
@@ -701,7 +719,7 @@
     <wsdl:part name="parameters" element="tns:ListCustomerFlagsResponse" />
   </wsdl:message>
   <wsdl:message name="CustomerService_ListCustomerFlags_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q77="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q77:ErrorMessage" />
+    <wsdl:part xmlns:q79="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q79:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="CustomerService_ListCompanyFlags_InputMessage">
     <wsdl:part name="parameters" element="tns:ListCompanyFlags" />
@@ -710,7 +728,7 @@
     <wsdl:part name="parameters" element="tns:ListCompanyFlagsResponse" />
   </wsdl:message>
   <wsdl:message name="CustomerService_ListCompanyFlags_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q78="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q78:ErrorMessage" />
+    <wsdl:part xmlns:q80="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q80:ErrorMessage" />
   </wsdl:message>
   <wsdl:portType name="CustomerService">
     <wsdl:operation name="ChangePassword">
@@ -1052,6 +1070,16 @@
       <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Customers/CustomerService/InsertCompanyPaymentMethod" message="tns:CustomerService_InsertCompanyPaymentMethod_InputMessage" />
       <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Customers/CustomerService/InsertCompanyPaymentMethodResponse" message="tns:CustomerService_InsertCompanyPaymentMethod_OutputMessage" />
       <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Customers/CustomerService/InsertCompanyPaymentMethodErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:CustomerService_InsertCompanyPaymentMethod_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCompanyPaymentMethod2">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Customers/CustomerService/InsertCompanyPaymentMethod2" message="tns:CustomerService_InsertCompanyPaymentMethod2_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Customers/CustomerService/InsertCompanyPaymentMethod2Response" message="tns:CustomerService_InsertCompanyPaymentMethod2_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Customers/CustomerService/InsertCompanyPaymentMethod2ErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:CustomerService_InsertCompanyPaymentMethod2_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyPaymentMethod">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Customers/CustomerService/GetCompanyPaymentMethod" message="tns:CustomerService_GetCompanyPaymentMethod_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Customers/CustomerService/GetCompanyPaymentMethodResponse" message="tns:CustomerService_GetCompanyPaymentMethod_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Customers/CustomerService/GetCompanyPaymentMethodErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:CustomerService_GetCompanyPaymentMethod_ErrorMessage_v2Fault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetCompanyPricelist">
       <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Customers/CustomerService/GetCompanyPricelist" message="tns:CustomerService_GetCompanyPricelist_InputMessage" />

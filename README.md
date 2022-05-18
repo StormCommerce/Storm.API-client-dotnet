@@ -9,8 +9,32 @@ Documentation for Storm API can be found at https://storm.io/docs/storm-api
 
 Watch this project to follow our releases.
 
-Bugfixes in 2.5.3
-    * Caching bug. Each caching key should now also depend on the application the request is using.
+## What's new?
+ 	Fixes in 2.5.4
+
+		Updated to latest Model
+
+		* Added new Endpoints
+		- CloseBasketForPostPurchaseUpsell
+		- InsertItemsPostPurchase
+		- IsPostPurchasePossbile
+		- ListFlagGroups
+		- ListParametricGroups
+		- InsertCompanyPaymentMethod2
+		- GetCompanyPaymentMethod
+
+		* Added new Entities
+		- CompanyPaymentMethod
+		- FlagGroupList
+		- ParametricGroupList
+
+
+		* Added field to Entity
+		- CommodityCode in Product
+		- RelationsMetadata in ProductRelations
+		- RelationsMetadata in VariantRelations
+		- IsGlobal in CategoryParametric
+		- IsGlobal in ParametricInfo
 
 ## How to use OAUTH2
 

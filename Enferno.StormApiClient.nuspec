@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Enferno.StormApiClient</id>
-    <version>2.5.3</version>
+    <version>2.5.4</version>
     <title>Enferno Storm Api Client</title>
     <authors>Storm Commerce AB</authors>
     <owners>Storm Commerce AB</owners>
@@ -21,8 +21,35 @@
 
 		Breaking changes in 2.5.0
 
-		Bugfixes in 2.5.3
-			* Caching bug. Each caching key should now also depend on the application the request is using.
+
+		## What's new?
+
+		Fixes in 2.5.4
+
+		Updated to latest Model
+
+		* Added new Endpoints
+		- CloseBasketForPostPurchaseUpsell
+		- InsertItemsPostPurchase
+		- IsPostPurchasePossbile
+		- ListFlagGroups
+		- ListParametricGroups
+		- InsertCompanyPaymentMethod2
+		- GetCompanyPaymentMethod
+
+		* Added new Entities
+		- CompanyPaymentMethod
+		- FlagGroupList
+		- ParametricGroupList
+
+
+		* Added field to Entity
+		- CommodityCode in Product
+		- RelationsMetadata in ProductRelations
+		- RelationsMetadata in VariantRelations
+		- IsGlobal in CategoryParametric
+		- IsGlobal in ParametricInfo
+
 
 		Using Oauth2 instead of certificates.
 

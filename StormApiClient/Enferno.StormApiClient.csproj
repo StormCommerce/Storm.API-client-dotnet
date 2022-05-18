@@ -213,6 +213,9 @@
     <None Include="Service References\ExposeProxy\Enferno.StormApiClient.Customers.CompanyList.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ExposeProxy\Enferno.StormApiClient.Customers.CompanyPaymentMethod.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ExposeProxy\Enferno.StormApiClient.Customers.ContactList.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -279,6 +282,9 @@
     <None Include="Service References\ExposeProxy\Enferno.StormApiClient.Products.FilterList.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ExposeProxy\Enferno.StormApiClient.Products.FlagGroupList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ExposeProxy\Enferno.StormApiClient.Products.FlagList.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -292,6 +298,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ExposeProxy\Enferno.StormApiClient.Products.NavigationStructure.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExposeProxy\Enferno.StormApiClient.Products.ParametricGroupList.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ExposeProxy\Enferno.StormApiClient.Products.ParametricInfoList.datasource">

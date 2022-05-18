@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="Enferno.Services.Contracts.Expose.Shopping" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="Enferno.Services.Contracts.Expose.Shopping" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="Enferno.Services.Contracts.Expose.Shopping" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" targetNamespace="Enferno.Services.Contracts.Expose.Shopping" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <xsd:schema targetNamespace="Enferno.Services.Contracts.Expose.Shopping/Imports">
       <xsd:import schemaLocation="https://api.lab.storm.io/api/1.1b/ShoppingService.svc?xsd=xsd0" namespace="Enferno.Services.Contracts.Expose.Shopping" />
@@ -643,6 +643,33 @@
   <wsdl:message name="ShoppingService_UpdatePaymentMethod2_ErrorMessage_v2Fault_FaultMessage">
     <wsdl:part xmlns:q70="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q70:ErrorMessage" />
   </wsdl:message>
+  <wsdl:message name="ShoppingService_CloseBasketForPostPurchaseUpsell_InputMessage">
+    <wsdl:part name="parameters" element="tns:CloseBasketForPostPurchaseUpsell" />
+  </wsdl:message>
+  <wsdl:message name="ShoppingService_CloseBasketForPostPurchaseUpsell_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CloseBasketForPostPurchaseUpsellResponse" />
+  </wsdl:message>
+  <wsdl:message name="ShoppingService_CloseBasketForPostPurchaseUpsell_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q71="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q71:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ShoppingService_InsertItemsPostPurchase_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertItemsPostPurchase" />
+  </wsdl:message>
+  <wsdl:message name="ShoppingService_InsertItemsPostPurchase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertItemsPostPurchaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ShoppingService_InsertItemsPostPurchase_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q72="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q72:ErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="ShoppingService_IsPostPurchasePossbile_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsPostPurchasePossbile" />
+  </wsdl:message>
+  <wsdl:message name="ShoppingService_IsPostPurchasePossbile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsPostPurchasePossbileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ShoppingService_IsPostPurchasePossbile_ErrorMessage_v2Fault_FaultMessage">
+    <wsdl:part xmlns:q73="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q73:ErrorMessage" />
+  </wsdl:message>
   <wsdl:message name="ShoppingService_ListBasketStatuses_InputMessage">
     <wsdl:part name="parameters" element="tns:ListBasketStatuses" />
   </wsdl:message>
@@ -650,7 +677,7 @@
     <wsdl:part name="parameters" element="tns:ListBasketStatusesResponse" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_ListBasketStatuses_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q71="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q71:ErrorMessage" />
+    <wsdl:part xmlns:q74="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q74:ErrorMessage" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_ListBasketTypes_InputMessage">
     <wsdl:part name="parameters" element="tns:ListBasketTypes" />
@@ -659,7 +686,7 @@
     <wsdl:part name="parameters" element="tns:ListBasketTypesResponse" />
   </wsdl:message>
   <wsdl:message name="ShoppingService_ListBasketTypes_ErrorMessage_v2Fault_FaultMessage">
-    <wsdl:part xmlns:q72="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q72:ErrorMessage" />
+    <wsdl:part xmlns:q75="http://Enferno.Native.Schemas.ErrorMessage_v2" name="detail" element="q75:ErrorMessage" />
   </wsdl:message>
   <wsdl:portType name="ShoppingService">
     <wsdl:operation name="ClearBasket">
@@ -1011,6 +1038,21 @@
       <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/UpdatePaymentMethod2" message="tns:ShoppingService_UpdatePaymentMethod2_InputMessage" />
       <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/UpdatePaymentMethod2Response" message="tns:ShoppingService_UpdatePaymentMethod2_OutputMessage" />
       <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/UpdatePaymentMethod2ErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ShoppingService_UpdatePaymentMethod2_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CloseBasketForPostPurchaseUpsell">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/CloseBasketForPostPurchaseUpsell" message="tns:ShoppingService_CloseBasketForPostPurchaseUpsell_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/CloseBasketForPostPurchaseUpsellResponse" message="tns:ShoppingService_CloseBasketForPostPurchaseUpsell_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/CloseBasketForPostPurchaseUpsellErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ShoppingService_CloseBasketForPostPurchaseUpsell_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertItemsPostPurchase">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/InsertItemsPostPurchase" message="tns:ShoppingService_InsertItemsPostPurchase_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/InsertItemsPostPurchaseResponse" message="tns:ShoppingService_InsertItemsPostPurchase_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/InsertItemsPostPurchaseErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ShoppingService_InsertItemsPostPurchase_ErrorMessage_v2Fault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsPostPurchasePossbile">
+      <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/IsPostPurchasePossbile" message="tns:ShoppingService_IsPostPurchasePossbile_InputMessage" />
+      <wsdl:output wsaw:Action="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/IsPostPurchasePossbileResponse" message="tns:ShoppingService_IsPostPurchasePossbile_OutputMessage" />
+      <wsdl:fault wsaw:Action="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/IsPostPurchasePossbileErrorMessage_v2Fault" name="ErrorMessage_v2Fault" message="tns:ShoppingService_IsPostPurchasePossbile_ErrorMessage_v2Fault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="ListBasketStatuses">
       <wsdl:input wsaw:Action="Enferno.Services.Contracts.Expose.Shopping/ShoppingService/ListBasketStatuses" message="tns:ShoppingService_ListBasketStatuses_InputMessage" />

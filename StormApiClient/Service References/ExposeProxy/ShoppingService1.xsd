@@ -1781,6 +1781,59 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="CloseBasketForPostPurchaseUpsell">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="basketId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CloseBasketForPostPurchaseUpsellResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertItemsPostPurchase">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="basketId" type="xs:int" />
+        <xs:element minOccurs="0" name="pricelistSeed" nillable="true" type="xs:string" />
+        <xs:element xmlns:q218="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="data" nillable="true" type="q218:InsertItemsPostPurchaseData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="InsertItemsPostPurchaseData">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q219="Enferno.Services.Contracts.Message" base="q219:Entity">
+        <xs:sequence>
+          <xs:element xmlns:q220="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="ItemsToAdd" nillable="true" type="q220:BasketItemList" />
+          <xs:element xmlns:q221="Enferno.Services.Contracts.Expose" minOccurs="0" name="PaymentParameters" nillable="true" type="q221:NameValues" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q222="Enferno.Services.Contracts.Expose.Shopping" name="InsertItemsPostPurchaseData" nillable="true" type="q222:InsertItemsPostPurchaseData" />
+  <xs:element name="InsertItemsPostPurchaseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q223="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="InsertItemsPostPurchaseResult" nillable="true" type="q223:PaymentResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsPostPurchasePossbile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="basketId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsPostPurchasePossbileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsPostPurchasePossbileResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ListBasketStatuses">
     <xs:complexType>
       <xs:sequence>
@@ -1791,7 +1844,7 @@
   <xs:element name="ListBasketStatusesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q218="Enferno.Services.Contracts.Expose" minOccurs="0" name="ListBasketStatusesResult" nillable="true" type="q218:IdNameDescriptions" />
+        <xs:element xmlns:q224="Enferno.Services.Contracts.Expose" minOccurs="0" name="ListBasketStatusesResult" nillable="true" type="q224:IdNameDescriptions" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1805,7 +1858,7 @@
   <xs:element name="ListBasketTypesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q219="Enferno.Services.Contracts.Expose" minOccurs="0" name="ListBasketTypesResult" nillable="true" type="q219:IdNameDescriptions" />
+        <xs:element xmlns:q225="Enferno.Services.Contracts.Expose" minOccurs="0" name="ListBasketTypesResult" nillable="true" type="q225:IdNameDescriptions" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="Enferno.Services.Contracts.Expose" elementFormDefault="qualified" targetNamespace="Enferno.Services.Contracts.Expose" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:tns="Enferno.Services.Contracts.Expose" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="Enferno.Services.Contracts.Expose" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd3" namespace="Enferno.Services.Contracts.Message" />
   <xs:import schemaLocation="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd4" namespace="Enferno.Services.Contracts.Expose.Shopping" />
   <xs:import schemaLocation="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
@@ -1003,6 +1003,38 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="UpdatePaymentMethod2Request" nillable="true" type="tns:UpdatePaymentMethod2Request" />
+  <xs:complexType name="CloseBasketForPostPurchaseUpsellRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BasketId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CloseBasketForPostPurchaseUpsellRequest" nillable="true" type="tns:CloseBasketForPostPurchaseUpsellRequest" />
+  <xs:complexType name="InsertItemsPostPurchaseRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BasketId" type="xs:int" />
+          <xs:element minOccurs="0" name="PricelistSeed" nillable="true" type="xs:string" />
+          <xs:element xmlns:q26="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="Data" nillable="true" type="q26:InsertItemsPostPurchaseData" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InsertItemsPostPurchaseRequest" nillable="true" type="tns:InsertItemsPostPurchaseRequest" />
+  <xs:complexType name="IsPostPurchasePossbileRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BasketId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IsPostPurchasePossbileRequest" nillable="true" type="tns:IsPostPurchasePossbileRequest" />
   <xs:complexType name="ListBasketStatusesRequest">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
@@ -1173,7 +1205,7 @@
       <xs:extension base="tns:Request">
         <xs:sequence>
           <xs:element minOccurs="0" name="PartNo" nillable="true" type="xs:string" />
-          <xs:element xmlns:q26="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Warehouses" nillable="true" type="q26:WarehouseList" />
+          <xs:element xmlns:q27="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Warehouses" nillable="true" type="q27:WarehouseList" />
           <xs:element minOccurs="0" name="StatusSeed" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="PricelistSeed" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CustomerId" nillable="true" type="xs:string" />
@@ -1190,7 +1222,7 @@
       <xs:extension base="tns:Request">
         <xs:sequence>
           <xs:element minOccurs="0" name="ProductId" type="xs:int" />
-          <xs:element xmlns:q27="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Warehouses" nillable="true" type="q27:WarehouseList" />
+          <xs:element xmlns:q28="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Warehouses" nillable="true" type="q28:WarehouseList" />
           <xs:element minOccurs="0" name="StatusSeed" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="PricelistSeed" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CustomerId" nillable="true" type="xs:string" />
@@ -1217,7 +1249,7 @@
       <xs:extension base="tns:Request">
         <xs:sequence>
           <xs:element minOccurs="0" name="PartNo" nillable="true" type="xs:string" />
-          <xs:element xmlns:q28="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Warehouses" nillable="true" type="q28:WarehouseList" />
+          <xs:element xmlns:q29="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Warehouses" nillable="true" type="q29:WarehouseList" />
           <xs:element minOccurs="0" name="StatusSeed" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="PricelistSeed" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CustomerId" nillable="true" type="xs:string" />
@@ -1234,7 +1266,7 @@
       <xs:extension base="tns:Request">
         <xs:sequence>
           <xs:element minOccurs="0" name="ProductId" type="xs:int" />
-          <xs:element xmlns:q29="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Warehouses" nillable="true" type="q29:WarehouseList" />
+          <xs:element xmlns:q30="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Warehouses" nillable="true" type="q30:WarehouseList" />
           <xs:element minOccurs="0" name="StatusSeed" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="PricelistSeed" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CustomerId" nillable="true" type="xs:string" />
@@ -1250,7 +1282,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
         <xs:sequence>
-          <xs:element xmlns:q30="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Review" nillable="true" type="q30:Review" />
+          <xs:element xmlns:q31="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Review" nillable="true" type="q31:Review" />
           <xs:element minOccurs="0" name="CultureCode" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
@@ -1311,6 +1343,16 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="ListProductFlagsRequest" nillable="true" type="tns:ListProductFlagsRequest" />
+  <xs:complexType name="ListFlagGroupsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CultureCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListFlagGroupsRequest" nillable="true" type="tns:ListFlagGroupsRequest" />
   <xs:complexType name="ListAssortmentsRequest">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
@@ -1414,6 +1456,16 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="ListFocusParametricsRequest" nillable="true" type="tns:ListFocusParametricsRequest" />
+  <xs:complexType name="ListParametricGroupsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CultureCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListParametricGroupsRequest" nillable="true" type="tns:ListParametricGroupsRequest" />
   <xs:complexType name="ListManufacturersRequest">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
@@ -2725,7 +2777,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
         <xs:sequence>
-          <xs:element xmlns:q31="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ProductIds" nillable="true" type="q31:ArrayOfint" />
+          <xs:element xmlns:q32="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ProductIds" nillable="true" type="q32:ArrayOfint" />
           <xs:element minOccurs="0" name="StatusSeed" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Parametrics" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="StoreSeed" nillable="true" type="xs:string" />
@@ -2883,7 +2935,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
         <xs:sequence>
-          <xs:element xmlns:q32="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="DeliveryNote" nillable="true" type="q32:DeliveryNote" />
+          <xs:element xmlns:q33="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="DeliveryNote" nillable="true" type="q33:DeliveryNote" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -2893,7 +2945,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
         <xs:sequence>
-          <xs:element xmlns:q33="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="Invoice" nillable="true" type="q33:Invoice" />
+          <xs:element xmlns:q34="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="Invoice" nillable="true" type="q34:Invoice" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -3059,7 +3111,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
         <xs:sequence>
-          <xs:element xmlns:q34="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="DeliveryNotePackage" nillable="true" type="q34:DeliveryNotePackage" />
+          <xs:element xmlns:q35="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="DeliveryNotePackage" nillable="true" type="q35:DeliveryNotePackage" />
           <xs:element minOccurs="0" name="CultureCode" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
@@ -3114,7 +3166,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
         <xs:sequence>
-          <xs:element xmlns:q35="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Customer" nillable="true" type="q35:Customer" />
+          <xs:element xmlns:q36="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Customer" nillable="true" type="q36:Customer" />
           <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CultureCode" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -3126,7 +3178,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
         <xs:sequence>
-          <xs:element xmlns:q36="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Customer" nillable="true" type="q36:Customer" />
+          <xs:element xmlns:q37="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Customer" nillable="true" type="q37:Customer" />
           <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CultureCode" nillable="true" type="xs:string" />
@@ -3139,7 +3191,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
         <xs:sequence>
-          <xs:element xmlns:q37="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Customer" nillable="true" type="q37:Customer" />
+          <xs:element xmlns:q38="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Customer" nillable="true" type="q38:Customer" />
           <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="DoSendMail" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
@@ -3176,7 +3228,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
         <xs:sequence>
-          <xs:element xmlns:q38="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="PricelistItem" nillable="true" type="q38:PricelistItem" />
+          <xs:element xmlns:q39="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="PricelistItem" nillable="true" type="q39:PricelistItem" />
           <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
@@ -3187,7 +3239,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
         <xs:sequence>
-          <xs:element xmlns:q39="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="PricelistItem" nillable="true" type="q39:PricelistItem" />
+          <xs:element xmlns:q40="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="PricelistItem" nillable="true" type="q40:PricelistItem" />
           <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
@@ -3219,7 +3271,7 @@
       <xs:extension base="tns:Request">
         <xs:sequence>
           <xs:element minOccurs="0" name="CompanyId" type="xs:int" />
-          <xs:element xmlns:q40="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Discounts" nillable="true" type="q40:CompanyDiscountList" />
+          <xs:element xmlns:q41="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Discounts" nillable="true" type="q41:CompanyDiscountList" />
           <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
@@ -3231,7 +3283,7 @@
       <xs:extension base="tns:Request">
         <xs:sequence>
           <xs:element minOccurs="0" name="CompanyId" type="xs:int" />
-          <xs:element xmlns:q41="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Discount" nillable="true" type="q41:CompanyDiscount" />
+          <xs:element xmlns:q42="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Discount" nillable="true" type="q42:CompanyDiscount" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -3400,7 +3452,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
         <xs:sequence>
-          <xs:element xmlns:q42="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Customer" nillable="true" type="q42:Customer" />
+          <xs:element xmlns:q43="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Customer" nillable="true" type="q43:Customer" />
           <xs:element minOccurs="0" name="CultureCode" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
@@ -3411,7 +3463,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
         <xs:sequence>
-          <xs:element xmlns:q43="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Customer" nillable="true" type="q43:Customer" />
+          <xs:element xmlns:q44="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Customer" nillable="true" type="q44:Customer" />
           <xs:element minOccurs="0" name="CultureCode" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
@@ -3646,7 +3698,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
         <xs:sequence>
-          <xs:element xmlns:q44="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Customer" nillable="true" type="q44:Customer" />
+          <xs:element xmlns:q45="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Customer" nillable="true" type="q45:Customer" />
           <xs:element minOccurs="0" name="UpdatedBy" type="xs:int" />
           <xs:element minOccurs="0" name="CultureCode" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -3658,7 +3710,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
         <xs:sequence>
-          <xs:element xmlns:q45="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Customer" nillable="true" type="q45:Customer" />
+          <xs:element xmlns:q46="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Customer" nillable="true" type="q46:Customer" />
           <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="UpdatedBy" type="xs:int" />
           <xs:element minOccurs="0" name="CultureCode" nillable="true" type="xs:string" />
@@ -3671,7 +3723,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
         <xs:sequence>
-          <xs:element xmlns:q46="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Customer" nillable="true" type="q46:Customer" />
+          <xs:element xmlns:q47="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Customer" nillable="true" type="q47:Customer" />
           <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="DoSendMail" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="UpdatedBy" type="xs:int" />
@@ -3685,7 +3737,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
         <xs:sequence>
-          <xs:element xmlns:q47="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Customer" nillable="true" type="q47:Customer" />
+          <xs:element xmlns:q48="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Customer" nillable="true" type="q48:Customer" />
           <xs:element minOccurs="0" name="UpdatedBy" type="xs:int" />
           <xs:element minOccurs="0" name="CultureCode" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -3697,7 +3749,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
         <xs:sequence>
-          <xs:element xmlns:q48="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Customer" nillable="true" type="q48:Customer" />
+          <xs:element xmlns:q49="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Customer" nillable="true" type="q49:Customer" />
           <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="UpdatedBy" type="xs:int" />
           <xs:element minOccurs="0" name="CultureCode" nillable="true" type="xs:string" />
@@ -3710,7 +3762,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
         <xs:sequence>
-          <xs:element xmlns:q49="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Customer" nillable="true" type="q49:Customer" />
+          <xs:element xmlns:q50="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Customer" nillable="true" type="q50:Customer" />
           <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="DoSendMail" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="UpdatedBy" type="xs:int" />
@@ -3724,7 +3776,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
         <xs:sequence>
-          <xs:element xmlns:q50="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Company" nillable="true" type="q50:Company" />
+          <xs:element xmlns:q51="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Company" nillable="true" type="q51:Company" />
           <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
           <xs:element minOccurs="0" name="UpdatedBy" type="xs:int" />
           <xs:element minOccurs="0" name="CultureCode" nillable="true" type="xs:string" />
@@ -3737,7 +3789,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
         <xs:sequence>
-          <xs:element xmlns:q51="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Customer" nillable="true" type="q51:Customer" />
+          <xs:element xmlns:q52="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Customer" nillable="true" type="q52:Customer" />
           <xs:element minOccurs="0" name="CompanyId" type="xs:int" />
           <xs:element minOccurs="0" name="UpdatedBy" type="xs:int" />
           <xs:element minOccurs="0" name="CultureCode" nillable="true" type="xs:string" />
@@ -3750,7 +3802,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
         <xs:sequence>
-          <xs:element xmlns:q52="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Address" nillable="true" type="q52:Address" />
+          <xs:element xmlns:q53="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Address" nillable="true" type="q53:Address" />
           <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
           <xs:element minOccurs="0" name="UpdatedBy" type="xs:int" />
           <xs:element minOccurs="0" name="CultureCode" nillable="true" type="xs:string" />
@@ -3763,7 +3815,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
         <xs:sequence>
-          <xs:element xmlns:q53="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Address" nillable="true" type="q53:Address" />
+          <xs:element xmlns:q54="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Address" nillable="true" type="q54:Address" />
           <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
           <xs:element minOccurs="0" name="UpdatedBy" type="xs:int" />
           <xs:element minOccurs="0" name="CultureCode" nillable="true" type="xs:string" />
@@ -3788,7 +3840,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
         <xs:sequence>
-          <xs:element xmlns:q54="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Address" nillable="true" type="q54:Address" />
+          <xs:element xmlns:q55="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Address" nillable="true" type="q55:Address" />
           <xs:element minOccurs="0" name="CompanyId" type="xs:int" />
           <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
           <xs:element minOccurs="0" name="UpdatedBy" type="xs:int" />
@@ -3802,7 +3854,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
         <xs:sequence>
-          <xs:element xmlns:q55="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Address" nillable="true" type="q55:Address" />
+          <xs:element xmlns:q56="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Address" nillable="true" type="q56:Address" />
           <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
           <xs:element minOccurs="0" name="UpdatedBy" type="xs:int" />
           <xs:element minOccurs="0" name="CultureCode" nillable="true" type="xs:string" />
@@ -3839,7 +3891,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
         <xs:sequence>
-          <xs:element xmlns:q56="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Customer" nillable="true" type="q56:Customer" />
+          <xs:element xmlns:q57="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Customer" nillable="true" type="q57:Customer" />
           <xs:element minOccurs="0" name="CompanyId" type="xs:int" />
           <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CultureCode" nillable="true" type="xs:string" />
@@ -3852,7 +3904,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
         <xs:sequence>
-          <xs:element xmlns:q57="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Customer" nillable="true" type="q57:Customer" />
+          <xs:element xmlns:q58="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Customer" nillable="true" type="q58:Customer" />
           <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CompanyId" type="xs:int" />
           <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
@@ -3912,6 +3964,32 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="InsertCompanyPaymentMethodRequest" nillable="true" type="tns:InsertCompanyPaymentMethodRequest" />
+  <xs:complexType name="InsertCompanyPaymentMethod2Request">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MethodId" type="xs:int" />
+          <xs:element minOccurs="0" name="CompanyId" type="xs:int" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InvoiceCaptureSettingsCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CultureCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InsertCompanyPaymentMethod2Request" nillable="true" type="tns:InsertCompanyPaymentMethod2Request" />
+  <xs:complexType name="GetCompanyPaymentMethodRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PaymentMethodId" type="xs:int" />
+          <xs:element minOccurs="0" name="CompanyId" type="xs:int" />
+          <xs:element minOccurs="0" name="CultureCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetCompanyPaymentMethodRequest" nillable="true" type="tns:GetCompanyPaymentMethodRequest" />
   <xs:complexType name="GetCompanyPricelistRequest">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Request">
@@ -3940,7 +4018,7 @@
       <xs:extension base="tns:Request">
         <xs:sequence>
           <xs:element minOccurs="0" name="CompanyId" type="xs:int" />
-          <xs:element xmlns:q58="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Pricelist" nillable="true" type="q58:Pricelist" />
+          <xs:element xmlns:q59="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Pricelist" nillable="true" type="q59:Pricelist" />
           <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CultureCode" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -3953,7 +4031,7 @@
       <xs:extension base="tns:Request">
         <xs:sequence>
           <xs:element minOccurs="0" name="CompanyId" type="xs:int" />
-          <xs:element xmlns:q59="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Pricelist" nillable="true" type="q59:Pricelist" />
+          <xs:element xmlns:q60="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Pricelist" nillable="true" type="q60:Pricelist" />
           <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CultureCode" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -3966,7 +4044,7 @@
       <xs:extension base="tns:Request">
         <xs:sequence>
           <xs:element minOccurs="0" name="CompanyId" type="xs:int" />
-          <xs:element xmlns:q60="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Pricelist" nillable="true" type="q60:Pricelist" />
+          <xs:element xmlns:q61="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Pricelist" nillable="true" type="q61:Pricelist" />
           <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CultureCode" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -3979,7 +4057,7 @@
       <xs:extension base="tns:Request">
         <xs:sequence>
           <xs:element minOccurs="0" name="CompanyId" type="xs:int" />
-          <xs:element xmlns:q61="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Pricelist" nillable="true" type="q61:Pricelist" />
+          <xs:element xmlns:q62="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Pricelist" nillable="true" type="q62:Pricelist" />
           <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CultureCode" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -4240,7 +4318,7 @@
   <xs:element name="ResponseOfTypeNameValues" nillable="true" type="tns:ResponseOfTypeNameValues" />
   <xs:complexType name="Response">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q62="Enferno.Services.Contracts.Message" base="q62:Entity">
+      <xs:extension xmlns:q63="Enferno.Services.Contracts.Message" base="q63:Entity">
         <xs:sequence />
       </xs:extension>
     </xs:complexContent>
@@ -4265,7 +4343,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q63="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="Result" nillable="true" type="q63:Basket" />
+          <xs:element xmlns:q64="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="Result" nillable="true" type="q64:Basket" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -4298,7 +4376,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q64="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="Result" nillable="true" type="q64:Subscription" />
+          <xs:element xmlns:q65="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="Result" nillable="true" type="q65:Subscription" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -4355,7 +4433,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q65="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="Result" nillable="true" type="q65:BasketPagedList" />
+          <xs:element xmlns:q66="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="Result" nillable="true" type="q66:BasketPagedList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -4380,7 +4458,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q66="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="Result" nillable="true" type="q66:SavedBasketList" />
+          <xs:element xmlns:q67="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="Result" nillable="true" type="q67:SavedBasketList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -4405,7 +4483,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q67="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="Result" nillable="true" type="q67:SubscriptionList" />
+          <xs:element xmlns:q68="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="Result" nillable="true" type="q68:SubscriptionList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -4430,7 +4508,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q68="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="Result" nillable="true" type="q68:SubscriptionScheduleData" />
+          <xs:element xmlns:q69="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="Result" nillable="true" type="q69:SubscriptionScheduleData" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -4480,7 +4558,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q69="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="Result" nillable="true" type="q69:SubscriptionTypeList" />
+          <xs:element xmlns:q70="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="Result" nillable="true" type="q70:SubscriptionTypeList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -4505,7 +4583,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q70="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="Result" nillable="true" type="q70:SavedBasket" />
+          <xs:element xmlns:q71="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="Result" nillable="true" type="q71:SavedBasket" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -4538,7 +4616,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q71="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="Result" nillable="true" type="q71:Checkout" />
+          <xs:element xmlns:q72="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="Result" nillable="true" type="q72:Checkout" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -4571,7 +4649,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q72="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="Result" nillable="true" type="q72:PaymentResponse" />
+          <xs:element xmlns:q73="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="Result" nillable="true" type="q73:PaymentResponse" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -4636,7 +4714,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q73="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q73:ProductOnHandList" />
+          <xs:element xmlns:q74="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q74:ProductOnHandList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -4756,7 +4834,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q74="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="Result" nillable="true" type="q74:Promotion" />
+          <xs:element xmlns:q75="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="Result" nillable="true" type="q75:Promotion" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -4781,7 +4859,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q75="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="Result" nillable="true" type="q75:PromotionList" />
+          <xs:element xmlns:q76="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="Result" nillable="true" type="q76:PromotionList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -4806,7 +4884,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q76="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="Result" nillable="true" type="q76:DeliveryMethodList" />
+          <xs:element xmlns:q77="Enferno.Services.Contracts.Expose.Shopping" minOccurs="0" name="Result" nillable="true" type="q77:DeliveryMethodList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -5084,6 +5162,47 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="UpdatePaymentMethod2Response" nillable="true" type="tns:UpdatePaymentMethod2Response" />
+  <xs:complexType name="CloseBasketForPostPurchaseUpsellResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Response">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CloseBasketForPostPurchaseUpsellResponse" nillable="true" type="tns:CloseBasketForPostPurchaseUpsellResponse" />
+  <xs:complexType name="InsertItemsPostPurchaseResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseOfTypePaymentResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InsertItemsPostPurchaseResponse" nillable="true" type="tns:InsertItemsPostPurchaseResponse" />
+  <xs:complexType name="IsPostPurchasePossbileResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseOfTypeboolean">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IsPostPurchasePossbileResponse" nillable="true" type="tns:IsPostPurchasePossbileResponse" />
+  <xs:complexType name="ResponseOfTypeboolean">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseOfType{0}" Namespace="Enferno.Services.Contracts.Expose" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="boolean" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseOfTypeboolean" nillable="true" type="tns:ResponseOfTypeboolean" />
   <xs:complexType name="ListBasketStatusesResponse">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ResponseOfTypeIdNameDescriptions">
@@ -5117,7 +5236,7 @@
   <xs:element name="IdNameDescriptions" nillable="true" type="tns:IdNameDescriptions" />
   <xs:complexType name="IdNameDescription">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q77="Enferno.Services.Contracts.Message" base="q77:Entity">
+      <xs:extension xmlns:q78="Enferno.Services.Contracts.Message" base="q78:Entity">
         <xs:sequence>
           <xs:element minOccurs="0" name="Id" type="xs:int" />
           <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
@@ -5156,7 +5275,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q78="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q78:Manufacturer" />
+          <xs:element xmlns:q79="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q79:Manufacturer" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -5189,7 +5308,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q79="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q79:NavigationStructure" />
+          <xs:element xmlns:q80="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q80:NavigationStructure" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -5214,7 +5333,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q80="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q80:ConfigurationItemList" />
+          <xs:element xmlns:q81="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q81:ConfigurationItemList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -5239,7 +5358,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q81="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q81:Product" />
+          <xs:element xmlns:q82="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q82:Product" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -5264,7 +5383,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q82="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q82:ProductPriceQtyBreakList" />
+          <xs:element xmlns:q83="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q83:ProductPriceQtyBreakList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -5321,7 +5440,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q83="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q83:ProductOnHand" />
+          <xs:element xmlns:q84="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q84:ProductOnHand" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -5378,7 +5497,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q84="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q84:ReviewList" />
+          <xs:element xmlns:q85="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q85:ReviewList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -5427,7 +5546,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q85="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q85:PricelistList" />
+          <xs:element xmlns:q86="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q86:PricelistList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -5452,12 +5571,37 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q86="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q86:FlagList" />
+          <xs:element xmlns:q87="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q87:FlagList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="ResponseOfTypeFlagList" nillable="true" type="tns:ResponseOfTypeFlagList" />
+  <xs:complexType name="ListFlagGroupsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseOfTypeFlagGroupList">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListFlagGroupsResponse" nillable="true" type="tns:ListFlagGroupsResponse" />
+  <xs:complexType name="ResponseOfTypeFlagGroupList">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseOfType{0}" Namespace="Enferno.Services.Contracts.Expose" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="FlagGroupList" Namespace="Enferno.Services.Contracts.Expose.Products" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Response">
+        <xs:sequence>
+          <xs:element xmlns:q88="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q88:FlagGroupList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseOfTypeFlagGroupList" nillable="true" type="tns:ResponseOfTypeFlagGroupList" />
   <xs:complexType name="ListAssortmentsResponse">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ResponseOfTypeIdValues">
@@ -5509,7 +5653,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q87="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q87:ParametricInfoList" />
+          <xs:element xmlns:q89="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q89:ParametricInfoList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -5534,7 +5678,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q88="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q88:ParametricValueList" />
+          <xs:element xmlns:q90="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q90:ParametricValueList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -5583,12 +5727,37 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q89="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q89:FilterItemList" />
+          <xs:element xmlns:q91="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q91:FilterItemList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="ResponseOfTypeFilterItemList" nillable="true" type="tns:ResponseOfTypeFilterItemList" />
+  <xs:complexType name="ListParametricGroupsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseOfTypeParametricGroupList">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListParametricGroupsResponse" nillable="true" type="tns:ListParametricGroupsResponse" />
+  <xs:complexType name="ResponseOfTypeParametricGroupList">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseOfType{0}" Namespace="Enferno.Services.Contracts.Expose" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ParametricGroupList" Namespace="Enferno.Services.Contracts.Expose.Products" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Response">
+        <xs:sequence>
+          <xs:element xmlns:q92="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q92:ParametricGroupList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseOfTypeParametricGroupList" nillable="true" type="tns:ResponseOfTypeParametricGroupList" />
   <xs:complexType name="ListManufacturersResponse">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ResponseOfTypeManufacturerItemPagedList">
@@ -5608,7 +5777,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q90="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q90:ManufacturerItemPagedList" />
+          <xs:element xmlns:q93="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q93:ManufacturerItemPagedList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -5649,7 +5818,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q91="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q91:NavigationNodeList" />
+          <xs:element xmlns:q94="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q94:NavigationNodeList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -5682,7 +5851,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q92="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q92:ProductItemPagedList" />
+          <xs:element xmlns:q95="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q95:ProductItemPagedList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -5739,7 +5908,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q93="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q93:FamilyList" />
+          <xs:element xmlns:q96="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q96:FamilyList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -5812,7 +5981,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q94="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q94:ProductItem2PagedList" />
+          <xs:element xmlns:q97="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q97:ProductItem2PagedList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -5853,7 +6022,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q95="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q95:PromotionProductsList" />
+          <xs:element xmlns:q98="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q98:PromotionProductsList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -5926,7 +6095,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q96="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q96:ProductItemFilterValuesList" />
+          <xs:element xmlns:q99="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q99:ProductItemFilterValuesList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -5983,7 +6152,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q97="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q97:FilterList" />
+          <xs:element xmlns:q100="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q100:FilterList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -6080,7 +6249,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q98="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q98:ProductAccessories" />
+          <xs:element xmlns:q101="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q101:ProductAccessories" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -6113,7 +6282,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q99="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q99:ProductRelationsList" />
+          <xs:element xmlns:q102="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q102:ProductRelationsList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -6170,7 +6339,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q100="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q100:ProductParametricList" />
+          <xs:element xmlns:q103="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q103:ProductParametricList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -6283,7 +6452,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q101="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q101:VariantItemList" />
+          <xs:element xmlns:q104="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q104:VariantItemList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -6332,7 +6501,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q102="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q102:CategoryItemList" />
+          <xs:element xmlns:q105="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q105:CategoryItemList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -6365,7 +6534,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q103="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q103:WarehouseInfoList" />
+          <xs:element xmlns:q106="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q106:WarehouseInfoList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -6406,7 +6575,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q104="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q104:ProductIdNameList" />
+          <xs:element xmlns:q107="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q107:ProductIdNameList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -6439,7 +6608,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q105="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q105:SkuTypeList" />
+          <xs:element xmlns:q108="Enferno.Services.Contracts.Expose.Products" minOccurs="0" name="Result" nillable="true" type="q108:SkuTypeList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -6464,7 +6633,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q106="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="Result" nillable="true" type="q106:DeliveryNote" />
+          <xs:element xmlns:q109="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="Result" nillable="true" type="q109:DeliveryNote" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -6489,7 +6658,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q107="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="Result" nillable="true" type="q107:Invoice" />
+          <xs:element xmlns:q110="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="Result" nillable="true" type="q110:Invoice" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -6514,7 +6683,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q108="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="Result" nillable="true" type="q108:Order" />
+          <xs:element xmlns:q111="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="Result" nillable="true" type="q111:Order" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -6563,7 +6732,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q109="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="Result" nillable="true" type="q109:InvoicePagedList" />
+          <xs:element xmlns:q112="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="Result" nillable="true" type="q112:InvoicePagedList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -6596,7 +6765,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q110="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="Result" nillable="true" type="q110:OrderPagedList" />
+          <xs:element xmlns:q113="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="Result" nillable="true" type="q113:OrderPagedList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -6629,7 +6798,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q111="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="Result" nillable="true" type="q111:OrderPagedList2" />
+          <xs:element xmlns:q114="Enferno.Services.Contracts.Expose.Orders" minOccurs="0" name="Result" nillable="true" type="q114:OrderPagedList2" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -6710,7 +6879,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q112="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Result" nillable="true" type="q112:Customer" />
+          <xs:element xmlns:q115="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Result" nillable="true" type="q115:Customer" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -6751,7 +6920,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q113="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Result" nillable="true" type="q113:Company" />
+          <xs:element xmlns:q116="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Result" nillable="true" type="q116:Company" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -6776,7 +6945,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q114="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Result" nillable="true" type="q114:PricelistItem" />
+          <xs:element xmlns:q117="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Result" nillable="true" type="q117:PricelistItem" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -6825,7 +6994,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q115="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Result" nillable="true" type="q115:CompanyDiscountList" />
+          <xs:element xmlns:q118="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Result" nillable="true" type="q118:CompanyDiscountList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -6866,7 +7035,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q116="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Result" nillable="true" type="q116:CompanyList" />
+          <xs:element xmlns:q119="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Result" nillable="true" type="q119:CompanyList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -6923,7 +7092,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q117="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Result" nillable="true" type="q117:CustomerList" />
+          <xs:element xmlns:q120="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Result" nillable="true" type="q120:CustomerList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -7052,7 +7221,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q118="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Result" nillable="true" type="q118:ContactList" />
+          <xs:element xmlns:q121="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Result" nillable="true" type="q121:ContactList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -7165,7 +7334,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q119="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Result" nillable="true" type="q119:AgreementAccount" />
+          <xs:element xmlns:q122="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Result" nillable="true" type="q122:AgreementAccount" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -7363,6 +7532,39 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="InsertCompanyPaymentMethodResponse" nillable="true" type="tns:InsertCompanyPaymentMethodResponse" />
+  <xs:complexType name="InsertCompanyPaymentMethod2Response">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseOfTypeCompany">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InsertCompanyPaymentMethod2Response" nillable="true" type="tns:InsertCompanyPaymentMethod2Response" />
+  <xs:complexType name="GetCompanyPaymentMethodResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseOfTypeCompanyPaymentMethod">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetCompanyPaymentMethodResponse" nillable="true" type="tns:GetCompanyPaymentMethodResponse" />
+  <xs:complexType name="ResponseOfTypeCompanyPaymentMethod">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseOfType{0}" Namespace="Enferno.Services.Contracts.Expose" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="CompanyPaymentMethod" Namespace="Enferno.Services.Contracts.Expose.Customers" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Response">
+        <xs:sequence>
+          <xs:element xmlns:q123="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Result" nillable="true" type="q123:CompanyPaymentMethod" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseOfTypeCompanyPaymentMethod" nillable="true" type="tns:ResponseOfTypeCompanyPaymentMethod" />
   <xs:complexType name="GetCompanyPricelistResponse">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ResponseOfTypePricelist">
@@ -7382,7 +7584,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q120="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Result" nillable="true" type="q120:Pricelist" />
+          <xs:element xmlns:q124="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Result" nillable="true" type="q124:Pricelist" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -7407,7 +7609,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q121="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Result" nillable="true" type="q121:CustomerPricelistList" />
+          <xs:element xmlns:q125="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Result" nillable="true" type="q125:CustomerPricelistList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -7480,7 +7682,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q122="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Result" nillable="true" type="q122:CustomerFlags" />
+          <xs:element xmlns:q126="Enferno.Services.Contracts.Expose.Customers" minOccurs="0" name="Result" nillable="true" type="q126:CustomerFlags" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -7513,7 +7715,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q123="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="Result" nillable="true" type="q123:Application" />
+          <xs:element xmlns:q127="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="Result" nillable="true" type="q127:Application" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -7562,7 +7764,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q124="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="Result" nillable="true" type="q124:StoreItemPagedList" />
+          <xs:element xmlns:q128="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="Result" nillable="true" type="q128:StoreItemPagedList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -7587,7 +7789,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q125="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="Result" nillable="true" type="q125:LocationInfo" />
+          <xs:element xmlns:q129="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="Result" nillable="true" type="q129:LocationInfo" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -7612,7 +7814,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q126="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="Result" nillable="true" type="q126:StoreItem" />
+          <xs:element xmlns:q130="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="Result" nillable="true" type="q130:StoreItem" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -7661,7 +7863,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q127="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="Result" nillable="true" type="q127:StoreInfoPagedList" />
+          <xs:element xmlns:q131="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="Result" nillable="true" type="q131:StoreInfoPagedList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -7686,7 +7888,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q128="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="Result" nillable="true" type="q128:Store" />
+          <xs:element xmlns:q132="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="Result" nillable="true" type="q132:Store" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -7719,7 +7921,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Response">
         <xs:sequence>
-          <xs:element xmlns:q129="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="Result" nillable="true" type="q129:StoreList" />
+          <xs:element xmlns:q133="Enferno.Services.Contracts.Expose.Applications" minOccurs="0" name="Result" nillable="true" type="q133:StoreList" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

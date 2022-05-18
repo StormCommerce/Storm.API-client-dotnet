@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6280458a-0591-4c14-9453-e7ae15e11ef0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="6280458a-0591-4c14-9453-e7ae15e11ef0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -36,67 +36,67 @@
     <MetadataSource Address="https://api.lab.storm.io/api/1.1/ExposeService.svc?wsdl" Protocol="http" SourceId="7" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ApplicationService.wsdl" MetadataType="Wsdl" ID="40bc3572-2e58-4839-9dca-9a608c489a21" SourceId="1" SourceUrl="https://api.lab.storm.io/api/1.1b/ApplicationService.svc?wsdl=wsdl0" />
     <MetadataFile FileName="ApplicationService.xsd" MetadataType="Schema" ID="d7c33407-1486-49d1-a8db-fc44eac233cd" SourceId="1" SourceUrl="https://api.lab.storm.io/api/1.1b/ApplicationService.svc?xsd=xsd4" />
     <MetadataFile FileName="ApplicationService1.xsd" MetadataType="Schema" ID="e2dcb7ee-eb34-4804-b760-4e6ee9034514" SourceId="1" SourceUrl="https://api.lab.storm.io/api/1.1b/ApplicationService.svc?xsd=xsd5" />
     <MetadataFile FileName="ApplicationService2.xsd" MetadataType="Schema" ID="858f8800-9e65-4498-80f1-888ffb645ca5" SourceId="1" SourceUrl="https://api.lab.storm.io/api/1.1b/ApplicationService.svc?xsd=xsd6" />
-    <MetadataFile FileName="ApplicationService3.xsd" MetadataType="Schema" ID="2818df42-3745-42dd-ade2-8f65479603a5" SourceId="1" SourceUrl="https://api.lab.storm.io/api/1.1b/ApplicationService.svc?xsd=xsd2" />
-    <MetadataFile FileName="ApplicationService4.xsd" MetadataType="Schema" ID="cddd4102-385b-4883-8615-c0f08ca55b61" SourceId="1" SourceUrl="https://api.lab.storm.io/api/1.1b/ApplicationService.svc?xsd=xsd3" />
     <MetadataFile FileName="ApplicationService5.xsd" MetadataType="Schema" ID="78fb959d-f479-46b1-b136-17a6d7390eba" SourceId="1" SourceUrl="https://api.lab.storm.io/api/1.1b/ApplicationService.svc?xsd=xsd0" />
     <MetadataFile FileName="ApplicationService6.xsd" MetadataType="Schema" ID="e66cd05a-ca85-4fb9-a33c-42664f810a92" SourceId="1" SourceUrl="https://api.lab.storm.io/api/1.1b/ApplicationService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ApplicationService3.xsd" MetadataType="Schema" ID="2818df42-3745-42dd-ade2-8f65479603a5" SourceId="1" SourceUrl="https://api.lab.storm.io/api/1.1b/ApplicationService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ApplicationService4.xsd" MetadataType="Schema" ID="cddd4102-385b-4883-8615-c0f08ca55b61" SourceId="1" SourceUrl="https://api.lab.storm.io/api/1.1b/ApplicationService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ApplicationService.wsdl" MetadataType="Wsdl" ID="40bc3572-2e58-4839-9dca-9a608c489a21" SourceId="1" SourceUrl="https://api.lab.storm.io/api/1.1b/ApplicationService.svc?wsdl=wsdl0" />
     <MetadataFile FileName="ApplicationService2.wsdl" MetadataType="Wsdl" ID="4328d856-f911-4519-8516-a7d2c4bdf12c" SourceId="1" SourceUrl="https://api.lab.storm.io/api/1.1/ApplicationService.svc?wsdl" />
+    <MetadataFile FileName="CustomerService5.xsd" MetadataType="Schema" ID="cefe9fa9-c35c-44a0-b3c6-eabeffda7874" SourceId="2" SourceUrl="https://api.lab.storm.io/api/1.1b/CustomerService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CustomerService.wsdl" MetadataType="Wsdl" ID="f522a473-8dc2-4d0d-8cb9-5443526e5475" SourceId="2" SourceUrl="https://api.lab.storm.io/api/1.1b/CustomerService.svc?wsdl=wsdl0" />
     <MetadataFile FileName="CustomerService.xsd" MetadataType="Schema" ID="f5874e2a-d98b-4951-969f-e153fc0c1077" SourceId="2" SourceUrl="https://api.lab.storm.io/api/1.1b/CustomerService.svc?xsd=xsd4" />
+    <MetadataFile FileName="CustomerService3.xsd" MetadataType="Schema" ID="ec213e25-e351-4960-aff8-96adf6eee786" SourceId="2" SourceUrl="https://api.lab.storm.io/api/1.1b/CustomerService.svc?xsd=xsd3" />
     <MetadataFile FileName="CustomerService1.xsd" MetadataType="Schema" ID="5db9a63c-ade8-4357-871a-36bd500fe66f" SourceId="2" SourceUrl="https://api.lab.storm.io/api/1.1b/CustomerService.svc?xsd=xsd5" />
     <MetadataFile FileName="CustomerService2.xsd" MetadataType="Schema" ID="ffae170f-11e5-4921-a84f-5383f27ea808" SourceId="2" SourceUrl="https://api.lab.storm.io/api/1.1b/CustomerService.svc?xsd=xsd2" />
-    <MetadataFile FileName="CustomerService3.xsd" MetadataType="Schema" ID="ec213e25-e351-4960-aff8-96adf6eee786" SourceId="2" SourceUrl="https://api.lab.storm.io/api/1.1b/CustomerService.svc?xsd=xsd3" />
     <MetadataFile FileName="CustomerService4.xsd" MetadataType="Schema" ID="c6e4ffa3-2546-4f81-8883-04f11edcbc34" SourceId="2" SourceUrl="https://api.lab.storm.io/api/1.1b/CustomerService.svc?xsd=xsd0" />
-    <MetadataFile FileName="CustomerService5.xsd" MetadataType="Schema" ID="cefe9fa9-c35c-44a0-b3c6-eabeffda7874" SourceId="2" SourceUrl="https://api.lab.storm.io/api/1.1b/CustomerService.svc?xsd=xsd1" />
     <MetadataFile FileName="CustomerService21.wsdl" MetadataType="Wsdl" ID="a2487a9c-b6f8-4a21-be2e-32d0d96bc5a5" SourceId="2" SourceUrl="https://api.lab.storm.io/api/1.1/CustomerService.svc?wsdl" />
-    <MetadataFile FileName="CustomerService.wsdl" MetadataType="Wsdl" ID="f522a473-8dc2-4d0d-8cb9-5443526e5475" SourceId="2" SourceUrl="https://api.lab.storm.io/api/1.1b/CustomerService.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="OrderService.wsdl" MetadataType="Wsdl" ID="1c4ec166-d89c-4704-ae2d-447c90860be2" SourceId="4" SourceUrl="https://api.lab.storm.io/api/1.1b/OrderService.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="OrderService.xsd" MetadataType="Schema" ID="00810219-3535-48d2-a7ce-d9083976ae87" SourceId="4" SourceUrl="https://api.lab.storm.io/api/1.1b/OrderService.svc?xsd=xsd2" />
-    <MetadataFile FileName="OrderService1.xsd" MetadataType="Schema" ID="200add6c-0069-4994-b3bb-9b728b45658b" SourceId="4" SourceUrl="https://api.lab.storm.io/api/1.1b/OrderService.svc?xsd=xsd1" />
-    <MetadataFile FileName="OrderService2.wsdl" MetadataType="Wsdl" ID="c107aa85-c059-4686-bf89-b72d5fa995cd" SourceId="4" SourceUrl="https://api.lab.storm.io/api/1.1/OrderService.svc?wsdl" />
     <MetadataFile FileName="OrderService2.xsd" MetadataType="Schema" ID="71e28cff-6821-4fb1-8611-b9225ac512f0" SourceId="4" SourceUrl="https://api.lab.storm.io/api/1.1b/OrderService.svc?xsd=xsd4" />
-    <MetadataFile FileName="OrderService3.xsd" MetadataType="Schema" ID="0d69e870-2ba7-4ce2-89a0-e87bf6251da8" SourceId="4" SourceUrl="https://api.lab.storm.io/api/1.1b/OrderService.svc?xsd=xsd3" />
+    <MetadataFile FileName="OrderService1.xsd" MetadataType="Schema" ID="200add6c-0069-4994-b3bb-9b728b45658b" SourceId="4" SourceUrl="https://api.lab.storm.io/api/1.1b/OrderService.svc?xsd=xsd1" />
+    <MetadataFile FileName="OrderService.xsd" MetadataType="Schema" ID="00810219-3535-48d2-a7ce-d9083976ae87" SourceId="4" SourceUrl="https://api.lab.storm.io/api/1.1b/OrderService.svc?xsd=xsd2" />
+    <MetadataFile FileName="OrderService2.wsdl" MetadataType="Wsdl" ID="c107aa85-c059-4686-bf89-b72d5fa995cd" SourceId="4" SourceUrl="https://api.lab.storm.io/api/1.1/OrderService.svc?wsdl" />
     <MetadataFile FileName="OrderService4.xsd" MetadataType="Schema" ID="7855b44d-6d11-4283-b50f-870717e380ae" SourceId="4" SourceUrl="https://api.lab.storm.io/api/1.1b/OrderService.svc?xsd=xsd0" />
-    <MetadataFile FileName="ProductService.xsd" MetadataType="Schema" ID="6467b443-d2aa-45ab-8f14-206c629ea849" SourceId="5" SourceUrl="https://api.lab.storm.io/api/1.1b/ProductService.svc?xsd=xsd0" />
-    <MetadataFile FileName="ProductService1.xsd" MetadataType="Schema" ID="1f79a608-0132-44ca-8b58-58709c0cf634" SourceId="5" SourceUrl="https://api.lab.storm.io/api/1.1b/ProductService.svc?xsd=xsd1" />
+    <MetadataFile FileName="OrderService3.xsd" MetadataType="Schema" ID="0d69e870-2ba7-4ce2-89a0-e87bf6251da8" SourceId="4" SourceUrl="https://api.lab.storm.io/api/1.1b/OrderService.svc?xsd=xsd3" />
+    <MetadataFile FileName="OrderService.wsdl" MetadataType="Wsdl" ID="1c4ec166-d89c-4704-ae2d-447c90860be2" SourceId="4" SourceUrl="https://api.lab.storm.io/api/1.1b/OrderService.svc?wsdl=wsdl0" />
     <MetadataFile FileName="ProductService.wsdl" MetadataType="Wsdl" ID="5242249e-98ac-4643-b476-143a58f269e8" SourceId="5" SourceUrl="https://api.lab.storm.io/api/1.1b/ProductService.svc?wsdl=wsdl0" />
     <MetadataFile FileName="ProductService2.xsd" MetadataType="Schema" ID="0f036910-fdf2-4c42-97cd-1fbf8166fcb2" SourceId="5" SourceUrl="https://api.lab.storm.io/api/1.1b/ProductService.svc?xsd=xsd8" />
-    <MetadataFile FileName="ProductService21.wsdl" MetadataType="Wsdl" ID="1d506dd2-af3f-4312-95da-902153b3336b" SourceId="5" SourceUrl="https://api.lab.storm.io/api/1.1/ProductService.svc?wsdl" />
-    <MetadataFile FileName="ProductService3.xsd" MetadataType="Schema" ID="7890f23b-7aeb-4faf-b2ca-310c02c53dd4" SourceId="5" SourceUrl="https://api.lab.storm.io/api/1.1b/ProductService.svc?xsd=xsd6" />
-    <MetadataFile FileName="ProductService4.xsd" MetadataType="Schema" ID="2c9d43a8-f761-4c9b-a4e9-71866c5339c5" SourceId="5" SourceUrl="https://api.lab.storm.io/api/1.1b/ProductService.svc?xsd=xsd7" />
     <MetadataFile FileName="ProductService5.xsd" MetadataType="Schema" ID="df7d28b5-5674-463a-a9f2-d136c6eaad1b" SourceId="5" SourceUrl="https://api.lab.storm.io/api/1.1b/ProductService.svc?xsd=xsd4" />
     <MetadataFile FileName="ProductService6.xsd" MetadataType="Schema" ID="b5cd44e9-097c-45da-9f97-cf7bd45170be" SourceId="5" SourceUrl="https://api.lab.storm.io/api/1.1b/ProductService.svc?xsd=xsd5" />
+    <MetadataFile FileName="ProductService3.xsd" MetadataType="Schema" ID="7890f23b-7aeb-4faf-b2ca-310c02c53dd4" SourceId="5" SourceUrl="https://api.lab.storm.io/api/1.1b/ProductService.svc?xsd=xsd6" />
+    <MetadataFile FileName="ProductService4.xsd" MetadataType="Schema" ID="2c9d43a8-f761-4c9b-a4e9-71866c5339c5" SourceId="5" SourceUrl="https://api.lab.storm.io/api/1.1b/ProductService.svc?xsd=xsd7" />
+    <MetadataFile FileName="ProductService.xsd" MetadataType="Schema" ID="6467b443-d2aa-45ab-8f14-206c629ea849" SourceId="5" SourceUrl="https://api.lab.storm.io/api/1.1b/ProductService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ProductService21.wsdl" MetadataType="Wsdl" ID="1d506dd2-af3f-4312-95da-902153b3336b" SourceId="5" SourceUrl="https://api.lab.storm.io/api/1.1/ProductService.svc?wsdl" />
     <MetadataFile FileName="ProductService7.xsd" MetadataType="Schema" ID="b2d3aa75-124c-4294-8983-5619e951d333" SourceId="5" SourceUrl="https://api.lab.storm.io/api/1.1b/ProductService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ProductService1.xsd" MetadataType="Schema" ID="1f79a608-0132-44ca-8b58-58709c0cf634" SourceId="5" SourceUrl="https://api.lab.storm.io/api/1.1b/ProductService.svc?xsd=xsd1" />
     <MetadataFile FileName="ProductService8.xsd" MetadataType="Schema" ID="46c90479-dd2e-4ed7-b0f2-820888a79b48" SourceId="5" SourceUrl="https://api.lab.storm.io/api/1.1b/ProductService.svc?xsd=xsd3" />
-    <MetadataFile FileName="ShoppingService.xsd" MetadataType="Schema" ID="9ed746ce-0ff9-42b2-9169-cd02fb56361b" SourceId="6" SourceUrl="https://api.lab.storm.io/api/1.1b/ShoppingService.svc?xsd=xsd3" />
-    <MetadataFile FileName="ShoppingService1.xsd" MetadataType="Schema" ID="da1a35fe-ec6d-49b8-b6ca-1bd9ff5c2b4b" SourceId="6" SourceUrl="https://api.lab.storm.io/api/1.1b/ShoppingService.svc?xsd=xsd0" />
-    <MetadataFile FileName="ShoppingService2.xsd" MetadataType="Schema" ID="ed421d69-3999-4847-adb2-289e5af63567" SourceId="6" SourceUrl="https://api.lab.storm.io/api/1.1b/ShoppingService.svc?xsd=xsd1" />
-    <MetadataFile FileName="ShoppingService.wsdl" MetadataType="Wsdl" ID="2c18c8fb-76d4-4840-9906-c2a7009136ea" SourceId="6" SourceUrl="https://api.lab.storm.io/api/1.1b/ShoppingService.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="ShoppingService3.xsd" MetadataType="Schema" ID="c8cdc2e1-66d3-43a3-bd36-cd359a765888" SourceId="6" SourceUrl="https://api.lab.storm.io/api/1.1b/ShoppingService.svc?xsd=xsd6" />
-    <MetadataFile FileName="ShoppingService4.xsd" MetadataType="Schema" ID="8ce8133a-fc60-41d1-adfe-32bd7c5013cc" SourceId="6" SourceUrl="https://api.lab.storm.io/api/1.1b/ShoppingService.svc?xsd=xsd8" />
     <MetadataFile FileName="ShoppingService2.wsdl" MetadataType="Wsdl" ID="2d686ce8-8b8b-4520-a841-5bd920519ee6" SourceId="6" SourceUrl="https://api.lab.storm.io/api/1.1/ShoppingService.svc?wsdl" />
-    <MetadataFile FileName="ShoppingService5.xsd" MetadataType="Schema" ID="5474b34c-aedc-474d-b0f0-1613040b4f18" SourceId="6" SourceUrl="https://api.lab.storm.io/api/1.1b/ShoppingService.svc?xsd=xsd7" />
-    <MetadataFile FileName="ShoppingService6.xsd" MetadataType="Schema" ID="31c3feee-2c38-4dc9-aff9-a45d6eabf514" SourceId="6" SourceUrl="https://api.lab.storm.io/api/1.1b/ShoppingService.svc?xsd=xsd4" />
-    <MetadataFile FileName="ShoppingService7.xsd" MetadataType="Schema" ID="9ffcc8af-b250-45d3-9652-f45a1f93c41a" SourceId="6" SourceUrl="https://api.lab.storm.io/api/1.1b/ShoppingService.svc?xsd=xsd5" />
+    <MetadataFile FileName="ShoppingService2.xsd" MetadataType="Schema" ID="ed421d69-3999-4847-adb2-289e5af63567" SourceId="6" SourceUrl="https://api.lab.storm.io/api/1.1b/ShoppingService.svc?xsd=xsd1" />
     <MetadataFile FileName="ShoppingService8.xsd" MetadataType="Schema" ID="15ea16ce-c116-4f0f-9815-b206e83c8f01" SourceId="6" SourceUrl="https://api.lab.storm.io/api/1.1b/ShoppingService.svc?xsd=xsd2" />
-    <MetadataFile FileName="ExposeService.xsd" MetadataType="Schema" ID="9cf145a4-4da3-40d2-919d-d822af3ae7a7" SourceId="7" SourceUrl="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd9" />
-    <MetadataFile FileName="ExposeService1.xsd" MetadataType="Schema" ID="b696a07b-c70f-47ef-bd58-7329e50e8504" SourceId="7" SourceUrl="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd5" />
-    <MetadataFile FileName="ExposeService2.xsd" MetadataType="Schema" ID="0c17fd18-bfe4-4d95-98a4-25a47644c5c1" SourceId="7" SourceUrl="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd6" />
+    <MetadataFile FileName="ShoppingService5.xsd" MetadataType="Schema" ID="5474b34c-aedc-474d-b0f0-1613040b4f18" SourceId="6" SourceUrl="https://api.lab.storm.io/api/1.1b/ShoppingService.svc?xsd=xsd7" />
+    <MetadataFile FileName="ShoppingService7.xsd" MetadataType="Schema" ID="9ffcc8af-b250-45d3-9652-f45a1f93c41a" SourceId="6" SourceUrl="https://api.lab.storm.io/api/1.1b/ShoppingService.svc?xsd=xsd5" />
+    <MetadataFile FileName="ShoppingService6.xsd" MetadataType="Schema" ID="31c3feee-2c38-4dc9-aff9-a45d6eabf514" SourceId="6" SourceUrl="https://api.lab.storm.io/api/1.1b/ShoppingService.svc?xsd=xsd4" />
+    <MetadataFile FileName="ShoppingService3.xsd" MetadataType="Schema" ID="c8cdc2e1-66d3-43a3-bd36-cd359a765888" SourceId="6" SourceUrl="https://api.lab.storm.io/api/1.1b/ShoppingService.svc?xsd=xsd6" />
+    <MetadataFile FileName="ShoppingService.wsdl" MetadataType="Wsdl" ID="2c18c8fb-76d4-4840-9906-c2a7009136ea" SourceId="6" SourceUrl="https://api.lab.storm.io/api/1.1b/ShoppingService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ShoppingService.xsd" MetadataType="Schema" ID="9ed746ce-0ff9-42b2-9169-cd02fb56361b" SourceId="6" SourceUrl="https://api.lab.storm.io/api/1.1b/ShoppingService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ShoppingService4.xsd" MetadataType="Schema" ID="8ce8133a-fc60-41d1-adfe-32bd7c5013cc" SourceId="6" SourceUrl="https://api.lab.storm.io/api/1.1b/ShoppingService.svc?xsd=xsd8" />
+    <MetadataFile FileName="ShoppingService1.xsd" MetadataType="Schema" ID="da1a35fe-ec6d-49b8-b6ca-1bd9ff5c2b4b" SourceId="6" SourceUrl="https://api.lab.storm.io/api/1.1b/ShoppingService.svc?xsd=xsd0" />
     <MetadataFile FileName="ExposeService3.xsd" MetadataType="Schema" ID="abbef824-e803-4853-ab66-e23d19cdb817" SourceId="7" SourceUrl="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd12" />
-    <MetadataFile FileName="ExposeService4.xsd" MetadataType="Schema" ID="9a9145c4-d783-41be-9dd3-a012ff0372f4" SourceId="7" SourceUrl="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd0" />
-    <MetadataFile FileName="ExposeService5.xsd" MetadataType="Schema" ID="91c8c344-8c2d-404c-83e4-4ceb58d66db1" SourceId="7" SourceUrl="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd2" />
-    <MetadataFile FileName="ExposeService.wsdl" MetadataType="Wsdl" ID="9a3c878f-f96a-425d-ba3c-15d7ee968cba" SourceId="7" SourceUrl="https://api.lab.storm.io/api/1.1b/ExposeService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ExposeService2.xsd" MetadataType="Schema" ID="0c17fd18-bfe4-4d95-98a4-25a47644c5c1" SourceId="7" SourceUrl="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd6" />
     <MetadataFile FileName="ExposeService6.xsd" MetadataType="Schema" ID="7a37d2b7-8fda-4f6e-a7b4-4837481fbbf6" SourceId="7" SourceUrl="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd8" />
-    <MetadataFile FileName="ExposeService7.xsd" MetadataType="Schema" ID="5ad52a21-02e5-4011-9b08-07dc7892326e" SourceId="7" SourceUrl="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd7" />
-    <MetadataFile FileName="ExposeService8.xsd" MetadataType="Schema" ID="1f48c41a-67bc-4006-bc9b-9bb5946c288c" SourceId="7" SourceUrl="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd1" />
-    <MetadataFile FileName="ExposeService9.xsd" MetadataType="Schema" ID="df646e9e-7353-4b48-9659-c2a8cafff425" SourceId="7" SourceUrl="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd10" />
-    <MetadataFile FileName="ExposeService10.xsd" MetadataType="Schema" ID="c4e99c50-aebe-4cbb-848a-5173bf1f7a8f" SourceId="7" SourceUrl="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd11" />
     <MetadataFile FileName="ExposeService11.xsd" MetadataType="Schema" ID="572a7a4c-cb5f-4dde-a2c5-a2e2ba0e0dbf" SourceId="7" SourceUrl="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ExposeService1.xsd" MetadataType="Schema" ID="b696a07b-c70f-47ef-bd58-7329e50e8504" SourceId="7" SourceUrl="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd5" />
+    <MetadataFile FileName="ExposeService7.xsd" MetadataType="Schema" ID="5ad52a21-02e5-4011-9b08-07dc7892326e" SourceId="7" SourceUrl="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd7" />
+    <MetadataFile FileName="ExposeService10.xsd" MetadataType="Schema" ID="c4e99c50-aebe-4cbb-848a-5173bf1f7a8f" SourceId="7" SourceUrl="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd11" />
+    <MetadataFile FileName="ExposeService9.xsd" MetadataType="Schema" ID="df646e9e-7353-4b48-9659-c2a8cafff425" SourceId="7" SourceUrl="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd10" />
+    <MetadataFile FileName="ExposeService4.xsd" MetadataType="Schema" ID="9a9145c4-d783-41be-9dd3-a012ff0372f4" SourceId="7" SourceUrl="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd0" />
     <MetadataFile FileName="ExposeService2.wsdl" MetadataType="Wsdl" ID="f1715bc4-7bc0-4063-b0ef-6e1c1fb6f608" SourceId="7" SourceUrl="https://api.lab.storm.io/api/1.1/ExposeService.svc?wsdl" />
+    <MetadataFile FileName="ExposeService.xsd" MetadataType="Schema" ID="9cf145a4-4da3-40d2-919d-d822af3ae7a7" SourceId="7" SourceUrl="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd9" />
+    <MetadataFile FileName="ExposeService.wsdl" MetadataType="Wsdl" ID="9a3c878f-f96a-425d-ba3c-15d7ee968cba" SourceId="7" SourceUrl="https://api.lab.storm.io/api/1.1b/ExposeService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ExposeService8.xsd" MetadataType="Schema" ID="1f48c41a-67bc-4006-bc9b-9bb5946c288c" SourceId="7" SourceUrl="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd1" />
     <MetadataFile FileName="ExposeService12.xsd" MetadataType="Schema" ID="29d47c99-98ad-4f3c-892b-6304abaaf694" SourceId="7" SourceUrl="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd4" />
+    <MetadataFile FileName="ExposeService5.xsd" MetadataType="Schema" ID="91c8c344-8c2d-404c-83e4-4ceb58d66db1" SourceId="7" SourceUrl="https://api.lab.storm.io/api/1.1b/ExposeService.svc?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
