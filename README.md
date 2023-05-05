@@ -1,5 +1,5 @@
 # Storm API .NET
-Important note: This component has reached it's end of development and will not be developed further by Norce Commerce. Feel free to branch it and use as a base in your own projects.
+**Important note: This component has reached it's end of development and will not be developed further by Norce Commerce. Feel free to branch it and use as a base in your own projects.**
 
 Storm API is a client library for easy integration against the Storm API. This is used when building applications that calls Storm API. It wraps WCF calls to Storm API and provides support for caching and batch calls.
 
