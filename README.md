@@ -12,6 +12,10 @@ Documentation for Storm API can be found at https://docs.norce.io/api-reference/
 Watch this project to follow our releases.
 
 ## What's new?
+	Fixes in 2.5.5
+		
+		Fixed a bug where pricelists where not sent correctly in ExportHelper.
+
  	Fixes in 2.5.4
 
 		Updated to latest Model
