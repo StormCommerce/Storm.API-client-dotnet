@@ -1,0 +1,78 @@
+name: StormCommerce.Storm.StormApiClient - $(majorMinorVersion).$(semanticVersion)$(versionSuffix)
+
+name: StormCommerce.Storm.Connect.Contracts - $(majorMinorVersion).$(semanticVersion)$(versionSuffix)
+
+trigger:
+  - production
+  - master
+  - feature/*
+  - bugfix/*
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  majorMinorVersion: 2.5
+  semanticVersion: $[counter(variables['majorMinorVersion'], 0)]
+  ${{ if eq(variables['Build.SourceBranchName'], 'production') }}:
+    versionSuffix: ''
+    buildConfiguration: 'Release'
+  ${{ if and(ne(variables['Build.SourceBranchName'], 'production'), ne(variables['Build.SourceBranchName'], 'qa'))}}:
+    versionSuffix: '-beta'
+    buildConfiguration: 'Debug'
+  version: $(majorMinorVersion).$(semanticVersion)
+  versionAndSuffix: $(version)$(versionSuffix)
+
+steps:
+  - task: NuGetToolInstaller@1 # Ensure nuget is installed
+    displayName: Install nuget
+
+  - task: NuGetCommand@2
+    displayName: Nuget Restore
+    inputs:
+      restoreSolution: '$(solution)' # nuget restore
+      feedsToUse: 'select'
+      vstsFeed: 'da90892f-4936-4382-9d6d-ab0feaa72091'
+      includeNuGetOrg: true
+
+  - task: MSBuild@1 # Run MSBuild and deploy to file system
+    displayName: Build Solution
+    inputs:
+      solution: '$(solution)'
+      msbuildArguments: '/p:DeployOnBuild=True /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=true /p:PublishProfile=$(buildConfiguration) /p:PublishUrl="$(Build.ArtifactStagingDirectory)/" /p:AssemblyVersion=$(version) /p:Version=$(versionAndSuffix)'
+      platform: '$(buildPlatform)'
+      configuration: '$(buildConfiguration)'
+
+  - task: DotNetCoreCLI@2
+    displayName: Running unit tests
+    inputs:
+      nobuild: true
+      command: 'test'
+      projects: '**/*Test*/*.csproj'
+      arguments: '--configuration $(buildConfiguration) /p:AssemblyVersion=$(version) /p:Version=$(versionAndSuffix)'
+
+  - task: NuGetCommand@2
+    displayName: Nuget Pack
+    inputs:
+      command: 'pack'
+      packDestination: '$(Build.ArtifactStagingDirectory)\nugets'
+      packagesToPack: '*.nuspec'
+      includesymbols: false
+      versioningScheme: byEnvVar
+      versionEnvVar: versionAndSuffix
+      verbosityPack: 'Detailed'
+      buildProperties: "version=$(versionAndSuffix)"
+
+  - task: NuGetCommand@2
+    displayName: Nuget Pack
+    inputs:
+      command: 'pack'
+      packDestination: '$(Build.ArtifactStagingDirectory)\symbols'
+      packagesToPack: '*.nuspec'
+      includesymbols: true
+      versioningScheme: byEnvVar
+      versionEnvVar: versionAndSuffix
+      verbosityPack: 'Detailed'
+      buildProperties: "version=$(versionAndSuffix)"
