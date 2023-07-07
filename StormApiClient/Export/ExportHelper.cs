@@ -1,5 +1,4 @@
-﻿
-using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 using Enferno.StormApiClient.Products;
 using System;
 using System.Collections.Generic;
@@ -11,29 +10,29 @@ namespace Enferno.StormApiClient.Export
 {
     public class ExportHelper
     {
-        public IEnumerable<ProductItem> ListProductItems(Guid applicationKey, string statusSeed, DateTime? lastUpdatedFrom, string pricelistSeed = null, string cultureCode = null)
+        public IEnumerable<ProductItem> ListProductItems(Guid applicationKey, string statusSeed, DateTime? lastUpdatedFrom, string priceListSeed = null, string cultureCode = null)
         {
             using (var client = new ExportProxy.ExportServiceClient())
             {
-                var response = client.ListProductItems(CreateRequestMessage("Enferno.Services/ExportService/ListProductItems", applicationKey, statusSeed, lastUpdatedFrom, pricelistSeed, cultureCode));
+                var response = client.ListProductItems(CreateRequestMessage("Enferno.Services/ExportService/ListProductItems", applicationKey, statusSeed, lastUpdatedFrom, priceListSeed, cultureCode));
 
                 foreach (var productItem in ReadData<ProductItem>(response.GetReaderAtBodyContents(), "ArrayOfProductItem", "ProductItem"))
                     yield return productItem;
             }
         }
 
-        public IEnumerable<Product> ListProducts(Guid applicationKey, string statusSeed, DateTime? lastUpdatedFrom = null, string pricelistSeed = null, string cultureCode = null)
+        public IEnumerable<Product> ListProducts(Guid applicationKey, string statusSeed, DateTime? lastUpdatedFrom = null, string priceListSeed = null, string cultureCode = null)
         {
             using (var client = new ExportProxy.ExportServiceClient())
             {
-                var response = client.ListProducts(CreateRequestMessage("Enferno.Services/ExportService/ListProducts", applicationKey, statusSeed, lastUpdatedFrom, pricelistSeed, cultureCode));
+                var response = client.ListProducts(CreateRequestMessage("Enferno.Services/ExportService/ListProducts", applicationKey, statusSeed, lastUpdatedFrom, priceListSeed, cultureCode));
 
                 foreach (var product in ReadData<Product>(response.GetReaderAtBodyContents(), "ArrayOfProduct", "Product"))
                     yield return product;
             }
         }
 
-        private static Message CreateRequestMessage(string action, Guid applicationKey, string statusSeed, DateTime? lastUpdatedFrom, string pricelistSeed, string cultureCode)
+        private static Message CreateRequestMessage(string action, Guid applicationKey, string statusSeed, DateTime? lastUpdatedFrom, string priceListSeed, string cultureCode)
         {
             var request = Message.CreateMessage(MessageVersion.Soap11, action);
 
@@ -41,7 +40,7 @@ namespace Enferno.StormApiClient.Export
             request.Headers.Add(MessageHeader.CreateHeader("applicationKey", ns, applicationKey));
             request.Headers.Add(MessageHeader.CreateHeader("statusSeed", ns, statusSeed));
             request.Headers.Add(MessageHeader.CreateHeader("lastUpdatedFrom", ns, lastUpdatedFrom));
-            request.Headers.Add(MessageHeader.CreateHeader("pricelistSeed", ns, pricelistSeed));
+            request.Headers.Add(MessageHeader.CreateHeader("priceListSeed", ns, priceListSeed));
             request.Headers.Add(MessageHeader.CreateHeader("cultureCode", ns, cultureCode));
 
             return request;
